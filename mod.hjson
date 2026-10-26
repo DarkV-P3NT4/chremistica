@@ -1,0 +1,18 @@
+name: "cmtc"
+displayName: "Chremistica"
+author: "Dark V"
+description: "Chremistica is a mod that adds a Planet called Candemor. a rocky planet that were terraformed by the electromagnetic storm raging from its atmosphere, the mod adds various encounters than the usual Crux encounters. Seek the threats and long challenges ahead in this planet, are you able to adapt to the raging pace?
+
+{{ WHAT THIS MOD OFFERS }}
+- A playable campaign with 2 branch paths. (Not Finished)
+- Dozens of hellish factory chains
+- Variety of statuseffects and hazard areas
+- 7 Unique combat units with 6 Tiers
+- Small lore about the planet and the Faraway faction
+- Galenic Lifeforms
+
+Main Author: Dark V {@deathlife}"
+subtitle: "This is not in a full campaign yet."
+version: "0.1"
+minGameVersion: 156
+hidden: false
