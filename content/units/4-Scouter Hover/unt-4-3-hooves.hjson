@@ -1,0 +1,217 @@
+type: mech
+name: "Hooves"
+description: "Fires streams of lasers at enemy targets, Equipped with point defense mounts, Able to hover over bodies of liquid and hazards."
+
+health: 2100
+armor: 8
+hitSize: 25
+speed: 1.4
+rotateSpeed: 4.5
+faceTarget: true
+forceMultiTarget: true
+drag: 0.08
+accel: 0.095
+deathShake: 15
+rippleScale: 0
+range: 100
+maxRange: 170
+strafePenalty: 1
+targetAir: false
+targetGround: true
+canDrown: false
+hovering: true
+outlineColor: 2F2724
+shadowElevation: 0.2
+mechFrontSway: 0
+mechSideSway: 0
+mechStride: 0
+itemCapacity: 0
+stepSound: none
+moveSound: loopHover
+moveSoundVolume: 0.7
+knockbackMultiplier: 2.15
+
+
+engines: [
+{
+    x: 4
+    y: -12
+    radius: 3.5
+    rotation: -90
+}
+{
+    x: -4
+    y: -12
+    radius: 3.5
+    rotation: -90
+}
+]
+useEngineElevation: false
+lowAltitude: true
+
+abilities: [
+{
+    type: StatusFieldAbility
+    effect: cmtc-sts-03-speedy-ii
+    duration: 30
+    reload: 180
+    range: 0
+    }
+  {
+    type: MoveEffectAbility
+    teamColor: true
+    effect: missileTrailShort
+    x: -4
+    y: -12
+    interval: 4
+    minVelocity: 0.1
+  }
+  {
+    type: MoveEffectAbility
+    teamColor: true
+    effect: missileTrailShort
+    x: 4
+    y: -12
+    interval: 4
+    minVelocity: 0.1
+  }
+]
+
+parts: [
+{
+    type: HoverPart
+    color: 96A5F8FF
+    radius: 10
+    sides: 4
+    layerOffset: -0.0001
+    x: 6
+    y: 5
+    phase: 60
+    }
+{
+    type: HoverPart
+    color: 96A5F8FF
+    radius: 10
+    sides: 4
+    layerOffset: -0.0001
+    x: -6
+    y: 5
+    phase: 60
+    }
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: reload
+    color: 6369AEFF
+    colorTo: 96A5F8FF
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+
+weapons: [
+{
+    name: hooves-laser
+    x: 0
+    y: 0
+    mirror: false
+    top: false
+    rotate: false
+    reload: 90
+    recoil: 0
+    cooldownTime: 75
+    shootSound: shootBeamPlasma
+    shootSoundVolume: 0.5
+    chargeSound: chargeVela
+    shootY: 1.5
+    shake: 3.5
+    shootCone: 15
+    shootStatus: unmoving
+    shootStatusDuration: 40
+
+shoot: {
+    type: ShootSpread
+    firstShotDelay: 40
+    shots: 3
+    spread: 15
+}
+
+bullet: {
+    type: LaserBulletType
+    laserEffect: lancerLaserShootSmoke
+    hitEffect: hitLancer
+    length: 170
+    width: 30
+    sideAngle: 90
+    sideWidth: 2
+    sideLength: 20
+    damage: 120
+    pierce: true
+    laserAbsorb: true
+    pierceArmor: true
+    knockback: 2.5
+    impact: true
+    recoil: 2.5
+    lightningSpacing: 34
+    lightningLength: 4
+    lightningLengthRand: 4
+    lightningDamage: 25
+    lightningColor: 96A5F8FF
+    lightningDelay: 1
+    status: cmtc-sts-06-dilemma-i
+    statusDuration: 90
+    colors: [ 6369AEFF, 96A5F8FF, ffffffff ]
+    chargeEffect: {
+    type: SeqEffect
+    followParent: true
+    rotWithParent: true
+effects: [
+{
+    type: ParticleEffect
+    sizeFrom: 0
+    sizeTo: 16
+    lifetime: 30
+    particles: 1
+    length: 0
+    colorFrom: 96A5F8FF
+    colorTo: FFFFFFFF
+    interp: exp5In
+    }
+{
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    sizeFrom: 16
+    sizeTo: 0
+    lifetime: 15
+    colorFrom: FFFFFFFF
+    colorTo: 96A5F8FF
+    interp: exp5Out
+    }
+    ]
+}
+}
+    }
+{
+    name: hooves-pointdefense
+    type: PointDefenseWeapon
+    color: 96A5F8FF
+    targetSwitchInterval: 2
+    targetInterval: 1
+    layerOffset: 0.1
+    mirror: true
+    x: 6.75
+    y: -0.5
+    reload: 7.5
+    shootSound: shootSegment
+
+bullet: {
+    maxRange: 120
+    damage: 30
+    shootEffect: sparkShoot
+    hitEffect: pointHit
+}
+    }
+]
+

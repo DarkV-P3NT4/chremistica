@@ -1,0 +1,145 @@
+type: mech
+name: "Foot"
+description: "Fires arcs of electricity at ememy targets, Able to hover over bodies of liquid."
+
+health: 950
+armor: 0
+hitSize: 12
+speed: 2
+rotateSpeed: 5
+faceTarget: true
+drag: 0.08
+accel: 0.095
+deathShake: 5
+rippleScale: 0
+range: 80
+maxRange: 80
+strafePenalty: 1
+targetAir: false
+targetGround: true
+canDrown: false
+hovering: true
+outlineColor: 2F2724
+shadowElevation: 0.1
+mechFrontSway: 0
+mechSideSway: 0
+mechStride: 0
+itemCapacity: 0
+stepSound: none
+moveSound: loopHover
+moveSoundVolume: 0.7
+knockbackMultiplier: 2.15
+
+
+abilities: [
+{
+    type: ShieldRegenFieldAbility
+    reload: 60
+    amount: 10
+    range: 0
+    max: 100
+    }
+{
+    type: MoveLightningAbility
+    damage: 25
+    minSpeed: 0.7
+    maxSpeed: 1.6
+    color: 96A5F8FF
+}
+  {
+    type: MoveEffectAbility
+    teamColor: true
+    effect: missileTrailShort
+    x: 0
+    y: -7
+    interval: 4
+    minVelocity: 0.1
+  }
+  {
+    type: MoveEffectAbility
+    minVelocity: 2
+    x: 0
+    y: 0
+    effect: shockwaveSmaller
+    teamColor: true
+    interval: 2
+  }
+]
+
+parts: [
+{
+    type: HoverPart
+    color: 96A5F8FF
+    radius: 10
+    sides: 8
+    layerOffset: -0.0001
+    x: 0
+    y: 0
+    phase: 40
+    }
+{
+    type: HoverPart
+    color: 96A5F8FF
+    radius: 15
+    sides: 8
+    layerOffset: -0.0001
+    x: 0
+    y: 0
+    phase: 80
+    }
+]
+
+weapons: [
+{
+    name: foot-wing
+    x: 5.5
+    y: 5.5
+    top: false
+    mirror: true
+    alternate: true
+    rotate: false
+    useAttackRange: false
+    reload: 30
+    recoil: 1.25
+    recoilTime: 30
+    shootCone: 5
+    inaccuracy: 30
+    shootSound: shootArc
+
+shoot: {
+    shots: 6
+    shotDelay: 0.5
+}
+
+bullet: {
+    type: LightningBulletType
+    collidesAir: false
+    lightningColor: 96A5F8FF
+    hitColor: 96A5F8FF
+    damage: 10
+    lightningLength: 12
+    lightningLengthRand: 4
+    shootEffect: sparkShoot
+    recoil: -0.25
+    pierce: true
+    pierceCap: 2
+
+lightningType: {
+    collidesAir: false
+    width: 0
+    height: 0
+    damage: 0
+    speed: 0.0001
+    lifetime: 5
+    hitEffect: hitLancer
+    despawnEffect: none
+    hittable: false
+    status: shocked
+    statusDuration: 60
+    pierce: true
+    pierceCap: 2
+    }
+}
+    }
+]
+

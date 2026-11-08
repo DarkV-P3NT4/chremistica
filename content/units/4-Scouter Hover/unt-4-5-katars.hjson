@@ -1,0 +1,767 @@
+type: mech
+name: "Katars"
+description: "Charges and fires an unstable electric orb at enemy targets, Now capable of flight."
+
+health: 21000
+armor: 18
+hitSize: 36
+speed: 0.44
+rotateSpeed: 4
+faceTarget: true
+drag: 0.08
+accel: 0.12
+deathShake: 50
+rippleScale: 0
+range: 240
+maxRange: 240
+strafePenalty: 1
+targetAir: false
+targetGround: true
+canDrown: false
+hovering: true
+canBoost: true
+boostMultiplier: 1.0
+outlineColor: 2F2724
+shadowElevation: 0.35
+mechFrontSway: 0
+mechSideSway: 0
+mechStride: 0
+engineSize: 0
+itemCapacity: 0
+stepSound: none
+moveSound: loopHover
+moveSoundVolume: 1.5
+knockbackMultiplier: 2.15
+riseSpeed: 0.008
+descentSpeed: 0.02
+
+immunities: [ cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-08-ruined-i, cmtc-sts-12-heavyweight ]
+
+engines: [
+{
+    x: 8
+    y: -23
+    radius: 5.5
+    rotation: -90
+}
+{
+    x: -8
+    y: -23
+    radius: 5.5
+    rotation: -90
+}
+]
+useEngineElevation: false
+lowAltitude: true
+
+abilities: [
+{
+    type: MoveLightningAbility
+    chance: 0.1
+    minSpeed: 0.2
+    maxSpeed: 2.5
+    bullet: {
+    type: BasicBulletType
+    sprite: cmtc-blast-small
+    collidesAir: false
+    width: 16
+    height: 16
+    spin: 0.5
+    hitSize: 8
+    shrinkY: 0
+    drag: 0.02
+    damage: 7.5
+    splashDamage: 6.25
+    splashDamageRadius: 7
+    pierce: true
+    bulletInterval: 45
+    intervalDelay: 45
+    intervalBullets: 3
+    lifetime: 150
+    speed: 3.5
+    lifeScaleRandMin: 0.8
+    lifeScaleRandMax: 1.1
+    velocityScaleRandMin: 0.6
+    velocityScaleRandMax: 1.5
+    hittable: false
+    absorbable: false
+    reflectable: false
+
+intervalBullet: {
+    type: LightningBulletType
+    collidesAir: false
+    damage: 1.25
+    lightningLength: 8
+    lightningLengthRand: 3
+    lightningColor: 6369AEFF
+    hitEffect: hitLancerLow
+    status: cmtc-sts-04-sluggish-ii
+    statusDuration: 180
+    }
+
+    frontColor: 96A5F8FF
+    backColor: 6369AEFF
+    trailColor: 6369AEFF
+    hitColor: 96A5F8FF
+    trailLength: 8
+    trailRotation: true
+    trailInterval: 6
+    trailEffect: {
+    type: ParticleEffect
+    length: 16
+    particles: 4
+    sizeFrom: 4
+    sizeTo: 2
+    cone: 15
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F800
+    lifetime: 20
+    baseRotation: 180
+}
+    weaveMag: 6
+    weaveScale: 5
+    hitSound: explosionCleroi
+    despawnSound: shootMalign
+    hitEffect: [ squareWaveEffect, hitSquaresColor, hitLancer,
+{
+    type: WaveEffect
+    interp: exp5Out
+    sizeFrom: 0
+    sizeTo: 28
+    strokeFrom: 4
+    strokeTo: 0
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    lifetime: 16
+}
+    ]
+    despawnEffect: [ squareWaveEffect, hitSquaresColor ]
+    fragBullets: 4
+    fragSpread: 90
+    fragRandomSpread: 0
+    fragOnHit: false
+    fragOnDespawn: true
+    fragOnAbsorb: false
+
+fragBullet: {
+    type: LaserBulletType
+    collidesAir: false
+    laserEffect: lancerLaserShootSmoke
+    hitEffect: hitLancer
+    length: 20
+    width: 20
+    sideAngle: 90
+    sideWidth: 0
+    sideLength: 0
+    damage: 27.5
+    pierce: true
+    laserAbsorb: true
+    knockback: 2.5
+    impact: true
+    largeHit: true
+    colors: [ 6369AEFF, 96A5F8FF, ffffffff ]
+}
+    }
+}
+  {
+    type: MoveEffectAbility
+    teamColor: true
+    effect: missileTrail
+    x: 8
+    y: -23
+    interval: 4
+    chance: 0.05
+    minVelocity: 0.1
+  }
+  {
+    type: MoveEffectAbility
+    teamColor: true
+    effect: missileTrail
+    x: -8
+    y: -23
+    interval: 4
+    chance: 0.05
+    minVelocity: 0.1
+  }
+]
+
+parts: [
+{
+    type: HoverPart
+    color: 96A5F8FF
+    radius: 16
+    sides: 4
+    layerOffset: -0.0001
+    x: 10.5
+    y: 4.5
+    phase: 60
+    mirror: true
+    }
+{
+    type: HoverPart
+    color: 96A5F8FF
+    radius: 16
+    sides: 4
+    layerOffset: -0.0001
+    x: 7.5
+    y: 16
+    phase: 60
+    mirror: true
+    }
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: reload
+    color: 6369AEFF
+    colorTo: 96A5F8FF
+    blending: additive
+    outline: false
+    layer: -1
+}
+{
+    type: RegionPart
+    suffix: "-blade"
+    layerOffset: -0.01
+    heatLayerOffset: 0.005
+    x: 15
+    y: -12.5
+    progress: warmup
+    moveRot: -90
+    heatColor: 96A5F8FF
+    mirror: true
+}
+{
+    type: RegionPart
+    suffix: "-blade"
+    layerOffset: -0.01
+    heatLayerOffset: 0.005
+    x: 15
+    y: -7.5
+    progress: warmup
+    moveRot: -90
+    heatColor: 96A5F8FF
+    mirror: true
+}
+{
+    type: RegionPart
+    suffix: "-blade"
+    layerOffset: -0.01
+    heatLayerOffset: 0.005
+    x: 15
+    y: -2.5
+    progress: warmup
+    moveRot: -90
+    heatColor: 96A5F8FF
+    mirror: true
+}
+]
+
+
+weapons: [
+{
+    name: katars-blast
+    x: 0
+    y: 0
+    shootSound: shootKatars
+    chargeSound: chargeKatars
+    soundPitchMin: 1
+    soundPitchMax: 1
+    reload: 720
+    recoil: 0
+    shootCone: 1.5
+    shootStatus: unmoving
+    shootStatusDuration: 360
+    mirror: false
+    layerOffset: 0.1
+    shootWarmupSpeed: 0.05
+    minWarmup: 0.9
+    cooldownTime: 180
+    shake: 10
+
+shoot: {
+    firstShotDelay: 120
+    shots: 3
+    shotDelay: 30
+}
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-blast
+    width: 30
+    height: 30
+    hitSize: 16
+    shrinkY: 0.3
+    shrinkX: 0.3
+    drag: 0.035
+    recoil: 1.5
+    rangeOverride: 240
+    lifetime: 240
+    speed: 8
+    velocityScaleRandMin:  0.9
+    velocityScaleRandMax: 1.1
+    damage: 25
+    splashDamage: 250
+    splashDamageRadius: 40
+    homingPower: 0.05
+    homingDelay: 15
+    frontColor: 96A5F8FF
+    backColor: 6369AEFF
+    trailColor: 6369AEFF
+    hitColor: 96A5F8FF
+    trailLength: 18
+    trailWidth: 3.5
+    trailInterval: 4
+    trailEffect: {
+    type: ParticleEffect
+    length: 16
+    particles: 4
+    sizeFrom: 3
+    sizeTo: 4
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F800
+    lifetime: 20
+}
+    lightning: 8
+    lightningLength: 12
+    lightningLengthRand: 3
+    lightningColor: 6369AEFF
+    lightningDamage: 15
+    collidesAir: false
+    weaveMag: 2
+    weaveScale: 4
+    status: shocked
+    statusDuration: 60
+    reflectable: false
+    smokeEffect: [ shootBigColor, sparkShoot, lightningShoot ]
+    shootEffect: {
+    type: MultiEffect
+effects: [
+{
+    type: ParticleEffect
+    length: 90
+    line: true
+    particles: 48
+    sizeFrom: 8
+    sizeTo: 2
+    strokeFrom: 2.5
+    strokeTo: 0
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    lifetime: 60
+    interp: exp5Out
+}
+{
+    type: WaveEffect
+    interp: exp5Out
+    sizeFrom: 0
+    sizeTo: 60
+    strokeFrom: 8
+    strokeTo: 0
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    lifetime: 60
+}
+{
+    type: ParticleEffect
+    length: 0
+    particles: 1
+    sizeFrom: 20
+    sizeTo: 0
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    lifetime: 60
+    interp: exp5Out
+}
+]
+}
+    chargeEffect: {
+    type: MultiEffect
+effects: [
+{
+    type: SeqEffect
+    effects: [
+{
+    type: ParticleEffect
+    baseLength: -30
+    length: 30
+    randLength: false
+    particles: 1
+    cone: 1
+    sizeFrom: 0
+    sizeTo: 2
+    colorFrom: 00000000
+    colorTo: 96A5F8FF
+    lifetime: 30
+    interp: exp5Out
+}
+{
+    type: ParticleEffect
+    length: 0
+    particles: 1
+    sizeFrom: 2
+    sizeTo: 12
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    lifetime: 90
+    interp: exp5In
+}
+    ]
+}
+{
+    type: ParticleEffect
+    baseLength: -60
+    length: 60
+    line: true
+    particles: 72
+    sizeFrom: 3
+    sizeTo: 5
+    strokeFrom: 0.7
+    strokeTo: 2.3
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    startDelay: 100
+    lifetime: 20
+}
+{
+    type: ParticleEffect
+    baseLength: -90
+    length: 90
+    particles: 24
+    sizeFrom: 1
+    sizeTo: 3.5
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    startDelay: 100
+    lifetime: 20
+}
+{
+    type: WaveEffect
+    interp: exp5In
+    sizeFrom: 80
+    sizeTo: 6
+    strokeFrom: 0
+    strokeTo: 5
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    startDelay: 30
+    lifetime: 90
+}
+{
+    type: WaveEffect
+    interp: exp5In
+    sizeFrom: 50
+    sizeTo: 6
+    strokeFrom: 0
+    strokeTo: 5
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    startDelay: 30
+    lifetime: 90
+}
+    ]
+}
+    hitEffect: [ squareWaveEffect, hitSquaresColor, hitLancer,
+{
+    type: WaveEffect
+    interp: exp5Out
+    sizeFrom: 0
+    sizeTo: 40
+    strokeFrom: 4
+    strokeTo: 0
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    lifetime: 16
+}
+   ]
+    despawnEffect: [ squareWaveEffect, hitSquaresColor ]
+    hitSound: explosionAfflict
+    despawnSound: blockExplodeElectricBig
+    fragBullets: 16
+    fragSpread: 3.75
+    fragRandomSpread: 0
+    fragOnHit: false
+    fragOnDespawn: true
+    fragOnAbsorb: false
+    fragLifeMin: 0.8
+    fragLifeMax: 1.1
+    fragVelocityMin: 0.6
+    fragVelocityMax: 1.5
+
+fragBullet: {
+    type: BasicBulletType
+    sprite: cmtc-blast-small
+    collidesAir: false
+    width: 16
+    height: 16
+    spin: 4
+    hitSize: 8
+    shrinkY: 0
+    drag: 0.02
+    damage: 30
+    splashDamage: 25
+    splashDamageRadius: 28
+    pierce: true
+    bulletInterval: 45
+    intervalDelay: 45
+    intervalBullets: 3
+    lifetime: 600
+    speed: 3.5
+    hittable: false
+    absorbable: false
+    reflectable: false
+
+intervalBullet: {
+    type: LightningBulletType
+    collidesAir: false
+    damage: 5
+    lightningLength: 8
+    lightningLengthRand: 3
+    lightningColor: 6369AEFF
+    hitEffect: hitLancerLow
+    status: cmtc-sts-04-sluggish-ii
+    statusDuration: 180
+    }
+
+    frontColor: 96A5F8FF
+    backColor: 6369AEFF
+    trailColor: 6369AEFF
+    hitColor: 96A5F8FF
+    trailLength: 8
+    trailRotation: true
+    trailInterval: 6
+    trailEffect: {
+    type: ParticleEffect
+    length: 16
+    particles: 4
+    sizeFrom: 4
+    sizeTo: 2
+    cone: 15
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F800
+    lifetime: 20
+    baseRotation: 180
+}
+    weaveMag: 6
+    weaveScale: 5
+    hitSound: explosionCleroi
+    despawnSound: shootMalign
+    hitEffect: [ squareWaveEffect, hitSquaresColor, hitLancer,
+{
+    type: WaveEffect
+    interp: exp5Out
+    sizeFrom: 0
+    sizeTo: 28
+    strokeFrom: 4
+    strokeTo: 0
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    lifetime: 16
+}
+    ]
+    despawnEffect: [ squareWaveEffect, hitSquaresColor ]
+    fragBullets: 4
+    fragSpread: 90
+    fragRandomSpread: 0
+    fragOnHit: false
+    fragOnDespawn: true
+    fragOnAbsorb: false
+
+fragBullet: {
+    type: LaserBulletType
+    collidesAir: false
+    laserEffect: lancerLaserShootSmoke
+    hitEffect: hitLancer
+    length: 80
+    width: 20
+    sideAngle: 90
+    sideWidth: 0
+    sideLength: 0
+    damage: 110
+    pierce: true
+    laserAbsorb: true
+    armorMultiplier: 0.75
+    knockback: 10
+    impact: true
+    largeHit: true
+    colors: [ 6369AEFF, 96A5F8FF, ffffffff ]
+}
+    }
+}
+    }
+{
+    x: 17.5
+    y: -6
+    rotate: false
+    mirror: true
+    baseRotation: -45
+    autoTarget: true
+    controllable: false
+    ignoreRotation: true
+    shootCone: 361
+    shootSound: shootMissilePlasma
+    shootSoundVolume: 0.75
+    reload: 45
+    shootY: 0
+
+bullet: {
+    type: FlakBulletType
+    sprite: missile-large
+    collidesGround: true
+    collidesAir: false
+    width: 10
+    height: 20
+    shrinkY: 0
+    lifetime: 60
+    speed: 6
+    drag: 0.01
+    rangeOverride: 240
+    damage: 60
+    splashDamage: 30
+    splashDamageRadius: 24
+    homingPower: 0.1
+    homingDelay: 6
+    homingRange: 160
+    frontColor: 96A5F8FF
+    backColor: 6369AEFF
+    trailColor: 6369AEFF
+    hitColor: 96A5F8FF
+    shootEffect: shootSmokeSquareBig
+    smokeEffect: shootSmokeDisperse
+    trailLength: 8
+    trailWidth: 3.5
+    trailRotation: true
+    trailEffect: colorSpark
+    trailInterval: 6
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    intervalBullets: 2
+    bulletInterval: 7.5
+
+intervalBullet: {
+    type: LightningBulletType
+    collidesAir: false
+    damage: 15
+    lightningLength: 8
+    lightningLengthRand: 3
+    lightningColor: 6369AEFF
+    hitEffect: hitLancerLow
+    status: cmtc-sts-06-dilemma-ii
+    statusDuration: 180
+    }
+    fragBullets: 3
+    fragSpread: 30
+    fragRandomSpread: 0
+    fragOnHit: false
+    fragOnDespawn: true
+    fragOnAbsorb: false
+
+fragBullet: {
+    type: LaserBulletType
+    collidesAir: false
+    laserEffect: lancerLaserShootSmoke
+    hitEffect: hitLancer
+    length: 100
+    width: 20
+    sideAngle: 90
+    sideWidth: 0
+    sideLength: 0
+    damage: 60
+    pierce: true
+    laserAbsorb: true
+    armorMultiplier: 1.4
+    knockback: 5
+    impact: true
+    largeHit: true
+    colors: [ 6369AEFF, 96A5F8FF, ffffffff ]
+}
+}
+}
+{
+    x: 17.5
+    y: 7.5
+    rotate: false
+    mirror: true
+    baseRotation: -45
+    autoTarget: true
+    controllable: false
+    ignoreRotation: true
+    shootCone: 361
+    shootSound: shootMissilePlasma
+    shootSoundVolume: 0.75
+    reload: 60
+    shootY: 0
+
+bullet: {
+    type: FlakBulletType
+    sprite: missile-large
+    collidesGround: true
+    collidesAir: false
+    width: 10
+    height: 20
+    shrinkY: 0
+    lifetime: 60
+    speed: 6
+    drag: 0.01
+    rangeOverride: 240
+    damage: 60
+    splashDamage: 30
+    splashDamageRadius: 24
+    homingPower: 0.1
+    homingDelay: 6
+    homingRange: 160
+    frontColor: 96A5F8FF
+    backColor: 6369AEFF
+    trailColor: 6369AEFF
+    hitColor: 96A5F8FF
+    shootEffect: shootSmokeSquareBig
+    smokeEffect: shootSmokeDisperse
+    trailLength: 8
+    trailWidth: 3.5
+    trailRotation: true
+    trailEffect: colorSpark
+    trailInterval: 6
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    intervalBullets: 2
+    bulletInterval: 7.5
+
+intervalBullet: {
+    type: LightningBulletType
+    collidesAir: false
+    damage: 15
+    lightningLength: 8
+    lightningLengthRand: 3
+    lightningColor: 6369AEFF
+    hitEffect: hitLancerLow
+    status: cmtc-sts-06-dilemma-ii
+    statusDuration: 180
+    }
+    fragBullets: 3
+    fragSpread: 30
+    fragRandomSpread: 0
+    fragOnHit: false
+    fragOnDespawn: true
+    fragOnAbsorb: false
+
+fragBullet: {
+    type: LaserBulletType
+    collidesAir: false
+    laserEffect: lancerLaserShootSmoke
+    hitEffect: hitLancer
+    length: 100
+    width: 20
+    sideAngle: 90
+    sideWidth: 0
+    sideLength: 0
+    damage: 60
+    pierce: true
+    laserAbsorb: true
+    armorMultiplier: 1.4
+    knockback: 5
+    impact: true
+    largeHit: true
+    colors: [ 6369AEFF, 96A5F8FF, ffffffff ]
+}
+}
+}
+]
