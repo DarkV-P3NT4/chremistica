@@ -1,0 +1,129 @@
+type: missile
+physics: false
+template: MissileUnitType
+controller: MissileAI
+flying: true
+speed: 3.2
+accel: 1
+drag: 0
+lifetime: 62.5
+useUnitCap: false
+rotateSpeed: 1
+trailLength: 0
+health: 80
+homingDelay: 0
+deathSound: explosionArtillery
+deathExplosionEffect: none
+drawMinimap: false
+isEnemy: false
+shadowElevation: 1
+engineSize: 0
+outlines: true
+hidden: true  
+lowAltitude: true
+outlineColor: 2F2724
+aimDst: 2
+range: 2
+maxRange: 2
+knockbackMultiplier: 0
+trailLength: 8
+abilities: [
+  {
+    type: MoveEffectAbility
+    minVelocity: 0.1
+    x: 0
+    y: -2.5
+    effect: missileTrailShort
+    teamColor: true
+    interval: 2
+  }
+]
+weapons: [
+{
+    x: 0
+    y: 0
+    reload: 1
+    mirror: false
+    shootOnDeath: true
+    shootCone: 180
+    shootSound: none
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    hitColor: F25555FF
+    killShooter: true
+    splashDamage: 50
+    splashDamageRadius: 24
+    shieldDamageMultiplier: 1.2
+    knockback: 1.5
+    impact: true
+    collidesGround: true
+    collidesAir: true
+    hitEffect: none
+    shootEffect: [ squareWaveEffect, hitSquaresColor ]
+    despawnEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 26
+    strokeFrom: 5
+    strokeTo: 0
+    lifetime: 30
+    colorFrom: F25555FF
+    colorTo: F25555FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 3
+    sizeTo: 0
+    lifetime: 30
+    colorFrom: F25555FF
+    colorTo: F25555FF
+    interp: pow3Out
+    particles: 4
+    length: 30
+}
+    ]
+}
+    }
+{
+    x: 0
+    y: 0
+    reload: 1
+    mirror: false
+    shootOnDeath: true
+    shootCone: 180
+    shootSound: none
+    controllable: false
+    aiControllable: false
+shoot: {
+    type: ShootSpread
+    shots: 6
+    spread: 10
+}
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-spray
+    keepVelocity: false
+    width: 12
+    height: 8
+    damage: 5
+    speed: 3.2
+    pierce: true
+    pierceBuilding: true
+    lifetime: 20
+    shrinkY: 0
+    drag: 0.05
+    frontColor: F25555FF
+    backColor: A14553FF
+    trailColor: A14553FF
+    hitColor: F25555FF
+    trailLength: 0
+    hitEffect: hitBulletColor
+    despawnEffect: none
+}
+    }
+]

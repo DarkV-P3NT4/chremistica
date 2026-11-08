@@ -1,0 +1,71 @@
+type: flying
+
+name: test unit
+description: testing purposes only
+
+health: 1800
+armor: 180
+speed: 1
+hitSize: 8
+flying: true
+drag: 0.08
+accel: 0.08
+isEnemy: false
+lowAltitude: false
+engineColor: 000000
+trailLength: 32
+itemCapacity: 0
+rotateSpeed: 4.5
+strafePenalty: 1
+deathShake: 4
+omniMovement: false
+
+weapons: [
+{
+    type: PointDefenseBulletWeapon
+    x: 0
+    y: 0
+    reload: 600
+    mirror: false
+    recoil: 0
+    shootSound: shootDisperse
+    chargeSound: chargeLancer
+    shootCone: 361
+    rotate: false
+    ignoreRotation: true
+    soundPitchMin: 1
+    soundPitchMax: 1.2
+
+shoot: {
+    shots: 32
+    shotDelay: 3.75
+    firstShotDelay: 35
+}
+
+bullet: {
+    rangeOverride: 360
+    type: InterceptorBulletType
+    sprite: mine-bullet
+    width: 18
+    height: 18
+    hitSize: 14
+    shrinkY: 0
+    frontColor: D47BC4FF
+    backColor: 9D4E8EFF
+    trailColor: 9D4E8EFF
+    hitColor: D47BC4FF
+    damage: 60
+    buildingDamageMultiplier: 0.01
+    speed: 4
+    lifetime: 600
+    shootEffect: sparkShoot
+    smokeEffect: colorSpark
+    hitEffect: [ pointHit, hitSquaresColor ]
+    despawnEffect: none
+    trailLength: 12
+    circleShooter: true
+    circleShooterRadius: 48
+    circleShooterRadiusSmooth: 16
+    }
+}
+]

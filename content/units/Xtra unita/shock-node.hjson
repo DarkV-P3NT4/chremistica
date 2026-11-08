@@ -1,0 +1,85 @@
+type: missile
+physics: false
+template: MissileUnitType
+flying: true
+speed: 0
+accel: 0
+drag: 1
+lifetime: 1800
+useUnitCap: false
+targetable: false
+killable: true
+wobble: false
+rotateSpeed: 0
+trailLength: 0
+health: 90000
+homingDelay: 0
+deathSound: explosionArtilleryShock
+deathExplosionEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 30
+    strokeFrom: 3
+    strokeTo: 0
+    lifetime: 30
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 30
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    interp: pow3Out
+    particles: 16
+    length: 30
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    line: true
+    sizeFrom: 4
+    sizeTo: 2
+    lenFrom: 6
+    lenTo: 0
+    lifetime: 30
+    colorFrom: 96A5F8FF
+    colorTo: 96A5F8FF
+    interp: pow3Out
+    particles: 16
+    length: 30
+}
+    ]
+drawMinimap: false
+isEnemy: false
+shadowElevation: 1
+engineSize: 0
+outlines: true
+hidden: true  
+lowAltitude: true
+aimDst: 2
+range: 2
+maxRange: 2
+abilities: [
+  {
+    type: EnergyFieldAbility
+    hitUnits: true
+    hitBuildings: true
+    reload: 60
+    color: 96A5F8FF
+    damage: 50
+    healPercent: 0
+    sameTypeHealMult: 0
+    range: 100
+    maxTargets: 20
+    effectRadius: 3
+    rotateSpeed: 6
+    status: none
+  }
+]
+weapons: []

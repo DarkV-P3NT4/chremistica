@@ -1,0 +1,45 @@
+type: crawl
+name: "Nymph"
+description: "Mama?"
+
+health: 600
+armor: 3
+hitSize: 8.8
+speed: 1.22
+controller: HugAI
+range: 0
+itemCapacity: 0
+drawBody: false
+drawCell: true
+segments: 3
+segmentMag: 1.2
+segmentScl: 2.8
+segmentMaxRot: 35
+rotateSpeed: 3
+omniMovement: false
+drag: 0.12
+outlineColor: 2F2724
+canDrown: false
+floorMultiplier: 0
+faceTarget: true
+targetAir: false
+hovering: true
+hidden: true
+playerControllable: false
+logicControllable: false
+
+knockbackMultiplier: 0
+
+crawlSlowdown: 0.8
+crushDamage: 0.2
+
+immunities: [ cmtc-sts-02-deprived-i, cmtc-sts-03-speedy-i, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii ]
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.025
+    }
+]
+
+weapons: []

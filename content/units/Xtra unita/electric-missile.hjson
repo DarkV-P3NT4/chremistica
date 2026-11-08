@@ -1,0 +1,108 @@
+type: missile
+physics: false
+template: MissileUnitType
+flying: true
+speed: 2
+accel: 1
+drag: 0
+lifetime: 165
+useUnitCap: false
+rotateSpeed: 0
+trailLength: 0
+health: 140
+homingDelay: 0
+deathSound: explosionArtilleryShock
+deathExplosionEffect: none
+drawMinimap: false
+isEnemy: false
+shadowElevation: 1
+engineSize: 0
+outlines: true
+hidden: true  
+lowAltitude: true
+outlineColor: 2F2724
+aimDst: 2
+range: 2
+maxRange: 2
+knockbackMultiplier: 0
+abilities: [
+  {
+    type: MoveEffectAbility
+    minVelocity: 0.1
+    x: 0
+    y: -2.5
+    effect: missileTrailShort
+    teamColor: true
+    interval: 4
+  }
+  {
+    type: EnergyFieldAbility
+    hitUnits: true
+    hitBuildings: false
+    reload: 15
+    color: 7BCD83FF
+    damage: 10
+    healPercent: 1
+    sameTypeHealMult: 0
+    status: cmtc-sts-06-dilemma-i
+    statusDuration: 300
+    range: 80
+    maxTargets: 15
+    effectRadius: 1.5
+    rotateSpeed: 3
+  }
+]
+weapons: [
+{
+    x: 0
+    y: 0
+    reload: 1
+    mirror: false
+    shootOnDeath: true
+    shootCone: 180
+    shootSound: none
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    killShooter: true
+    splashDamage: 75
+    splashDamageRadius: 28
+    knockback: 5
+    impact: true
+    collidesGround: true
+    collidesAir: true
+    hitEffect: pulverize
+    shootEffect: [ squareWaveEffect, hitSquaresColor ]
+    despawnEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 30
+    strokeFrom: 3
+    strokeTo: 0
+    lifetime: 30
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD83FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 30
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD83FF
+    interp: pow3Out
+    particles: 16
+    length: 30
+}
+    ]
+    status: none
+    lightning: 8
+    lightningColor: 7BCD83FF
+    lightningLength: 12
+    lightningDamage: 5
+}
+    }
+]

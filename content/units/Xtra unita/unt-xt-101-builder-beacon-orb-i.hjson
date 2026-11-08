@@ -1,0 +1,67 @@
+type: tether
+name: "Builder Beacon"
+description: "A magic orb spawned from the beacon used to grant statuseffects to allies."
+flying: true
+controller: CargoAI
+isEnemy: false
+logicControllable: false
+allowedInPayloads: false
+playerControllable: false
+drawBody: false
+drawCell: false
+drawMinimap: false
+outlines: false
+payloadCapacity: 0
+lowAltitude: false
+drag: 0.06
+speed: 0
+rotateSpeed: 0
+accel: 0.1
+engineSize: 0
+itemCapacity: 0
+health: 60
+hitSize: 8
+hidden: true
+
+abilities: [
+{
+    type: StatusFieldAbility
+    effect: cmtc-sts-09-instruction-i
+    duration: 1200
+    reload: 600
+    range: 100
+    }
+]
+
+parts: [
+{
+    type: ShapePart
+    radius: 4
+    stroke: 3
+    sides: 4
+    color: 7BCD83FF
+    layer: 110
+    hollow: true
+}
+{
+    type: ShapePart
+    radius: 15
+    stroke: 1
+    circle: true
+    color: 7BCD83FF
+    layer: 110
+    hollow: true
+}
+{
+    type: HaloPart
+    haloRadius: 11
+    radius: 4
+    sides: 4
+    shapes: 4
+    rotateSpeed: -1.5
+    haloRotateSpeed: 1.5
+    color: 7BCD83FF
+    hollow: true
+    layer: 110
+}
+]

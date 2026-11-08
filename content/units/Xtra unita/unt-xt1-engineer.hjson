@@ -1,0 +1,24 @@
+type: tether
+name: "Engineer"
+description: "I loved you since you were first created, son..."
+flying: true
+drag: 0.06
+accel: 0.11
+speed: 0.85
+health: 500
+engineSize: 2
+engineOffset: 6.5
+payloadCapacity: 0
+targetable: false
+bounded: false
+outlineColor: 2F2724
+isEnemy: false
+hidden: true
+useUnitCap: false
+logicControllable: false
+playerControllable: false
+allowedInPayloads: false
+createWreck: false
+controller: AssemblerAI
+loopSound: loopHover
+loopSoundVolume: 0.4

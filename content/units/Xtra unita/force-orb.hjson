@@ -1,0 +1,58 @@
+type: tether
+name: "Force Orb"
+description: "A magic orb spawned from the beacon protecting everyone in a radius."
+flying: true
+controller: CargoAI
+isEnemy: false
+logicControllable: false
+allowedInPayloads: false
+playerControllable: false
+drawBody: false
+drawCell: false
+drawMinimap: false
+outlines: false
+wobble: false
+payloadCapacity: 0
+lowAltitude: false
+drag: 0.06
+speed: 0
+rotateSpeed: 0
+accel: 0.1
+engineSize: 0
+itemCapacity: 0
+health: 800
+hitSize: 8
+hidden: true
+
+abilities: [
+{
+    type: ForceFieldAbility
+    max: 1250
+    regen: 1
+    radius: 160
+    cooldown: 2400
+    sides: 4
+    rotation: 45
+    }
+]
+
+parts: [
+{
+    type: ShapePart
+    radius: 4
+    stroke: 1.5
+    sides: 4
+    color: D8998D
+    layer: 110
+    hollow: true
+}
+{
+    type: ShapePart
+    radius: 16
+    stroke: 1
+    sides: 4
+    color: D8998D
+    layer: 110
+    hollow: true
+}
+]

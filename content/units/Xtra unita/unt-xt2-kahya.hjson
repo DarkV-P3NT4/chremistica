@@ -1,0 +1,48 @@
+type: tether
+name: "Kahya"
+description: "I have a loving father and they always wanted a daughter, me."
+flying: true
+controller: CargoAI
+isEnemy: false
+logicControllable: false
+allowedInPayloads: false
+playerControllable: false
+drawMinimap: true
+outlineColor: 2F2724
+payloadCapacity: 0
+lowAltitude: false
+drag: 0.06
+speed: 2.86
+rotateSpeed: 3.5
+omniMovement: false
+accel: 0.1
+itemCapacity: 60
+health: 160
+hitSize: 16
+hidden: true
+itemOffsetY: -1.5
+loopSound: loopHover
+loopSoundVolume: 0.8
+engineSize: 0
+
+engines: [
+{
+    x: 0
+    y: -7.5
+    radius: 3
+    rotation: -90
+}
+{
+    x: 6
+    y: 0
+    radius: 3
+    rotation: 0
+}
+{
+    x: -6
+    y: 0
+    radius: 3
+    rotation: -180
+}
+]
+

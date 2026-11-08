@@ -1,0 +1,205 @@
+type: flying
+name: "Crazed Pixie"
+description: "A crazed pixie craving to let out insanity to targets."
+flying: true
+controller: FlyingAI
+isEnemy: false
+logicControllable: false
+allowedInPayloads: false
+playerControllable: false
+drawBody: false
+drawCell: false
+drawMinimap: false
+outlines: false
+lowAltitude: false
+drag: 0.06
+speed: 2
+rotateSpeed: 2.5
+accel: 0.1
+engineSize: 0
+itemCapacity: 0
+health: 150
+hitSize: 8
+hidden: true
+omniMovement: false
+circleTarget: true
+deathSound: deathPixie
+deathSoundVolume: 2
+deathShake: 0
+loopSound: loopPixie
+loopSoundVolume: 0.5
+fallSpeed: 1
+createWreck: false
+createScorch: false
+wreckSound: none
+maxRange: 240
+range: 120
+drawSoftShadow: false
+deathExplosionEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 30
+    colorFrom: FFFFFFFF
+    colorTo: 7D40FF00
+    strokeFrom: 5
+    strokeTo: 3
+    lifetime: 24
+    interp: exp5Out
+}
+{
+    type: ParticleEffect
+    colorInterp: pow3In
+    sizeFrom: 4
+    sizeTo: 2
+    length: 45
+    lifetime: 24
+    colorFrom: FFFFFFFF
+    colorTo: 7D40FF00
+    particles: 12
+    interp: exp5Out
+}
+]
+
+parts: [
+{
+    type: ShapePart
+    radius: 4
+    stroke: 1
+    color: 7D50FFFF
+    layer: 110
+    hollow: true
+    rotateSpeed: 4
+    circle: true
+}
+{
+    type: ShapePart
+    radius: 8
+    stroke: 1
+    color: 7D40FF
+    layer: 110
+    hollow: true
+    rotateSpeed: 4
+    circle: true
+}
+{
+    type: ShapePart
+    radius: 12
+    stroke: 1
+    circle: true
+    color: 7D40FF66
+    layer: 110
+    hollow: true
+}
+{
+    type: ShapePart
+    radius: 16
+    stroke: 1
+    circle: true
+    color: 7D40FF33
+    layer: 110
+    hollow: true
+}
+]
+
+weapons: [
+{
+    x: 0
+    y: 0
+    shootSound: shootPixie
+    shootSoundVolume: 0.4
+    shootCone: 1.5
+    predictTarget: false
+    rotate: true
+    rotateSpeed: 10
+    reload: 10
+    mirror: false
+
+bullet: {
+    type: BasicBulletType
+    keepVelocity: false
+    width: 9
+    height: 12
+    hitSize: 4.5
+    damage: 8
+    knockback: 0.2
+    impact: true
+    speed: 4
+    lifetime: 20
+    frontColor: 7D40FFFF
+    backColor: 7D40FF66
+    trailColor: 7D40FF66
+    hitColor: 7D40FFFF
+    trailLength: 12
+    hitEffect: hitBulletColor
+    despawnEffect: none
+    shootEffect: none
+    smokeEffect: none
+}
+}
+{
+    x: 0
+    y: 0
+    shootSound: shootHorizon
+    minShootVelocity: 0.3
+    reload: 15
+    mirror: false
+    alwaysShooting: true
+
+bullet: {
+    type: BombBulletType
+    sprite: mine-bullet
+    width: 10
+    height: 10
+    shrinkY: 0.5
+    shrinkX: 0.5
+    splashDamage: 30
+    splashDamageRadius: 24
+    knockback: 0.2
+    speed: 0
+    lifetime: 50
+    frontColor: 7D40FFFF
+    backColor: 7D40FF66
+    trailColor: 7D40FF66
+    hitColor: 7D40FFFF
+    trailLength: 0
+    hitEffect: {
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 24
+    colorFrom: 7D40FFFF
+    colorTo: 7D40FF00
+    strokeFrom: 5
+    strokeTo: 3
+    lifetime: 12
+    interp: pow3Out
+}
+    despawnEffect: none
+    shootEffect: none
+    smokeEffect: none
+    despawnSound: explosion
+}
+}
+{
+    x: 0
+    y: 0
+    shootSound: none
+    alwaysShooting: true
+    display: false
+    reload: 300
+
+shoot: {
+    firstShotDelay: 300
+}
+
+bullet: {
+    instantDisappear: true
+    despawnEffect: none
+    shootEffect: none
+    smokeEffect: none
+    hitEffect: none
+    killShooter: true
+    damage: 0
+}
+}
+]
