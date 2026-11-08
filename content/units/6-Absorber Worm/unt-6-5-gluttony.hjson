@@ -1,0 +1,276 @@
+type: crawl
+name: "Gluttony"
+description: "The hunger persists to satiate what is left for it's desires."
+details: "TAKE A BITE"
+
+health: 31000
+armor: 16
+hitSize: 42
+speed: 0.32
+range: 0
+maxRange: 236
+itemCapacity: 0
+drawBody: false
+drawCell: true
+segments: 3
+segmentMag: 1.2
+segmentScl: 2.5
+segmentMaxRot: 15
+rotateSpeed: 1.5
+omniMovement: false
+drag: 0.24
+outlineColor: 2F2724
+canDrown: false
+floorMultiplier: 0
+faceTarget: true
+targetAir: false
+targetGround: true
+hovering: true
+knockbackMultiplier: 0
+softShadowScl: 7.3
+
+crawlSlowdown: 0.8
+crushDamage: 7
+
+abilities: [
+{
+    type: RegenAbility
+    amount: 3.5
+    }
+{
+    type: SpawnDeathAbility
+    unit: cmtc-auto-grub
+    amount: 16
+    }
+{
+    type: SpawnDeathAbility
+    unit: cmtc-auto-maggot
+    amount: 8
+    }
+]
+
+weapons: [
+{
+    name: glutton-mount
+    x: 13
+    y: 26.25
+    shootSound: beamLustre
+    continuous: true
+    alwaysContinuous: true
+    rotate: true
+    rotateSpeed: 3
+    alternate: false
+
+bullet: {
+    type: ContinuousFlameBulletType
+    rangeOverride: 120
+    damage: 22.5
+    length: 120
+    knockback: 0.25
+    pierceArmor: true
+    pierce: true
+    pierceCap: 3
+    buildingDamageMultiplier: 0.75
+    collidesAir: false
+    colors: [ "A14553", "BF2D2D", "F25555", "E79A9A", "FFFFFF" ]
+    collidesAir: false
+    flareColor: E79A9A
+    flareRotSpeed: 3.5
+    flareLength: 15
+    hitEffect: hitFlameBeam
+    hitColor: F25555
+}
+    }
+{
+    name: glutton-mount
+    x: 7.5
+    y: -16.5
+    shootSound: shootRipple
+    rotate: true
+    rotateSpeed: 2
+    reload: 60
+    recoilTime: 120
+    ejectEffect: casing2
+    velocityRnd: 0.15
+    inaccuracy: 16
+
+shoot: {
+    shots: 5
+}
+
+bullet: {
+    type: ArtilleryBulletType
+    collidesTiles: false
+    width: 12
+    height: 14
+    sprite: shell
+    damage: 5
+    splashDamage: 25
+    splashDamageRadius: 26
+    speed: 3.2
+    lifetime: 75
+    knockback: 1.8
+    status: cmtc-sts-02-deprived-ii
+    statusDuration: 270
+    frontColor: F25555FF
+    backColor: A14553FF
+    trailColor: A14553FF
+    hitColor: F25555FF
+    lifeScaleRandMin: 0.92
+    lifeScaleRandMax: 1.05
+    despawnEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 26
+    strokeFrom: 5
+    strokeTo: 0
+    lifetime: 30
+    colorFrom: F25555FF
+    colorTo: F25555FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 3
+    sizeTo: 0
+    lifetime: 30
+    colorFrom: F25555FF
+    colorTo: F25555FF
+    interp: pow3Out
+    particles: 8
+    length: 30
+}
+    ]
+    hitEffect: none
+}
+    }
+{
+    x: 0
+    y: 0
+    mirror: false
+    reload: 1500
+    recoil: 0
+    controllable: false
+    autoTarget: true
+    shootCone: 360
+    rotate: false
+    shootSound: roaringGluttony
+    chargeSound: growlingGluttony
+    shootSoundVolume: 0.5
+    soundPitchMin: 1
+    soundPitchMax: 1
+    shootOnDeath: false
+    shootStatus: unmoving
+    shootStatusDuration: 210
+    useAttackRange: false
+
+shoot: {
+    firstShotDelay: 60
+}
+
+bullet: {
+    type: BasicBulletType
+    killShooter: false
+    hitUnder: true
+    width: 0
+    height: 0
+    damage: 0
+    splashDamage: 1000
+    splashDamageRadius: 160
+    buildingDamageMultiplier: 0.6
+    collides: false
+    hittable: false
+    absorbable: false
+    reflectable: false
+    speed: 0
+    lifetime: 40
+    rangeOverride: 100
+    status: cmtc-sts-06-dilemma-iii
+    statusDuration: 1050
+    hitEffect: none
+    shootEffect: none
+    smokeEffect: none
+    knockback: 20
+    despawnShake: 20
+    despawnEffect: [
+{
+    type: WaveEffect
+    colorFrom: F25555FF
+    colorTo: F2555500
+    sizeFrom: 0
+    sizeTo: 160
+    strokeFrom: 12
+    strokeTo: 8
+    interp: exp5Out
+    lifetime: 60
+}
+    {
+    type: WaveEffect
+    colorFrom: F25555FF
+    colorTo: F2555500
+    sizeFrom: 0
+    sizeTo: 200
+    strokeFrom: 6
+    strokeTo: 2
+    interp: exp5Out
+    lifetime: 20
+    }
+{
+    type: ParticleEffect
+    colorInterp: exp5In
+    sizeFrom: 8
+    sizeTo: 3
+    lifetime: 60
+    colorFrom: F25555FF
+    colorTo: F2555500
+    interp: exp5Out
+    particles: 40
+    length: 160
+}
+{
+    type: ParticleEffect
+    colorInterp: exp5In
+    sizeFrom: 6
+    sizeTo: 5
+    lifetime: 30
+    colorFrom: F25555FF
+    colorTo: F2555500
+    interp: exp5Out
+    particles: 40
+    length: 200
+}
+{
+    type: ParticleEffect
+    colorInterp: exp5In
+    sizeFrom: 6
+    sizeTo: 4
+    lifetime: 40
+    colorFrom: F25555FF
+    colorTo: F2555500
+    interp: pow3Out
+    particles: 40
+    length: 160
+}
+{
+    type: ParticleEffect
+    colorInterp: exp5In
+    sizeFrom: 8
+    sizeTo: 8
+    lenFrom: 12
+    lenTo: 6
+    lifetime: 50
+    colorFrom: F25555FF
+    colorTo: F2555500
+    interp: exp5Out
+    particles: 80
+    length: 160
+    line: true
+    strokeFrom: 6
+    strokeTo: 2
+}
+    ]
+  }
+}
+]

@@ -1,0 +1,135 @@
+type: crawl
+name: "Slither"
+description: "Fires swarms of missiles at enemy targets, Equipped with a directional shield to protect allies, Able to crawl over most terrain."
+
+health: 4000
+armor: 9
+hitSize: 20
+speed: 0.5
+range: 200
+maxRange: 200
+itemCapacity: 0
+drawBody: false
+drawCell: true
+segments: 4
+segmentMag: 1.2
+segmentScl: 2.5
+segmentMaxRot: 35
+rotateSpeed: 3
+omniMovement: false
+drag: 0.24
+outlineColor: 2F2724
+canDrown: false
+floorMultiplier: 0
+faceTarget: true
+targetAir: true
+targetGround: true
+hovering: true
+knockbackMultiplier: 0
+softShadowScl: 3.1
+
+abilities: [
+{
+    type: RegenAbility
+    amount: 0.5
+    }
+{
+    type: ShieldArcAbility
+    radius: 40
+    angle: 135
+    width: 9
+    cooldown: 480
+    y: -7
+    whenShooting: false
+    missileUnitMultiplier: 0.8
+    chanceDeflect: 0.8
+    reflectVel: 1.5
+    max: 1200
+    regen: 1
+}
+]
+
+weapons: [
+{
+    name: tetherdrone-a
+    layerOffset: 0.1
+    x: 13.5
+    y: 0.5
+    reload: 40
+    recoil: 1
+    recoilTime: 30
+    shake: 2.5
+    shootSound: shootMissile
+    shootCone: 5
+    rotate: true
+    rotateSpeed: 5
+    mirror: false
+    predictTarget: false
+
+parts: [
+{
+    type: HoverPart
+    color: F25555FF
+    radius: 10
+    sides: 4
+    layerOffset: -0.0001
+    x: 0
+    y: 0
+    phase: 50
+    }
+]
+
+bullet: {
+    instantDisappear: true
+    damage: 0
+    smokeEffect: shootSmallSmoke
+    shootEffect: [ shootSmallColor, vaporSmall ]
+    frontColor: F25555FF
+    backColor: A14553FF
+    trailColor: A14553FF
+    hitColor: F25555FF
+    spawnUnit: cmtc-missile-from-abs1
+}
+    }
+{
+    name: tetherdrone-a
+    layerOffset: 0.1
+    x: -13.5
+    y: 0.5
+    reload: 40
+    recoil: 1
+    recoilTime: 30
+    shake: 2.5
+    shootSound: shootMissile
+    shootCone: 5
+    rotate: true
+    rotateSpeed: 5
+    mirror: false
+    predictTarget: false
+
+parts: [
+{
+    type: HoverPart
+    color: F25555FF
+    radius: 10
+    sides: 4
+    layerOffset: -0.0001
+    x: 0
+    y: 0
+    phase: 50
+    }
+]
+
+bullet: {
+    instantDisappear: true
+    damage: 0
+    smokeEffect: shootSmallSmoke
+    shootEffect: [ shootSmallColor, vaporSmall ]
+    frontColor: F25555FF
+    backColor: A14553FF
+    trailColor: A14553FF
+    hitColor: F25555FF
+    spawnUnit: cmtc-missile-from-abs1
+}
+    }
+]

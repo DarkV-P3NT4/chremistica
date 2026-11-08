@@ -1,0 +1,106 @@
+type: crawl
+name: "Maggot"
+description: "Bites down enemy targets that gets too close to it's jaws, Able to crawl over most terrain."
+
+health: 1800
+armor: 6
+hitSize: 12.8
+speed: 1
+range: 28
+maxRange: 32
+itemCapacity: 0
+drawBody: false
+drawCell: true
+segments: 3
+segmentMag: 1
+segmentScl: 2.75
+segmentMaxRot: 30
+rotateSpeed: 3
+omniMovement: false
+drag: 0.24
+outlineColor: 2F2724
+canDrown: false
+floorMultiplier: 0
+faceTarget: true
+targetAir: false
+hovering: true
+alwaysShootWhenMoving: true
+knockbackMultiplier: 0
+softShadowScl: 2.5
+
+immunities: [ cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-iii, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-11-lightweight, burning, melting, cmtc-sts-13-sulfur-coated ]
+
+abilities: [
+{
+    type: RegenAbility
+    amount: 0.23
+    }
+]
+
+weapons: [
+{
+    name: maggot-mandible
+    x: 0
+    y: 7.25
+    reload: 300
+    recoil: 0
+    recoilTime: 120
+    mirror: false
+    rotate: false
+    useAttackRange: false
+    shootSound: biteMaggot
+    inaccuracy: 0
+    layerOffset: -0.001
+    shootStatus: unmoving
+    shootStatusDuration: 300
+    shootCone: 15
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-teeth"
+    x: 3.5
+    y: 0
+    rotation: -45
+    under: true
+    mirror: true
+    progress: reload
+    moveX: -1
+    moveY: 3
+    moveRot: 45
+    }
+]
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-chomp
+    collidesAir: false
+    damage: 600
+    recoil: -1
+    speed: 8
+    lifetime: 4
+    hitSize: 10
+    height: 15
+    width: 15
+    pierce: true
+    reflectable: false
+    absorbable: false
+    hittable: false
+    hitEffect: [ hitBulletColor, blastExplosion ]
+    despawnEffect: none
+    lifesteal: 0.2
+    shrinkY: 0
+    trailLength: 3
+    frontColor: F25555FF
+    backColor: A14553FF
+    trailColor: A14553FF
+    hitColor: F25555FF
+    shootEffect: none
+    smokeEffect: none
+    hitSound: hitMaggot
+    despawnSound: none
+    status: cmtc-sts-08-ruined-i
+    statusDuration: 300
+}
+    }
+]

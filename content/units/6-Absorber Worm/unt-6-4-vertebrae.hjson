@@ -1,0 +1,157 @@
+type: crawl
+name: "Vertebrae"
+description: "A huge worm that can crush anything in its path, Fabricates Nymphs."
+details: "CHONKY"
+
+health: 14000
+armor: 14
+hitSize: 30
+speed: 0.3676
+range: 0
+maxRange: 80
+itemCapacity: 0
+drawBody: false
+drawCell: true
+segments: 5
+segmentMag: 1.2
+segmentScl: 2.5
+segmentMaxRot: 60
+rotateSpeed: 1.5
+omniMovement: false
+drag: 0.24
+outlineColor: 2F2724
+canDrown: false
+floorMultiplier: 0
+faceTarget: true
+targetAir: true
+targetGround: true
+hovering: true
+knockbackMultiplier: 0
+softShadowScl: 5.4
+
+crawlSlowdown: 0.8
+crushDamage: 3
+
+abilities: [
+{
+    type: RegenAbility
+    amount: 2.25
+    }
+{
+    type: ArmorPlateAbility
+    healthMultiplier: 0.25
+    drawPlate: false
+    drawShine: false
+    }
+{
+    type: UnitSpawnAbility
+    spawnTime: 1200
+    unit: cmtc-unt-xt3-nymph
+    spawnX: 0
+    spawnY: -16
+    }
+{
+    type: UnitSpawnAbility
+    spawnTime: 600
+    unit: cmtc-unt-xt3-nymph
+    spawnX: 0
+    spawnY: 8
+    display: false
+    }
+{
+    type: UnitSpawnAbility
+    spawnTime: 900
+    unit: cmtc-unt-xt3-nymph
+    spawnX: 10.5
+    spawnY: 6
+    display: false
+    }
+{
+    type: UnitSpawnAbility
+    spawnTime: 900
+    unit: cmtc-unt-xt3-nymph
+    spawnX: -10.5
+    spawnY: 6
+    display: false
+    }
+]
+
+weapons: [
+{
+    x: 0
+    y: 0
+    rotate: true
+    shootY: 0
+    reload: 120
+    shootSound: sonarVertebrae
+    shootSoundVolume: 0.5
+    display: false
+    controllable: false
+    autoTarget: true
+    shootCone: 180
+
+bullet: {
+    type: BasicBulletType
+    width: 0
+    height: 0
+    speed: 8
+    lifetime: 10
+    instantDisappear: true
+    hitEffect: none
+    despawnEffect: none
+    damage: 0
+    splashDamage: 20
+    splashDamageRadius: 80
+    status: cmtc-sts-02-deprived-ii
+    statusDuration: 130
+shootEffect: [
+{
+    type: WaveEffect
+    colorFrom: F25555FF
+    colorTo: F2555500
+    sizeFrom: 0
+    sizeTo: 80
+    strokeFrom: 6
+    strokeTo: 3
+    interp: pow2Out
+    lifetime: 120
+}
+{
+    type: WaveEffect
+    colorFrom: F25555FF
+    colorTo: F2555500
+    sizeFrom: 0
+    sizeTo: 60
+    strokeFrom: 6
+    strokeTo: 3
+    interp: pow2Out
+    sides: 4
+    lifetime: 120
+}
+{
+    type: WaveEffect
+    colorFrom: F25555FF
+    colorTo: F2555500
+    sizeFrom: 0
+    sizeTo: 40
+    strokeFrom: 6
+    strokeTo: 3
+    interp: pow2Out
+    lifetime: 120
+}
+{
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    sizeFrom: 0
+    sizeTo: 6
+    colorFrom: F25555FF
+    colorTo: F2555500
+    lifetime: 120
+    interp: pow2Out
+}
+]
+    smokeEffect: none
+}
+    }
+]

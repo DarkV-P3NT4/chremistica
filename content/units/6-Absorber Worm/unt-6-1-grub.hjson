@@ -1,0 +1,98 @@
+type: crawl
+name: "Grub"
+description: "Spits out bursts of bullets at enemy targets, Can crawl over most terrain."
+
+health: 950
+armor: 3
+hitSize: 10.4
+speed: 0.6
+range: 100
+itemCapacity: 0
+drawBody: false
+drawCell: true
+segments: 3
+segmentMag: 1
+segmentScl: 2.8
+segmentMaxRot: 30
+rotateSpeed: 3
+omniMovement: false
+drag: 0.24
+outlineColor: 2F2724
+canDrown: false
+floorMultiplier: 0
+faceTarget: true
+targetAir: false
+hovering: true
+knockbackMultiplier: 0
+softShadowScl: 1.5
+
+crushDamage: 0.04
+
+immunities: [ cmtc-sts-02-deprived-i, cmtc-sts-03-speedy-i, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii ]
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.025
+    }
+]
+
+weapons: [
+{
+    x: 0
+    y: 0
+    reload: 72
+    recoil: 0
+    mirror: false
+    rotate: true
+    rotateSpeed: 3
+    shootSound: shoot
+    inaccuracy: 20
+
+shoot: {
+    shots: 4
+    shotDelay: 4
+}
+
+bullet: {
+    type: BasicBulletType
+    collidesAir: false
+    damage: 8
+    knockback: 0.8
+    speed: 4
+    lifetime: 26
+    height: 12
+    width: 9
+    hitEffect: {
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 2
+    strokeFrom: 1.7
+    strokeTo: 0.1
+    colorFrom: F25555FF
+    colorTo: F2555500
+    particles: 6
+    length: 5
+    cone: 30
+}
+    despawnEffect: {
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 2
+    strokeFrom: 1.7
+    strokeTo: 0.1
+    colorFrom: F25555FF
+    colorTo: F2555500
+    particles: 6
+    length: 5
+    cone: 30
+}
+    shrinkY: 0
+    trailLength: 3
+    frontColor: F25555FF
+    backColor: A14553FF
+    trailColor: A14553FF
+    hitColor: F25555FF
+}
+    }
+]
