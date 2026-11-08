@@ -1,0 +1,107 @@
+type: crawl
+name: "Mayon"
+description: "Defends the circuit core, Capable of mining and building. Able to traverse through rough terrrain easily."
+details: "The first core unit of Candemor."
+
+health: 500
+armor: 0
+hitSize: 14.6
+speed: 1.5666666666666
+range: 210
+itemCapacity: 40
+drawBody: false
+drawCell: true
+segments: 3
+segmentMag: 1
+segmentScl: 3
+segmentMaxRot: 40
+rotateSpeed: 4
+omniMovement: false
+isEnemy: false
+coreUnitDock: true
+controller: CommandAI
+mineSpeed: 7
+mineTier: 2
+mineBeamOffset: 10.95
+buildSpeed: 0.7
+buildBeamOffset: 10.95
+alwaysUnlocked: true
+rotateToBuilding: false
+drag: 0.24
+outlineColor: 2F2724
+canDrown: false
+floorMultiplier: 0
+faceTarget: false
+targetAir: false
+mineWalls: true
+hovering: true
+targetBuildingsMobile: false
+knockbackMultiplier: 0
+
+research: {
+    parent: cmtc-asp-core-circuit
+    planet: dkv-candemor
+    requiresUnlock: false
+}
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.025
+    }
+]
+
+weapons: [
+{
+    name: "mayon-mount"
+    x: 0
+    y: -0.5
+    reload: 60
+    recoil: 2
+    mirror: false
+    rotate: true
+    rotateSpeed: 8.5
+    shootSound: shootArtillery
+bullet: {
+    type: ArtilleryBulletType
+    sprite: shell
+    collidesTiles: false
+    collidesAir: false
+    keepVelocity: false
+    damage: 0
+    splashDamage: 65
+    splashDamageRadius: 13.6
+    buildingDamageMultiplier: 0.01
+    knockback: 0.8
+    speed: 3.2
+    lifetime: 65.625
+    height: 10
+    width: 10
+    hitEffect: {
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 8
+    colorFrom: FFD37FFF
+    colorTo: FFD37FFF
+    strokeFrom: 2
+    strokeTo: 0.25
+    lifetime: 13.6
+}
+    despawnEffect: {
+    type: ParticleEffect
+    sizeFrom: 2.4
+    sizeTo: 0
+    lifetime: 16
+    colorFrom: FFD37FFF
+    colorTo: FFD37FFF
+    interp: pow3Out
+    particles: 10
+    length: 15
+    sizeChangeStart: 10
+}
+    shrinkY: 0
+    frontColor: FFD37FFF
+    backColor: D4816BFF
+}
+    }
+]

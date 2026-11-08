@@ -1,0 +1,152 @@
+type: crawl
+name: "Fiji"
+description: "Defends the array core, Capable of mining and building. Able to traverse through rough terrrain easily."
+details: "The second core unit of Candemor."
+
+health: 800
+armor: 4
+hitSize: 17.2
+speed: 1.65
+range: 172
+itemCapacity: 60
+drawBody: false
+drawCell: true
+segments: 3
+segmentMag: 1
+segmentScl: 3
+segmentMaxRot: 40
+rotateSpeed: 4
+omniMovement: false
+isEnemy: false
+coreUnitDock: true
+controller: CommandAI
+mineSpeed: 8.5
+mineTier: 3
+mineBeamOffset: 12
+buildSpeed: 0.9
+buildBeamOffset: 12
+alwaysUnlocked: true
+rotateToBuilding: false
+drag: 0.24
+outlineColor: 2F2724
+canDrown: false
+floorMultiplier: 0
+faceTarget: false
+targetAir: true
+mineWalls: true
+hovering: true
+targetBuildingsMobile: false
+knockbackMultiplier: 0
+
+research: {
+    parent: cmtc-asp-core-circuit
+    planet: dkv-candemor
+    requiresUnlock: false
+}
+
+abilities: [
+{
+    type: RegenAbility
+    amount: 0.75
+    }
+]
+
+weapons: [
+{
+    name: "fiji-flak"
+    x: 0
+    y: -1
+    reload: 20
+    recoil: 1.5
+    mirror: false
+    rotate: true
+    rotateSpeed: 5.5
+    shootSound: shootScatter
+    inaccuracy: 6
+    velocityRnd: 0.15
+
+shoot: {
+    shots: 2
+    shotDelay: 5
+}
+
+bullet: {
+    type: FlakBulletType
+    sprite: cmtc-hard-bullet
+    collidesGround: true
+    keepVelocity: false
+    damage: 3
+    splashDamage: 15
+    splashDamageRadius: 30
+    buildingDamageMultiplier: 0.01
+    knockback: 0.5
+    impact: true
+    speed: 8
+    lifetime: 21.5
+    height: 15
+    width: 10
+    hitSize: 8
+    homingPower: 0.1
+    homingRange: 80
+    hitEffect: [ 
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 22
+    colorFrom: FFD37FFF
+    colorTo: FFD37FFF
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 20
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 6
+    sizeTo: 0
+    lifetime: 20
+    colorFrom: FFD37FFF
+    colorTo: FFD37FFF
+    interp: pow3Out
+    particles: 4
+    length: 24
+    sizeChangeStart: 10
+}
+    ]
+    despawnEffect: {
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 20
+    colorFrom: FFD37FFF
+    colorTo: FFD37FFF
+    interp: pow3Out
+    particles: 8
+    length: 25
+    sizeChangeStart: 10
+}
+    shrinkY: 0
+    frontColor: FFD37FFF
+    backColor: D4816BFF
+    trailColor: D4816BFF
+    trailLength: 6
+    fragBullets: 2
+fragBullet: {
+    type: BasicBulletType
+    height: 4
+    width: 4
+    shrinkY: 0
+    damage: 10
+    speed: 4
+    lifetime: 15
+    frontColor: FFD37FFF
+    backColor: D4816BFF
+    trailColor: D4816BFF
+    trailLength: 2
+    buildingDamageMultiplier: 0.01
+    hitEffect: hitBulletColor
+    despawnEffect: none
+    }
+}
+    }
+]
