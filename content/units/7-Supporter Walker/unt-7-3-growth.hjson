@@ -1,0 +1,212 @@
+type: legs
+
+name: "Growth"
+description: "Fires electric rockets at enemy targets, Equipped with plasma missiles as secondary, Assist on repairs and rebuild, Can walk over most terrain."
+
+health: 2100
+armor: 12
+speed: 0.768
+hitSize: 26
+deathShake: 20
+rotateSpeed: 2.85
+buildSpeed: 0.75
+outlineColor: 2F2724
+itemCapacity: 50
+commands: [move, enterPayload, repair, mine, rebuild, assist]
+mineTier: 3
+mineSpeed: 3
+mineItems: [ scrap, cmtc-itm-01-quartz, cmtc-itm-02-ruined-tin, cmtc-itm-05-sulfur, cmtc-itm-03-raw-iron, cmtc-itm-06-aluminum ]
+
+knockbackMultiplier: 1.2
+
+legCount: 6
+legLength: 52
+legGroupSize: 3
+lockLegBase: true
+legContinuousMove: true
+legExtension: -3
+legBaseOffset: 8
+legMaxLength: 1.3
+legMinLength: 0.2
+legLengthScl: 0.92
+legForwardScl: 0.96
+legMoveSpace: 1
+legStraightness: 0.4
+
+allowLegStep: true
+hovering: true
+legPhysicsLayer: true
+
+stepShake: 1.5
+stepSound: walkerStepSmall
+stepSoundVolume: 0.5
+
+shadowElevation: 0.85
+groundLayer: 70
+
+parts: [
+    {
+      type: ShapePart
+      y: 1
+      radius: 27.5
+      stroke: 1
+      layer: 110
+      circle: true
+      hollow: true
+      color: 7BCD83FF
+    }
+    {
+      type: ShapePart
+      y: 1
+      radius: 20
+      stroke: 1
+      layer: 110
+      circle: true
+      hollow: true
+      color: 7BCD83FF
+    }
+    {
+      type: HaloPart
+      y: 1
+      layer: 110
+      color: 7BCD83FF
+      shapes: 6
+      triLength: 8
+      haloRadius: 19.5
+      tri: true
+      hollow: true
+      radius: 10
+      stroke: 0.2
+      haloRotateSpeed: 0.75
+    }
+]
+
+abilities: [
+{
+    type: ShieldRegenFieldAbility
+    reload: 300
+    amount: 50
+    range: 64
+    max: 150
+    }
+]
+
+weapons: [
+{
+    name: growth-missilemount
+    x: 10.75
+    y: 10.25
+    reload: 60
+    recoil: 1.5
+    recoilTime: 30
+    shake: 0.25
+    inaccuracy: 3
+    shootSound: shootMissilePlasma
+    ejectEffect: none
+    rotate: true
+    mirror: true
+    rotateSpeed: 3
+    predictTarget: false
+
+shoot: {
+    shots: 4
+    shotDelay: 6
+}
+
+bullet: {
+
+    type: MissileBulletType
+    scaleKeepVelocity: false
+    collidesTeam: true
+    homingPower: 0.2
+    healPercent: 3
+    homingRange: 108
+    homingDelay: 10
+    weaveScale: 6
+    lifetime: 54
+    weaveMag: 3
+    damage: 10
+    splashDamage: 20
+    splashDamageRadius: 20
+    speed: 4
+    hitSize: 6
+    width: 11
+    height: 13
+    despawnEffect: hitLaser
+    shootEffect: shootHeal
+    smokeEffect: hitLaser
+    frontColor: 7BCD83FF
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 22
+    strokeFrom: 3
+    strokeTo: 0.1
+    lifetime: 10
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD8300
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 10
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 15
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD83FF
+    interp: pow3Out
+    particles: 8
+    length: 20
+}
+    ]
+    hitSound: explosion
+    reflectable: false
+    trailColor: 528866FF
+    backColor: 528866FF
+    trailLength: 6
+}
+    }
+{
+    name: growth-tribarrel
+    x: 0
+    y: -8
+    shootSound: shootMissileLong
+    shake: 2.5
+    shootCone: 5
+    recoil: 2
+    recoilTime: 120
+    reload: 240
+    rotate: true
+    rotateSpeed: 2
+    rotationLimit: 30
+    inaccuracy: 2
+    mirror: false
+
+shoot: {
+    type: ShootBarrel
+    shots: 3
+    shotDelay: 20
+
+barrels: [
+    -4, 1.25, 0
+    0, 0, 0
+    4, -1.25, 0
+]
+    }
+
+bullet: {
+    instantDisappear: true
+    damage: 0
+    smokeEffect: shootBigSmoke
+    shootEffect: [ shootBigColor, vaporSmall ]
+    frontColor: 7BCD83FF
+    backColor: 528866FF
+    hitColor: 7BCD83FF
+    trailColor: 528866FF
+    spawnUnit: cmtc-electric-missile
+}
+    }
+
+]

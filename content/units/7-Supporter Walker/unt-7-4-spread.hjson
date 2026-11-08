@@ -1,0 +1,292 @@
+type: legs
+
+name: "Spread"
+description: "Fires homing energy shells at enemy targets, Suppresses enemy structure repair blocks, And equipped with point defense turrets, can walk over most terrain."
+
+health: 8000
+armor: 12
+speed: 0.6
+hitSize: 40
+deathShake: 20
+rotateSpeed: 2.35
+buildSpeed: 1
+outlineColor: 2F2724
+itemCapacity: 0
+commands: [move, enterPayload, repair, rebuild, assist]
+
+knockbackMultiplier: 1.2
+
+legCount: 8
+legLength: 34
+legGroupSize: 4
+lockLegBase: true
+legContinuousMove: true
+legBaseOffset: 16
+legMaxLength: 1.3
+legMinLength: 0.2
+legForwardScl: 1.1
+legStraightness: 0.4
+baseLegStraightness: 0.5
+
+allowLegStep: true
+hovering: true
+legPhysicsLayer: true
+
+stepShake: 2
+stepSound: walkerStep
+stepSoundPitch: 1
+stepSoundVolume: 1
+
+shadowElevation: 1
+groundLayer: 70
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    color: 528866FF
+    colorTo: 7BCD83FF
+    blending: additive
+    outline: false
+    layer: -1
+    }
+{
+    type: ShapePart
+    radius: 40
+    stroke: 1
+    layer: 110
+    circle: true
+    hollow: true
+    color: 7BCD83FF
+    }
+{
+    type: ShapePart
+    radius: 40
+    stroke: 1
+    sides: 4
+    layer: 110
+    circle: false
+    hollow: true
+    color: 7BCD83FF
+    }
+{
+    type: HaloPart
+    layer: 110
+    color: 7BCD83FF
+    shapes: 8
+    triLength: 10
+    triLengthTo: 20
+    haloRadius: 40
+    tri: true
+    radius: 10
+    haloRotateSpeed: 1
+    }
+]
+
+abilities: [
+{
+    type: RepairFieldAbility
+    reload: 300
+    amount: 100
+    range: 80
+    }
+{
+    type: SuppressionFieldAbility
+    color: 7BCD83
+    orbRadius: 6
+    particles: 10
+    particleSize: 3
+    range: 240
+    reload: 300
+    maxDelay: 300
+    particleColor: 7BCD83
+    effectColor: 528866
+    layer: 60
+}
+]
+
+weapons: [
+{
+    name: spread-pew
+    x: 16
+    y: 11.75
+    top: false
+    mirror: true
+    reload: 30
+    shootSound: shootEnergyShell
+    recoil: 1.5
+    recoilTime: 15
+    cooldownTime: 15
+    shootY: 8
+    rotate: false
+    shootCone: 15
+    inaccuracy: 8
+
+shoot: {
+    shots: 3
+}
+bullet: {
+    type: MissileBulletType
+    sprite: cmtc-energy-shell
+    keepVelocity: false
+    height: 20
+    width: 20
+    shrinkY: -0.1
+    shrinkX: -0.1
+    spin: 4
+    damage: 25
+    splashDamage: 52.5
+    splashDamageRadius: 26
+    knockback: 1.5
+    impact: true
+    speed: 4
+    lifetime: 60
+    collidesTeam: true
+    healPercent: 3
+    weaveMag: 4
+    weaveScale: 4
+    homingPower: 0.1
+    homingRange: 80
+    frontColor: 7BCD83FF
+    backColor: 528866FF
+    trailColor: 528866FF
+    hitColor: 7BCD83FF
+    velocityScaleRandMin: 0.8
+    velocityScaleRandMax: 1.05
+    trailLength: 18
+    trailWidth: 8
+    trailEffect: colorSpark
+    trailInterval: 2
+    trailRotation: true
+    hitSound: shootBeamPlasmaSmall
+    hitSoundVolume: 0.6
+    shootEffect: [ shootHeal, shootBigColor ]
+    smokeEffect: shootSmokeTitan
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 28
+    strokeFrom: 8
+    strokeTo: 0
+    lifetime: 20
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD83FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 12
+    sizeFrom: 5
+    sizeTo: 0
+    lifetime: 24
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD83FF
+    interp: pow3Out
+    particles: 8
+    length: 30
+}
+{
+    type: ParticleEffect
+    sizeFrom: 5
+    sizeTo: 4
+    strokeFrom: 6
+    strokeTo: 0
+    lifetime: 24
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD83FF
+    interp: pow3Out
+    particles: 18
+    length: 40
+    line: true
+}
+    ]
+    despawnEffect: none
+    status: cmtc-sts-04-sluggish-ii
+    statusDuration: 360
+    fragBullets: 3
+    fragVelocityMin: 0.75
+    fragVelocityMax: 1.1
+    fragLifeMin: 0.8
+    fragLifeMax: 1.05
+    delayFrags: true
+    fragAngle: 180
+    fragRandomSpread: 30
+
+fragBullet: {
+    type: MissileBulletType
+    sprite: cmtc-energy-shell
+    keepVelocity: false
+    height: 12
+    width: 12
+    shrinkY: -0.2
+    shrinkX: -0.2
+    spin: 4
+    damage: 5
+    splashDamage: 10
+    splashDamageRadius: 20
+    knockback: 0.75
+    impact: true
+    speed: 4
+    lifetime: 30
+    collidesTeam: true
+    healPercent: 1
+    weaveMag: 2
+    weaveScale: 2
+    homingPower: 0.3
+    homingRange: 80
+    homingDelay: 6
+    frontColor: 7BCD83FF
+    backColor: 528866FF
+    trailColor: 528866FF
+    hitColor: 7BCD83FF
+    trailLength: 16
+    trailWidth: 4
+    trailEffect: colorSpark
+    trailInterval: 2
+    trailRotation: true
+    hitSound: shootElude
+    hitEffect: [ squareWaveEffect, hitSquaresColor,
+{
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 2
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 24
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD83FF
+    interp: pow3Out
+    particles: 8
+    length: 20
+    line: true
+}
+    ]
+    status: cmtc-sts-10-interrupted-ii
+    statusDuration: 1500
+    drag: -0.02
+    despawnEffect: none
+    }
+}
+    }
+{
+    name: spread-pointdefense
+    type: PointDefenseWeapon
+    color: 7BCD83FF
+    targetSwitchInterval: 2
+    targetInterval: 1
+    layerOffset: 0.1
+    mirror: true
+    x: 11.5
+    y: -13.5
+    reload: 10
+    shootSound: shootSegment
+
+bullet: {
+    maxRange: 240
+    damage: 30
+    shootEffect: sparkShoot
+    hitEffect: pointHit
+}
+    }
+]

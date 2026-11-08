@@ -1,0 +1,159 @@
+type: legs
+
+name: "Roots"
+description: "Shoots spreads of laser bolts to repair structures, Able to build and assist players, Can walk over most terrain."
+
+health: 1100
+armor: 2
+speed: 1
+hitSize: 8.8
+range: 146
+maxRange: 146
+buildSpeed: 0.5
+outlineColor: 2F2724
+itemCapacity: 20
+commands: [move, enterPayload, repair, mine, rebuild, assist]
+deathExplosionEffect: [ dynamicExplosion,
+{
+    type: SoundEffect
+    minPitch: 0.9
+    maxPitch: 1
+    sound: deathRoots
+    effect: none
+    }
+]
+knockbackMultiplier: 1.2
+mineSpeed: 3
+mineItems: [ scrap, cmtc-itm-01-quartz, cmtc-itm-02-ruined-tin, cmtc-itm-05-sulfur ]
+mineTier: 2
+
+legCount: 4
+legLength: 16
+legPairOffset: 0.5
+lockLegBase: true
+legContinuousMove: true
+legExtension: -3
+legBaseOffset: 3.5
+legMaxLength: 1.1
+legMinLength: 0.2
+legLengthScl: 0.92
+legForwardScl: 0.7
+legMoveSpace: 1
+
+allowLegStep: true
+hovering: true
+legPhysicsLayer: true
+
+stepShake: 0.1
+stepSound: walkerStepTiny
+stepSoundVolume: 0.5
+
+shadowElevation: 0.3
+groundLayer: 69
+
+immunities: [ cmtc-sts-01-empowered-ii, cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, electrified, cmtc-sts-10-interrupted-i ]
+
+parts: [
+    {
+      type: ShapePart
+      y: 0
+      radius: 11
+      stroke: 1
+      layer: 110
+      circle: true
+      hollow: true
+      color: 7BCD83FF
+    }
+    {
+      type: HaloPart
+      y: 0
+      layer: 110
+      color: 7BCD83FF
+      shapes: 4
+      triLength: 4
+      haloRadius: 14
+      tri: true
+      radius: 4
+      haloRotateSpeed: 1
+    }
+]
+
+abilities: [
+{
+    type: RepairFieldAbility
+    reload: 150
+    amount: 50
+    range: 80
+    }
+{
+    type: MoveEffectAbility
+    minVelocity: 0
+    display: false
+    interval: 1500
+    chance: 0.0001
+    effect: {
+    type: SoundEffect
+    minVolume: 0.4
+    maxVolume: 1
+    sound: chirpRootsImpatient
+    effect: coalSmeltsmoke
+    }
+  }
+{
+    type: MoveEffectAbility
+    minVelocity: 0.01
+    display: false
+    interval: 600
+    chance: 0.0001
+    effect: {
+    type: SoundEffect
+    minVolume: 0.4
+    maxVolume: 1
+    sound: chirpRoots
+    effect: coalSmeltsmoke
+    }
+  }
+]
+
+weapons: [
+{
+    name: roots-tool
+    useAttackRange: false
+ 	mirror: true
+    x: 4.5
+ 	y: 1.5
+	 reload: 90
+ 	recoil: 1
+    rotate: true
+    rotateSpeed: 2
+ 	shootSound: shootLaser
+    shootSoundVolume: 1
+    ejectEffect: none
+
+shoot: {
+    type: ShootSpread
+    shots: 8
+    spread: 4
+    shotDelay: 0.5
+}
+
+bullet: {
+    type: LaserBoltBulletType
+    lifetime: 30
+    damage: 14
+    speed: 5.6
+    healPercent: 1.5
+    collidesTeam: true
+    shootEffect: shootHeal
+    frontColor: 7BCD83FF
+    backColor: 528866FF
+    trailColor: 528866FF
+    trailLength: 4
+    trailWidth: 1
+    hitEffect: heal
+    pierce: true
+    pierceCap: 2
+    pierceBuilding: true
+}
+    }
+]

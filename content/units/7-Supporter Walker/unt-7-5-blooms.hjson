@@ -1,0 +1,434 @@
+type: legs
+
+name: "Blooms"
+description: "Fires EMP blasts and homing plasma missiles at enemy targets, can walk over most terrain."
+
+health: 21000
+armor: 19
+speed: 0.5
+hitSize: 48
+rotateSpeed: 2
+deathShake: 50
+buildSpeed: 1.5
+outlineColor: 2F2724
+itemCapacity: 0
+commands: [move, enterPayload, repair, rebuild, assist]
+
+knockbackMultiplier: 1.2
+
+legCount: 6
+legLength: 50
+lockLegBase: true
+legContinuousMove: true
+legPairOffset: 3
+legBaseOffset: 19.5
+legMaxLength: 1.3
+legMinLength: 0.2
+legForwardScl: 1.
+legLengthScl: 0.95
+legMoveSpace: 0.65
+legExtension: -2.5
+legStraightness: 0.2
+baseLegStraightness: 0.3
+
+allowLegStep: true
+hovering: true
+legPhysicsLayer: true
+
+stepShake: 4
+stepSound: walkerStep
+stepSoundPitch: 1
+stepSoundVolume: 1
+
+shadowElevation: 1.1
+groundLayer: 70
+
+immunities: [ cmtc-sts-23-hyperclock ]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    color: 528866FF
+    colorTo: 7BCD83FF
+    blending: additive
+    outline: false
+    layer: -1
+    }
+{
+    type: ShapePart
+    radius: 48
+    stroke: 1.5
+    layer: 110
+    circle: true
+    hollow: true
+    color: 7BCD83FF
+    }
+{
+    type: ShapePart
+    radius: 32
+    stroke: 1.5
+    sides: 6
+    layer: 110
+    circle: false
+    hollow: true
+    color: 7BCD83FF
+    rotateSpeed: 2
+    }
+{
+    type: HaloPart
+    layer: 110
+    color: 7BCD83FF
+    shapes: 6
+    triLength: 8
+    haloRadius: 40
+    tri: true
+    radius: 8
+    haloRotateSpeed: 1
+    }
+{
+    type: HaloPart
+    layer: 110
+    color: 7BCD83FF
+    shapes: 6
+    haloRadius: 36
+    radius: 8
+    haloRotateSpeed: 1
+    }
+{
+    type: HaloPart
+    layer: 110
+    color: 7BCD83FF
+    shapes: 6
+    triLength: 8
+    haloRadius: 48
+    tri: true
+    radius: 8
+    haloRotateSpeed: 0.5
+    }
+]
+
+abilities: [
+{
+    type: StatusFieldAbility
+    effect: cmtc-sts-23-hyperclock
+    reload: 1440
+    range: 80
+    duration: 480
+    onShoot: true
+activeEffect: {
+    sound: hyperclock
+    type: SoundEffect
+    minVolume: 0.5
+    maxVolume: 0.5
+    minPitch: 1
+    maxPitch: 1
+    effect: overdriveWave
+}
+}
+{
+    type: ShieldRegenFieldAbility
+    reload: 120
+    amount: 50
+    range: 80
+    max: 250
+    }
+  {
+    type: EnergyFieldAbility
+    hitUnits: true
+    reload: 120
+    color: 7BCD83FF
+    damage: 20
+    healPercent: 1.1
+    sameTypeHealMult: 0.2
+    status: cmtc-sts-10-interrupted-i
+    statusDuration: 240
+    range: 80
+    rotateSpeed: 1.5
+  }
+]
+
+weapons: [
+{
+    name: blooms-mount
+    x: 19.25
+    y: 2.25
+    reload: 60
+    shake: 10
+    recoil: 1.5
+    rotate: true
+    rotateSpeed: 1.5
+    shootSound: shootNavanax
+    
+bullet: {
+    type: EmpBulletType
+    sprite: "circle"
+    damage: 100
+    splashDamage: 100
+    splashDamageRadius: 80
+    lifetime: 50
+    speed: 4.8
+    lightOpacity: 0.7
+    lightRadius: 80
+    scaleLife: true
+    unitDamageScl: 0.25
+    collidesTeam: true
+    shrinkY: 0
+    healPercent: 15
+    radius: 80
+    timeIncrease: 2.5
+    timeDuration: 1200
+    powerDamageScl: 2
+    powerSclDecrease: 0.2
+    shootEffect: hitEmpSpark
+    smokeEffect: shootBigSmoke2
+    frontColor: 7BCD83FF
+    backColor: 528866FF
+    trailColor: 528866FF
+    hitColor: 7BCD83FF
+    trailLength: 20
+    trailWidth: 6
+    trailEffect: colorSpark
+    trailInterval: 5
+    trailRotation: true
+    width: 12
+    height: 12
+    hitShake: 5
+    status: electrified
+    statusDuration: 480
+    hitSound: explosionNavanax
+    hitEffect: {
+type: MultiEffect
+effects: [
+{
+    type: WaveEffect
+    sizeFrom: 80
+    sizeTo: 60
+    strokeFrom: 8
+    strokeTo: 0
+    lifetime: 30
+    interp: pow3Out
+    colorFrom: 7BCD83FF
+    colorTo: 528866FF
+}
+{
+    type: WaveEffect
+    sizeFrom: 60
+    sizeTo: 30
+    strokeFrom: 8
+    strokeTo: 0
+    lifetime: 30
+    interp: pow3Out
+    colorFrom: 7BCD83FF
+    colorTo: 528866FF
+}
+{
+    type: ParticleEffect
+    particles: 1
+    length: 0
+    sizeFrom: 80
+    sizeTo: 6
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD8300
+    lifetime: 30
+    interp: pow3Out
+    colorInterp: exp5In
+}
+{
+    type: ParticleEffect
+    particles: 30
+    line: true
+    lenFrom: 10
+    lenTo: 16
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD83FF
+    lifetime: 45
+    baseLength: 30
+    length: 60
+    interp: pow2Out
+    strokeFrom: 8
+    strokeTo: 0
+}
+{
+    type: ParticleEffect
+    particles: 30
+    line: true
+    lenFrom: 10
+    lenTo: 16
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD83FF
+    lifetime: 60
+    baseLength: 30
+    length: 120
+    interp: pow2Out
+    strokeFrom: 8
+    strokeTo: 0
+}
+]
+}
+    hitPowerEffect: hitEmpSpark
+    chainEffect: chainEmp
+    homingPower: 0.1
+    homingRange: 120
+    reflectable: false
+
+parts: [
+{
+    type: HaloPart
+    layer: 110
+    color: 7BCD83FF
+    shapes: 6
+    triLength: 8
+    haloRadius: 6
+    tri: true
+    radius: 4
+    haloRotateSpeed: 8
+    }
+]
+}
+    }
+{
+    name: growth-missilemount
+    x: 10.75
+    y: 18
+    reload: 10
+    recoil: 1.5
+    recoilTime: 30
+    shake: 0.5
+    inaccuracy: 3
+    shootSound: shootMissilePlasmaShort
+    ejectEffect: none
+    rotate: true
+    mirror: true
+    rotateSpeed: 2.25
+    predictTarget: false
+
+bullet: {
+
+    type: MissileBulletType
+    scaleKeepVelocity: false
+    rangeOverride: 200
+    collidesTeam: true
+    homingPower: 0.15
+    healPercent: 1
+    homingRange: 100
+    homingDelay: 10
+    weaveScale: 6
+    lifetime: 50
+    weaveMag: 3
+    damage: 15
+    splashDamage: 30
+    splashDamageRadius: 20
+    speed: 4
+    hitSize: 6
+    width: 12
+    height: 14
+    despawnEffect: hitLaser
+    shootEffect: shootHeal
+    smokeEffect: hitLaser
+    frontColor: 7BCD83FF
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 22
+    strokeFrom: 3
+    strokeTo: 0.1
+    lifetime: 10
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD8300
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 6
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 15
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD83FF
+    interp: pow3Out
+    particles: 8
+    length: 20
+}
+    ]
+    hitSound: explosion
+    reflectable: false
+    trailColor: 528866FF
+    backColor: 528866FF
+    trailLength: 6
+}
+    }
+{
+    name: growth-missilemount
+    x: 11.25
+    y: -10.5
+    reload: 15
+    recoil: 1.5
+    recoilTime: 30
+    shake: 0.5
+    inaccuracy: 3
+    shootSound: shootMissilePlasmaShort
+    ejectEffect: none
+    rotate: true
+    mirror: true
+    rotateSpeed: 2.25
+    predictTarget: false
+
+bullet: {
+
+    type: MissileBulletType
+    scaleKeepVelocity: false
+    rangeOverride: 200
+    collidesTeam: true
+    homingPower: 0.15
+    healPercent: 1
+    homingRange: 100
+    homingDelay: 10
+    weaveScale: 6
+    lifetime: 50
+    weaveMag: 3
+    damage: 15
+    splashDamage: 30
+    splashDamageRadius: 20
+    speed: 4
+    hitSize: 6
+    width: 12
+    height: 14
+    despawnEffect: hitLaser
+    shootEffect: shootHeal
+    smokeEffect: hitLaser
+    frontColor: 7BCD83FF
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 22
+    strokeFrom: 3
+    strokeTo: 0.1
+    lifetime: 10
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD8300
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 6
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 15
+    colorFrom: 7BCD83FF
+    colorTo: 7BCD83FF
+    interp: pow3Out
+    particles: 8
+    length: 20
+}
+    ]
+    hitSound: explosion
+    reflectable: false
+    trailColor: 528866FF
+    backColor: 528866FF
+    trailLength: 6
+}
+    }
+]
