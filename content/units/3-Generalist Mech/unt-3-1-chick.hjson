@@ -1,0 +1,108 @@
+type: mech
+name: "Chick"
+description: "Fires homing missiles at enemy targets."
+
+health: 500
+armor: 2
+hitSize: 8
+speed: 0.516
+rotateSpeed: 5
+faceTarget: true
+deathShake: 3
+targetAir: true
+targetGround: true
+outlineColor: 2F2724
+mechLegColor: 2F2724
+itemCapacity: 0
+stepSound: mechStepSmall
+range: 145.6
+maxRange: 145.6
+
+immunities: [ cmtc-sts-02-deprived-i ]
+
+abilities: [
+{
+    type: ShieldRegenFieldAbility
+    amount: 50
+    max: 50
+    reload: 300
+    range: 40
+}
+]
+
+weapons: [
+{
+    name: chick-arm
+    x: 4
+    y: 2
+    top: false
+    mirror: true
+    rotate: false
+    reload: 48
+    recoil: 2
+    shootCone: 5
+    ejectEffect: casing1
+    shootSound: shootMissileShort
+
+bullet: {
+    type: MissileBulletType
+    width: 9
+    height: 12
+    damage: 25
+    splashDamage: 15
+    splashDamageRadius: 10
+    speed: 4
+    lifetime: 35.4
+    keepVelocity: false
+    homingDelay: 6
+    homingRange: 72.8
+    homingPower: 0.1
+    hitShake: 1
+    frontColor: C9A58FFF
+    backColor: 8F665BFF
+    trailColor: 8F665BFF
+    hitColor: C9A58FFF
+    shootEffect: shootSmallColor
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 12
+    strokeFrom: 2
+    strokeTo: 0.1
+    lifetime: 12
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 1
+    lifetime: 16
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 10
+    length: 16
+}
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 0
+    lifetime: 16
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 5
+    length: 15
+    line: true
+}
+    ]
+    despawnEffect: none
+    trailLength: 4
+    drag: -0.003
+}
+    }
+]
+

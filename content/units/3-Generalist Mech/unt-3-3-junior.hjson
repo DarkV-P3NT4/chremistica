@@ -1,0 +1,302 @@
+type: mech
+name: "Junior"
+description: "Fires sprays of bullets at enemy targets, Equipped with orbiting bombs to deter anything close to it."
+
+health: 2400
+armor: 10
+hitSize: 22
+speed: 0.44
+rotateSpeed: 4.5
+faceTarget: true
+deathShake: 15
+deathSound: deathJunior
+targetAir: true
+targetGround: true
+outlineColor: 2F2724
+mechLegColor: 2F2724
+itemCapacity: 0
+stepSound: mechStep
+stepShake: 3
+range: 160
+maxRange: 160
+
+immunities: [ cmtc-sts-02-deprived-iii, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-iii ]
+
+abilities: [
+{
+    type: StatusFieldAbility
+    effect: cmtc-sts-01-empowered-ii
+    duration: 600
+    reload: 1500
+    range: 64
+    onShoot: true
+applyEffect: [
+{
+    type: ParticleEffect
+    particles: 6
+    colorFrom: F25555FF
+    colorTo: F2555500
+    length: 40
+    interp: exp5Out
+    lifetime: 120
+    sizeFrom: 2
+    sizeTo: 4
+}
+{
+    type: ParticleEffect
+    particles: 6
+    colorFrom: A14553FF
+    colorTo: A1455300
+    length: 40
+    interp: exp5Out
+    lifetime: 120
+    sizeFrom: 3
+    sizeTo: 5
+}
+    ]
+activeEffect: {
+    sound: aggressionJunior
+    type: SoundEffect
+    minVolume: 0.5
+    maxVolume: 0.5
+    minPitch: 1
+    maxPitch: 1
+effect: {
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 40
+    strokeFrom: 6
+    strokeTo: 2
+    colorFrom: F25555FF
+    colorTo: FF2555500
+    lifetime: 60
+}
+    }
+  }
+]
+
+weapons: [
+{
+    name: junior-arm
+    inaccuracy: 8
+    x: 11.25
+    y: 0.25
+    top: false
+    mirror: true
+    rotate: false
+    reload: 45
+    recoil: 1.5
+    shake: 3
+    shootCone: 20
+    ejectEffect: casing2
+    shootY: 8
+    shootX: -2
+    shootSound: bang2
+    shootSoundVolume: 0.5
+    shootStatus: cmtc-sts-04-sluggish-i
+    shootStatusDuration: 60
+
+shoot: {
+    shots: 5
+    shotDelay: 4
+}
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-hard-bullet
+    width: 16
+    height: 22
+    hitSize: 8
+    shrinkY: 0.2
+    damage: 45
+    splashDamage: 30
+    splashDamageRadius: 20
+    speed: 3.2
+    lifetime: 51.25
+    knockback: 0.5
+    impact: true
+    keepVelocity: false
+    frontColor: C9A58FFF
+    backColor: 8F665BFF
+    trailColor: 8F665BFF
+    hitColor: C9A58FFF
+    shootEffect: shootBigColor
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 20
+    colorFrom: C9A58FFF
+    colorTo: C9A58F00
+    strokeFrom: 2
+    strokeTo: 2
+    lifetime: 10
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 30
+    sizeFrom: 4
+    sizeTo: 2
+    lifetime: 14
+    colorFrom: C9A58FFF
+    colorTo: C9A58F00
+    interp: pow3Out
+    particles: 10
+    length: 24
+}
+]
+    despawnEffect: none
+    smokeEffect: shootBigSmoke
+    trailLength: 4
+}
+    }
+{
+    x: 0
+    y: 0
+    shootSound: shootTank
+    chargeSound: shootArc
+    reload: 2400
+    useAttackRange: false
+    recoil: 0
+    rotate: false
+    shake: 7.5
+    controllable: false
+    autoTarget: true
+
+shoot: {
+    type: ShootSpread
+    firstShotDelay: 40
+    shots: 4
+    spread: 90
+}
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-junior-bomb-bullet
+    width: 16
+    height: 16
+    hitSize: 8
+    spin: 80
+    shrinkY: 0
+    damage: 60
+    splashDamage: 180
+    splashDamageRadius: 40
+    rangeOverride: 200
+    knockback: 50
+    speed: 4
+    lifetime: 1200
+    impact: true
+    pierce: true
+    pierceCap: 5
+    pierceBuilding: true
+    buildingDamageMultiplier: 0.7
+    hittable: false
+    reflectable: false
+    absorbable: false
+    frontColor: C9A58FFF
+    backColor: 8F665BFF
+    trailColor: 8F665BFF
+    hitColor: C9A58FFF
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 42
+    strokeFrom: 3
+    strokeTo: 2
+    lifetime: 30
+    colorFrom: C9A58FFF
+    colorTo: C9A58F00
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 30
+    sizeFrom: 7
+    sizeTo: 0
+    lifetime: 40
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 8
+    length: 40
+}
+    ]
+    despawnEffect: none
+    hitSound: explosionDull
+    despawnSound: none
+    shootEffect: none
+    smokeEffect: none
+    status: cmtc-sts-02-deprived-ii
+    statusDuration: 300
+    circleShooter: true
+    circleShooterRadius: 30
+    circleShooterRadiusSmooth: 30
+    fragBullets: 1
+    fragLifeMin: 1
+    fragVelocityMin: 1
+    fragRandomSpread: 0
+    fragAngle: 0
+    fragOnHit: false
+    fragOnAbsorb: false
+
+fragBullet: {
+    type: BasicBulletType
+    sprite: cmtc-junior-bomb-bullet
+    width: 16
+    height: 16
+    hitSize: 8
+    spin: -8
+    shrinkY: 0
+    damage: 60
+    splashDamage: 180
+    splashDamageRadius: 24
+    knockback: 50
+    speed: 4
+    lifetime: 180
+    impact: true
+    hittable: false
+    reflectable: false
+    absorbable: false
+    homingPower: 0.1
+    homingRange: 160
+    homingDelay: 15
+    frontColor: C9A58FFF
+    backColor: 8F665BFF
+    trailColor: 8F665BFF
+    hitColor: C9A58FFF
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 42
+    strokeFrom: 3
+    strokeTo: 2
+    lifetime: 30
+    colorFrom: C9A58FFF
+    colorTo: C9A58F00
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 30
+    sizeFrom: 7
+    sizeTo: 0
+    lifetime: 40
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 8
+    length: 40
+}
+    ]
+    despawnEffect: none
+    status: cmtc-sts-02-deprived-ii
+    statusDuration: 300
+    hitSound: explosionDull
+    despawnSound: explosionDull
+    }
+}
+    }
+]
+

@@ -1,0 +1,522 @@
+type: mech
+name: "Senior"
+description: "Capable of bringing in heavy weaponaries. Launching missiles and cannonballs to targets."
+
+health: 9300
+armor: 15
+hitSize: 26
+speed: 0.5
+rotateSpeed: 3.5
+faceTarget: true
+deathShake: 35
+targetAir: true
+targetGround: true
+outlineColor: 2F2724
+mechLegColor: 2F2724
+itemCapacity: 0
+deathSound: deathSenior
+stepSound: mechStepHeavy
+stepShake: 5
+mechFrontSway: 1
+range: 240
+maxRange: 240
+
+immunities: [ cmtc-sts-02-deprived-i, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-07-refined-iii, burning ]
+
+abilities: [
+{
+    type: ShieldRegenFieldAbility
+    amount: 250
+    max: 500
+    reload: 600
+    range: 80
+}
+{
+    type: StatusFieldAbility
+    effect: cmtc-sts-07-refined-ii
+    duration: 600
+    reload: 1500
+    range: 80
+    onShoot: true
+applyEffect: {
+    type: MultiEffect
+effects: [
+{
+    type: ParticleEffect
+    particles: 6
+    colorFrom: D9DAD9FF
+    colorTo: D9DAD900
+    length: 24
+    interp: exp5Out
+    lifetime: 50
+    sizeFrom: 2
+    sizeTo: 4
+}
+{
+    type: ParticleEffect
+    particles: 6
+    colorFrom: F4F4F4FF
+    colorTo: F4F4F400
+    length: 24
+    interp: exp5Out
+    lifetime: 60
+    sizeFrom: 3
+    sizeTo: 5
+}
+]
+}
+
+activeEffect: {
+    sound: aggressionSenior
+    type: SoundEffect
+    minVolume: 1
+    maxVolume: 1
+    minPitch: 1
+    maxPitch: 1
+effect: {
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 80
+    strokeFrom: 6
+    strokeTo: 2
+    colorFrom: D9DAD9FF
+    colorTo: D9DAD900
+    lifetime: 50
+    interp: exp5Out
+}
+}
+}
+]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: reload
+    color: 8F665BFF
+    colorTo: C9A58FFF
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+
+weapons: [
+{
+    x: 0
+    y: 6
+    shootSound: shootMissileSmall
+    chargeSound: chargeHatch
+    shake: 10
+    reload: 840
+    shootCone: 5
+    mirror: false
+    rotate: false
+
+shoot: {
+    firstShotDelay: 60
+}
+
+bullet: {
+    type: MissileBulletType
+    sprite: "cmtc-missile-huge"
+    height: 18
+    width: 16
+    homingPower: 0.1
+    homingRange: 120
+    homingDelay: 18
+    speed: 3.2
+    lifetime: 100
+    damage: 500
+    splashDamage: 250
+    splashDamageRadius: 48
+    knockback: 5
+    impact: true
+    frontColor: C9A58FFF
+    backColor: 8F665BFF
+    trailColor: 8F665BFF
+    hitColor: C9A58FFF
+    trailLength: 8
+    shootEffect: [ shootBigColor, vapor ]
+    smokeEffect: shootBigSmoke2
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 50
+    strokeFrom: 3
+    strokeTo: 2
+    lifetime: 40
+    colorFrom: C9A58FFF
+    colorTo: C9A58F00
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 10
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 50
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 12
+    length: 46
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 8
+    sizeTo: 5
+    lenFrom: 18
+    lenTo: 0
+    lifetime: 50
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 18
+    length: 60
+    line: true
+}
+    ]
+    despawnEffect: none
+    hitSound: explosionMissile
+    despawnSound: explosionMissile
+    fragBullets: 6
+    fragOnAbsorb: false
+    delayFrags: true
+    fragAngle: 180
+    fragRandomSpread: 30
+    fragVelocityMin: 0.6
+    fragVelocityMax: 1
+    fragLifeMin: 0.8
+    fragLifeMax: 1.05
+
+fragBullet: {
+    type: MissileBulletType
+    height: 10
+    width: 8
+    homingPower: 0.15
+    homingRange: 120
+    homingDelay: 12
+    speed: 4
+    lifetime: 60
+    damage: 80
+    splashDamage: 50
+    splashDamageRadius: 24
+    knockback: 2.5
+    impact: true
+    frontColor: C9A58FFF
+    backColor: 8F665BFF
+    trailColor: 8F665BFF
+    hitColor: C9A58FFF
+    trailLength: 4
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 26
+    strokeFrom: 2
+    strokeTo: 0.5
+    lifetime: 40
+    colorFrom: C9A58FFF
+    colorTo: C9A58F00
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 10
+    sizeFrom: 2
+    sizeTo: 0
+    lifetime: 50
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 12
+    length: 24
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 4
+    sizeTo: 2
+    lenFrom: 18
+    lenTo: 0
+    lifetime: 50
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 18
+    length: 24
+    line: true
+}
+    ]
+    despawnEffect: none
+    hitSound: explosionDull
+    despawnSound: explosionDull
+    }
+}
+    }
+{
+    name: senior-missile-right
+    x: 20
+    y: 1
+    reload: 240
+    shootSound: shootMissileLong
+    shootY: 8.75
+    shootX: -1
+    recoil: 2
+    cooldownTime: 60
+    mirror: false
+    rotate: false
+    shootCone: 10
+    top: false
+
+shoot: {
+    type: ShootAlternate
+    barrels: 5
+    spread: 1
+    shots: 5
+    shotDelay: 8
+}
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: reload
+    color: 8F665BFF
+    colorTo: C9A58FFF
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+    
+bullet: {
+    type: MissileBulletType
+    sprite: missile-large
+    height: 15
+    width: 12
+    shrinkY: 0.1
+    damage: 30
+    splashDamage: 100
+    splashDamageRadius: 32
+    knockback: 2
+    impact: true
+    homingPower: 0.2
+    homingDelay: 10
+    homingRange: 120
+    speed: 4
+    lifetime: 59.5
+    drag: -0.001
+    weaveMag: 1.5
+    weaveScale: 4
+    frontColor: C9A58FFF
+    backColor: 8F665BFF
+    trailColor: 8F665BFF
+    hitColor: C9A58FFF
+    trailLength: 8
+    shootEffect: [ shootBigColor, vaporSmall ]
+    smokeEffect: shootBigSmoke
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 26
+    strokeFrom: 3
+    strokeTo: 2
+    lifetime: 26
+    colorFrom: C9A58FFF
+    colorTo: C9A58F00
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 10
+    sizeFrom: 6
+    sizeTo: 0
+    lifetime: 30
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 8
+    length: 32
+}
+    ]
+    despawnEffect: none
+    hitSound: explosion
+    despawnSound: explosion
+}
+    }
+{
+    name: senior-cannon-left
+    x: -19
+    y: 3
+    reload: 300
+    shootSound: shootTank
+    soundPitchMin: 1.1
+    soundPitchMax: 1.3
+    recoil: 1.5
+    cooldownTime: 240
+    mirror: false
+    rotate: false
+    shootCone: 5
+    inaccuracy: 4
+    top: false
+    shake: 5
+    shootX: -0.25
+    shootY: 15.5
+
+shoot: {
+    shots: 3
+    shotDelay: 20
+}
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: reload
+    color: 8F665BFF
+    colorTo: C9A58FFF
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-cannonball
+    height: 10
+    width: 10
+    shrinkY: 0
+    lifetime: 30
+    speed: 8
+    knockback: 20
+    impact: true
+    damage: 300
+    status: cmtc-sts-02-deprived-i
+    statusDuration: 300
+    frontColor: C9A58FFF
+    backColor: 8F665BFF
+    trailColor: 8F665BFF
+    hitColor: C9A58FFF
+    trailLength: 8
+    shootEffect: [ shootTitan, vapor ]
+    smokeEffect: shootSmokeTitan
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 30
+    strokeFrom: 3
+    strokeTo: 0
+    lifetime: 30
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 8
+    sizeTo: 0
+    lifetime: 40
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 10
+    length: 60
+    cone: 60
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 10
+    sizeTo: 5
+    lenFrom: 12
+    lenTo: 0
+    lifetime: 45
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 18
+    length: 60
+    cone: 60
+    line: true
+}
+    ]
+    despawnEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 30
+    strokeFrom: 3
+    strokeTo: 0
+    lifetime: 30
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 8
+    sizeTo: 0
+    lifetime: 40
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 10
+    length: 60
+    cone: 60
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 10
+    sizeTo: 5
+    lenFrom: 12
+    lenTo: 0
+    lifetime: 45
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 18
+    length: 60
+    cone: 60
+    line: true
+}
+    ]
+    hitSound: explosionTitan
+    despawnSound: explosionTitan
+    fragBullets: 3
+    fragOnHit: true
+    fragOnDespawn: false
+    fragOnAbsorb: true
+
+fragBullet: {
+    type: BasicBulletType
+    width: 8
+    height: 12
+    shrinkY: 0
+    damage: 50
+    knockback: 2.5
+    pierce: true
+    pierceCap: 2
+    speed: 4
+    lifetime: 31
+    drag: 0.01
+    frontColor: C9A58FFF
+    backColor: 8F665BFF
+    trailColor: 8F665BFF
+    hitColor: C9A58FFF
+    trailLength: 4
+    status: cmtc-sts-06-dilemma-i
+    statusDuration: 300
+    }
+}
+    }
+]
