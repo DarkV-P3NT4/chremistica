@@ -1,0 +1,283 @@
+type: payload
+
+name: "Domesticus"
+description: "Fires streams of bullets and hookshots at enemy targets, Capable of carrying payloads, Can strafe without loosing speed."
+
+health: 9250
+armor: 11
+hitSize: 28
+outlineColor: 492C20
+
+speed: 1.3
+range: 330
+maxRange: 330
+itemCapacity: 0
+drag: 0.08
+accel: 0.095
+fallSpeed: 0.0032
+rotateSpeed: 2
+strafePenalty: 1
+payloadCapacity: 784
+deathShake: 30
+engineSize: 0
+wobble: true
+flying: true
+hovering: true
+lowAltitude: false
+loopSound: helicopter2
+loopSoundVolume: 3
+pickupUnits: true
+drawMinimap: false
+knockbackMultiplier: 1.75
+
+immunities: [ cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-05-amplified-iii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, burning ]
+
+abilities: []
+
+weapons: [
+{
+    name: domesticus-gatling
+    x: 17.25
+    y: 4
+    mirror: true
+    minWarmup: 0.9
+    shootWarmupSpeed: 0.05
+    smoothReloadSpeed: 0.15
+    reload: 6
+    recoil: 1
+    rotate: true
+    rotateSpeed: 2
+    rotationLimit: 30
+    shootCone: 30
+    shootCone: 9
+    inaccuracy: 12
+    layerOffset: -0.1
+    shootSound: shootCyclone
+    velocityRnd: 0.2
+    shootY: 9
+    predictTarget: false
+
+shoot: {
+    type: ShootAlternate
+    barrels: 3
+    spread: 2.5
+}
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-spray
+    width:  8
+    height: 12
+    damage: 10
+    pierce: true
+    pierceCap: 2
+    pierceBuilding: true
+    buildingDamageMultiplier: 1.33
+    knockback: 0.5
+    impact: true
+    armorMultiplier: -2
+    lifetime: 32.5
+    speed: 8
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    trailLength: 4
+    trailWidth: 3
+    despawnEffect: none
+    hitEffect: {
+    type: ParticleEffect
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    sizeFrom: 5
+    sizeTo: 0
+    strokeFrom: 8
+    strokeTo: 0
+    line: true
+    lifetime: 6
+    length: 18
+    interp: pow2Out
+    }
+    shootEffect: shootBigColor
+    smokeEffect: shootBigSmoke2
+}
+    }
+{
+    x: 0
+    y: 8.5
+    shootSound: shootHookshot
+    reload: 120
+    shootCone: 15
+    rotate: true
+    rotateSpeed: 2
+    mirror: false
+    top: false
+    shootY: 0
+    inaccuracy: 30
+
+shoot: {
+    shots: 4
+    shotDelay: 6
+    }
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-hookshot
+    width: 12
+    height: 24
+    shrinkY: 0
+    damage: 45
+    knockback: -20
+    impact: true
+    speed: 8
+    lifetime: 41.25
+    status: cmtc-sts-04-sluggish-i
+    statusDuration: 360
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    trailLength: 12
+    hitEffect: {
+    type: ParticleEffect
+    cone: 15
+    colorFrom: E69E6BFF
+    colorTo: E69E6BFF
+    strokeFrom: 2.5
+    strokeTo: 0
+    line: true
+    particles: 45
+    lifetime: 45
+    length: -80
+    interp: pow2Out
+    }
+    hitSound: hitHookshot
+    hitSoundVolume: 0.5
+    despawnEffect: none
+    shootEffect: shootSmallColor
+    smokeEffect: none
+}
+    }
+{
+    name: unt-8-4-domesticus-rotor
+    layerOffset: 0.1
+    alwaysShooting: true
+	 display: false
+ 	controllable: false
+    useAttackRange: false
+ 	mirror: false
+    x: 0
+ 	y: 0
+	 reload: 60
+ 	recoil: 0
+ 	shootSound: none
+
+bullet: {
+    type: BasicBulletType
+ 	width: 0
+ 	height: 0
+ 	speed: 0
+ 	damage: 0
+ 	lifetime: 0
+ 	hitEffect: none
+	 instantDisappear: true
+	 despawnEffect: none
+	 shootEffect: none
+ 	smokeEffect: none
+    }
+
+parts: [
+{
+ 	type: RegionPart
+ 	suffix: "-blade-s"
+ 	progress: reload
+ 	moveRot: -360
+ 	mirror: false
+ 	outline: false
+    y: 2.75
+    x: 12.5
+    mirror: true
+    }
+{
+    type: RegionPart
+    suffix: "-top-s"
+ 	mirror: false
+ 	outline: false
+    y: 2.75
+    x: 12.5
+    mirror: true
+    }
+{
+ 	type: RegionPart
+ 	suffix: "-blade-l"
+ 	progress: reload
+ 	moveRot: -180
+ 	mirror: false
+ 	outline: false
+    y: 8.5
+    }
+{
+    type: RegionPart
+    suffix: "-top-l"
+ 	mirror: false
+ 	outline: false
+    y: 8.5
+    }
+]
+    }
+    {
+    x: 0
+    y: 0
+    reload: 1
+    mirror: false
+    shootOnDeath: true
+    shootCone: 180
+    shootSound: explosionDull
+    controllable: false
+    aiControllable: false
+
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    killShooter: true
+    splashDamage: 800
+    splashDamageRadius: 36
+    buildingDamageMultiplier: 1.2
+    collidesGround: true
+    collidesAir: false
+    makeFire: true
+    incendAmount: 30
+    incendSpread: 36
+    incendChance: 0.4
+    hitEffect: pulverize
+    despawnEffect: [ massiveExplosion, blastExplosion, flakExplosion, shockwave ]
+fragBullet: {
+
+    type: BasicBulletType
+    width: 0
+    height: 0
+    collides: false
+    hittable: false
+    absorbable: false
+    reflectable: false
+    damage: 0
+    speed: 0
+    lifetime: 600
+    bulletInterval: 15
+    despawnEffect: none
+    intervalBullets: 10
+
+intervalBullet: {
+    createChance: 0.35
+    type: FireBulletType
+    lifetime: 30
+    velMin: 0.5
+    velMax: 5
+    damage: 30
+    splashDamage: 30
+    splashDamageRadius: 40
+}
+    }
+}
+    }
+]

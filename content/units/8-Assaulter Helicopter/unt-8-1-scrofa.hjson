@@ -1,0 +1,227 @@
+type: flying
+
+name: "Scrofa"
+description: "Fires swarms of bullets and missiles at enemy targets."
+
+health: 500
+armor: 2
+hitSize: 9.2
+outlineColor: 492C20
+
+speed: 1.8
+range: 120
+maxRange: 120
+itemCapacity: 0
+drag: 0.08
+accel: 0.095
+fallSpeed: 0.0042
+rotateSpeed: 4.5
+strafePenalty: 1
+deathShake: 4
+engineSize: 0
+wobble: true
+flying: true
+hovering: true
+lowAltitude: true
+loopSound: helicopter1
+knockbackMultiplier: 1.75
+
+weapons: [
+{
+    x: 2.5
+    y: 4.5
+    reload: 45
+    shootCone: 5
+    rotate: false
+    useAttackRange: false
+    shootSound: shootMissileShort
+    shake: 0.25
+
+bullet: {
+    type: MissileBulletType
+    width: 10
+    height: 12
+    damage: 25
+    splashDamage: 20
+    splashDamageRadius: 12
+    buildingDamageMultiplier: 1.1
+    speed: 3.2
+    lifetime: 36.25
+    keepVelocity: false
+    homingDelay: 6
+    homingRange: 60
+    homingPower: 0.1
+    hitShake: 1
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    shootEffect: shootSmallColor
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 14
+    strokeFrom: 2
+    strokeTo: 0.1
+    lifetime: 12
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 1
+    lifetime: 16
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 10
+    length: 18
+}
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 0
+    lifetime: 16
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 5
+    length: 15
+    line: true
+}
+    ]
+    despawnEffect: none
+    trailLength: 4
+    drag: -0.003
+}
+    }
+{
+    x: 3.75
+    y: 2.5
+    mirror: true
+    alternate: true
+    rotate: false
+    useAttackRange: false
+    reload: 13
+    shootCone: 5
+    inaccuracy: 6
+    ejectEffect: casing1
+
+bullet: {
+    type: BasicBulletType
+    width: 7
+    height: 9
+    damage: 15
+    speed: 3.2
+    buildingDamageMultiplier: 1.15
+    lifetime: 38.75
+    keepVelocity: false
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    trailLength: 3
+    hitEffect: {
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 2
+    strokeFrom: 1.7
+    strokeTo: 0.1
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    particles: 8
+    length: 8
+    cone: 30
+    line: true
+    lifetime: 6
+}
+    despawnEffect: {
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 2
+    strokeFrom: 1.7
+    strokeTo: 0.1
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    particles: 8
+    length: 8
+    cone: 30
+    line: true
+    lifetime: 6
+}
+    shootEffect: shootSmallColor
+}
+    }
+{
+    name: unt-8-1-scrofa-rotor
+    alwaysShooting: true
+	 display: false
+ 	controllable: false
+    useAttackRange: false
+ 	mirror: false
+    x: 0
+ 	y: 0
+	 reload: 180
+ 	recoil: 0
+ 	shootSound: none
+
+bullet: {
+    type: BasicBulletType
+ 	width: 0
+ 	height: 0
+ 	speed: 0
+ 	damage: 0
+ 	lifetime: 0
+ 	hitEffect: none
+	 instantDisappear: true
+	 despawnEffect: none
+	 shootEffect: none
+ 	smokeEffect: none
+    }
+
+parts: [
+{
+ 	type: RegionPart
+ 	suffix: "-blade"
+    y: 1.5
+ 	progress: reload
+ 	moveRot: -360
+ 	mirror: false
+ 	outline: false
+    }
+{
+    type: RegionPart
+    suffix: "-top"
+ 	mirror: false
+ 	outline: false
+    }
+]
+    }
+    {
+    x: 0
+    y: 0
+    reload: 1
+    mirror: false
+    shootOnDeath: true
+    shootCone: 180
+    shootSound: explosionDull
+    controllable: false
+    aiControllable: false
+
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    killShooter: true
+    splashDamage: 330
+    splashDamageRadius: 13.8
+    buildingDamageMultiplier: 1.5
+    collidesGround: true
+    collidesAir: false
+    hitEffect: pulverize
+    despawnEffect: [ massiveExplosion, blastExplosion, flakExplosion, shockwave ]
+}
+    }
+]

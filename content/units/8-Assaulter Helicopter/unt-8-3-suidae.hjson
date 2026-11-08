@@ -1,0 +1,287 @@
+type: payload
+
+name: "Suidae"
+description: "Fires swarms of missiles and incendiary bombs at enemy targets from above while circling. Capable of carrying payloads."
+
+health: 2100
+armor: 9
+hitSize: 18
+outlineColor: 492C20
+
+speed: 1.5
+range: 180
+maxRange: 180
+circleTarget: true
+circleTargetRadius: 90
+omniMovement: false
+itemCapacity: 0
+drag: 0.08
+accel: 0.095
+fallSpeed: 0.0032
+rotateSpeed: 3
+strafePenalty: 1
+payloadCapacity: 256
+deathShake: 15
+engineSize: 0
+wobble: true
+flying: true
+hovering: true
+lowAltitude: false
+autoDropBombs: true
+loopSound: helicopter2
+loopSoundVolume: 2
+pickupUnits: true
+knockbackMultiplier: 1.75
+
+immunities: [ cmtc-sts-01-empowered-ii, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii ]
+
+abilities: [
+{
+    type: ShieldArcAbility
+    radius: 18
+    angle: 361
+    width: 9
+    cooldown: 600
+    whenShooting: false
+    missileUnitMultiplier: 1.5
+    chanceDeflect: 0.35
+    reflectVel: 2
+    max: 600
+    regen: 1
+    pushUnits: false
+}
+]
+
+weapons: [
+{
+    x: 8
+    y: 6
+    mirror: true
+    shootSound: shootMissileLong
+    reload: 16
+    alternate: false
+    rotate: true
+    shootCone: 20
+    ejectEffect: casing3
+    shootY: 0
+    useAttackRange: false
+    shake: 3.5
+    ignoreRotation: true
+
+bullet: {
+    type: MissileBulletType
+    width: 11
+    height: 15
+    damage: 35
+    splashDamage: 25
+    splashDamageRadius: 20
+    buildingDamageMultiplier: 1.1
+    speed: 3.2
+    lifetime: 57
+    knockback: 2
+    impact: true
+    keepVelocity: true
+    homingDelay: 17
+    homingPower: 0.15
+    homingRange: 90
+    hitShake: 2
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    shootEffect: [ shootBigColor, vaporSmall ]
+    smokeEffect: shootBigSmoke
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 22
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 20
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 1
+    lifetime: 24
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 8
+    length: 24
+}
+{
+    type: ParticleEffect
+    sizeFrom: 5
+    sizeTo: 0
+    lifetime: 24
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 12
+    length: 25
+    line: true
+}
+    ]
+    despawnEffect: none
+    trailLength: 4
+    drag: -0.003
+    status: cmtc-sts-06-dilemma-i
+    statusDuration: 90
+}
+    }
+{
+    x: 0
+    y: -4
+    shootY: 0
+    shootSound: shootDull
+    inaccuracy: 15
+    reload: 12
+    minShootVelocity: 0.2
+    rotate: false
+    ignoreRotation: true
+    shootCone: 180
+    layerOffset: -0.1
+    top: false
+    baseRotation: -180
+
+bullet: {
+    type: BombBulletType
+    sprite: mine-bullet
+    despawnShake: 3.25
+    height: 14
+    width: 14
+    shrinkY: 0.2
+    shrinkX: 0.2
+    spin: 3
+    speed: 2.5
+    hitUnder: true
+    velocityScaleRandMin: 0
+    velocityScaleRandMax: 1
+    splashDamageRadius: 24
+    splashDamage: 35
+    incendChance: 0.2
+    incendAmount: 2
+    incendSpread: 24
+    status: blasted
+    statusDuration: 60
+    lifetime: 60
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 26
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 20
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 8
+    sizeTo: 0
+    lifetime: 24
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 8
+    length: 30
+}
+{
+    type: ParticleEffect
+    sizeFrom: 5
+    sizeTo: 0
+    lifetime: 24
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 16
+    length: 30
+    line: true
+}
+    ]
+    shootEffect: none
+    smokeEffect: none
+    hitSound: explosionFine
+    hitSoundVolume: 0.3
+}
+    }
+{
+    name: unt-8-3-suidae-rotor
+    alwaysShooting: true
+	 display: false
+ 	controllable: false
+    useAttackRange: false
+ 	mirror: false
+    x: 0
+ 	y: 3
+	 reload: 180
+ 	recoil: 0
+ 	shootSound: none
+
+bullet: {
+    type: BasicBulletType
+ 	width: 0
+ 	height: 0
+ 	speed: 0
+ 	damage: 0
+ 	lifetime: 0
+ 	hitEffect: none
+	 instantDisappear: true
+	 despawnEffect: none
+	 shootEffect: none
+ 	smokeEffect: none
+    }
+
+parts: [
+{
+ 	type: RegionPart
+ 	suffix: "-blade"
+ 	progress: reload
+ 	moveRot: -360
+ 	mirror: false
+ 	outline: false
+    }
+{
+    type: RegionPart
+    suffix: "-top"
+ 	mirror: false
+ 	outline: false
+    }
+]
+    }
+    {
+    x: 0
+    y: 0
+    reload: 1
+    mirror: false
+    shootOnDeath: true
+    shootCone: 180
+    shootSound: explosionDull
+    controllable: false
+    aiControllable: false
+
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    killShooter: true
+    splashDamage: 880
+    splashDamageRadius: 30
+    buildingDamageMultiplier: 1.5
+    collidesGround: true
+    collidesAir: false
+    hitEffect: pulverize
+    despawnEffect: [ massiveExplosion, blastExplosion, flakExplosion, shockwave ]
+}
+    }
+]
