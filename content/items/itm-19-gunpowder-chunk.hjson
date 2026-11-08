@@ -1,0 +1,12 @@
+color: "34342C"
+name: "Gunpowder Chunk"
+description: "The impurities of the lignite caused deformation during the processing phase, it still is a gunpowder."
+details: "I don't know if i can call this a gunpowder if its just a chunk of rock."
+research: cmtc-itm-18-lignite
+hardness: 1
+charge: 0.0
+explosiveness: 1
+flammability: 0.85
+radioactivity: 0.0
+buildable: false
+shownPlanets: [dkv-candemor]

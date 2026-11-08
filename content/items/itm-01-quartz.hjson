@@ -1,0 +1,11 @@
+color: "C4C3BB"
+name: "Quartz"
+description: "the backbone of most structures. used for almost any constructions, factories, production, much more."
+research: cmtc-asp-core-circuit
+hardness: 1
+charge: 0.0
+explosiveness: 0.0
+flammability: 0.0
+radioactivity: 0.0
+cost: 1
+shownPlanets: [dkv-candemor]

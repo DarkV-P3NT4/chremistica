@@ -1,0 +1,11 @@
+color: "675276"
+name: "Essence Matter"
+description: "The essence of the electromagnetic storm formed as a solid stone. Still holds volatile energy waiting to be unleashed."
+research: cmtc-itm-10-darkite
+hardness: 1
+charge: 0.8
+explosiveness: 0.2
+flammability: 0.05
+radioactivity: 0.8
+cost: 1
+shownPlanets: [dkv-candemor]

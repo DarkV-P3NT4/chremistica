@@ -1,0 +1,11 @@
+color: "5F5982"
+name: "Shale Fragment"
+description: "Absolute waste. It is a byproduct and a trash disposal."
+research: cmtc-itm-08-raw-titanium
+charge: 0.0
+explosiveness: 0
+flammability: 0
+radioactivity: 0.0
+cost: 1
+buildable: false
+shownPlanets: [dkv-candemor]

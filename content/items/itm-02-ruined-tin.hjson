@@ -1,0 +1,11 @@
+color: "DCC18F"
+name: "Ruined Tin"
+description: "Rusted and ruined due to the rough disasters and neglection, used for lesser constructions."
+research: cmtc-itm-01-quartz
+hardness: 1
+charge: 0.0
+explosiveness: 0.0
+flammability: 0.0
+radioactivity: 0.0
+cost: 1
+shownPlanets: [dkv-candemor]

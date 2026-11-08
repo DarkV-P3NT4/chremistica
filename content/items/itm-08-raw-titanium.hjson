@@ -1,0 +1,11 @@
+color: "7D8CB2"
+name: "Raw Titanium"
+description: "Raw, Unprocessed material extracted from shale stones, must be smelted in the Titanium Forge."
+research: cmtc-itm-03-raw-iron
+hardness: 4
+charge: 0.0
+explosiveness: 0
+flammability: 0
+radioactivity: 0.0
+cost: 1
+shownPlanets: [dkv-candemor]

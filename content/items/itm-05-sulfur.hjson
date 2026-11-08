@@ -1,0 +1,11 @@
+color: "E7D182"
+name: "Sulfur"
+description: "Flammable and Combustible element, used as fuel for power or smelting."
+research: cmtc-itm-01-quartz
+hardness: 2
+charge: 0.0
+explosiveness: 0.3
+flammability: 1.1
+radioactivity: 0.0
+buildable: false
+shownPlanets: [dkv-candemor]

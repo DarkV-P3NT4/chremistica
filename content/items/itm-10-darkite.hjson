@@ -1,0 +1,11 @@
+color: "4C3B59"
+name: "Darkite Shard"
+description: "A Corrupted Material imbued with some kind of arcane material from the Electromagnetic storm of Candemor."
+research: cmtc-itm-23-darkite-cluster
+hardness: 1
+charge: 0.0
+explosiveness: 0.5
+flammability: 0.1
+radioactivity: 0.75
+cost: 1
+shownPlanets: [dkv-candemor]

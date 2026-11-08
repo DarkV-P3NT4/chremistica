@@ -1,0 +1,10 @@
+color: "A5ADB5"
+name: "Iron Ingot"
+description: "Smelted into fine iron, used for common structures, factories, and turrets."
+research: cmtc-itm-02-ruined-tin
+charge: 0.0
+explosiveness: 0
+flammability: 0
+radioactivity: 0.0
+cost: 1
+shownPlanets: [dkv-candemor]

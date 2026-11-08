@@ -1,0 +1,12 @@
+color: "C084AF"
+name: "Mappazone Lump"
+description: "A literal lump of sh- sludge!"
+research: cmtc-itm-23-darkite-cluster
+hardness: 4
+charge: 0.5
+explosiveness: 0.1
+flammability: 0
+radioactivity: 0.25
+cost: 1
+buildable: false
+shownPlanets: [dkv-candemor]

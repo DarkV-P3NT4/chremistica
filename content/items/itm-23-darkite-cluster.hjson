@@ -1,0 +1,12 @@
+color: "8C4B99"
+name: "Darkite Cluster"
+description: "A Corrupted Material imbued with some kind of arcane material from the Electromagnetic storm of Candemor."
+research: cmtc-itm-09-obsidian
+hardness: 4
+charge: 0.0
+explosiveness: 0.4
+flammability: 0.15
+radioactivity: 0.8
+cost: 1
+buildable: false
+shownPlanets: [dkv-candemor]

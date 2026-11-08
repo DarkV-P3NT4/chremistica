@@ -1,0 +1,11 @@
+color: "A89288"
+name: "Raw Iron"
+description: "Raw, Unprocessed material extracted from barric stones, must be smelted in the Iron Furnace."
+research: cmtc-itm-01-quartz
+hardness: 3
+charge: 0.0
+explosiveness: 0
+flammability: 0
+radioactivity: 0.0
+cost: 1
+shownPlanets: [dkv-candemor]

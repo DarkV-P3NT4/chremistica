@@ -1,0 +1,11 @@
+color: "7A3E19"
+name: "Bromium Alloy"
+description: "A dense solidified bromine alloy. Extremely corrosive and reactive. Used in specialized weaponry and advanced chemical processes."
+research: cmtc-itm-10-darkite
+hardness: 1
+charge: 0.2
+explosiveness: 0.5
+flammability: 0.2
+radioactivity: 0
+cost: 1
+shownPlanets: [dkv-candemor]

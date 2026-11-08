@@ -1,0 +1,11 @@
+color: "9773B3"
+name: "Obsidian"
+description: "Hardened and cooled from slag and water, brittle but useful to construct more advanced technology."
+research: cmtc-itm-07-refined-tin
+hardness: 1
+charge: 0.0
+explosiveness: 0.0
+flammability: 0.0
+radioactivity: 0.0
+cost: 1
+shownPlanets: [dkv-candemor]

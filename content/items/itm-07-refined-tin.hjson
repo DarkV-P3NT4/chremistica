@@ -1,0 +1,11 @@
+color: "B3B3B3"
+name: "Refined Tin"
+description: "Refined into a Stronger, Durable material capable of becoming a wall, Used for advanced structures and ammo."
+research: cmtc-itm-06-aluminum
+hardness: 1
+charge: 0.0
+explosiveness: 0.0
+flammability: 0.0
+radioactivity: 0.0
+cost: 1
+shownPlanets: [dkv-candemor]

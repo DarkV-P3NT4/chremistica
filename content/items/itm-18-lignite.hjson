@@ -1,0 +1,11 @@
+color: "625042"
+name: "Lignite"
+description: "A chunk of rock that is flammable too, used for factories and ammunition."
+research: cmtc-itm-05-sulfur
+hardness: 2
+charge: 0.0
+explosiveness: 0.2
+flammability: 1
+radioactivity: 0.0
+buildable: false
+shownPlanets: [dkv-candemor]
