@@ -1,0 +1,207 @@
+localizedName: "Candemor"
+description: "Beeg planet (⁠ ⁠╹⁠▽⁠╹⁠ ⁠)"
+parent: sun
+solarSystem: sun
+
+orbitRadius: 48
+orbitSpacing: 14
+sectorSize: 2
+orbitTime: 180
+rotateTime: 3000
+
+mesh: [
+  {
+    //ferric
+    type: NoiseMesh
+    seed: 17
+    divisions: 5
+    color1: "877D72"
+    color2: "675B53"
+    radius: 0.9
+    octaves: 2
+    persistence: 0.55
+    scale: 1
+    mag: 1
+  }
+  {
+    //barric
+    type: NoiseMesh
+    seed: 43
+    divisions: 4
+    color1: "BEBEBD"
+    color2: "6F655A"
+    radius: 0.9
+    octaves: 3
+    persistence: 0.60
+    scale: 0.9
+    mag: 0.85
+  }
+  {
+    //quartz
+    type: NoiseMesh
+    seed: 71
+    divisions: 4
+    color1: "DCDBB4"
+    color2: "BFBF91"
+    radius: 0.9
+    octaves: 3
+    persistence: 0.55
+    scale: 0.8
+    mag: 0.95
+  }
+  {
+    //sulfur
+    type: NoiseMesh
+    seed: 109
+    divisions: 6
+    color1: "E7D182"
+    color2: "93844E"
+    radius: 0.9
+    octaves: 5
+    persistence: 0.45
+    scale: 0.89
+    mag: 0.85
+  }
+  {
+    //shale
+    type: NoiseMesh
+    seed: 151
+    divisions: 4
+    color1: "7D8CB2"
+    color2: "5F5982"
+    radius: 0.9
+    octaves: 2
+    persistence: 0.55
+    scale: 1
+    mag: 0.92
+  }
+  {
+    //ashen
+    type: NoiseMesh
+    seed: 197
+    divisions: 4
+    color1: "532926"
+    color2: "2E1715"
+    radius: 0.9
+    octaves: 2
+    persistence: 0.65
+    scale: 1
+    mag: 0.87
+  }
+  {
+    //galena
+    type: NoiseMesh
+    seed: 331
+    divisions: 2
+    color1: "757C99"
+    color2: "4A4E55"
+    radius: 0.9
+    octaves: 3
+    persistence: 0.80
+    scale: 0.9
+    mag: 0.9
+  }
+  {
+    //darkite
+    type: NoiseMesh
+    seed: 263
+    divisions: 4
+    color1: "4C3B59"
+    color2: "1A1520"
+    radius: 0.9
+    octaves: 3
+    persistence: 0.75
+    scale: 1.2
+    mag: 0.8
+  }
+  {
+    //bromine
+    type: NoiseMesh
+    seed: 421
+    divisions: 3
+    color1: "7A3E19"
+    color2: "3A1D0B"
+    radius: 0.9
+    octaves: 4
+    persistence: 0.70
+    scale: 0.92
+    mag: 0.92
+  }
+  {
+    //violium
+    type: NoiseMesh
+    seed: 587
+    divisions: 3
+    color1: "BE66D6"
+    color2: "794B8B"
+    radius: 0.9
+    octaves: 5
+    persistence: 0.85
+    scale: 0.7
+    mag: 0.85
+  }
+  {
+    //basalt
+    type: NoiseMesh
+    seed: 617
+    divisions: 4
+    color1: "3F4148"
+    color2: "1F2025"
+    radius: 0.9
+    octaves: 3
+    persistence: 0.60
+    scale: 1
+    mag: 0.9
+  }
+]
+
+cloudMesh: [
+   {
+   type: HexSkyMesh
+   planet: dkv-candemor
+   seed: 3
+   speed: 0.45
+   radius: 0.15
+   divisions: 5
+   color: 99908560
+   octaves: 3
+   persistence: 0.3
+   scl: 1
+   thresh: 0.45
+   }
+]
+
+hasAtmosphere: true
+atmosphereColor: 7467A8
+atmosphereRadIn: 0.025
+atmosphereRadOut: 0.34
+landCloudColor: 8B7BB4
+
+icon: planet
+iconColor: 794B8B
+bloom: false
+visible: true
+drawOrbit: true
+minZoom: 0.35
+maxZoom: 4.5
+
+allowCampaignRules: true
+allowLaunchLoadout: false
+allowLaunchSchematics: false
+allowLaunchToNumbered: false
+allowLegacyLaunchPads: false
+allowSectorInvasion: false
+allowSelfSectorLaunch: false
+allowWaves: true
+
+accessible: true
+alwaysUnlocked: true
+startSector: 0
+clearSectorOnLose: true
+prebuildBase: false
+updateLighting: true
+tidalLock: true
+
+defaultCore: cmtc-asp-core-circuit
+
+generator: "PlanetGenerator"
