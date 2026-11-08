@@ -1,0 +1,15 @@
+name: Liquid Nitrogen
+description: HOLY SHIT ITS TOO COLD!!
+boilPoint: 0.8
+incinerable: true
+coolant: true
+explosiveness: 0
+viscosity: 0.2
+color: E3DAEE
+heatCapacity: 1
+flammability: 0
+gasColor: FFFFFF
+effect: cmtc-sts-17-nitro-freezing
+research: {
+    parent: cmtc-lqd-02-liquid-aluminum
+}

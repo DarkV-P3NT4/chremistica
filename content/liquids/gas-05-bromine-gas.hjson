@@ -1,0 +1,16 @@
+name: "Bromine Gas"
+description: "A vapor gas of bromine, very toxic and dangerous to anyone non resistant to bromine."
+heatCapacity: 0
+explosiveness: 0.5
+temperature: 0.5
+coolant: false
+gas: true
+color: 7A3E19FF
+flammability: 0.2
+gasColor: 7A3E19FF
+barColor: 7A3E19
+incinerable: true
+lightColor: 7A3E19
+research: {
+  parent: cmtc-itm-12-bromium
+}

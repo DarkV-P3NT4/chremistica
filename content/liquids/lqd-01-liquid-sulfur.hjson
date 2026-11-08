@@ -1,0 +1,15 @@
+name: Liquid Sulfur
+description: A liquid form of the Sulfur, became even more volatile and explosive.
+boilPoint: 1.5
+incinerable: false
+coolant: false
+explosiveness: 1.2
+viscosity: 0.25
+color: CAB773
+heatCapacity: 0.4
+flammability: 0.75
+effect: cmtc-sts-13-sulfur-coated
+gasColor: d9e1e6E6
+research: {
+    parent: cmtc-itm-05-sulfur
+}

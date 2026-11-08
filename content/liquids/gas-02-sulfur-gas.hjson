@@ -1,0 +1,16 @@
+name: "Sulfur Gas"
+description: "A gas form of Sulfur.. thats enough now."
+heatCapacity: 0
+explosiveness: 0.75
+temperature: 0.5
+coolant: false
+gas: true
+color: CAB773FF
+flammability: 0.2
+gasColor: CAB773FF
+barColor: CAB773
+incinerable: false
+lightColor: CAB773
+research: {
+  parent: cmtc-itm-05-sulfur
+}

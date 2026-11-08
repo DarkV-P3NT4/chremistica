@@ -1,0 +1,14 @@
+name: Liquid Aluminum
+description: A liquid form of the Aluminum, Seems like it only has one use to refine tin
+boilPoint: 1
+incinerable: false
+coolant: false
+explosiveness: 0
+viscosity: 0.1
+color: F4F4F4
+heatCapacity: 0.1
+flammability: 0
+gasColor: FFFFFF
+research: {
+    parent: cmtc-itm-06-aluminum
+}

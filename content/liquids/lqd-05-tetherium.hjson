@@ -1,0 +1,15 @@
+name: Tetherium
+description: A Warm Viscous liquid that seem to be used solely for one thing, be cautious as infusing could cause lifeforms to grow.
+boilPoint: 0.85
+incinerable: false
+coolant: false
+explosiveness: 0.2
+viscosity: 0.35
+color: 89CCDE
+heatCapacity: 0.5
+flammability: 0.05
+gasColor: FFFFFF
+effect: cmtc-sts-20-tethersludge
+research: {
+    parent: cmtc-lqd-03-liquid-nitrogen
+}

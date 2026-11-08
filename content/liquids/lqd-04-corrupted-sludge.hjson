@@ -1,0 +1,13 @@
+name: Corrupted Sludge
+description: "[gray]DO NOT TOUCH!!![]"
+boilPoint: 1
+incinerable: false
+coolant: false
+explosiveness: 0
+viscosity: 0
+color: 261F2F
+heatCapacity: 0
+flammability: 0
+gasColor: 261F2F
+effect: cmtc-sts-19-crazed-weakness
+hideDatabase: true

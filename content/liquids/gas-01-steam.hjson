@@ -1,0 +1,16 @@
+name: "Steam"
+description: "Used for additional machinery in need of power or boost."
+heatCapacity: 0
+explosiveness: 0.25
+temperature: 0.5
+coolant: false
+gas: true
+color: f4f4f4f4
+flammability: 0
+gasColor: f4f4f4
+barColor: f4f4f4
+incinerable: true
+lightColor: f4f4f4
+research: {
+  parent: cmtc-asp-core-circuit
+}
