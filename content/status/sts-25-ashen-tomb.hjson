@@ -1,0 +1,4 @@
+name: Ashen Tomb
+speedMultiplier: 0.9
+damage: 0.1365
+affinities: [ burning, melting ]

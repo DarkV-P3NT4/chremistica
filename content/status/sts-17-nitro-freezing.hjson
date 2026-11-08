@@ -1,0 +1,13 @@
+name: Nitro Freezing
+
+effect: [freezing, wet]
+
+transitionDamage: 22
+
+color: E3DAEE
+
+speedMultiplier: 0.7
+healthMultiplier: 0.85
+
+affinities: [ blasted, freezing ]
+opposites: [ cmtc-sts-13-sulfur-coated, burning, melting ]
