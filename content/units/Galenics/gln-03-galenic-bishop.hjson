@@ -1,0 +1,150 @@
+type: legs
+name: "Galenic Bishop"
+description: "The advanced caste of the galenic species. An invasive species of the meltdown incident, the nurse of the kingdom volunteered to assist the patients to regenerate and keep up the battle."
+
+health: 1800
+armor: 22
+hitSize: 9.6
+speed: 0.472
+range: 100
+maxRange: 148
+itemCapacity: 0
+drawCell: false
+rotateSpeed: 3
+drag: 0.24
+outlineColor: 2D2F33
+canDrown: false
+floorMultiplier: 0.5
+faceTarget: true
+hidden: false
+logicControllable: false
+healColor: 89CCDE
+
+lockLegBase: true
+legCount: 6
+legLength: 20
+legGroupSize: 2
+legPairOffset: 0.5
+lockLegBase: true
+legContinuousMove: true
+legExtension: -3
+legBaseOffset: 1.2
+legMaxLength: 1.3
+legMinLength: 0.2
+legLengthScl: 0.9
+legForwardScl: 1
+legMoveSpace: 0.9
+legStraightness: 0.25
+
+allowLegStep: true
+hovering: true
+legPhysicsLayer: true
+groundLayer: 71
+
+immunities: [ cmtc-sts-01-empowered-i, cmtc-sts-01-empowered-ii, cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-i, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-i, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-07-refined-i, cmtc-sts-07-refined-ii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii, cmtc-sts-20-tethersludge ]
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.05
+    }
+{
+    type: LiquidRegenAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: LiquidExplodeAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: StatusFieldAbility
+    effect: cmtc-sts-21-synthesis
+    duration: 300
+    reload: 600
+    range: 80
+    }
+]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    color: 458091
+    colorTo: 89CCDE
+    blending: additive
+    outline: false
+    layer: -1
+}
+{
+    type: RegionPart
+    suffix: "-mandible"
+    mirror: true
+    x: 2
+    y: 10
+    under: true
+    progress: warmup
+    moveX: 1
+    moveRot: -45
+    layerOffset: -0.01
+}
+]
+
+weapons: [
+{
+    x: 0
+    y: 10
+    shootSound: shootAtrax
+    shootSoundVolume: 0.3
+    reload: 3
+    inaccuracy: 12
+    minWarmup: 0.9
+    shootWarmupSpeed: 0.05
+    smoothReloadSpeed: 0.15
+    shootCone: 12
+    mirror: false
+    rotate: false
+
+bullet: {
+    type: LiquidBulletType
+    boilTime: 30
+    liquid: cmtc-lqd-05-tetherium
+    orbSize: 2
+    puddleSize: 12
+    damage: 2
+    knockback: 1.5
+    impact: true
+    speed: 4
+    lifetime: 38
+    shootEffect: {
+    type: ParticleEffect
+    colorFrom: 89CCDEFF
+    colorTo: 89CCDEFF
+    sizeFrom: 2
+    sizeTo: 0
+    sizeChangeStart: 5
+    lifetime: 10
+    length: 12
+    particles: 6
+    cone: 30
+    interp: pow2Out
+}
+    smokeEffect: none
+    hitEffect: {
+    type: ParticleEffect
+    colorFrom: 89CCDEFF
+    colorTo: 89CCDEFF
+    sizeFrom: 2
+    sizeTo: 0
+    sizeChangeStart: 5
+    lifetime: 10
+    length: 16
+    particles: 8
+    cone: 30
+    interp: pow3Out
+}
+    despawnEffect: none
+    status: cmtc-sts-20-tethersludge
+    statusDuration: 150
+}
+    }
+]

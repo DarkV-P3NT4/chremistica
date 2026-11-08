@@ -1,0 +1,245 @@
+type: legs
+name: "Galenic Pawn"
+description: "The firstborn of the galenic species. An invasive species originated from the meltdown incident, the hatched worker of the kingdom that thrives for swarming."
+
+health: 2000
+armor: 20
+hitSize: 9.2
+speed: 0.65
+range: 120
+maxRange: 160
+itemCapacity: 0
+drawCell: false
+rotateSpeed: 3
+drag: 0.24
+outlineColor: 2D2F33
+canDrown: false
+floorMultiplier: 0.5
+faceTarget: true
+hidden: false
+logicControllable: false
+healColor: 89CCDE
+
+lockLegBase: true
+legCount: 6
+legLength: 20
+legGroupSize: 2
+legPairOffset: 0.5
+lockLegBase: true
+legContinuousMove: true
+legExtension: -3
+legBaseOffset: 1.2
+legMaxLength: 1.3
+legMinLength: 0.2
+legLengthScl: 0.92
+legForwardScl: 0.96
+legMoveSpace: 0.9
+legStraightness: 0.25
+
+allowLegStep: true
+hovering: true
+legPhysicsLayer: true
+groundLayer: 71
+
+immunities: [ cmtc-sts-01-empowered-i, cmtc-sts-01-empowered-ii, cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-i, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-i, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-07-refined-i, cmtc-sts-07-refined-ii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii, cmtc-sts-20-tethersludge ]
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.05
+    }
+{
+    type: LiquidRegenAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: LiquidExplodeAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-mandible"
+    mirror: true
+    x: 2
+    y: 7
+    under: true
+    progress: warmup
+    moveX: 0.5
+    moveRot: -45
+    layerOffset: -0.01
+}
+]
+
+weapons: [
+{
+    x: 0
+    y: -4
+    shootCone: 30
+    ignoreRotation: true
+    rotate: false
+    mirror: false
+    shootSound: stepMud
+    shootSoundVolume: 0.3
+    soundPitchMin: 1.2
+    soundPitchMax: 1.4
+    reload: 120
+    layerOffset: 0.1
+    recoil: 0
+    shootY: 0
+
+shoot: {
+    type: ShootSpread
+    shots: 8
+    spread: 45
+    shotDelay: 2
+}
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-needle
+    width: 8
+    height: 8
+    shrinkY: 0
+    shrinkX: 0
+    damage: 20
+    pierce: true
+    pierceCap: 3
+    pierceBuilding: true
+    knockback: 2.5
+    impact: true
+    rangeOverride: 156
+    speed: 4
+    lifetime: 78
+    hitSound: rockBreak
+    frontColor: 757C99FF
+    backColor: 5F6475FF
+    trailColor: 5F6475FF
+    hitColor: 757C99FF
+    trailLength: 5
+    hitEffect: {
+    type: ParticleEffect
+    particles: 12
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    sizeFrom: 4
+    sizeTo: 2
+    strokeFrom: 1.5
+    strokeTo: 0.4
+    lenFrom: 5
+    lenTo: 0
+    lifetime: 30
+    length: 20
+    interp: pow3Out
+}
+    despawnEffect: none
+    homingPower: 0.4
+    homingDelay: 10
+    shootEffect: {
+    type: ParticleEffect
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    sizeFrom: 3
+    sizeTo: 0
+    sizeChangeStart: 10
+    lifetime: 20
+    length: 12
+    particles: 6
+}
+    smokeEffect: none
+    }
+}
+{
+    x: 0
+    y: 7
+    reload: 60
+    recoil: 0
+    shootSound: shootPawn
+    shootSoundVolume: 0.25
+    shootStatus: slow
+    shootStatusDuration: 120
+    shootY: 0
+    shootWarmupSpeed: 0.05
+    minWarmup: 0.9
+    smoothReloadSpeed: 0.15
+    rotate: false
+    shootCone: 15
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-rock-bullet
+    width: 10
+    height: 10
+    shrinkY: 0
+    speed: 3.2
+    lifetime: 51.25
+    damage: 50
+    splashDamage: 25
+    splashDamageRadius: 24
+    knockback: 25
+    impact: true
+    frontColor: 757C99FF
+    backColor: 5F6475FF
+    shootEffect: none
+    smokeEffect: none
+    recoil: 1.5
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 28
+    colorFrom: 5F6475FF
+    colorTo: 757C99FF
+    strokeFrom: 5
+    strokeTo: 0.1
+    lifetime: 12
+    interp: exp5Out
+}
+{
+    type: ParticleEffect
+    particles: 12
+    length: 30
+    sizeFrom: 6
+    sizeTo: 2
+    sizeChangeStart: 10
+    lifetime: 18
+    colorFrom: 5F6475FF
+    colorTo: 757C99FF
+    interp: exp5Out
+}
+]
+    despawnEffect: none
+    hitSound: hitGalena
+    despawnSound: hitGalena
+    hitSoundVolume: 0.5
+    fragRandomSpread: 1
+    fragSpread: 90
+    fragBullets: 4
+    fragVelocityMin: 1
+    fragVelocityMax: 1
+
+fragBullet: {
+    type: BasicBulletType
+    sprite: cmtc-rock-bullet-shard
+    width: 10
+    height: 10
+    shrinkY: 0
+    speed: 4
+    lifetime: 20
+    damage: 15
+    pierce: true
+    pierceCap: 2
+    pierceBuilding: true
+    knockback: 10
+    impact: true
+    hitSound: none
+    hitEffect: none
+    despawnEffect: none
+    frontColor: 757C99FF
+    backColor: 757C99FF
+    }
+}
+    }
+]

@@ -1,0 +1,248 @@
+type: legs
+name: "Galenic Knight"
+description: "The advanced caste of the galenic species. An invasive species of the meltdown incident, the soldier of the kingdom that are more deliberate to attack any intruders in the territory."
+
+health: 2500
+armor: 30
+hitSize: 10
+speed: 0.472
+range: 24
+maxRange: 180
+itemCapacity: 0
+drawCell: false
+drag: 0.24
+outlineColor: 2D2F33
+canDrown: false
+floorMultiplier: 0.5
+faceTarget: true
+hidden: false
+logicControllable: false
+healColor: 89CCDE
+
+lockLegBase: true
+legContinuousMove: true
+legCount: 6
+legLength: 22
+legGroupSize: 2
+legPairOffset: 0.5
+lockLegBase: true
+legExtension: -3
+legBaseOffset: 1.2
+legMaxLength: 1.3
+legMinLength: 0.2
+legLengthScl: 0.92
+legForwardScl: 1
+legMoveSpace: 0.9
+legStraightness: 0.25
+
+allowLegStep: true
+hovering: true
+legPhysicsLayer: true
+groundLayer: 71
+
+immunities: [ cmtc-sts-01-empowered-i, cmtc-sts-01-empowered-ii, cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-i, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-i, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-07-refined-i, cmtc-sts-07-refined-ii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii, cmtc-sts-20-tethersludge ]
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.05
+    }
+{
+    type: LiquidRegenAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: LiquidExplodeAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-antennae"
+    layerOffset: 0.001
+    mirror: true
+    x: 5.5
+    y: 6.5
+    rotation: -45
+    progress: warmup
+    moveX: 0.25
+    moveRot: -15
+    children: [
+    {
+        type: RegionPart
+        suffix: "-antennae-segment"
+        y: 8
+        rotation: 45
+        progress: warmup
+        moveRot: -15
+        children: [
+        {
+            type: RegionPart
+            suffix: "-antennae-segment-top"
+            y: 8
+            rotation: 45
+            progress: warmup
+            moveRot: -15
+        }
+        ]
+    }
+    ]
+}
+]
+
+weapons: [
+{
+    x: 0
+    y: 10
+    reload: 120
+    recoil: 1
+    recoilPow: 2
+    shootSound: shootPawn
+    shootSoundVolume: 0.25
+    shootY: 0
+    shootWarmupSpeed: 0.1
+    minWarmup: 0.9
+    smoothReloadSpeed: 0.15
+    rotate: false
+    shootCone: 15
+    soundPitchMin: 0.6
+    soundPitchMax: 0.8
+
+parts: [
+{
+    type: ShapePart
+    progress: warmup
+    color: FFFFFF00
+    radius: 0
+    radiusTo: 6
+}
+]
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-rock-bullet
+    width: 14
+    height: 14
+    shrinkY: 0
+    speed: 3.2
+    lifetime: 57.5
+    damage: 120
+    splashDamage: 40
+    splashDamageRadius: 24
+    knockback: 35
+    impact: true
+    frontColor: 757C99FF
+    backColor: 5F6475FF
+    shootEffect: none
+    smokeEffect: none
+    recoil: 1
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 28
+    colorFrom: 5F6475FF
+    colorTo: 757C99FF
+    strokeFrom: 5
+    strokeTo: 0.1
+    lifetime: 12
+    interp: exp5Out
+}
+{
+    type: ParticleEffect
+    particles: 16
+    length: 30
+    sizeFrom: 6
+    sizeTo: 2
+    sizeChangeStart: 10
+    lifetime: 18
+    colorFrom: 5F6475FF
+    colorTo: 757C99FF
+    interp: exp5Out
+}
+]
+    despawnEffect: none
+    hitSound: hitGalena
+    despawnSound: hitGalena
+    hitSoundVolume: 0.5
+    status: cmtc-sts-04-sluggish-ii
+    statusDuration: 150
+}
+    }
+{
+    name: gln-02-galenic-knight-bite
+    layerOffset: -0.1
+    x: 0
+    y: 10.5
+    reload: 120
+    recoil: 0
+    recoilTime: 60
+    mirror: false
+    rotate: false
+    useAttackRange: false
+    shootSound: biteKnight
+    soundPitchMin: 0.9
+    soundPitchMax: 1
+    inaccuracy: 0
+    layerOffset: -0.001
+    shootStatus: unmoving
+    shootStatusDuration: 30
+    smoothReloadSpeed: 0.15
+    shootWarmupSpeed: 0.05
+    minWarmup: 0.9
+    controllable: false
+    autoTarget: true
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-mandible"
+    x: 3
+    y: 0
+    under: true
+    mirror: true
+    progress: warmup
+    moveRot: -45
+    moves: [
+    {
+        type: PartMove
+        progress: recoil
+        rot: 45
+        y: 0.5
+    }
+    ]
+}
+]
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-chomp
+    collidesAir: false
+    damage: 200
+    recoil: -1.5
+    speed: 8
+    lifetime: 3.5
+    hitSize: 10
+    height: 15
+    width: 15
+    pierce: true
+    reflectable: false
+    absorbable: false
+    hittable: false
+    hitEffect: [ hitBulletColor, blastExplosion ]
+    despawnEffect: none
+    shrinkY: 0
+    frontColor: 757C99FF
+    backColor: 5F6475FF
+    hitColor: 757C99FF
+    shootEffect: none
+    smokeEffect: none
+    hitSound: hitKnight
+    despawnSound: none
+    status: cmtc-sts-08-ruined-ii
+    statusDuration: 60
+}
+    }
+]

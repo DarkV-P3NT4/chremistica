@@ -1,0 +1,74 @@
+type: crawl
+name: "Galenic Larvae"
+description: "The firstborn of the galenic species. An invasive species originated from the meltdown incident, the larvaes known to attack aggressively to any beings threatened to attack the colony... or METAMORPHOSIS."
+
+health: 2100
+armor: 30
+hitSize: 10.4
+speed: 0.3
+range: 0
+maxRange: 0
+itemCapacity: 0
+drawBody: false
+drawCell: false
+segments: 3
+segmentMag: 1.5
+segmentScl: 2.5
+segmentMaxRot: 35
+rotateSpeed: 3
+omniMovement: false
+drag: 0.24
+outlineColor: 2D2F33
+canDrown: false
+floorMultiplier: 0
+faceTarget: true
+targetAir: true
+hovering: true
+hidden: false
+logicControllable: false
+healColor: 89CCDE
+
+crawlSlowdown: 0.8
+crushDamage: 0.1
+
+immunities: [ cmtc-sts-01-empowered-i, cmtc-sts-01-empowered-ii, cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-i, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-i, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-07-refined-i, cmtc-sts-07-refined-ii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii, cmtc-sts-20-tethersludge ]
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.05
+    }
+{
+    type: LiquidRegenAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: LiquidExplodeAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+]
+
+weapons: [
+{
+    x: 0
+    y: 0
+    shootSound: none
+    reload: 3600
+    mirror: false
+    display: false
+    alwaysShooting: true
+
+shoot: {
+    firstShotDelay: 3600
+}
+
+bullet: {
+    instantDisappear: true
+    killShooter: true
+    damage: 0
+    shootEffect: none
+    smokeEffect: none
+    spawnUnit: cmtc-gln-00-galenic-larvae-egg
+}
+    }
+]

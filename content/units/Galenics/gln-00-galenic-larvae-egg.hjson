@@ -1,0 +1,109 @@
+type: mech
+name: "Galenic Egg"
+description: "I T S  H A T C H I N G..."
+
+health: 1000
+armor: 30
+hitSize: 10.4
+speed: 0
+controller: HugAI
+range: 0
+maxRange: 0
+itemCapacity: 0
+drawCell: false
+rotateSpeed: 0
+omniMovement: false
+drag: 0.24
+outlineColor: 2D2F33
+deathSound: hitGalena
+canDrown: false
+floorMultiplier: 0
+faceTarget: false
+targetAir: false
+canAttack: false
+hovering: true
+hidden: true
+playerControllable: false
+logicControllable: false
+healColor: 89CCDE
+knockbackMultiplier: 0
+
+immunities: [ cmtc-sts-01-empowered-i, cmtc-sts-01-empowered-ii, cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-i, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-i, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-07-refined-i, cmtc-sts-07-refined-ii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii, cmtc-sts-20-tethersludge ]
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.05
+    }
+{
+    type: LiquidRegenAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: LiquidExplodeAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    color: 458091
+    colorTo: 89CCDE
+    blending: additive
+    outline: false
+    progress: charge
+    layer: -1
+}
+]
+
+weapons: [
+{
+    x: 0
+    y: 0
+    shootSound: none
+    reload: 900
+    mirror: false
+    display: false
+    shootOnDeath: false
+    alwaysShooting: true
+
+shoot: {
+    firstShotDelay: 900
+}
+
+bullet: {
+    type: MultiBulletType
+bullets: [
+{
+    instantDisappear: true
+    killShooter: true
+    createChance: 0.33
+    damage: 0
+    shootEffect: none
+    smokeEffect: none
+    spawnUnit: cmtc-gln-01-galenic-pawn
+}
+{
+    instantDisappear: true
+    killShooter: true
+    createChance: 0.33
+    damage: 0
+    shootEffect: none
+    smokeEffect: none
+    spawnUnit: cmtc-gln-02-galenic-knight
+}
+{
+    instantDisappear: true
+    killShooter: true
+    createChance: 0.33
+    damage: 0
+    shootEffect: none
+    smokeEffect: none
+    spawnUnit: cmtc-gln-03-galenic-bishop
+}
+    ]
+}
+    }
+]
