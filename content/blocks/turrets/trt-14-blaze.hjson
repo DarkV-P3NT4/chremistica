@@ -1,0 +1,122 @@
+type: ItemTurret
+
+name: "Blaze"
+description: "Fires ignited flames to enemy targets rapidly."
+
+health: 1000
+size: 2
+maxAmmo: 20
+ammoPerShot: 1
+reload: 10
+squareSprite: false
+
+buildTime: 240
+requirements: [ cmtc-itm-01-quartz/60, cmtc-itm-02-ruined-tin/35, cmtc-itm-04-iron-ingot/20, cmtc-itm-09-obsidian/20 ]
+category: turret
+outlineColor: 1E0D0D
+
+shootSound: shootFlame
+recoil: 1
+range: 100
+trackingRange: 160
+shootEffect: [
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 1.5
+    cone: 10
+    length: 118
+    particles: 18
+    colorFrom: ffdd55FF
+    colorTo: 80808000
+    lifetime: 26
+    interp: pow3Out
+    colorInterp: pow3In
+}
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 1.5
+    cone: 10
+    length: 112
+    particles: 18
+    colorFrom: ffb855FF
+    colorTo: 80808000
+    lifetime: 23
+    interp: pow3Out
+    colorInterp: pow3In
+}
+]
+smokeEffect: {
+    type: ParticleEffect
+    sizeFrom: 1
+    sizeTo: 0.4
+    cone: 10
+    length: 40
+    particles: 12
+    colorFrom: F4F4F4FF
+    colorTo: C3C3C300
+    lifetime: 20
+    interp: pow3Out
+}
+inaccuracy: 3
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: false
+    allowLiquid: true
+    amount: 0.1
+}
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+}
+
+ammoTypes: {
+
+itm-18-lignite: {
+    type: BasicBulletType
+    collidesAir: false
+    hittable: false
+    hitSize: 10
+    statusDuration: 240
+    status: burning
+    pierce: true
+    lifetime: 8
+    speed: 12.5
+    damage: 40
+    width: 0
+    height: 0
+    hitEffect: hitFlameSmall
+    despawnEffect: none
+}
+itm-05-sulfur: {
+    type: BasicBulletType
+    collidesAir: false
+    hittable: false
+    hitSize: 10
+    statusDuration: 600
+    status: burning
+    pierce: true
+    lifetime: 8
+    speed: 12.5
+    damage: 25
+    width: 0
+    height: 0
+    hitEffect: hitFlameSmall
+    despawnEffect: none
+}
+    }
+
+research: {
+    parent: cmtc-trt-06-barrel
+    planet: dkv-candemor
+    objectives: [ cmtc-itm-18-lignite ]
+}
+
+researchCostMultiplier: 1
+
+
+
+

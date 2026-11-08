@@ -1,0 +1,26 @@
+type: PointDefenseTurret
+name: "Vetex"
+description: "Shoots point lasers that targets enemy kinetic projectiles, lasers and missileunits not included."
+
+rotateSpeed: 8
+category: turret
+hasPower: true
+size: 2
+
+bulletDamage: 30
+reload: 6
+health: 680
+color: D2BF7E
+outlineColor: 1E0D0D
+range: 180
+
+consumes: {
+    power: 4
+}
+buildTime: 165
+requirements: [ graphite/100, cmtc-itm-09-obsidian/50, titanium/50, silicon/60 ]
+
+research: {
+    parent: cmtc-trt-05-shock
+    planet: dkv-candemor
+}

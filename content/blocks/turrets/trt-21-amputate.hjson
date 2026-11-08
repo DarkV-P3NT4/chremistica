@@ -1,0 +1,284 @@
+type: LaserTurret
+
+name: "Amputate"
+description: "IMMA FIRING MY LASER!!"
+
+health: 2150
+size: 4
+reload: 600
+squareSprite: false
+reloadWhileCharging: false
+moveWhileCharging: false
+liquidCapacity: 96
+
+buildTime: 300
+requirements: [ cmtc-itm-10-darkite/30, cmtc-itm-11-essence-matter/25, cmtc-itm-07-refined-tin/50, titanium/60, graphite/100 ]
+category: turret
+outlineColor: 1E0D0D
+
+hasPower: true
+
+consumes: {
+    power: 18
+}
+
+coolant: {
+    type: ConsumeLiquid
+    liquid: cmtc-lqd-03-liquid-nitrogen
+    amount: 0.4
+}
+
+coolantMultiplier: 1
+
+shootSound: shootAmputate
+loopSound: beamAmputate
+chargeSound: chargeAmputate
+soundPitchMin: 0.975
+soundPitchMax: 1.05
+recoil: 1.5
+range: 200
+trackingRange: 360
+shootEffect: none
+smokeEffect: shootBigSmoke2
+inaccuracy: 0
+rotateSpeed: 2.5
+shake: 15
+cooldownTime: 300
+shootCone: 5
+shootDuration: 315
+heatColor: A49050
+minWarmup: 0.9
+shootWarmupSpeed: 0.02
+shootY: 5.5
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+    parts: [
+{
+    type: RegionPart
+    suffix: "-cover"
+    under: true
+    mirror: false
+    moveY: -15.75
+    progress: {
+    type: warmup
+    ops: [
+    { op: curve, interp: pow10Out }
+    { op: delay, amount: 0.2 }
+    ]
+    }
+    moves: [
+    {
+    type: PartMove
+    y: -2.25
+    progress: recoil
+    }
+    ]
+}
+{
+    type: RegionPart
+    suffix: "-side"
+    under: true
+    mirror: true
+    moveX: 4.5
+    heatColor: A49050
+    progress: {
+    type: warmup
+    ops: [
+    { op: curve, interp: sineOut, duration: 60 }
+    ]
+    }
+    moves: [
+    {
+    type: PartMove
+    y: -2
+    progress: {
+    type: recoil
+    ops: [
+    { op: curve, interp: pow3In }
+    ]
+    }
+    }
+    ]
+}
+{
+    type: RegionPart
+    suffix: "-top"
+    heatColor: A49050
+    heatProgress: warmup
+}
+    ]
+}
+
+shoot: {
+    firstShotDelay: 180
+}
+
+shootType: {
+    type: ContinuousLaserBulletType
+    timescaleDamage: true
+    drawSize: 200
+    length: 200
+    width: 16
+    ammoMultiplier: 1
+    incendChance: 0.2
+    incendSpread: 16
+    incendAmount: 8
+    lifetime: 30
+    damage: 120
+    colors: [ 6C5F38, A49050, D2BF7E, ffffff ]
+    oscMag: 3
+    oscScl: 0.6
+chargeEffect: {
+  type: MultiEffect
+  effects: [
+{
+    type: SeqEffect
+    effects: [
+    {
+    type: WaveEffect
+    colorFrom: 6C5F38FF
+    colorTo: 6C5F38FF
+    sizeFrom: 20
+    sizeTo: 2
+    strokeFrom: 0
+    strokeTo: 6
+    lifetime: 60
+    interp: pow3In
+    }
+    {
+    type: WaveEffect
+    colorFrom: A49050FF
+    colorTo: A49050FF
+    sizeFrom: 40
+    sizeTo: 2
+    strokeFrom: 0
+    strokeTo: 6
+    lifetime: 60
+    interp: pow3In
+    }
+    {
+    type: WaveEffect
+    colorFrom: D2BF7EFF
+    colorTo: D2BF7EFF
+    sizeFrom: 80
+    sizeTo: 2
+    strokeFrom: 0
+    strokeTo: 6
+    lifetime: 60
+    interp: pow3In
+    }
+    ]
+    }
+{
+    type: ParticleEffect
+    baseLength: -120
+    length: 120
+    colorFrom: A49050FF
+    colorTo: A49050FF
+    sizeFrom: 0
+    sizeTo: 4
+    lifetime: 180
+    interp: exp5In
+    particles: 24
+}
+{
+    type: ParticleEffect
+    length: 0
+    colorFrom: A49050FF
+    colorTo: FFFFFFFF
+    sizeFrom: 0
+    sizeTo: 12
+    lifetime: 180
+    interp: smoother
+    particles: 1
+}
+{
+    type: ParticleEffect
+    baseLength: -120
+    length: 120
+    colorFrom: A49050FF
+    colorTo: FFFFFFFF
+    sizeFrom: 0
+    sizeTo: 8
+    lifetime: 180
+    interp: exp5In
+    particles: 38
+}
+{
+    type: ParticleEffect
+    baseLength: -40
+    length: 40
+    colorFrom: A49050FF
+    colorTo: A49050FF
+    sizeFrom: 0
+    sizeTo: 4
+    lifetime: 50
+    interp: pow2In
+    startDelay: 60
+    particles: 12
+}
+{
+    type: ParticleEffect
+    baseLength: -60
+    length: 60
+    colorFrom: A49050FF
+    colorTo: A49050FF
+    sizeFrom: 0
+    sizeTo: 2
+    lifetime: 30
+    interp: pow3In
+    startDelay: 100
+    particles: 30
+}
+{
+    type: ParticleEffect
+    baseLength: -120
+    length: 120
+    colorFrom: A49050FF
+    colorTo: A49050FF
+    sizeFrom: 0
+    sizeTo: 6
+    lifetime: 60
+    interp: pow3In
+    startDelay: 120
+    particles: 12
+}
+{
+    type: ParticleEffect
+    baseLength: -20
+    length: 20
+    colorFrom: A49050FF
+    colorTo: A49050FF
+    sizeFrom: 0
+    sizeTo: 4
+    lifetime: 25
+    interp: pow2In
+    startDelay: 20
+    particles: 10
+}
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 80
+    interp: exp5Out
+    colorFrom: A49050FF
+    colorTo: A4905000
+    strokeFrom: 4
+    strokeTo: 1
+    lifetime: 180
+}
+]
+}
+}
+
+research: {
+    parent: cmtc-trt-03-joust
+    planet: dkv-candemor
+}
+researchCostMultiplier: 1
+
+
+
+

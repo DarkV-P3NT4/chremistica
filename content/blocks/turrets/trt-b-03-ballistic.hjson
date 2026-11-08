@@ -1,0 +1,149 @@
+type: ItemTurret
+
+name: "Ballistic"
+description: "Launches powerful missiles reaching over vast distances, tracking down enemy targets in the way."
+
+health: 2850
+size: 4
+maxAmmo: 75
+ammoPerShot: 15
+reload: 600
+liquidCapacity: 150
+
+buildTime: 680
+requirements: [ titanium/60 ]
+category: turret
+outlineColor: 161C2D
+
+shootSound: shootScathe
+recoil: 2
+range: 1280
+trackingRange: 1440
+shootEffect: shootBigColor
+smokeEffect: shootSmokeMissileColor
+inaccuracy: 0
+shootY: 0
+shootCone: 0.5
+minWarmup: 0.94
+shootWarmupSpeed: 0.04
+coolantMultiplier: 3
+shake: 10
+rotateSpeed: 0.8
+targetUnderBlocks: false
+unitSort: strongest
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: false
+    allowLiquid: true
+    amount: 0.5
+}
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "reshined-"
+    parts: [
+{
+    type: RegionPart
+    suffix: "-blade"
+    mirror: true
+    progress: {
+    type: warmup
+    ops: [
+    { op: curve, interp: pow2Out }
+    ]
+    }
+    heatProgress: warmup
+    heatColor: 8B74A9FF
+    moveRot: -15
+    moveX: 2
+    moveY: 2.5
+    moves: [
+{
+    type: PartMove
+    rot: -10
+    x: 0.5
+    y: -1.25
+    progress: recoil
+}
+    ]
+    children: [
+    {
+    type: RegionPart
+    suffix: "-side"
+    mirror: true
+    under: false
+    heatColor: 8B74A9FF
+    heatProgress: recoil
+    progress: {
+    type: warmup
+    ops: [
+    { op: delay, amount: 0.4 }
+    { op: curve, interp: pow2Out }
+    ]
+    }
+    moveX: 1
+    moveY: -3
+    moves: [
+    {
+    type: PartMove
+    rot: -12.5
+    x: 1
+    y: 1.5
+    progress: {
+    type: recoil
+    ops: [
+    { op: curve, interp: smooth2 }
+    ]
+    }
+    }
+    ]
+    }
+    ]
+}
+{
+    type: RegionPart
+    suffix: "-mid"
+    under: true
+    mirror: false
+    heatProgress: warmup
+    progress: recoil
+    moveY: -3
+    heatColor: 8B74A9FF
+}
+    ]
+}
+
+
+ammoTypes: {
+itm-09-obsidian: {
+    type: BasicBulletType
+    collidesAir: false
+    width: 10
+    height: 10
+    damage: 26
+    lifetime: 44
+    speed: 4
+    ammoMultiplier: 6
+    buildingDamageMultiplier: 0.3
+    armorMultiplier: 1.3
+    frontColor: F4F4F4FF
+    backColor: B3B3B3FF
+    trailColor: B3B3B3FF
+    hitColor: F4F4F4FF
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    trailLength: 4
+}
+    }
+
+research: {
+    parent: cmtc-trt-06-barrel
+    planet: dkv-candemor
+}
+
+researchCostMultiplier: 1
+
+
+
+

@@ -1,0 +1,266 @@
+type: ItemTurret
+
+name: "Silo [T1]"
+description: "Fires missiles at enemy targets in a shooting pattern."
+
+health: 750
+size: 2
+maxAmmo: 20
+ammoPerShot: 2
+reload: 50
+
+buildTime: 200
+requirements: [ cmtc-itm-01-quartz/15, graphite/30, cmtc-itm-06-aluminum/25 ]
+category: turret
+outlineColor: 000000
+
+shootSound: shootMissileLong
+soundPitchMin: 0.9
+soundPitchMax: 1
+recoil: 0
+range: 240
+trackingRange: 320
+shootEffect: [ shootBigColor, vaporSmall ]
+smokeEffect: shootBigSmoke
+inaccuracy: 0
+rotateSpeed: 0
+rotate: false
+shootY: 0
+shootCone: 360
+shake: 1.5
+minWarmup: 0.9
+shootWarmupSpeed: 0.05
+warmupMaintainTime: 120
+elevation: 0
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: false
+    allowLiquid: true
+    amount: 0.1
+}
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+    parts: [
+    {
+        type: RegionPart
+        suffix: "-lid"
+        progress: warmup
+        moveX: 3.25
+        moveY: 3.25
+    }
+  ]
+}
+
+shoot: {
+    type: ShootBarrel
+    shots: 2
+    barrels: [
+    0, 0, 0
+    0, 0, 180
+    0, 0, 90
+    0, 0, 270
+  ]
+}
+
+ammoTypes: {
+
+graphite: {
+    type: MissileBulletType
+    width: 8
+    height: 8
+    shrinkY: 0
+    damage: 22
+    splashDamage: 17.5
+    splashDamageRadius: 24
+    lifetime: 80
+    speed: 3.5
+    drag: -0.003
+    homingPower: 0.12
+    homingRange: 120
+    frontColor: 95ABD9FF
+    backColor: 626F9BFF
+    trailColor: 626F9BFF
+    hitColor: 95ABD9FF
+    trailLength: 4
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 24
+    strokeFrom: 2
+    strokeTo: 0.1
+    lifetime: 12
+    colorFrom: 95ABD9FF
+    colorTo: 95ABD9FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 1
+    lifetime: 16
+    colorFrom: 95ABD9FF
+    colorTo: 95ABD9FF
+    interp: pow3Out
+    particles: 10
+    length: 16
+}
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 0
+    lifetime: 16
+    colorFrom: 95ABD9FF
+    colorTo: 95ABD9FF
+    interp: pow3Out
+    particles: 5
+    length: 15
+    line: true
+}
+    ]
+    despawnEffect: none
+    hitSound: explosion
+    despawnSound: explosion
+    hitShake: 1
+}
+
+silicon: {
+    type: MissileBulletType
+    width: 10
+    height: 10
+    shrinkY: 0
+    damage: 25
+    splashDamage: 17.5
+    splashDamageRadius: 24
+    lifetime: 80
+    speed: 3.5
+    drag: -0.003
+    homingPower: 0.2
+    homingRange: 120
+    frontColor: 8E9097FF
+    backColor: 767A84FF
+    trailColor: 767A84FF
+    hitColor: 8E9097FF
+    trailLength: 6
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 24
+    strokeFrom: 2
+    strokeTo: 0
+    lifetime: 12
+    colorFrom: 8E9097FF
+    colorTo: 8E9097FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 1
+    lifetime: 16
+    colorFrom: 8E9097FF
+    colorTo: 8E909700
+    colorInterp: exp5In
+    interp: pow3Out
+    particles: 10
+    length: 16
+}
+{
+    type: ParticleEffect
+    sizeFrom: 8
+    sizeTo: 3
+    strokeFrom: 6
+    strokeTo: 0
+    lifetime: 16
+    colorFrom: 8E9097FF
+    colorTo: 8E909700
+    interp: pow3Out
+    particles: 5
+    length: 15
+    line: true
+}
+    ]
+    despawnEffect: none
+    hitSound: explosion
+    despawnSound: explosion
+    hitShake: 1
+}
+
+cmtc-itm-09-obsidian: {
+    type: MissileBulletType
+    width: 10
+    height: 10
+    shrinkY: 0
+    damage: 40
+    splashDamage: 20
+    splashDamageRadius: 28
+    lifetime: 80
+    speed: 3.5
+    drag: -0.003
+    homingPower: 0.2
+    homingRange: 120
+    frontColor: 9773B3FF
+    backColor: 6B557DFF
+    trailColor: 6B557DFF
+    hitColor: 9773B3FF
+    trailLength: 6
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 28
+    strokeFrom: 2
+    strokeTo: 0
+    lifetime: 12
+    colorFrom: 6B557DFF
+    colorTo: 6B557DFF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 1
+    lifetime: 16
+    colorFrom: 6B557DFF
+    colorTo: 6B557D00
+    colorInterp: exp5In
+    interp: pow3Out
+    particles: 10
+    length: 28
+}
+{
+    type: ParticleEffect
+    sizeFrom: 8
+    sizeTo: 3
+    strokeFrom: 6
+    strokeTo: 0
+    lifetime: 16
+    colorFrom: 6B557DFF
+    colorTo: 6B557D00
+    interp: pow3Out
+    particles: 5
+    length: 28
+    line: true
+}
+    ]
+    despawnEffect: none
+    hitSound: explosion
+    despawnSound: explosion
+    hitShake: 1
+}
+}
+
+research: {
+    parent: cmtc-trt-02-trip
+    planet: dkv-candemor
+}
+
+researchCostMultiplier: 0.25
+
+
+
+

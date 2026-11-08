@@ -1,0 +1,71 @@
+type: PowerTurret
+
+name: "Joust"
+description: "Fires quick lasers at enemy targets."
+
+health: 800
+size: 2
+reload: 15
+squareSprite: false
+
+buildTime: 300
+requirements: [ cmtc-itm-01-quartz/30, cmtc-itm-02-ruined-tin/45, cmtc-itm-04-iron-ingot/20 ]
+category: turret
+outlineColor: 1E0D0D
+
+hasPower: true
+
+consumes: {
+    power: 1
+}
+
+shootSound: shootLocus
+soundPitchMin: 0.9
+soundPitchMax: 1.1
+recoil: 1.5
+range: 148
+trackingRange: 180
+shootEffect: none
+smokeEffect: lancerLaserShootSmoke
+inaccuracy: 0
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: false
+    allowLiquid: true
+    amount: 0.15
+}
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+}
+
+shootType: {
+
+    type: LaserBulletType
+    laserEffect: lancerLaserShootSmoke
+    hitEffect: hitLancer
+    length: 150
+    width: 15
+    sideAngle: 90
+    sideWidth: 1
+    sideLength: 20
+    damage: 25
+    pierce: true
+    laserAbsorb: true
+    pierceCap: 3
+    pierceBuilding: true
+    buildingDamageMultiplier: 0.3
+    colors: [ A49050, D2BF7E, ffffff ]
+}
+
+research: {
+    parent: cmtc-trt-01-slope
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.25
+
+
+
+

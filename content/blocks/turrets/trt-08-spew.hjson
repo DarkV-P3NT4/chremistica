@@ -1,0 +1,130 @@
+type: LiquidTurret
+
+name: "Spew"
+description: "Fires pressurized liquids with high velocity."
+
+health: 800
+size: 2
+liquidCapacity: 60
+consumeAmmoOnce: false
+ammoPerShot: 1
+reload: 60
+squareSprite: false
+
+buildTime: 180
+requirements: [ cmtc-itm-01-quartz/100, cmtc-itm-02-ruined-tin/20, cmtc-itm-04-iron-ingot/10, cmtc-itm-06-aluminum/30 ]
+category: turret
+outlineColor: 1E0D0D
+
+recoil: 0
+range: 160
+trackingRange: 160
+shootEffect: shootLiquid
+smokeEffect: none
+inaccuracy: 20
+shootCone: 50
+shootSound: shootLiquid
+shootSoundVolume: 0.5
+loopSound: none
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+}
+
+shoot: {
+    shots: 30
+    shotDelay: 1
+}
+
+ammoTypes: {
+
+water: {
+    type: LiquidBulletType
+    liquid: water
+    orbSize: 3.5
+    drag: 0.01
+    layer: 98
+    knockback: 2.5
+    impact: true
+    lifetime: 21
+    speed: 8
+    hitColor: 596ab8
+}
+
+slag: {
+    type: LiquidBulletType
+    liquid: slag
+    orbSize: 3
+    drag: 0.01
+    reloadMultiplier: 0.9
+    statusDuration: 480
+    status: melting
+    knockback: 1.8
+    impact: true
+    lifetime: 21
+    damage: 4
+    speed: 8
+    hitColor: ffa166
+}
+
+cmtc-lqd-01-liquid-sulfur: {
+    type: LiquidBulletType
+    liquid: cmtc-lqd-01-liquid-sulfur
+    orbSize: 3
+    drag: 0.01
+    knockback: 1.65
+    impact: true
+    lifetime: 21
+    lifeScaleRandMin: 0.5
+    lifeScaleRandMax: 1.1
+    damage: 1
+    speed: 8
+    hitColor: CAB773
+    status: cmtc-sts-13-sulfur-coated
+    statusDuration: 180
+    fragBullets: 1
+
+fragBullet: {
+    type: BasicBulletType
+    instantDisappear: true
+    createChance: 0.5
+    splashDamage: 25
+    splashDamageRadius: 20
+    despawnEffect: blastExplosion
+    hitEffect: blastExplosion
+    knockback: 1.5
+    collidesAir: false
+    status: burning
+    statusDuration: 180
+    }
+}
+
+cmtc-lqd-02-liquid-aluminum: {
+    type: LiquidBulletType
+    liquid: cmtc-lqd-02-liquid-aluminum
+    orbSize: 3
+    drag: 0.01
+    reloadMultiplier: 0.75
+    statusDuration: 480
+    status: cmtc-sts-08-ruined-i
+    knockback: 1
+    impact: true
+    lifetime: 21
+    damage: 2
+    speed: 8
+    hitColor: F4F4F4
+}
+}
+
+research: {
+    parent: cmtc-trt-01-slope
+    planet: dkv-candemor
+    objectives: [ pmp-01-dull-pump ]
+}
+
+researchCostMultiplier: 0.25
+
+
+
+

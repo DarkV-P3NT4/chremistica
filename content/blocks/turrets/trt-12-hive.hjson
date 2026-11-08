@@ -1,0 +1,183 @@
+type: ItemTurret
+
+name: "Hive"
+description: "Fires a floating disc that fires mini-missiles in an area."
+
+health: 890
+size: 3
+maxAmmo: 20
+ammoPerShot: 5
+reload: 240
+
+buildTime: 300
+requirements: [ titanium/60, cmtc-itm-07-refined-tin/80, cmtc-itm-09-obsidian/40, cmtc-itm-06-aluminum/60 ]
+category: turret
+outlineColor: 1E0D0D
+
+shootSound: shootBreach
+soundPitchMin: 1.1
+soundPitchMax: 1.3
+recoil: 2.5
+range: 200
+trackingRange: 240
+shootEffect: shootBigColor
+smokeEffect: shootBigSmoke
+inaccuracy: 2
+shootY: 0
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: false
+    allowLiquid: true
+    amount: 0.3
+}
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+
+ammoParts: {
+
+cmtc-itm-09-obsidian: [
+{
+    type: RegionPart
+    suffix: "-disc-obsidian"
+    under: true
+    y: 3
+    moveY: -7
+    progress: {
+    type: reload
+    ops: [
+{
+    op: curve
+    interp: exp5In
+}
+    ]
+}
+}
+    ]
+}
+}
+
+
+ammoTypes: {
+
+cmtc-itm-09-obsidian: {
+    type: BasicBulletType
+    sprite: cmtc-cannonball
+    width: 8
+    height: 8
+    spin: 1
+    shrinkY: 0
+    collides: false
+    damage: 0
+    splashDamage: 0
+    speed: 1
+    lifetime: 200
+    frontColor: 9773B3FF
+    backColor: 6B557DFF
+    trailColor: 6B557DFF
+    hitColor: 9773B3FF
+    despawnEffect: shockwave
+    hitEffect: none
+    hittable: false
+    absorbable: false
+    reflectable: false
+    intervalBullets: 4
+    bulletInterval: 30
+    intervalDelay: 30
+    intervalSpread: 90
+    intervalRandomSpread: 0
+
+intervalBullet: {
+    type: MissileBulletType
+    width: 6
+    height: 8
+    shrinkY: 0
+    damage: 15
+    splashDamage: 20
+    splashDamageRadius: 20
+    knockback: 0.5
+    impact: true
+    homingPower: 0.2
+    homingRange: 80
+    homingDelay: 5
+    speed: 4
+    lifetime: 50
+    frontColor: 9773B3FF
+    backColor: 6B557DFF
+    trailColor: 6B557DFF
+    hitColor: 9773B3FF
+    despawnHit: true
+    trailLength: 12
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 28
+    strokeFrom: 2
+    strokeTo: 0
+    lifetime: 12
+    colorFrom: 6B557DFF
+    colorTo: 6B557DFF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 1
+    lifetime: 16
+    colorFrom: 6B557DFF
+    colorTo: 6B557D00
+    colorInterp: exp5In
+    interp: pow3Out
+    particles: 10
+    length: 28
+}
+{
+    type: ParticleEffect
+    sizeFrom: 8
+    sizeTo: 3
+    strokeFrom: 6
+    strokeTo: 0
+    lifetime: 16
+    colorFrom: 6B557DFF
+    colorTo: 6B557D00
+    interp: pow3Out
+    particles: 5
+    length: 28
+    line: true
+}
+    ]
+    fragBullets: 2
+    fragOnHit: true
+    fragOnDespawn: false
+    fragOnAbsorb: true
+fragBullet: {
+    type: BasicBulletType
+    damage: 15
+    height: 18
+    width: 12
+    lifetime: 8
+    speed: 8
+    pierce: true
+    pierceCap: 4
+    frontColor: 9773B3
+    backColor: 7C658F
+    hitEffect: none
+    despawnEffect: none
+}
+    }
+}
+    }
+
+research: {
+    parent: cmtc-trt-06-barrel
+    planet: dkv-candemor
+}
+
+researchCostMultiplier: 0.5
+
+
+
+

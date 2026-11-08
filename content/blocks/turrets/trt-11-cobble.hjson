@@ -1,0 +1,104 @@
+type: ItemTurret
+
+name: "Cobble"
+description: "Fires clusters of artillery shells at enemy targets."
+
+health: 820
+size: 2
+maxAmmo: 20
+ammoPerShot: 2
+reload: 90
+squareSprite: false
+
+buildTime: 220
+requirements: [ cmtc-itm-01-quartz/80, titanium/40, cmtc-itm-04-iron-ingot/25, graphite/90, cmtc-itm-09-obsidian/30 ]
+category: turret
+outlineColor: 1E0D0D
+
+shootSound: shootRipple
+recoil: 1.5
+cooldownTime: 60
+range: 340
+trackingRange: 420
+shootEffect: shootBigColor
+smokeEffect: shootBigSmoke
+inaccuracy: 12
+velocityRnd: 0.25
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: false
+    allowLiquid: true
+    amount: 0.1
+}
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+}
+
+shoot: {
+    shots: 8
+}
+
+ammoTypes: {
+
+graphite: {
+    type: ArtilleryBulletType
+    sprite: shell
+    collidesTiles: false
+    height: 16
+    width: 16
+    shrinkY: 0
+    ammoMultiplier: 2
+    splashDamageRadius: 24
+    splashDamage: 25
+    knockback: 0.8
+    lifetime: 106.25
+    speed: 3.2
+    hitShake: 3
+    trailColor: 7E90BFFF
+    trailLength: 10
+    frontColor: 95ABD9FF
+    backColor: 7E90BFFF
+    hitColor: 95ABD9FF
+    hitEffect: [ flakExplosion, shockwaveSmaller ]
+    despawnEffect: hitBulletColor
+    lifeScaleRandMin: 0.85
+    lifeScaleRandMax: 1.1
+    }
+
+silicon: {
+    type: ArtilleryBulletType
+    sprite: shell
+    collidesTiles: false
+    height: 16
+    width: 16
+    shrinkY: 0
+    ammoMultiplier: 2
+    splashDamageRadius: 24
+    splashDamage: 25
+    knockback: 0.8
+    lifetime: 106.25
+    homingPower: 0.1
+    homingRange: 80
+    speed: 3.2
+    hitShake: 3
+    frontColor: 8E9097FF
+    backColor: 767A84FF
+    trailColor: 767A84FF
+    hitColor: 8E9097FF
+    trailLength: 10
+    hitEffect: [ flakExplosion, shockwaveSmaller ]
+    despawnEffect: hitBulletColor
+    lifeScaleRandMin: 0.85
+    lifeScaleRandMax: 1.1
+    }
+    }
+
+research: {
+    parent: cmtc-trt-02-trip
+    planet: dkv-candemor
+}
+
+researchCostMultiplier: 0.5

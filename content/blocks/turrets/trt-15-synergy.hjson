@@ -1,0 +1,103 @@
+type: ItemTurret
+
+name: "Synergy"
+description: "Fires statuseffect bullets at enemy targets. Best used with other turrets."
+
+health: 1150
+size: 3
+maxAmmo: 30
+ammoPerShot: 3
+reload: 30
+squareSprite: false
+
+buildTime: 120
+requirements: [ silicon/30, cmtc-itm-07-refined-tin/10, cmtc-itm-09-obsidian/30, cmtc-itm-10-darkite/20 ]
+category: turret
+outlineColor: 1E0D0D
+
+shootSound: shootSynergy
+soundPitchMin: 0.8
+soundPitchMax: 1
+recoil: 2
+recoilTime: 45
+cooldownTime: 40
+range: 200
+trackingRange: 240
+shootEffect: shootBigColor
+smokeEffect: shootBigSmoke
+inaccuracy: 3
+shootY: 6
+velocityRnd: 0.1
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: false
+    allowLiquid: true
+    amount: 0.3
+}
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+    parts: [
+{
+    type: RegionPart
+    suffix: "-barrel"
+    under: true
+    moveY: -2
+    progress: recoil
+}
+{
+    type: RegionPart
+    suffix: "-gilded"
+    under: true
+    mirror: true
+    moveY: -1
+    moveX: 0.25
+    progress: recoil
+}
+    ]
+}
+
+shoot: {
+    shots: 3
+    shotDelay: 3
+}
+
+ammoTypes: {
+
+surge-alloy: {
+    type: BasicBulletType
+    height: 10
+    width: 8
+    ammoMultiplier: 1
+    rangeChange: 16
+    splashDamageRadius: 37.8
+    splashDamage: 30
+    lifetime: 36
+    damage: 10
+    buildingDamageMultiplier: 0.3
+    speed: 5
+    lightning: 6
+    lightningLength: 7
+    lightningDamage: 5
+    frontColor: FCF387FF
+    backColor: E8D174FF
+    trailColor: E8D174FF
+    trailLength: 6
+    hitColor: FCF387FF
+    hitEffect: flakExplosionBig
+    despawnEffect: hitBulletColor
+}
+    }
+
+research: {
+    parent: cmtc-trt-06-barrel
+    planet: dkv-candemor
+}
+
+researchCostMultiplier: 1
+
+
+
+

@@ -1,0 +1,157 @@
+type: ItemTurret
+
+name: "Barrel"
+description: "Fires bullets at enemy targets in a rapid fire spread. High ammo efficiency but weak to armored."
+
+health: 800
+size: 2
+maxAmmo: 30
+ammoPerShot: 1
+reload: 12
+squareSprite: false
+
+buildTime: 180
+requirements: [ cmtc-itm-01-quartz/25, cmtc-itm-02-ruined-tin/10, cmtc-itm-06-aluminum/30 ]
+category: turret
+outlineColor: 1E0D0D
+
+shootSound: shootDiffuse
+soundPitchMin: 1
+soundPitchMax: 1.1
+recoil: 1
+range: 180
+trackingRange: 240
+shootEffect: shootBigColor
+smokeEffect: shootBigSmoke
+inaccuracy: 14
+targetGround: true
+targetAir: false
+velocityRnd: 0.22
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: false
+    allowLiquid: true
+    amount: 0.1
+}
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+}
+
+shoot: {
+    type: ShootAlternate
+    spread: 6
+    barrels: 2
+}
+
+ammoTypes: {
+
+itm-02-ruined-tin: {
+    type: BasicBulletType
+    collidesAir: false
+    width: 10
+    height: 10
+    damage: 12
+    lifetime: 44
+    speed: 4
+    ammoMultiplier: 3
+    buildingDamageMultiplier: 0.3
+    armorMultiplier: 1.5
+    frontColor: DCC18FFF
+    backColor: 837356FF
+    trailColor: 837356FF
+    hitColor: DCC18FFF
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    trailLength: 4
+    fragBullets: 3
+
+fragBullet: {
+    type: BasicBulletType
+    collidesAir: false
+    width: 5
+    height: 5
+    damage: 4
+    lifetime: 22
+    speed: 3
+    buildingDamageMultiplier: 0.3
+    frontColor: F4F4F4FF
+    backColor: B3B3B3FF
+    trailColor: B3B3B3FF
+    hitColor: F4F4F4FF
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    }
+}
+
+itm-06-aluminum: {
+    type: BasicBulletType
+    collidesAir: false
+    width: 10
+    height: 10
+    damage: 26
+    lifetime: 44
+    speed: 4
+    ammoMultiplier: 6
+    buildingDamageMultiplier: 0.3
+    armorMultiplier: 1.3
+    frontColor: F4F4F4FF
+    backColor: B3B3B3FF
+    trailColor: B3B3B3FF
+    hitColor: F4F4F4FF
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    trailLength: 4
+}
+
+itm-07-refined-tin: {
+    type: BasicBulletType
+    collidesAir: false
+    width: 10
+    height: 10
+    damage: 21
+    lifetime: 44
+    speed: 4
+    ammoMultiplier: 4
+    buildingDamageMultiplier: 0.3
+    armorMultiplier: 1.5
+    frontColor: F4F4F4FF
+    backColor: B3B3B3FF
+    trailColor: B3B3B3FF
+    hitColor: F4F4F4FF
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    trailLength: 4
+    fragBullets: 6
+
+fragBullet: {
+    type: BasicBulletType
+    collidesAir: false
+    width: 5
+    height: 5
+    damage: 7
+    lifetime: 22
+    speed: 3
+    buildingDamageMultiplier: 0.3
+    frontColor: F4F4F4FF
+    backColor: B3B3B3FF
+    trailColor: B3B3B3FF
+    hitColor: F4F4F4FF
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
+    }
+}
+    }
+
+research: {
+    parent: cmtc-trt-02-trip
+    planet: dkv-candemor
+}
+
+researchCostMultiplier: 0.25
+
+
+
+

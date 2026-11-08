@@ -1,0 +1,80 @@
+type: PowerTurret
+
+name: "Shock"
+description: "Fires a giant shell that conjure an energy field in an area."
+
+health: 1000
+size: 3
+reload: 60
+squareSprite: false
+
+buildTime: 300
+requirements: [ graphite/60, cmtc-itm-07-refined-tin/50, cmtc-itm-04-iron-ingot/60, silicon/40 ]
+category: turret
+outlineColor: 1E0D0D
+
+hasPower: true
+
+consumes: {
+    power: 3.6
+}
+
+shootSound: shootArc
+soundPitchMin: 0.9
+soundPitchMax: 1.1
+recoil: 1.5
+range: 180
+trackingRange: 240
+shootEffect: sparkShoot
+smokeEffect: none
+inaccuracy: 0
+shootY: 3
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: false
+    allowLiquid: true
+    amount: 0.3
+}
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+}
+
+shoot: {
+    shots: 20
+    shotDelay: 1
+}
+
+shootType: {
+    type: LightningBulletType
+    collidesAir: true
+    buildingDamageMultiplier: 0.3
+    ammoMultiplier: 1
+    lightningLength: 30
+    damage: 10
+    lightningColor: D2BF7E
+
+lightningType: {
+    collidesAir: true
+    width: 0
+    hittable: false
+    buildingDamageMultiplier: 0.70
+    statusDuration: 30
+    status: cmtc-sts-06-dilemma-i
+    lifetime: 3
+    hitEffect: hitLancer
+    despawnEffect: none
+}
+    }
+
+research: {
+    parent: cmtc-trt-03-joust
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.25
+
+
+
+

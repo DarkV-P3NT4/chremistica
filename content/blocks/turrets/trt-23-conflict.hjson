@@ -1,0 +1,183 @@
+type: ItemTurret
+
+name: "Conflict"
+description: "Fires seared violium shells at enemy targets at far range, Best at single target but worse at groups."
+
+health: 1450
+size: 4
+maxAmmo: 25
+ammoPerShot: 5
+reload: 300
+squareSprite: false
+
+heatRequirement: 60
+maxHeatEfficiency: 1
+
+buildTime: 300
+requirements: [ silicon/80, cmtc-itm-07-refined-tin/70, graphite/90, cmtc-itm-11-essence-matter/100, cmtc-itm-14-violium-gem/80 ]
+category: turret
+outlineColor: 1E0D0D
+
+shootSound: shootSniper
+soundPitchMin: 0.8
+soundPitchMax: 1
+recoil: 2
+range: 340
+trackingRange: 420
+shootEffect: shootBigColor
+smokeEffect: [ shootBigSmoke, shootSmokeTitan ]
+inaccuracy: 0
+shootY: 12
+velocityRnd: 0
+shake: 5
+minWarmup: 0.94
+shootWarmupSpeed: 0.06
+shootCone: 1
+
+coolantMultiplier: 2
+
+consumes: {
+    power: 9
+}
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: false
+    allowLiquid: true
+    amount: 0.4
+}
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+    parts: [
+{
+    type: RegionPart
+    suffix: "-barrel"
+    under: true
+    moveY: 10
+    progress: warmup
+    moves: [
+    { type: PartMove, progress: recoil, y: -8 }
+]
+}
+{
+    type: RegionPart
+    suffix: "-wing"
+    mirror: true
+    moveY: 2
+    moveX: 2
+    moveRot: -15
+    progress: warmup
+    moves: [
+    { type: PartMove, progress: recoil, y: -2, rot: -5 }
+]
+}
+{
+    type: RegionPart
+    suffix: "-blade"
+    mirror: true
+    under: true
+    moveY: -1.5
+    moveX: 0.75
+    progress: warmup
+    moves: [
+    { type: PartMove, progress: recoil, y: -2 }
+]
+}
+]
+}
+
+ammoTypes: {
+
+itm-14-violium-gem: {
+    type: BasicBulletType
+    sprite: cmtc-hard-bullet
+    width: 16
+    height: 24
+    shrinkY: 0.25
+    frontColor: FFFFFFFF
+    backColor: B170C7FF
+    trailColor: 7C528AFF
+    hitColor: B170C7FF
+    trailLength: 24
+    trailWidth: 5
+    trailInterval: 1
+    trailEffect: shockwaveSmaller
+    damage: 1000
+    knockback: 5
+    impact: true
+    speed: 8
+    lifetime: 42
+    lightning: 20
+    lightningDamage: 5
+    lightningLength: 12
+    lightningLengthRand: 4
+    lightningColor: B170C7FF
+    ammoMultiplier: 1
+    pierceArmor: true
+    buildingDamageMultiplier: 0.1
+    shieldDamageMultiplier: 1.5
+    hitSound: blockExplodeElectric
+    despawnSound: none
+    hitEffect: [
+{
+    type: WaveEffect
+    colorFrom: B170C7FF
+    colorTo: 7C528AFF
+    sizeFrom: 1
+    sizeTo: 24
+    strokeFrom: 3.4
+    strokeTo: 0
+    interp: pow3Out
+    lifetime: 30
+}
+{
+    type: ParticleEffect
+    particles: 32
+    colorFrom: B170C7FF
+    colorTo: 7C528AFF
+    line: true
+    strokeFrom: 3
+    strokeTo: 0
+    sizeFrom: 4
+    sizeTo: 8
+    lenFrom: 16
+    lenTo: 8
+    sizeChangeStart: 12
+    lifetime: 36
+    length: 28
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    particles: 16
+    colorFrom: FFFFFFFF
+    colorTo: B170C7FF
+    line: true
+    strokeFrom: 3
+    strokeTo: 0
+    sizeFrom: 6
+    sizeTo: 8
+    lenFrom: 16
+    lenTo: 8
+    sizeChangeStart: 12
+    lifetime: 40
+    cone: 45
+    length: 44
+    interp: pow3Out
+}
+]
+    }
+}
+
+research: {
+    parent: cmtc-trt-21-amputate
+    planet: dkv-candemor
+}
+
+researchCostMultiplier: 1.5
+
+
+
+

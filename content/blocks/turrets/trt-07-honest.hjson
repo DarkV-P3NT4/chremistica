@@ -1,0 +1,81 @@
+type: PowerTurret
+
+name: "Honest"
+description: "[white]EXPERIMENTAL USE ONLY!!![] Shoots a thin but long ranged laser at enemy targets, 8%HP Damage"
+
+health: 1000
+size: 2
+reload: 150
+reloadWhileCharging: false
+moveWhileCharging: false
+squareSprite: false
+
+buildTime: 470
+requirements: [ cmtc-itm-01-quartz/80, cmtc-itm-07-refined-tin/50, cmtc-itm-04-iron-ingot/80 ]
+category: turret
+outlineColor: 1E0D0D
+
+hasPower: true
+
+consumes: {
+    power: 6.25
+}
+
+shootSound: shootLancer
+chargeSound: chargeLancer
+soundPitchMin: 0.9
+soundPitchMax: 1.1
+recoil: 1.5
+shake: 10
+range: 160
+trackingRange: 240
+shootEffect: none
+smokeEffect: lancerLaserShootSmoke
+inaccuracy: 0
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: false
+    allowLiquid: true
+    amount: 0.1
+}
+
+shoot: {
+    firstShotDelay: 40
+}
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+}
+
+shootType: {
+
+    type: LaserBulletType
+    laserEffect: lancerLaserShootSmoke
+    hitEffect: hitLancer
+    length: 160
+    width: 7.5
+    sideAngle: 30
+    sideWidth: 3.5
+    sideLength: 20
+    damage: 2500
+    maxDamageFraction: 0.08
+    buildingDamageMultiplier: 0.01
+    pierce: true
+    laserAbsorb: true
+    pierceCap: 2
+    chargeEffect: [ lancerLaserCharge, lancerLaserChargeBegin ]
+    buildingDamageMultiplier: 0.3
+    colors: [ BEBEBE, F4F4F4, ffffff ]
+}
+
+research: {
+    parent: cmtc-trt-03-joust
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.25
+
+
+
+

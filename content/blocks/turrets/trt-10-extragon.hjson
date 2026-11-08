@@ -1,0 +1,202 @@
+type: ItemTurret
+
+name: "Extragon"
+description: "Fires a powerful caliber with fragmented AP bullets... sometimes."
+
+health: 1100
+size: 3
+maxAmmo: 20
+ammoPerShot: 1
+reload: 60
+squareSprite: false
+
+buildTime: 280
+requirements: [ cmtc-itm-01-quartz/80, cmtc-itm-07-refined-tin/50, cmtc-itm-09-obsidian/40 ]
+category: turret
+outlineColor: 1E0D0D
+
+shootSound: shootExtragon
+soundPitchMin: 1
+soundPitchMax: 1.2
+recoil: 2.5
+cooldownTime: 40
+range: 200
+trackingRange: 240
+shootEffect: shootBigColor
+smokeEffect: shootBigSmoke
+inaccuracy: 2
+shootY: 5.25
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: false
+    allowLiquid: true
+    amount: 0.3
+}
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+    parts: [
+{
+    type: RegionPart
+    suffix: "-barrel"
+    under: true
+    moveY: -2
+progress: {
+    type: reload
+    ops: [
+    {
+        op: curve
+        interp: pow3In
+    }
+    ]
+}
+}
+    ]
+}
+
+ammoTypes: {
+
+graphite: {
+    type: BasicBulletType
+    createChance: 0.5
+    width: 16
+    height: 20
+    damage: 350
+    lifetime: 25
+    speed: 8
+    pierce: true
+    pierceCap: 5
+    buildingDamageMultiplier: 0.1
+    frontColor: 95ABD9FF
+    backColor: 626F9BFF
+    trailColor: 626F9BFF
+    hitColor: 95ABD9FF
+    trailLength: 8
+    hitEffect: [ hitBulletBig, hitBulletColor ]
+    despawnEffect: hitBulletColor
+    fragBullets: 8
+
+fragBullet: {
+    type: BasicBulletType
+    width: 10
+    height: 12
+    shrinkY: 1
+    damage: 60
+    pierceArmor: true
+    lifetime: 8
+    speed: 8
+    buildingDamageMultiplier: 0.1
+    pierce: true
+    pierceCap: 5
+    frontColor: 95ABD9FF
+    backColor: 626F9BFF
+    trailColor: 626F9BFF
+    hitColor: 95ABD9FF
+    hitEffect: hitBulletColor
+    despawnEffect: none
+    trailLength: 2
+    }
+}
+
+silicon: {
+    type: BasicBulletType
+    createChance: 0.5
+    width: 16
+    height: 20
+    damage: 300
+    lifetime: 25
+    speed: 8
+    pierce: true
+    pierceCap: 5
+    homingPower: 0.2
+    homingRange: 80
+    buildingDamageMultiplier: 0.1
+    frontColor: 8E9097FF
+    backColor: 767A84FF
+    trailColor: 767A84FF
+    hitColor: 8E9097FF
+    trailLength: 8
+    hitEffect: [ hitBulletBig, hitBulletColor ]
+    despawnEffect: hitBulletColor
+    fragBullets: 8
+
+fragBullet: {
+    type: BasicBulletType
+    width: 10
+    height: 12
+    shrinkY: 1
+    damage: 60
+    pierceArmor: true
+    lifetime: 8
+    speed: 8
+    homingPower: 0.2
+    homingRange: 80
+    buildingDamageMultiplier: 0.1
+    pierce: true
+    pierceCap: 5
+    frontColor: 8E9097FF
+    backColor: 767A84FF
+    trailColor: 767A84FF
+    hitColor: 8E9097FF
+    hitEffect: [ hitBulletColor, hitBulletBig ]
+    despawnEffect: none
+    trailLength: 2
+    }
+}
+
+cmtc-itm-09-obsidian: {
+    type: BasicBulletType
+    createChance: 0.5
+    width: 16
+    height: 20
+    damage: 440
+    lifetime: 25
+    speed: 8
+    pierce: true
+    pierceCap: 5
+    buildingDamageMultiplier: 0.1
+    reloadMultiplier: 0.8
+    frontColor: 9773B3FF
+    backColor: 6B557DFF
+    trailColor: 6B557DFF
+    hitColor: 9773B3FF
+    trailLength: 8
+    hitEffect: [ hitBulletBig, hitBulletColor ]
+    despawnEffect: hitBulletColor
+    fragBullets: 16
+
+fragBullet: {
+    type: BasicBulletType
+    width: 10
+    height: 12
+    shrinkY: 1
+    damage: 60
+    pierceArmor: true
+    lifetime: 8
+    speed: 8
+    buildingDamageMultiplier: 0.1
+    pierce: true
+    pierceCap: 5
+    frontColor: 9773B3FF
+    backColor: 6B557DFF
+    trailColor: 6B557DFF
+    hitColor: 9773B3FF
+    hitEffect: [ hitBulletColor, hitBulletBig ]
+    despawnEffect: none
+    trailLength: 2
+    }
+}
+    }
+
+research: {
+    parent: cmtc-trt-06-barrel
+    planet: dkv-candemor
+}
+
+researchCostMultiplier: 0.5
+
+
+
+
