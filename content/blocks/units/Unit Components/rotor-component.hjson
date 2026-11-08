@@ -1,0 +1,18 @@
+type: wall
+
+name: "Rotor Component"
+description: "a Component used for units that require for helicopters."
+
+health: 100
+size: 1
+buildTime: 30
+
+placeablePlayer: false
+squareSprite: false
+category: units
+databaseTag: components
+
+requirements: [
+  silicon/12
+  cmtc-itm-12-bromium/8
+]

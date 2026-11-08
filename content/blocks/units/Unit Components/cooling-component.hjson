@@ -1,0 +1,19 @@
+type: wall
+
+name: "Cooling Component"
+description: "a Component used for units that require for advanced machines."
+
+health: 100
+size: 1
+buildTime: 30
+
+placeablePlayer: false
+squareSprite: false
+category: units
+databaseTag: components
+
+requirements: [
+  cmtc-itm-06-aluminum/90
+  silicon/60
+  cmtc-itm-10-darkite/20
+]

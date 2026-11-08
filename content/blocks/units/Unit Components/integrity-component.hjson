@@ -1,0 +1,18 @@
+type: wall
+
+name: "Integrity Component"
+description: "a Component used for units that require for holding the unit's body in place."
+
+health: 100
+size: 1
+buildTime: 30
+
+placeablePlayer: false
+squareSprite: false
+category: units
+databaseTag: components
+
+requirements: [
+  cmtc-itm-09-obsidian/8
+  cmtc-itm-10-darkite/2
+]

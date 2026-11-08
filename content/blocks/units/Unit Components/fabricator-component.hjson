@@ -1,0 +1,19 @@
+type: wall
+
+name: "Fabricator Component"
+description: "a Component used for units that require for built in unit factory."
+
+health: 100
+size: 1
+buildTime: 30
+
+placeablePlayer: false
+squareSprite: false
+category: units
+databaseTag: components
+
+requirements: [
+  silicon/120
+  cmtc-itm-07-refined-tin/40
+  cmtc-itm-01-quartz/20
+]

@@ -1,0 +1,18 @@
+type: wall
+
+name: "Gravitron Component"
+description: "a Component used for units that require for walkers."
+
+health: 100
+size: 1
+buildTime: 30
+
+placeablePlayer: false
+squareSprite: false
+category: units
+databaseTag: components
+
+requirements: [
+  cmtc-itm-06-aluminum/8
+  silicon/12
+]

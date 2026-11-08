@@ -1,0 +1,19 @@
+type: wall
+
+name: "Absorber AI Chip"
+description: "The brain for the unit creation. able to rise the power of the absorber"
+
+health: 100
+size: 1
+buildTime: 30
+
+placeablePlayer: false
+squareSprite: false
+category: units
+databaseTag: components
+
+requirements: [
+  cmtc-itm-09-obsidian/2
+  cmtc-itm-07-refined-tin/4
+  silicon/8
+]
