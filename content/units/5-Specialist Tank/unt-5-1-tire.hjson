@@ -1,0 +1,96 @@
+type: tank
+name: "Tire"
+description: "Fires slow but powerful bullets at enemy targets."
+health: 780
+armor: 3
+hitSize: 12
+treadPullOffset: 3
+omniMovement: false
+rotateMoveFirst: true
+faceTarget: false
+outlineColor: 2F2724
+speed: 0.516
+drag: 0.56
+deathShake: 3
+rotateSpeed: 3
+itemCapacity: 0
+tankMoveSound: tankMoveSmall
+range: 180
+maxRange: 180
+knockbackMultiplier: 0.5
+floorMultiplier: 0.9
+
+immunities: [ cmtc-sts-02-deprived-i ]
+
+
+treadRects: [
+{
+    x: -20
+    y: -25
+    width: 14
+    height: 51
+    }
+]
+
+weapons: [
+  {
+    x: 0
+    y: 0
+    name: "tire-cannon"
+    reload: 75
+    rotate: true
+    mirror: false
+    rotateSpeed: 5
+    inaccuracy: 0
+    recoil: 2
+    recoilTime: 45
+    shootSound: shootStell
+    ejectEffect: casing2
+    shootY: 6
+    shootStatus: unmoving
+    shootStatusDuration: 30
+
+shoot: {
+    type: ShootAlternate
+    spread: 4
+}
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-hard-bullet
+    width: 10
+    height: 14
+    damage: 50
+    splashDamage: 30
+    splashDamageRadius: 12
+    knockback: 1.2
+    impact: true
+    lifetime: 36
+    speed: 5
+    keepVelocity: false
+    frontColor: 8B74A9FF
+    backColor: 503F65FF
+    trailColor: 503F65FF
+    hitColor: 8B74A9FF
+    hitEffect: [ squareWaveEffect,
+{
+    type: ParticleEffect
+    particles: 12
+    line: true
+    length: 12
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A9FF
+    sizeFrom: 2
+    sizeTo: 1.5
+    strokeFrom: 1.7
+    strokeTo: 1
+    lifetime: 20
+}
+]
+    despawnEffect: none
+    trailLength: 4
+    shootEffect: shootBigColor
+    smokeEffect: shootBigSmoke
+}
+    }
+]

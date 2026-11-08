@@ -1,0 +1,292 @@
+type: tank
+name: "Wheels"
+description: "Fires interval missiles up in high altitudes, each dropping falling payloads to rain from afar."
+
+health: 3600
+armor: 12
+hitSize: 26
+treadPullOffset: 3
+omniMovement: false
+rotateMoveFirst: true
+faceTarget: false
+outlineColor: 2F2724
+speed: 0.632
+drag: 0.56
+deathShake: 20
+rotateSpeed: 2.5
+itemCapacity: 0
+targetAir: true
+targetGround: true
+tankMoveSound: tankMove
+range: 300
+maxRange: 330
+crushDamage: 1
+knockbackMultiplier: 0.5
+floorMultiplier: 0.7
+immunities: [ cmtc-sts-02-deprived-i, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-06-dilemma-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii, blasted ]
+
+treadRects: [
+  [-42, -50, 14, 24],
+  [-22, -50, 18, 18],
+  [-28,  32, 24, 18]
+]
+
+abilities: [
+{
+    type: StatusFieldAbility
+    effect: cmtc-sts-03-speedy-iii
+    duration: 60
+    reload: 300
+    range: 80
+    onShoot: true
+    activeEffect: {
+    type: WaveEffect
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A900
+    sizeFrom: 0
+    sizeTo: 80
+    strokeFrom: 3
+    strokeTo: 3.5
+    lifetime: 60
+    interp: exp5Out
+    }
+    applyEffect: {
+    type: ParticleEffect
+    particles: 8
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A900
+    length: 48
+    interp: exp5Out
+    lifetime: 60
+    sizeFrom: 2
+    sizeTo: 3
+}
+    }
+]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: recoil
+    color: 503F65FF
+    colorTo: 8B74A9FF
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+
+weapons: [
+{
+    name: wheels-battery
+    useAttackRange: false
+    x: 0
+    y: 2
+    mirror: false
+    reload: 240
+    shootCone: 2.5
+    layerOffset: 0.1
+    recoil: 1
+    cooldownTime: 120
+    heatColor: 8B74A9FF
+    shootStatus: unmoving
+    shootStatusDuration: 120
+    shootSound: shootMissileLong
+    shake: 3
+    rotate: true
+    rotateSpeed: 2
+    rotationLimit: 270
+    recoilTime: 60
+
+shoot: {
+    type: ShootAlternate
+    shots: 5
+    barrels: 5
+    spread: 2
+    shotDelay: 12
+}
+
+parts: [
+    {
+      type: ShapePart
+      progress: warmup
+      y: 0
+      moveY: 16
+      radius: 0
+      radiusTo: 6
+      stroke: 0
+      strokeTo: 1.5
+      layer: 110
+      circle: false
+      sides: 4
+      hollow: true
+      color: AA91CBFF
+      rotateSpeed: 1.5
+    }
+    {
+      type: ShapePart
+      progress: warmup
+      y: 0
+      moveY: 16
+      radius: 0
+      radiusTo: 3
+      stroke: 0
+      strokeTo: 2
+      layer: 110
+      circle: false
+      sides: 3
+      color: AA91CBFF
+      rotation: -30
+    }
+    {
+      type: HaloPart
+      progress: warmup
+      y: 0
+      moveY: 16
+      layer: 110
+      color: AA91CBFF
+      shapes: 4
+      sides: 3
+      triLength: 0
+      triLengthTo: 4
+      haloRadius: 7
+      tri: true
+      radius: 3
+      hollow: true
+      haloRotateSpeed: 1.5
+    }
+]
+
+bullet: {
+    type: MissileBulletType
+    sprite: "cmtc-missile-huge"
+    width: 12
+    height: 15
+    hitSize: 8
+    shrinkY: 0
+    collidesGround: false
+    collidesAir: true
+    damage: 120
+    splashDamage: 150
+    splashDamageRadius: 28
+    knockback: 3.5
+    impact: true
+    homingPower: 0.15
+    homingDelay: 20
+    homingRange: 220
+    lifetime: 220
+    speed: 1.5
+    followAimSpeed: 1
+    drag: -0.0003
+    weaveMag: 4
+    weaveScale: 4
+    hittable: false
+    reflectable: false
+    absorbable: false
+    frontColor: AA91CBFF
+    backColor:  8B74A9FF
+    trailColor: 8B74A9FF
+    hitColor: AA91CBFF
+    smokeEffect: shootBigSmoke
+    shootEffect: [ shootBigColor, vaporSmall ]
+    trailLength: 12
+    bulletInterval: 15
+    despawnSound: explosionDull
+    despawnEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 30
+    strokeFrom: 3
+    strokeTo: 0
+    lifetime: 15
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A9FF
+    interp: pow3Out
+}
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 20
+    strokeFrom: 3
+    strokeTo: 0
+    lifetime: 20
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A9FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 5
+    sizeTo: 0
+    lifetime: 25
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A9FF
+    interp: pow3Out
+    particles: 8
+    length: 29
+}
+    ]
+    hitShake: 5
+
+intervalBullet: {
+    type: BasicBulletType
+    sprite: mine-bullet
+    width: 10
+    height: 10
+    shrinkY: 0.3
+    shrinkX: 0.3
+    spin: 1.5
+    lifetime: 50
+    speed: 1.2
+    homingPower: 0.1
+    homingRange: 220
+    velocityScaleRandMin: 0
+    velocityScaleRandMax: 1.5
+    collides: false
+    collidesAir: false
+    splashDamage: 35
+    splashDamageRadius: 20
+    buildingDamageMultiplier: 0.85
+    knockback: 0.8
+    frontColor: 8B74A9FF
+    backColor: 503F65FF
+    trailColor: 503F65FF
+    hitColor: 8B74A9FF
+    trailLength: 4
+    shootSound: shootHorizon
+    despawnSound: explosionArtillery
+    despawnShake: 2
+    despawnEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 22
+    strokeFrom: 3
+    strokeTo: 0
+    lifetime: 15
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A9FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 25
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A9FF
+    interp: pow3Out
+    particles: 8
+    length: 20
+}
+    ]
+    status: cmtc-sts-04-sluggish-iii
+    statusDuration: 30
+}
+    }
+}
+]

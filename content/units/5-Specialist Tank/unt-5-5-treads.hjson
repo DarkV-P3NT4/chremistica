@@ -1,0 +1,273 @@
+type: tank
+name: "Treads"
+description: "Fires powerful missiles at enemy targets over vast distances. Equipped with smaller mounts to attack nearby targets."
+
+health: 25000
+armor: 28
+hitSize: 50
+omniMovement: false
+rotateMoveFirst: true
+faceTarget: false
+outlineColor: 2F2724
+speed: 0.3676
+drag: 0.56
+deathShake: 65
+rotateSpeed: 1.25
+itemCapacity: 0
+targetAir: true
+targetGround: true
+tankMoveSound: tankMoveHeavy
+range: 1160
+maxRange: 1200
+crushDamage: 5
+knockbackMultiplier: 0.5
+floorMultiplier: 0.45
+targetPriority: 1
+alwaysShootWhenMoving: true
+
+immunities: [ cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-i, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-05-amplified-i, cmtc-sts-06-dilemma-iii, cmtc-sts-07-refined-i, cmtc-sts-07-refined-ii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii, burning ]
+
+treadRects: [
+  [-49, -109, 35, 32],
+  [-99,  -68, 15, 72],
+  [-97,   16, 14, 40],
+  [-84,   69, 38, 40],
+  [-32,   40, 25, 40]
+]
+
+abilities: []
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: recoil
+    color: 503F65FF
+    colorTo: 8B74A9FF
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+
+weapons: [
+{
+    name: treads-launcher
+    layerOffset: 0.1
+    x: 0
+    y: 0
+    shootSound: shootScathe
+    shake: 2.5
+    rotate: true
+    rotateSpeed: 1
+    shootCone: 0.1
+    recoil: 3
+    recoilTime: 360
+    recoilPow: 3
+    reload: 480
+    cooldownTime: 300
+    mirror: false
+    predictTarget: false
+    shootWarmupSpeed: 0.02
+    minWarmup: 0.95
+    smoothReloadSpeed: 0.3
+    heatColor: 8B74A9FF
+    shootStatus: unmoving
+    shootStatusDuration: 480
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: recoil
+    color: 503F65FF
+    colorTo: 8B74A9FF
+    blending: additive
+    outline: false
+    layer: -1
+}
+{
+    type: RegionPart
+    suffix: "-rocket"
+    under: true
+    y: -3.5
+    progress: warmup
+    moveY: 5.5
+    color: 00000000
+    colorTo: ffffffff
+moves: [
+{
+    type: PartMove
+    progress: reload
+    y: -5.5
+}
+]
+}
+{
+    type: RegionPart
+    suffix: "-blade"
+    progress: warmup
+    mirror: true
+    under: true
+    moveX: 0
+    moveY: 2
+    moveRot: -20
+    heatColor: 8B74A9FF
+moves: [
+{
+    type: PartMove
+    rot: -15
+    progress: {
+    type: recoil
+    ops: [
+{
+    op: curve
+    interp: exp5In
+    }
+    ]
+    }
+}
+]
+children: [
+{
+    type: RegionPart
+    suffix: "-blade-glow"
+    progress: recoil
+    color: 503F65FF
+    colorTo: 8B74A9FF
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+}
+]
+
+bullet: {
+    instantDisappear: true
+    rangeOverride: 1200
+    frontColor: 8B74A9FF
+    backColor: 503F65FF
+    trailColor: 503F65FF
+    hitColor: 8B74A9FF
+    shootEffect: shootBigColor
+    smokeEffect: shootSmokeMissileColor
+    damage: 0
+    spawnUnit: cmtc-tactical-arsenal-rocket
+}
+    }
+{
+    name: treads-gun
+    x: 21.25
+    y: 18.75
+    shootSound: shootStell
+    shootSoundVolume: 0.8
+    soundPitchMin: 1
+    soundPitchMax: 1.2
+    reload: 15
+    mirror: true
+    rotate: true
+    rotateSpeed: 3
+    controllable: false
+    autoTarget: true
+    shootCone: 2.5
+    predictTarget: false
+
+bullet: {
+    type: BasicBulletType
+    sprite: missile
+    width: 10
+    height: 16
+    damage: 20
+    splashDamage: 15
+    splashDamageRadius: 24.8
+    speed: 4
+    lifetime: 57
+    knockback: 1.2
+    impact: true
+    keepVelocity: false
+    rangeOverride: 228
+    frontColor: 8B74A9FF
+    backColor: 503F65FF
+    trailColor: 503F65FF
+    hitColor: 8B74A9FF
+    hitEffect: [ squareWaveEffect,
+{
+    type: ParticleEffect
+    particles: 12
+    line: true
+    length: 25
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A9FF
+    sizeFrom: 4
+    sizeTo: 1.5
+    strokeFrom: 3
+    strokeTo: 0
+    lifetime: 20
+    interp: pow3Out
+}
+]
+    despawnEffect: none
+    trailLength: 8
+    shootEffect: shootBigColor
+    smokeEffect: shootBigSmoke
+}
+    }
+{
+    name: treads-gun
+    x: 19.5
+    y: -16.5
+    shootSound: shootStell
+    shootSoundVolume: 0.8
+    soundPitchMin: 1
+    soundPitchMax: 1.2
+    reload: 20
+    mirror: true
+    rotate: true
+    rotateSpeed: 3
+    controllable: false
+    autoTarget: true
+    shootCone: 2.5
+    predictTarget: false
+
+bullet: {
+    type: BasicBulletType
+    sprite: missile
+    width: 10
+    height: 16
+    damage: 20
+    splashDamage: 15
+    splashDamageRadius: 24.8
+    knockback: 1.2
+    impact: true
+    speed: 4
+    lifetime: 57
+    keepVelocity: false
+    rangeOverride: 228
+    frontColor: 8B74A9FF
+    backColor: 503F65FF
+    trailColor: 503F65FF
+    hitColor: 8B74A9FF
+    hitEffect: [ squareWaveEffect,
+{
+    type: ParticleEffect
+    particles: 12
+    line: true
+    length: 25
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A9FF
+    sizeFrom: 4
+    sizeTo: 1.5
+    strokeFrom: 3
+    strokeTo: 0
+    lifetime: 20
+    interp: pow3Out
+}
+]
+    despawnEffect: none
+    trailLength: 8
+    shootEffect: shootBigColor
+    smokeEffect: shootBigSmoke
+}
+    }
+]
