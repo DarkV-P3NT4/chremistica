@@ -1,0 +1,105 @@
+type: tank
+name: "Cover"
+description: "Shoots Homing Intercepting Bullets at enemy projectiles, can damage enemy targets, Capable of building"
+health: 1200
+armor: 5
+hitSize: 20
+treadPullOffset: 0
+treadFrames: 16
+omniMovement: false
+rotateMoveFirst: true
+faceTarget: false
+outlineColor: 492C20
+speed: 1
+drag: 0.56
+deathShake: 8
+rotateSpeed: 3
+buildSpeed: 0.3
+itemCapacity: 0
+tankMoveSound: tankMoveSmall
+knockbackMultiplier: 0.5
+floorMultiplier: 0.8
+commands: [move, enterPayload, rebuild, assist]
+
+immunities: [ cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-14-bromine-burns, cmtc-sts-13-sulfur-coated ]
+
+
+treadRects: [
+  [-24, -48, 19, 16]
+  [-45, -22, 21, 32]
+  [-42,  29, 31, 16]
+]
+
+abilities: [
+{
+    type: ShieldArcAbility
+    radius: 28
+    angle: 90
+    max: 150
+    chanceDeflect: 1
+    reflectTime: 1
+    reflectBuildingDamage: 0.5
+    missileUnitMultiplier: 0.9
+    pushDiffLayer: false
+    regen: 1.25
+    cooldown: 240
+    whenShooting: false
+    color: D47BC4
+}
+]
+
+weapons: [
+{
+    type: BuildWeapon
+    name: "lock-build"
+    x: 10.5
+    y: -3
+    rotateSpeed: 5
+    mirror: true
+}
+{
+    type: PointDefenseBulletWeapon
+    name: "cover-gun"
+    mirror: false
+    x: 0
+    y: 0
+    targetSwitchInterval: 2
+    targetInterval: 1
+    layerOffset: 0.1
+    mirror: false
+    reload: 15
+    shootSound: shootDuo
+    recoil: 0.5
+    rotateSpeed: 5
+    shootY: 10.5
+
+shoot: {
+    type: ShootAlternate
+    barrels: 2
+    spread: 5
+}
+
+bullet: {
+    rangeOverride: 148
+    type: InterceptorBulletType
+    width: 8
+    height: 12
+    frontColor: D47BC4FF
+    backColor: 9D4E8EFF
+    trailColor: 9D4E8EFF
+    hitColor: D47BC4FF
+    damage: 30
+    buildingDamageMultiplier: 0.01
+    speed: 4
+    lifetime: 46.25
+    shootEffect: sparkShoot
+    smokeEffect: colorSpark
+    hitEffect: [ pointHit, hitSquaresColor ]
+    despawnEffect: none
+    trailLength: 6
+    homingPower: 0.15
+    homingRange: 148
+    homingDelay: 15
+    }
+}
+]

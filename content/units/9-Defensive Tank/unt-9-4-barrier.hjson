@@ -1,0 +1,232 @@
+type: tank
+name: "Barrier"
+description: "Fires an Array of weak disarming spreadshots at enemy targets, Seconary mounts can pull targets closer, Capable of Building, Less affected by liquid drag."
+health: 11000
+armor: 15
+hitSize: 36
+treadPullOffset: 3
+treadFrames: 18
+omniMovement: false
+rotateMoveFirst: true
+faceTarget: false
+outlineColor: 492C20
+speed: 0.5
+drag: 0.56
+deathShake: 25
+rotateSpeed: 2
+buildSpeed: 0.8
+itemCapacity: 0
+tankMoveSound: tankMoveSmall
+knockbackMultiplier: 0.5
+floorMultiplier: 0.5
+targetAir: false
+commands: [move, enterPayload, rebuild, assist]
+
+immunities: [ cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-08-ruined-i, cmtc-sts-14-bromine-burns, cmtc-sts-13-sulfur-coated, sts-15-corrupted-precision, disarmed ]
+
+crushDamage: 0.6
+
+treadRects: [
+{
+    x: -70
+    y: -30
+    width: 22
+    height: 96
+    }
+{
+    x: -62
+    y: -76
+    width: 22
+    height: 36
+    }
+{
+    x: -30
+    y: -76
+    width: 22
+    height: 36
+    }
+]
+
+abilities: [
+{
+    type: ForceFieldAbility
+    radius: 120
+    max: 1500
+    regen: 2
+    cooldown: 1080
+    sides: 6
+}
+]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: recoil
+    color: 9D4E8EFF
+    colorTo: AD69A1FF
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+
+weapons: [
+{
+    name: barrier-shotgun
+    layerOffset: 0.2
+    x: 0
+    y: 0
+    mirror: false
+    rotate: true
+    rotateSpeed: 1.5
+    shootCone: 30
+    reload: 240
+    recoil: 2
+    shootSound: shootTank
+    shake: 5
+    minWarmup: 0.9
+    heatColor: AD69A1FF
+
+shoot: {
+    type: ShootSpread
+    shots: 12
+    spread: 3.75
+}
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-barrel"
+    mirror: false
+    under: true
+    outline: true
+    moveY: 4
+    progress: warmup
+    moves: [
+    {
+    type: PartMove
+    progress: recoil
+    y: -6
+    }
+    ]
+}
+{
+    type: RegionPart
+    suffix: -side
+    mirror: true
+    under: true
+    progress: warmup
+    moveRot: -90
+    moveX: 11.5
+    moveY: 6
+    moves: [
+    {
+    type: PartMove
+    progress: recoil
+    y: -3
+    }
+    ]
+    children: [
+{
+    type: RegionPart
+    suffix: "-side-glow"
+    progress: recoil
+    color: 9D4E8EFF
+    colorTo: AD69A1FF
+    blending: additive
+    outline: false
+    mirror: true
+    layer: -1
+}
+]
+}
+{
+    type: RegionPart
+    suffix: -cover
+    mirror: true
+    under: true
+    outline: true
+    moveY: -2.5
+    moveX: 5
+    progress: warmup
+}
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: recoil
+    color: 9D4E8EFF
+    colorTo: AD69A1FF
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+
+bullet: {
+    type: BasicBulletType
+    sprite: "cmtc-hard-bullet"
+    width: 8
+    height: 10
+    shrinkY: 0.1
+    frontColor: D47BC4FF
+    backColor: 9D4E8EFF
+    trailColor: 9D4E8EFF
+    hitColor: D47BC4FF
+    trailLength: 12
+    damage: 25
+    splashDamage: 25
+    status: disarmed
+    statusDuration: 60
+    speed: 4
+    lifetime: 30
+    knockback: 5
+    shootEffect: shootBigColor
+    smokeEffect: shootSmokeSquareSparse
+    hitEffect: hitSquaresColor
+    despawnEffect: hitSquaresColor
+    hitSound: shootArc
+    hitSoundVolume: 0.15
+}
+}
+{
+    name: barrier-jets
+    x: 13.5
+    y: 11
+    shootSound: shootSublimate
+    continuous: true
+    alwaysContinuous: true
+    rotate: true
+    rotateSpeed: 2.25
+    alternate: false
+    layerOffset: 0.1
+
+bullet: {
+    type: ContinuousFlameBulletType
+    rangeOverride: 180
+    damage: 6
+    length: 180
+    knockback: -1
+    pierce: true
+    pierceCap: 1
+    buildingDamageMultiplier: 0.75
+    collidesAir: true
+    colors: [ "79436F", "8D5483", "AD69A1", "D47BC4", "EDB8E3" ]
+    armorMultiplier: 1.15
+    pierceArmor: false
+    flareColor: EDB8E3
+    flareRotSpeed: 3.5
+    flareLength: 15
+    hitEffect: hitFlameBeam
+    hitColor: EDB8E3
+}
+    }
+{
+    type: BuildWeapon
+    name: "lock-build"
+    x: 16
+    y: -11.75
+    rotateSpeed: 5
+    mirror: true
+}
+]

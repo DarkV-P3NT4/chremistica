@@ -1,0 +1,79 @@
+type: tank
+name: "Lock"
+description: "Prioritizes kinetic bullets and shoot down quickly, Capable of building"
+health: 680
+armor: 4
+hitSize: 12
+treadPullOffset: 4
+treadFrames: 16
+omniMovement: false
+rotateMoveFirst: true
+faceTarget: false
+outlineColor: 492C20
+speed: 1
+drag: 0.56
+deathShake: 3
+rotateSpeed: 3
+buildSpeed: 0.2
+itemCapacity: 0
+tankMoveSound: tankMoveSmall
+knockbackMultiplier: 0.5
+floorMultiplier: 0.9
+commands: [move, enterPayload, rebuild, assist]
+
+immunities: [ cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-10-interrupted-iii, cmtc-sts-14-bromine-burns ]
+
+
+treadRects: [
+{
+    x: -20
+    y: -29
+    width: 10
+    height: 8
+    }
+{
+    x: -26
+    y: -14
+    width: 8
+    height: 24
+    }
+{
+    x: -16
+    y: 5
+    width: 14
+    height: 24
+    }
+]
+
+weapons: [
+{
+    type: BuildWeapon
+    name: "lock-build"
+    x: -4.5
+    y: -3.25
+    rotateSpeed: 5
+    mirror: false
+}
+{
+    type: PointDefenseWeapon
+    name: "lock-point"
+    mirror: false
+    x: 0
+    y: 0
+    color: "AD69A1FF"
+    targetSwitchInterval: 2
+    targetInterval: 1
+    layerOffset: 0.1
+    mirror: false
+    reload: 45
+    shootSound: shootSegment
+    recoil: 0.5
+
+bullet: {
+    maxRange: 148
+    damage: 50
+    shootEffect: sparkShoot
+    hitEffect: pointHit
+    }
+}
+]
