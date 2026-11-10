@@ -150,6 +150,7 @@ bullet: {
     backColor: 503F65FF
     trailColor: 503F65FF
     hitColor: 8B74A9FF
+    speed: 0
     shootEffect: shootBigColor
     smokeEffect: shootSmokeMissileColor
     damage: 0
