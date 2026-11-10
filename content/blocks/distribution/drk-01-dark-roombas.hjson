@@ -1,0 +1,44 @@
+type: StackConveyor
+name: Dark Roombas
+description: "A bunch of roombas are created from these conveyor belts, They can transport batches of items into the unload destination. [darkgray]WHO NAMED THESE?![]"
+speed: 0.075
+itemCapacity: 20
+health: 300
+category: distribution
+research: cmtc-blk-01-tube
+requirements: [
+  cmtc-itm-10-darkite/2
+  cmtc-itm-09-obsidian/1
+]
+consumes: {
+  power: 0.0166666666666
+}
+baseEfficiency: 0.1
+conductivePower: true
+loadEffect: [
+{
+  type: WaveEffect
+  sizeFrom: 0
+  sizeTo: 4
+  strokeFrom: 1.5
+  strokeTo: 0.1
+  colorFrom: 33293DFF
+  colorTo: 33293DFF
+  lifetime: 15
+  interp: pow2Out
+}
+]
+unloadEffect: [
+{
+  type: WaveEffect
+  sizeFrom: 0
+  sizeTo: 4
+  strokeFrom: 1.5
+  strokeTo: 0.1
+  colorFrom: 33293DFF
+  colorTo: 33293DFF
+  lifetime: 15
+  interp: pow2Out
+}
+]
+researchCostMultiplier: 1.15

@@ -1,0 +1,23 @@
+type: UnitCargoLoader
+name: "Trojan Transport Bay"
+description: "A transport bay used to transfer batches of items at far distances."
+size: 3
+squareSprite: false
+unitType: cmtc-unt-xt2-kahya
+unitBuildTime: 300
+consumes: {
+  power: 0.5
+  liquids: [ cmtc-lqd-03-liquid-nitrogen/0.4, cmtc-gas-01-steam/0.2 ]
+}
+polyColor: 9FC6EDFF
+polyRadius: 8
+itemCapacity: 300
+category: distribution
+buildTime: 120
+requirements: [
+  silicon/140
+  titanium/25
+  cmtc-itm-07-refined-tin/90
+  cmtc-itm-10-darkite/50
+]
+researchCostMultiplier: 1

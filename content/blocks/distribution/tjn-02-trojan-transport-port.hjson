@@ -1,0 +1,13 @@
+type: UnitCargoUnloadPoint
+name: "Trojan Transporter Port"
+description: Kahya will put the items down here, make sure to add item filter to it
+itemCapacity: 300
+size: 2
+category: distribution
+requirements: [
+  silicon/140
+  titanium/25
+  cmtc-itm-07-refined-tin/90
+  cmtc-itm-10-darkite/50
+]
+researchCostMultiplier: 1
