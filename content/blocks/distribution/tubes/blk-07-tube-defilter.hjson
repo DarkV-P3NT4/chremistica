@@ -1,0 +1,12 @@
+type: Sorter
+invert: true
+name: "Tube Defilter"
+description: "Accepts any items forward and kicks away the Item selected."
+category: distribution
+research: cmtc-blk-06-tube-filter
+requirements: [
+  cmtc-itm-01-quartz/3
+  cmtc-itm-02-ruined-tin/3
+]
+researchCostMultiplier: 0.5
+health: 300

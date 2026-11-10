@@ -1,0 +1,15 @@
+type: Router
+name: "Tube Flipper"
+description: "Flips the Tube Destination on 3 Outputs."
+details: "The gods had feared the router, but have they met it's cousin?"
+size: 1
+speed: 2.5
+health: 450
+itemCapacity: 1
+requirements: [
+  cmtc-itm-01-quartz/3
+]
+squareSprite: false
+category: distribution
+research: cmtc-blk-02-tube-crosswork
+researchCostMultiplier: 0.5

@@ -1,0 +1,11 @@
+type: OverflowGate
+name: "Tube Inclusion Gate"
+description: "If a path forward is blocked, escorts items at the sides."
+category: distribution
+research: cmtc-blk-06-tube-filter
+requirements: [
+  cmtc-itm-01-quartz/5
+  cmtc-itm-02-ruined-tin/4
+]
+researchCostMultiplier: 0.5
+health: 300

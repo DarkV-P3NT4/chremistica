@@ -1,0 +1,13 @@
+type: Junction
+name: "Tube Crosswork"
+description: "Allows the Tubes to pass eachother."
+health: 300
+size: 1
+speed: 2.5
+requirements: [
+  cmtc-itm-01-quartz/2
+]
+squareSprite: false
+category: distribution
+research: cmtc-blk-01-tube
+researchCostMultiplier: 0.5

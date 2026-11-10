@@ -1,0 +1,12 @@
+type: OverflowGate
+name: "Tube Exclusion Gate"
+description: "If the sides are blocked, escorts the Items forward."
+category: distribution
+invert: true
+research: cmtc-blk-08-tube-inclusion-gate
+requirements: [
+  cmtc-itm-01-quartz/5
+  cmtc-itm-02-ruined-tin/4
+]
+researchCostMultiplier: 0.5
+health: 300

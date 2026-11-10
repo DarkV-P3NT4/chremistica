@@ -1,0 +1,13 @@
+type: Duct
+name: "Tube"
+description: "Moves items forward. Your only source of transportation."
+category: distribution
+alwaysUnlocked: true
+research: cmtc-asp-core-circuit
+speed: 2.5
+health: 300
+bridgeReplacement: cmtc-blk-05-tube-connector
+requirements: [
+  cmtc-itm-01-quartz/1
+]
+junctionReplacement: cmtc-blk-02-tube-crosswork

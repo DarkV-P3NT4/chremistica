@@ -1,0 +1,15 @@
+type: Router
+name: "Tube Randomizer"
+description: "It's just a bigger Tube Flipper, outputs 7 directions."
+size: 2
+health: 650
+speed: 2.5
+itemCapacity: 12
+requirements: [
+  cmtc-itm-01-quartz/6
+  cmtc-itm-02-ruined-tin/6
+]
+squareSprite: false
+category: distribution
+research: cmtc-blk-03-tube-flipper
+researchCostMultiplier: 0.5

@@ -1,0 +1,11 @@
+type: Sorter
+name: "Tube Filter"
+description: "Accepts selected items forward and kicks away the items that are not selected."
+category: distribution
+research: cmtc-blk-05-tube-connector
+requirements: [
+  cmtc-itm-01-quartz/3
+  cmtc-itm-02-ruined-tin/3
+]
+researchCostMultiplier: 0.5
+health: 300

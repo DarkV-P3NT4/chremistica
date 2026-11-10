@@ -1,0 +1,14 @@
+type: Duct
+name: "Armored Tube"
+description: "Moves items forward. Your only source of transportation. Does not accept Non-tube inputs."
+category: distribution
+armored: true
+research: cmtc-blk-01-tube
+speed: 2.5
+health: 450
+bridgeReplacement: cmtc-blk-05-tube-connector
+requirements: [
+  cmtc-itm-01-quartz/2
+  cmtc-itm-06-aluminum/1
+]
+junctionReplacement: cmtc-blk-02-tube-crosswork

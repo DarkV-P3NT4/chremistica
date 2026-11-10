@@ -1,0 +1,15 @@
+type: DuctBridge
+name: "Tube Connector"
+description: "Transport items over terrain."
+health: 350
+size: 1
+requirements: [
+  cmtc-itm-01-quartz/4
+  cmtc-itm-02-ruined-tin/2
+] 
+category: distribution
+research: cmtc-blk-03-tube-flipper
+squareSprite: false
+range: 6
+speed: 2.5
+researchCostMultiplier: 0.5
