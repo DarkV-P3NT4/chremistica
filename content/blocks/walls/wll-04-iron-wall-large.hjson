@@ -1,0 +1,20 @@
+type: wall
+
+name: "Large Iron Wall"
+description: "Protects structures from enemy projectiles. a Durable Wall."
+
+health: 2160
+
+size: 2
+buildTime: 28
+requirements: [
+  cmtc-itm-04-iron-ingot/24
+]
+
+researchCostMultiplier: 0.5
+research: {
+    parent: cmtc-wll-03-iron-wall
+    planet: dkv-candemor
+}
+
+category: defense

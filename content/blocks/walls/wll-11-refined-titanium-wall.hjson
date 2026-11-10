@@ -1,0 +1,21 @@
+type: wall
+
+name: "Refined Titanium Wall"
+description: "Protects structures from enemy projectiles. an even harder Wall."
+
+health: 750
+
+size: 1
+buildTime: 4
+requirements: [
+  titanium/6
+  cmtc-itm-07-refined-tin/3
+]
+
+researchCostMultiplier: 0.5
+research: {
+    parent: cmtc-wll-09-obsidian-wall
+    planet: dkv-candemor
+}
+
+category: defense

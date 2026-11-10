@@ -1,0 +1,20 @@
+type: wall
+
+name: "Large Refined Tin Wall"
+description: "Protects structures from enemy projectiles. a more durable quicker wall."
+
+health: 620
+
+size: 2
+buildTime: 12
+requirements: [
+  cmtc-itm-07-refined-tin/24
+]
+
+researchCostMultiplier: 0.5
+research: {
+    parent: cmtc-wll-07-refined-tin-wall
+    planet: dkv-candemor
+}
+
+category: defense

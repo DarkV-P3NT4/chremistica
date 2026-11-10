@@ -1,0 +1,20 @@
+type: wall
+
+name: "Iron Wall"
+description: "Protects structures from enemy projectiles. a Durable Wall."
+
+health: 540
+
+size: 1
+buildTime: 7
+requirements: [
+  cmtc-itm-04-iron-ingot/6
+]
+
+researchCostMultiplier: 0.5
+research: {
+    parent: cmtc-wll-01-quartz-wall
+    planet: dkv-candemor
+}
+
+category: defense

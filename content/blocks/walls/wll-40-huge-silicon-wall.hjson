@@ -1,0 +1,20 @@
+type: wall
+
+name: "Huge Silicon Wall"
+description: "Protects structures from enemy projectiles. Can block electric arcs but interrupt automatic power connection."
+
+health: 4500
+
+size: 3
+buildTime: 24
+requirements: [
+  silicon/54
+]
+
+researchCostMultiplier: 0.5
+research: {
+    parent: wll-06-silicon-wall-large
+    planet: dkv-candemor
+}
+insulated: true
+category: defense

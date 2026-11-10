@@ -1,0 +1,20 @@
+type: wall
+
+name: "Quartz Wall"
+description: "Protects structures from enemy projectiles. a Cheap Deploying Wall."
+
+health: 400
+
+size: 1
+buildTime: 4
+requirements: [
+  cmtc-itm-01-quartz/6
+]
+
+researchCostMultiplier: 0.5
+research: {
+    parent: cmtc-trt-01-slope
+    planet: dkv-candemor
+}
+
+category: defense

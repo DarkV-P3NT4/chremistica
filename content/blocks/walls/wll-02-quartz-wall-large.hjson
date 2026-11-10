@@ -1,0 +1,20 @@
+type: wall
+
+name: "Large Quartz Wall"
+description: "Protects structures from enemy projectiles. a Cheap Deploying Wall."
+
+health: 1600
+
+size: 2
+buildTime: 16
+requirements: [
+  cmtc-itm-01-quartz/24
+]
+
+researchCostMultiplier: 0.5
+research: {
+    parent: cmtc-wll-01-quartz-wall
+    planet: dkv-candemor
+}
+
+category: defense

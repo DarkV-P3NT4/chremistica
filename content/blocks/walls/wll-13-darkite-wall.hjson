@@ -1,0 +1,24 @@
+type: wall
+
+name: "Darkite Wall"
+description: "Protects structures from enemy projectiles. Corrupted magic starts to reflect back."
+
+health: 1000
+
+size: 1
+buildTime: 4.5
+requirements: [
+  cmtc-itm-10-darkite/6
+  cmtc-itm-09-obsidian/1
+]
+
+chanceDeflect: 15
+deflectSound: shieldHit
+
+researchCostMultiplier: 0.75
+research: {
+    parent: cmtc-wll-09-obsidian-wall
+    planet: dkv-candemor
+}
+
+category: defense

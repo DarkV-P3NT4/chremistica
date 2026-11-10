@@ -1,0 +1,48 @@
+type: wall
+
+name: "Large Obsidian Wall"
+description: "Protects structures from enemy projectiles. Explodes to shards dealing damage."
+
+health: 3400
+
+size: 2
+buildTime: 20
+requirements: [
+  cmtc-itm-09-obsidian/32
+]
+
+researchCostMultiplier: 0.5
+research: {
+    parent: cmtc-wll-09-obsidian-wall
+    planet: dkv-candemor
+}
+
+destroySound: shootFuse
+destroySoundVolume: 0.2
+destroyBullet: {
+  type: BasicBulletType
+    damage: 6
+    speed: 0.1
+    lifetime: 0.5
+    hitEffect: explosion
+    smokeEffect: smoke
+    fragBullets: 18
+    fragVelocityMin: 0.8
+    fragVelocityMax: 1.5
+    fragBullet: {
+      type: BasicBulletType
+      damage: 80
+      height: 18
+      width: 12
+      lifetime: 8
+      speed: 8
+      pierce: true
+      pierceCap: 4
+      frontColor: 9773B3
+      backColor: 7C658F
+      hitEffect: none
+      despawnEffect: none
+    }
+  }
+
+category: defense
