@@ -1,0 +1,18 @@
+type: PayloadLoader
+name: Refined Payload Station
+description: Loads items or liquids into the block, as long as it has storage capacity.
+size: 3
+category: units
+research: cmtc-pld-19-refined-light-conveyor
+requirements: [
+    cmtc-itm-09-obsidian/60
+    silicon/50
+    graphite/20
+    cmtc-itm-07-refined-tin/60
+    cmtc-itm-01-quartz/100
+]
+buildTime: 120
+consumes: {
+    power: 1
+}
+regionSuffix: "-refined"

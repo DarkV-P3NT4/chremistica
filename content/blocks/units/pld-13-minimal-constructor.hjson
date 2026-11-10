@@ -1,0 +1,49 @@
+type: Constructor
+
+name: "Minimal Constructor"
+description: "Constructs the listed blocks/components as payload form."
+
+health: 800
+size: 3
+buildTime: 150
+category: units
+
+requirements: [
+    cmtc-itm-01-quartz/100
+    cmtc-itm-02-ruined-tin/100
+    silicon/75
+    cmtc-itm-09-obsidian/25
+]
+
+minBlockSize: 1
+maxBlockSize: 1
+configurable: true
+regionSuffix: "-refined"
+buildSpeed: 1
+filter: [
+    cmtc-wll-01-quartz-wall,
+    cmtc-wll-03-iron-wall,
+    cmtc-wll-05-silicon-wall,
+    cmtc-wll-07-refined-tin-wall,
+    cmtc-wll-09-obsidian-wall,
+    cmtc-ai-chip-generalist,
+    cmtc-ai-chip-scouter,
+    cmtc-ai-chip-specialist,
+    cmtc-ai-chip-absorber,
+    cmtc-ai-chip-supporter,
+    cmtc-ai-chip-assaulter
+    cmtc-multileg-component,
+    cmtc-sustain-component,
+    cmtc-gravitron-component,
+    cmtc-mandible-component,
+    cmtc-rotor-component
+]
+
+consumes: {
+    power: 2
+}
+
+research: {
+    parent: cmtc-pld-17-refined-heavy-conveyor
+    planet: dkv-candemor
+}

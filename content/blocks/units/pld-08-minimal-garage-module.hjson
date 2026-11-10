@@ -1,0 +1,20 @@
+type: UnitAssemblerModule
+name: Minimalist Garage Module
+description: Increases the tier of the garage bay by 1.
+size: 3
+category: units
+research: cmtc-pld-01-generalist-garage-bay
+requirements: [
+  silicon/300
+  cmtc-itm-09-obsidian/150
+  cmtc-itm-07-refined-tin/200
+  graphite/500
+  cmtc-itm-04-iron-ingot/300
+]
+buildTime: 300
+consumes: {
+  power: 1
+}
+tier: 1
+regionSuffix: "-refined"
+researchCostMultiplier: 0.5

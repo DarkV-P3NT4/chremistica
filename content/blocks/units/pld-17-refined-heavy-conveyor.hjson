@@ -1,0 +1,16 @@
+type: PayloadConveyor
+name: Refined Heavy Payload Conveyor
+description: Capable of carrying large payloads to another machine.
+size: 3
+category: units
+research: cmtc-pld-19-refined-light-conveyor
+requirements: [
+    cmtc-itm-09-obsidian/40
+    silicon/40
+    graphite/20
+]
+buildTime: 60
+canOverdrive: false
+moveTime: 50
+payloadLimit: 4
+researchCostMultiplier: 0.5

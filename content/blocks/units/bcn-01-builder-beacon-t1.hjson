@@ -1,0 +1,21 @@
+type: UnitCargoLoader
+name: "Builder Beacon [T1]"
+description: "A magical beacon that constructs a beacon orb."
+size: 3
+unitType: unt-xt-101-builder-beacon-orb-i
+unitBuildTime: 7200
+consumes: {
+  power: 1.5
+  liquids: [ lqd-03-liquid-nitrogen/0.6, gas-02-sulfur-gas/0.2 ]
+}
+polyColor: 7BCD83FF
+polyRadius: 4
+itemCapacity: 0
+category: units
+buildTime: 300
+squareSprite: false
+requirements: [
+  cmtc-itm-09-obsidian/120
+  cmtc-itm-07-refined-tin/80
+  cmtc-itm-10-darkite/80
+]

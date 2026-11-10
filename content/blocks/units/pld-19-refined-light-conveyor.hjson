@@ -1,0 +1,16 @@
+type: PayloadConveyor
+name: Refined Light Payload Conveyor
+description: Capable of carrying small payloads to another machine.
+size: 1
+category: units
+research: cmtc-pld-01-generalist-garage-bay
+requirements: [
+    cmtc-itm-09-obsidian/15
+    silicon/25
+    graphite/10
+]
+buildTime: 15
+canOverdrive: false
+moveTime: 20
+payloadLimit: 1.5
+researchCostMultiplier: 0.5
