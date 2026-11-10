@@ -1,0 +1,129 @@
+type: crawl
+name: "Mauna"
+description: "Defends the serverware core, Capable of mining and building. Able to traverse through rough terrrain easily."
+details: "The third and final core unit of Candemor."
+
+health: 1260
+armor: 6
+hitSize: 19.5
+speed: 1.5
+range: 212
+itemCapacity: 60
+drawBody: false
+drawCell: true
+segments: 3
+segmentMag: 1
+segmentScl: 4
+segmentMaxRot: 40
+rotateSpeed: 4
+omniMovement: false
+isEnemy: false
+coreUnitDock: true
+controller: CommandAI
+mineSpeed: 9
+mineTier: 4
+mineBeamOffset: 12
+buildSpeed: 1
+buildBeamOffset: 14
+rotateToBuilding: false
+drag: 0.24
+outlineColor: 2F2724
+canDrown: false
+floorMultiplier: 0
+faceTarget: false
+targetAir: true
+mineWalls: true
+hovering: true
+targetBuildingsMobile: false
+knockbackMultiplier: 0
+
+research: {
+    parent: cmtc-asp-core-circuit
+    planet: dkv-candemor
+    requiresUnlock: false
+}
+
+abilities: [
+{
+    type: RegenAbility
+    amount: 1
+    }
+]
+
+weapons: [
+{
+    name: "mauna-rocket"
+    x: 6.5
+    y: -1.5
+    reload: 42
+    recoil: 1
+    mirror: true
+    rotate: true
+    rotateSpeed: 4
+    shootSound: shootMissileShort
+    inaccuracy: 3
+    velocityRnd: 0.1
+    alternate: false
+
+bullet: {
+    type: BasicBulletType
+    sprite: missile
+    keepVelocity: false
+    damage: 30
+    splashDamage: 40
+    splashDamageRadius: 32
+    buildingDamageMultiplier: 0.01
+    knockback: 0.5
+    impact: true
+    speed: 8
+    lifetime: 26.5
+    height: 15
+    width: 10
+    hitSize: 8
+    homingPower: 0.1
+    homingRange: 80
+    hitEffect: [ 
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 34
+    colorFrom: FFD37FFF
+    colorTo: FFD37FFF
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 20
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 6
+    sizeTo: 0
+    lifetime: 20
+    colorFrom: FFD37FFF
+    colorTo: FFD37FFF
+    interp: pow3Out
+    particles: 4
+    length: 30
+    sizeChangeStart: 10
+}
+    ]
+    despawnEffect: {
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 20
+    colorFrom: FFD37FFF
+    colorTo: FFD37FFF
+    interp: pow3Out
+    particles: 8
+    length: 25
+    sizeChangeStart: 10
+}
+    shrinkY: 0
+    frontColor: FFD37FFF
+    backColor: D4816BFF
+    trailColor: D4816BFF
+    trailLength: 9
+}
+    }
+]
