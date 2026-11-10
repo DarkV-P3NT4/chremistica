@@ -1,0 +1,44 @@
+type: Pump
+name: Refined Pump
+description: Pumps and extracts liquid from liquid tiles. The refined quality demands power consumption.
+size: 2
+health: 450
+category: liquid
+liquidCapacity: 144
+squareSprite: false
+research: cmtc-pmp-01-dull-pump
+requirements: [
+  cmtc-itm-06-aluminum/30
+  cmtc-itm-07-refined-tin/20
+  cmtc-itm-01-quartz/40
+  cmtc-itm-09-obsidian/10
+  titanium/40
+]
+buildTime: 60
+pumpAmount: 0.15
+consumes: {
+    power: 0.5
+}
+researchCostMultiplier: 0.5
+
+drawer: {
+  type: DrawMulti
+drawers: [
+{
+    type: DrawRegion
+    suffix: -bottom
+}
+{
+    type: DrawPumpLiquid
+}
+{
+    type: DrawRegion
+    suffix: -rotator
+    spinSprite: true
+    rotateSpeed: 6
+}
+{
+    type: DrawDefault
+}
+]
+}

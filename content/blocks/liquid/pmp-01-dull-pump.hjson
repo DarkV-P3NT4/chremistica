@@ -1,0 +1,17 @@
+type: Pump
+name: Dull Pump
+description: Pumps and extracts liquid from liquid tiles. due to its Dull condition it has no need for extra cost.
+size: 1
+health: 300
+category: liquid
+liquidCapacity: 24
+squareSprite: false
+research: cmtc-asp-core-circuit
+requirements: [
+  cmtc-itm-06-aluminum/20
+  cmtc-itm-02-ruined-tin/15
+  cmtc-itm-01-quartz/20
+]
+buildTime: 15
+pumpAmount: 0.1
+researchCostMultiplier: 0.25
