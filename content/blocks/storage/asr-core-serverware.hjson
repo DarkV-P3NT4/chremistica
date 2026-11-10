@@ -1,0 +1,24 @@
+type: CoreBlock
+name: Core: Serverware
+description: Core of the base. Heavily armored and stores a massive amount of items.
+requirements: [
+  cmtc-itm-14-violium-gem/2000
+  cmtc-itm-07-refined-tin/4000
+  cmtc-itm-10-darkite/3000
+  cmtc-itm-09-obsidian/3000
+  silicon/5000
+]
+isFirstTier: false
+size: 5
+squareSprite: true
+alwaysUnlocked: false
+unitType: cmtc-unt-a1-3-core-mauna
+health: 18000
+itemCapacity: 18000
+unitCapModifier: 36
+category: effect
+research: {
+  planet: dkv-candemor
+  parent: asq-core-array
+}
+thrusterLength: 14

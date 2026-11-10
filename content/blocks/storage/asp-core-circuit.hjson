@@ -1,0 +1,23 @@
+type: CoreBlock
+name: Core: Circuit
+description: Core of the base. Armored and stores a medium amount of items.
+requirements: [
+  cmtc-itm-01-quartz/1200
+  cmtc-itm-02-ruined-tin/800
+]
+isFirstTier: true
+size: 3
+squareSprite: true
+alwaysUnlocked: true
+unitType: cmtc-unt-a1-1-core-mayon
+health: 3500
+itemCapacity: 5000
+unitCapModifier: 12
+category: effect
+research: {
+  planet: dkv-candemor
+  root: true
+  name: Candemor
+  requiresUnlock: false
+}
+thrusterLength: 7

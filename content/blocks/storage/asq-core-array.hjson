@@ -1,0 +1,23 @@
+type: CoreBlock
+name: Core: Array
+description: Core of the base. Well-armored and stores a large amount of items.
+requirements: [
+  cmtc-itm-01-quartz/2500
+  cmtc-itm-07-refined-tin/2000
+  cmtc-itm-06-aluminum/2500
+  cmtc-itm-09-obsidian/3000
+]
+isFirstTier: false
+size: 4
+squareSprite: true
+alwaysUnlocked: false
+unitType: cmtc-unt-a1-2-core-fiji
+health: 8000
+itemCapacity: 11000
+unitCapModifier: 24
+category: effect
+research: {
+  planet: dkv-candemor
+  parent: asp-core-circuit
+}
+thrusterLength: 10.5
