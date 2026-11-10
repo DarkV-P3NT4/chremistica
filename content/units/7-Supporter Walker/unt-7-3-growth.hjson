@@ -199,6 +199,7 @@ barrels: [
 bullet: {
     instantDisappear: true
     damage: 0
+    speed: 0
     smokeEffect: shootBigSmoke
     shootEffect: [ shootBigColor, vaporSmall ]
     frontColor: 7BCD83FF
