@@ -1,0 +1,59 @@
+type: ConsumeGenerator
+name: "Sulfuric Chamber"
+description: "Generates power from both Sulfur Gas and Liquid Sulfur, Don't ask me how but it's dangerous when destroyed."
+
+size: 2
+health: 500
+category: power
+
+buildTime: 60
+requirements: [
+  cmtc-itm-06-aluminum/45
+  cmtc-itm-02-ruined-tin/20
+  cmtc-itm-01-quartz/50
+]
+
+consumes: {
+  liquids: [  gas-02-sulfur-gas/0.25, lqd-01-liquid-sulfur/0.3 ]
+}
+
+powerProduction: 2.5
+generateEffect: [ generatespark, pulverize ]
+ambientSound: loopBio
+ambientSoundVolume: 0.2
+
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawDefault
+    }
+    { 
+      type: DrawRegion
+      suffix: -rotator
+      rotateSpeed: -8
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -top
+    }
+    {
+      type: DrawSoftParticles
+      color: "E7D182"
+      color2: "CAB773"
+      particleSize: 5
+      particleRad: 5
+      particles: 8
+    }
+    {
+      type: DrawRegion
+      suffix: -cap
+    }
+  ]
+}
+research: {
+    parent: cmtc-pwr-10-combustion-chamber
+    objectives: [ cmtc-itm-05-sulfur ]
+}
+researchCostMultiplier: 0.25

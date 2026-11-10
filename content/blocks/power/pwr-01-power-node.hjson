@@ -1,0 +1,17 @@
+type: PowerNode
+name: "Power Node"
+description: "Transfers power from one to another power block. has limited connections."
+size: 1
+squareSprite: false
+laserRange: 8
+maxNodes: 8
+laserColor1: C3C3C3FF
+laserColor2: 7E7E7EFF
+health: 300
+requirements: [
+  cmtc-itm-01-quartz/3
+  cmtc-itm-02-ruined-tin/2
+]
+category: power
+research: cmtc-pwr-10-combustion-chamber
+researchCostMultiplier: 0.1

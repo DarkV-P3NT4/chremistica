@@ -1,0 +1,72 @@
+type: ConsumeGenerator
+name: "Mixture Chamber"
+description: "Consumes Sulfur and Sand to generate water and power at the same time... This is getting ridiculous."
+
+size: 3
+health: 1200
+category: power
+squareSprite: false
+itemCapacity: 30
+
+buildTime: 210
+requirements: [
+  cmtc-itm-06-aluminum/90
+  cmtc-itm-07-refined-tin/20
+  cmtc-itm-01-quartz/50
+  graphite/30
+]
+
+consumes: {
+  liquids: [ lqd-01-liquid-sulfur/0.4 ]
+  items: [ sand/10 ]
+}
+
+itemDuration: 240
+
+powerProduction: 6
+outputLiquid: water/0.2
+generateEffect: [ generatespark, pulverize ]
+ambientSound: loopMachine
+ambientSoundVolume: 0.5
+
+drawer: {
+  type: DrawMulti
+  drawers: [
+  {
+    type: DrawRegion
+    suffix: -bottom
+  }
+  {
+    type: DrawLiquidTile
+    drawLiquid: lqd-01-liquid-sulfur
+    padding: 2
+  }
+  {
+    type: DrawLiquidTile
+    drawLiquid: water
+    padding: 2
+  }
+  {
+    type: DrawPistons
+    sinMag: 2.0
+    sinScl: 3.0
+    sideOffset: 3.0
+  }
+  {
+    type: DrawRegion
+    suffix: -mid
+  }
+  {
+    type: DrawDefault
+  }
+  {
+    type: DrawGlowRegion
+    color: C7955C
+    alpha: 0.85
+  }
+  ]
+}
+research: {
+    parent: cmtc-pwr-11-sulfuric-chamber
+}
+researchCostMultiplier: 0.5

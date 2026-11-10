@@ -1,0 +1,17 @@
+type: PowerNode
+name: "Silicon Node"
+description: "Transfers power from one to another power block. longer range but more limited connections."
+size: 1
+squareSprite: false
+laserRange: 12
+maxNodes: 4
+laserColor1: C3C3C3FF
+laserColor2: 7E7E7EFF
+health: 300
+requirements: [
+  silicon/4
+  cmtc-itm-06-aluminum/1
+]
+category: power
+research: cmtc-pwr-01-power-node
+researchCostMultiplier: 0.25

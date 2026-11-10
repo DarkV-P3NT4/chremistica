@@ -1,0 +1,59 @@
+type: ConsumeGenerator
+name: "Combustion Chamber"
+description: "Combusts any flammable elements to generate power from Flammability."
+
+size: 2
+health: 400
+category: power
+
+buildTime: 60
+requirements: [
+  cmtc-itm-01-quartz/30
+  cmtc-itm-02-ruined-tin/15
+]
+
+consumes: {
+  itemFlammable: {}
+}
+
+powerProduction: 1
+itemDuration: 240
+generateEffect: generatespark
+ambientSound: loopSmelter
+ambientSoundVolume: 0.3
+
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -bottom
+    }
+    { 
+      type: DrawRegion
+      suffix: -spinner
+      rotateSpeed: 3
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -top
+    }
+    {
+      type: DrawSoftParticles
+      color: "E7D182"
+      color2: "CAB773"
+      particleSize: 2
+      particleRad: 5
+      particles: 4
+    }
+    {
+      type: DrawDefault
+    }
+  ]
+}
+research: {
+    parent: cmtc-asp-core-circuit
+    objectives: [ cmtc-itm-05-sulfur ]
+}
+researchCostMultiplier: 0.1

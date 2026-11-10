@@ -1,0 +1,16 @@
+type: Battery
+name: Silicon Battery
+description: Can hold small amount of power
+health: 600
+size: 1
+squareSprite: false
+consumes: {
+  powerBuffered: 2500
+}
+requirements: [
+  silicon/10
+  cmtc-itm-04-iron-ingot/5
+]
+category: power
+research: pwr-02-silicon-node
+researchCostMultiplier: 0.25

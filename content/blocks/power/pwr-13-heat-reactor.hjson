@@ -1,0 +1,73 @@
+type: VariableReactor
+name: "Heat Reactor"
+description: "Generates a large amount of power from heat, Requires water as coolant. Lack of coolant causes dangerous explosions."
+details: why did i gave you this? because why not?
+
+size: 4
+health: 3000
+category: power
+
+buildTime: 1200
+requirements: [
+  cmtc-itm-06-aluminum/400
+  cmtc-itm-07-refined-tin/200
+  cmtc-itm-01-quartz/800
+  cmtc-itm-09-obsidian/500
+  cmtc-itm-04-iron-ingot/750
+  silicon/700
+]
+
+consumes: {
+    liquids: [ water/1.6 ]
+}
+
+maxHeat: 240
+
+effectColor: C7955C
+flashColor1: f25555
+flashColor2: ffffff
+explosionDamage: 2500
+explosionRadius: 20
+explosionShake: 10
+explosionShakeDuration: 60
+
+powerProduction: 250
+ambientSound: loopElectricHum
+ambientSoundVolume: 0.25
+
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -bottom
+    }
+    {
+      type: DrawLiquidTile
+      drawLiquid: water
+    }
+    {
+      type: DrawSoftParticles
+      color: "C7955C"
+      color2: "8A584C"
+      particleSize: 5
+      particleRad: 5
+      particles: 8
+    }
+    {
+      type: DrawDefault
+    }
+    {
+      type: DrawHeatInput
+    }
+    {
+      type: DrawGlowRegion
+      suffix: "-glow"
+      color: C7955C
+    }
+  ]
+}
+research: {
+    parent: cmtc-pwr-12-mixture-chamber
+}
+researchCostMultiplier: 0.5
