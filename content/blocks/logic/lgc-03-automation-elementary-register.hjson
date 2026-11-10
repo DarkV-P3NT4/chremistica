@@ -1,0 +1,11 @@
+type: LogicBlock
+name: Automation Elementary Register
+description: Runs logic command inputted in.
+category: logic
+research: cmtc-asp-core-circuit
+requirements: [
+  cmtc-itm-01-quartz/80
+]
+instructionsPerTick: 2
+size: 1
+researchCostMultiplier: 0.5

@@ -1,0 +1,12 @@
+type: MemoryBlock
+name: "Automation Archive"
+description: Stores logic instructions and values. 
+memoryCapacity: 64
+category: logic
+research: cmtc-lgc-03-automation-elementary-register
+requirements: [
+  cmtc-itm-01-quartz/15
+]
+squareSprite: false
+size: 1
+researchCostMultiplier: 0.5

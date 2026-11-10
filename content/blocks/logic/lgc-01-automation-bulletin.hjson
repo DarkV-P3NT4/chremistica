@@ -1,0 +1,9 @@
+type: MessageBlock
+name: "Automation Bulletin"
+description: Stores a message inside.
+size: 1
+requirements: [
+  cmtc-itm-01-quartz/10
+]
+category: logic
+research: cmtc-lgc-03-automation-elementary-register

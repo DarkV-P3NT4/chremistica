@@ -1,0 +1,10 @@
+type: SwitchBlock
+name: "Automation Lever"
+description: Enables or disables logic processors.
+size: 1
+category: logic
+research: cmtc-lgc-03-automation-elementary-register
+requirements: [
+  cmtc-itm-01-quartz/10
+]
+researchCostMultiplier: 0.5
