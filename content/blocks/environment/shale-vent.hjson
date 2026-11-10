@@ -1,0 +1,9 @@
+name: Shale Vent
+type: SteamVent
+blendGroup: shale
+parent: shale
+effect: ventSteam
+variants: 2
+attributes: {
+   steam: 1
+}

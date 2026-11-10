@@ -1,0 +1,6 @@
+type: Floor
+name: Quakened Ferric Crater
+variants: 3
+blendGroup: quakened-ferric-floor
+damageTaken: 0.3
+speedMultiplier: 0.5

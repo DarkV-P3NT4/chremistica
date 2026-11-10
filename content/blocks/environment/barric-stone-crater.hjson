@@ -1,0 +1,4 @@
+type: Floor
+name: Barric Stone Crater
+variants: 3
+blendGroup: barric-stone-floor

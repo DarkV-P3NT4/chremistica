@@ -1,0 +1,4 @@
+type: Floor
+name: Bromine Crater
+variants: 3
+blendGroup: bromine-floor

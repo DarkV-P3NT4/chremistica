@@ -1,0 +1,22 @@
+type: Floor
+name: Rigid Ashen Floor
+variants: 4
+blendGroup: ashen-floor
+status: cmtc-sts-25-ashen-tomb
+attributes: {
+    altar: 0.33
+}
+
+walkEffect: {
+    type: ParticleEffect
+    region: cmtc-ash-particle
+    baseLength: 4
+    length: 20
+    colorFrom: 3A3A3F
+    colorTo: 3A3A3F
+    layer: 99
+    interp: pow3Out
+    lifetime: 30
+    sizeFrom: 1
+    sizeTo: 0.1
+}

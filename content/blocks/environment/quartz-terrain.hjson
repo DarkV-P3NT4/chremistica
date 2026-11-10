@@ -1,0 +1,4 @@
+type: StaticWall
+name: Quartz Wall
+variants: 3
+itemDrop: cmtc-itm-01-quartz

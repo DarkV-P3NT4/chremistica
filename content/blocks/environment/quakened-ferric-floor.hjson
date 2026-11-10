@@ -1,0 +1,5 @@
+type: Floor
+name: Quakened Ferric Floor
+variants: 4
+damageTaken: 0.3
+speedMultiplier: 0.5

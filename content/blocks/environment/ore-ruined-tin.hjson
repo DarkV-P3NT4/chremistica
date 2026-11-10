@@ -1,0 +1,4 @@
+type: OreBlock
+name: Ruined Tin Deposit
+variants: 4
+itemDrop: cmtc-itm-02-ruined-tin

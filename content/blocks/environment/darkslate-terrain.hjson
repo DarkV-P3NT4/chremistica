@@ -1,0 +1,7 @@
+type: StaticWall
+name: Darkslate Wall
+variants: 4
+attributes: {
+    darkite: 1
+}
+itemDrop: itm-23-darkite-cluster

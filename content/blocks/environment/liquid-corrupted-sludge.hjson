@@ -1,0 +1,11 @@
+type: Floor
+name: Corrupted Sludge
+speedMultiplier: 0.2
+variants: 1
+liquidDrop: cmtc-lqd-04-corrupted-sludge
+isLiquid: true
+cacheLayer: mud
+liquidMultiplier: 0.25
+albedo: 0.8
+drownTime: 3000
+supportsOverlay: true

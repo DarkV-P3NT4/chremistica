@@ -1,0 +1,9 @@
+name: Quakened Ferric Vent
+type: SteamVent
+blendGroup: quakened-ferric-floor
+parent: quakened-ferric-floor
+effect: ventSteam
+variants: 2
+attributes: {
+   steam: 1
+}
