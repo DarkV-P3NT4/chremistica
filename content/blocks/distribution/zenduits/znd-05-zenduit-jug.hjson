@@ -1,0 +1,14 @@
+type: LiquidRouter
+name: Zenduit Jug
+description: Stores a large amount of liquid.
+size: 3
+solid: true
+health: 1000
+liquidCapacity: 1500
+liquidPadding: 1.5
+category: liquid
+squareSprite: false
+research: cmtc-znd-01-zenduit
+requirements: [ cmtc-itm-06-aluminum/40, cmtc-itm-07-refined-tin/120, titanium/20, silicon/80 ]
+buildTime: 180
+researchCostMultiplier: 0.25

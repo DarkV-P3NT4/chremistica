@@ -1,0 +1,15 @@
+type: ArmoredConduit
+name: Zenduit
+description: Transports liquids forward, Does not accept non-zenduit input and prevents leaking.
+category: liquid
+requirements: [
+  cmtc-itm-06-aluminum/2, cmtc-itm-09-obsidian/1
+]
+health: 450
+leaks: false
+junctionReplacement: cmtc-znd-03-zenduit-overhead
+bridgeReplacement: cmtc-znd-04-zenduit-elevator
+underBullets: true
+research: znd-01-zenduit
+researchCostMultiplier: 0.5
+liquidCapacity: 50

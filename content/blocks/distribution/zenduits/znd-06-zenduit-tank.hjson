@@ -1,0 +1,14 @@
+type: LiquidRouter
+name: Zenduit Tank
+description: Stores a ridiculously huge amount of liquid.
+size: 5
+solid: true
+health: 2500
+liquidCapacity: 3750
+liquidPadding: 1.75
+category: liquid
+squareSprite: false
+research: cmtc-znd-01-zenduit
+requirements: [ cmtc-itm-06-aluminum/100, cmtc-itm-07-refined-tin/300, titanium/80, silicon/200 ]
+buildTime: 360
+researchCostMultiplier: 0.25

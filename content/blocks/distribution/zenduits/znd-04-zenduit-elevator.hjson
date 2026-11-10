@@ -1,0 +1,16 @@
+type: LiquidBridge
+name: Zenduit Elevator
+description: Elevation and Liquid Transportation sounds good right?.
+fadeIn: false
+moveArrows: false
+arrowSpacing: 4
+range: 4
+hasPower: false
+category: liquid
+health: 300
+research: cmtc-znd-03-zenduit-overhead
+requirements: [
+  cmtc-itm-06-aluminum/8, cmtc-itm-01-quartz/3
+]
+researchCostMultiplier: 0.25
+liquidCapacity: 100

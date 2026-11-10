@@ -1,0 +1,12 @@
+type: LiquidJunction
+name: Zenduit Overhead
+description: Used for crossing two zenduits.
+solid: false
+category: liquid
+squareSprite: false
+health: 300
+research: cmtc-znd-01-zenduit
+requirements: [
+  cmtc-itm-06-aluminum/6, cmtc-itm-01-quartz/2
+]
+researchCostMultiplier: 0.25

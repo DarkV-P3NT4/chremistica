@@ -1,0 +1,15 @@
+type: Conduit
+name: Zenduit
+description: Transports liquids forward.
+category: liquid
+requirements: [
+  cmtc-itm-06-aluminum/1, cmtc-itm-01-quartz/2
+]
+health: 300
+leaks: true
+junctionReplacement: cmtc-znd-03-zenduit-overhead
+bridgeReplacement: cmtc-znd-04-zenduit-elevator
+underBullets: true
+research: pmp-01-dull-pump
+researchCostMultiplier: 0.5
+liquidCapacity: 50
