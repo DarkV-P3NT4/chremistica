@@ -123,6 +123,7 @@ parts: [
 bullet: {
     instantDisappear: true
     damage: 0
+    speed: 0
     smokeEffect: shootSmallSmoke
     shootEffect: [ shootSmallColor, vaporSmall ]
     frontColor: F25555FF
