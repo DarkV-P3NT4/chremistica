@@ -1,0 +1,46 @@
+type: Drill
+name: "Cruncher Drill"
+description: "Powerful crunches on the drill has given it capability to drill faster and extract harder ores."
+hasLiquids: true
+health: 1100
+size: 3
+itemCapacity: 30
+tier: 4
+drillTime: 270
+drawMineItem: true
+rotateSpeed: 4
+liquidBoostIntensity: 3
+drawRim: true
+heatColor: D7FFAF
+hardnessDrillMultiplier: 0
+
+category: production
+requirements: [
+  cmtc-itm-01-quartz/30
+  cmtc-itm-02-ruined-tin/40
+  cmtc-itm-06-aluminum/30
+  cmtc-itm-04-iron-ingot/20
+]
+buildTime: 90
+
+drillMultipliers: {
+    itm-08-raw-titanium: 0.5
+    itm-13-mappazone-lump: 0.25
+}
+
+consumes: {
+  liquids: {
+    liquids: [ water/0.1 ]
+  optional: true
+  booster: true
+  }
+  liquids: [ cmtc-lqd-01-liquid-sulfur/0.1 ]
+} 
+
+
+research: {
+    parent: cmtc-drl-01-scraper-drill
+    planet: dkv-candemor
+    objectives: [ cmtc-itm-06-aluminum ]
+}
+researchCostMultiplier: 0.25

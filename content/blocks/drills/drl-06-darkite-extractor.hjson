@@ -1,0 +1,28 @@
+type: WallCrafter
+name: Darkite Extractor
+description: Crushes Darkslate or Dampslate walls to collect darkite clusters.
+size: 3
+category: production
+research: {
+    parent: cmtc-drl-07-cluster-kiln
+    planet: dkv-candemor
+}
+requirements: [
+  cmtc-itm-01-quartz/80
+  cmtc-itm-09-obsidian/25
+  graphite/80
+  silicon/80
+  cmtc-itm-10-darkite/30
+]
+buildTime: 120
+drillTime: 180
+consumes: {
+  liquids: [ cmtc-lqd-01-liquid-sulfur/0.15, cmtc-gas-01-steam/0.1 ]
+}
+
+output: cmtc-itm-23-darkite-cluster
+attribute: darkite
+ambientSound: loopDrill
+ambientSoundVolume: 0.3
+squareSprite: false
+researchCostMultiplier: 1

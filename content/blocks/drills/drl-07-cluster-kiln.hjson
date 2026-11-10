@@ -1,0 +1,77 @@
+type: HeatCrafter
+
+name: "Cluster Kiln"
+description: "Breaks down the clusters into dozens of shards, Requires heat and lignite."
+
+health: 750
+size: 2
+hasItems: true
+itemCapacity: 30
+
+category: production
+requirements: [ cmtc-itm-01-quartz/80, titanium/20, graphite/50, cmtc-itm-09-obsidian/20 ]
+buildTime: 60
+
+craftTime: 60
+
+consumes: {
+    power: 2
+    items: [ cmtc-itm-23-darkite-cluster/4, cmtc-itm-18-lignite/2 ]
+}
+
+heatRequirement: 12
+maxEfficiency: 1
+
+outputItem: itm-10-darkite/8
+
+ambientSound: loopGrind
+ambientSoundVolume: 0.2
+
+updateEffect: [ smoke ]
+
+craftEffect: {
+    type: WaveEffect
+    colorFrom: 4C3B59
+    colorTo: 4C3B59
+    sizeFrom: 0
+    sizeTo: 10
+    strokeFrom: 1.5
+    strokeTo: 0
+    interp: pow2Out
+    lifetime: 30
+    sides: 4
+}
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawRegion
+    suffix: -bottom
+}
+{
+    type: DrawSoftParticles
+    color: 675276
+    color2: 4C3B59
+}
+{
+    type: DrawDefault
+}
+{
+    type: DrawHeatInput
+}
+{
+    type: DrawGlowRegion
+    suffix: "-glow"
+    color: 4C3B59
+}
+]
+}
+
+research: {
+    parent: cmtc-cft-18-titanium-furnace
+    planet: dkv-candemor
+    objectives: [ itm-23-darkite-cluster ]
+}
+researchCostMultiplier: 1

@@ -1,0 +1,80 @@
+type: GenericCrafter
+
+name: "Violet Blender"
+description: "A literal blender that proceeds to turn the lumps into fine gems."
+
+health: 750
+size: 3
+hasItems: true
+hasLiquids: true
+itemCapacity: 30
+liquidCapacity: 48
+squareSprite: false
+
+category: production
+requirements: [ cmtc-itm-07-refined-tin/90, cmtc-itm-10-darkite/80, cmtc-itm-11-essence-matter/20, cmtc-itm-09-obsidian/90, titanium/50, graphite/80 ]
+buildTime: 180
+
+craftTime: 300
+
+consumes: {
+    power: 4
+    liquids: [ cmtc-gas-01-steam/0.2 ]
+    items: [ cmtc-itm-13-mappazone-lump/10 ]
+}
+
+outputItem: itm-14-violium-gem/5
+
+ambientSound: loopGrind
+ambientSoundVolume: 0.5
+
+updateEffect: [ pulverize ]
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawRegion
+    suffix: -bottom
+}
+{
+    type: DrawLiquidTile
+    drawLiquid: cmtc-gas-01-steam
+    padding: 1.5
+}
+{
+    type: DrawSoftParticles
+    color: C084AF
+    color2: B170C7
+}
+{
+    type: DrawRegion
+    suffix: -spinner
+    spinSprite: true
+    rotateSpeed: 16
+}
+{
+    type: DrawPistons
+    suffix: "-piston"
+    sinMag: 3.0
+    sinScl: 3.0
+    sideOffset: 6.0
+}
+{
+    type: DrawDefault
+}
+{
+    type: DrawGlowRegion
+    suffix: "-glow"
+    color: 4C3B59
+}
+]
+}
+
+research: {
+    parent: cmtc-cft-18-titanium-furnace
+    planet: dkv-candemor
+    objectives: [ itm-23-darkite-cluster ]
+}
+researchCostMultiplier: 1

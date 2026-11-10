@@ -1,0 +1,40 @@
+type: Drill
+name: "Scraper Drill"
+description: "Scrapes out items from the floor, can be boosted with water."
+hasLiquids: true
+health: 450
+size: 2
+itemCapacity: 20
+tier: 3
+drillTime: 240
+drawMineItem: true
+rotateSpeed: 2
+liquidBoostIntensity: 3
+drawRim: true
+heatColor: D7FFAF
+hardnessDrillMultiplier: 0
+
+category: production
+requirements: [
+  cmtc-itm-01-quartz/20
+  cmtc-itm-02-ruined-tin/10
+]
+buildTime: 45
+
+
+consumes: {
+  liquids: {
+    liquids: [
+      cmtc-lqd-01-liquid-sulfur/0.1
+    ]
+  optional: true
+  booster: true
+  } 
+} 
+
+
+research: {
+    parent: cmtc-asp-core-circuit
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.1

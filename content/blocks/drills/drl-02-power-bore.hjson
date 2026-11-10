@@ -1,0 +1,35 @@
+type: BeamDrill
+name: "Power Bore"
+description: "Drills resources from walls using Plasma, Requires power."
+
+health: 480
+size: 2
+hasLiquids: true
+itemCapacity: 20
+liquidCapacity: 12
+consumes: {
+    power: 0.1
+    liquids: {
+    liquids: [ cmtc-gas-02-sulfur-gas/0.1 ]
+    optional: true
+    booster: true
+}
+    }
+
+drillTime: 240
+range: 5
+tier: 3
+rotate: true
+
+ambientSound: loopDrill
+ambientSoundVolume: 0.1
+
+category: production
+requirements: [ cmtc-itm-01-quartz/30, cmtc-itm-02-ruined-tin/15 ]
+buildTime: 30
+
+research: {
+    parent: cmtc-asp-core-circuit
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.1

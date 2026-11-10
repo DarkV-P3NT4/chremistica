@@ -1,0 +1,61 @@
+type: AttributeCrafter
+name: "Maplastone Excavator"
+description: "Excavates from Maplastone debris, Collecting lumps out of the piles, Requires slag and lignite."
+hasLiquids: true
+health: 500
+size: 3
+liquidCapacity: 60
+itemCapacity: 40
+attribute: mappa
+squareSprite: false
+category: production
+requirements: [
+  cmtc-itm-04-iron-ingot/50
+  cmtc-itm-07-refined-tin/80
+  cmtc-itm-06-aluminum/30
+]
+buildTime: 90
+
+consumes: {
+    items: [ cmtc-itm-18-lignite/16 ]
+    liquids: [ slag/0.2 ]
+}
+
+craftTime: 240
+baseEfficiency: 0
+minEfficiency: 1
+boostScale: 0.1111111111111
+displayEfficiency: false
+displayScaledOutput: false
+
+outputItem: cmtc-itm-13-mappazone-lump/8
+
+research: {
+    parent: cmtc-drl-06-darkite-extractor
+    planet: dkv-candemor
+}
+researchCostMultiplier: 1.5
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawDefault
+}
+{
+    type: DrawRegion
+    suffix: "-spinner"
+    spinSprite: true
+    rotateSpeed: 8
+}
+{
+    type: DrawRegion
+    suffix: "-cap"
+}
+{
+    type: DrawLiquidRegion
+    drawLiquid: slag
+}
+]
+}

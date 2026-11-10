@@ -1,0 +1,40 @@
+type: BeamDrill
+name: "Energized Bore"
+description: "Drills resources from walls using Plasma, More advanced than the power bore, Requires power and sulfur gas."
+
+health: 800
+size: 3
+hasLiquids: true
+itemCapacity: 30
+liquidCapacity: 24
+consumes: {
+    power: 0.8
+    liquids: [ cmtc-gas-02-sulfur-gas/0.1 ]
+    liquids: {
+    liquids: [ water/0.1 ]
+    optional: true
+    booster: true
+}
+    }
+
+drillTime: 90
+range: 5
+tier: 5
+rotate: true
+
+drillMultipliers: {
+    itm-23-darkite-cluster: 0.25
+}
+
+ambientSound: loopDrill
+ambientSoundVolume: 0.1
+
+category: production
+requirements: [ silicon/100, cmtc-itm-01-quartz/30, cmtc-itm-07-refined-tin/40, cmtc-itm-09-obsidian/30, titanium/25 ]
+buildTime: 120
+
+research: {
+    parent: cmtc-drl-02-power-bore
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.5
