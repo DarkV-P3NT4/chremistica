@@ -6,7 +6,7 @@ It is a Mod that adds a new planet called Candemor. a Rocky planet engulfed and 
 But watch out, the crux are already ahead of you, Attack and Conquer the planet to your liking.
 
 in short:
-Campaign Planet Mod
+Campaign Planet Mod that is unfinished as hell.
 
 # {{ WHAT THIS MOD OFFERS }}
 - Unique Biomes in one area (Can be Cluttery)
