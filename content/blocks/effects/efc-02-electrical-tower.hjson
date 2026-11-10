@@ -1,0 +1,38 @@
+type: ShockwaveTower
+name: Electrical Tower
+description: Unleashes charged shockwave to intercept waves of kinetic projectiles, MissileUnits and Lasers not included.
+size: 3
+health: 1270
+squareSprite: false
+buildTime: 360
+itemCapacity: 0
+liquidCapacity: 96
+requirements: [
+  cmtc-itm-04-iron-ingot/45
+  cmtc-itm-09-obsidian/50
+  silicon/90
+  cmtc-itm-10-darkite/40
+  cmtc-itm-11-essence-matter/15
+]
+category: effect
+
+consumes: {
+   power: 4
+   liquids: [ cmtc-lqd-03-liquid-nitrogen/0.4 ]
+}
+
+checkInterval: 6
+range: 240
+shootSound: shootCollaris
+shake: 8
+waveColor: D8998DFF
+shapeColor: D8998DFF
+reload: 150
+bulletDamage: 300
+
+research: {
+parent: cmtc-efc-03-compact-force
+planet: dkv-candemor
+}
+
+researchCostMultiplier: 1

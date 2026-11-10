@@ -1,0 +1,42 @@
+type: OverdriveProjector
+name: Compact Optimizer
+description: Boosts up nearby structures when supplied with power, Can consume darkite for increased boost effect.
+size: 1
+health: 1250
+range: 8
+phaseRangeBoost: 0
+baseColor: 805E9A
+phaseColor: 9F84B4
+squareSprite: false
+hasLiquids: false
+liquidCapacity: 0
+consumes: {
+  power: 1.5
+  items: {
+    items: [
+      cmtc-itm-10-darkite/1
+    ]
+    optional: true
+    booster: true
+  }
+}
+hasBoost: true
+reload: 60
+speedBoost: 1.2
+speedBoostPhase: 0.3
+useTime: 240
+requirements: [
+  silicon/100
+  cmtc-itm-01-quartz/50
+  cmtc-itm-06-aluminum/50
+  cmtc-itm-09-obsidian/25
+  cmtc-itm-10-darkite/10
+]
+category: effect
+
+
+research: {
+parent: cmtc-efc-01-compact-fabricator
+planet: dkv-candemor
+}
+researchCostMultiplier: 1

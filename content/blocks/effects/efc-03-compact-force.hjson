@@ -1,0 +1,36 @@
+type: UnitCargoLoader
+name: Compact Force
+description: Somewhat a beacon that projects a Force Orb to create a shield around an area.
+details: "Sorry, ForceProjector is a pain in the-"
+size: 3
+health: 1850
+squareSprite: false
+buildTime: 480
+itemCapacity: 0
+liquidCapacity: 96
+requirements: [
+  cmtc-itm-04-iron-ingot/45
+  cmtc-itm-09-obsidian/30
+  cmtc-itm-01-quartz/150
+  cmtc-itm-06-aluminum/40
+  cmtc-itm-10-darkite/30
+]
+category: effect
+
+consumes: {
+   power: 5
+   liquids: [ cmtc-lqd-03-liquid-nitrogen/0.4 ]
+}
+
+unitType: "cmtc-force-orb"
+unitBuildTime: 900
+
+polyColor: D8998DFF
+polyRadius: 12
+
+research: {
+parent: cmtc-efc-01-compact-fabricator
+planet: dkv-candemor
+}
+
+researchCostMultiplier: 1
