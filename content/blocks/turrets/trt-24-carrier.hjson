@@ -1,0 +1,230 @@
+type: ItemTurret
+
+name: "Carrier"
+description: "Fires artillery submunitions at enemy targets."
+
+health: 2200
+size: 4
+maxAmmo: 20
+ammoPerShot: 4
+reload: 320
+
+requirements: [ cmtc-itm-10-darkite/80, cmtc-itm-14-violium-gem/50, cmtc-itm-07-refined-tin/100, silicon/150, graphite/150 ]
+buildTime: 320
+category: turret
+shootSound: shootMortar
+inaccuracy: 0
+range: 340
+recoilTime: 300
+cooldownTime: 120
+outlineColor: 1E0D0D
+shootEffect: [ shootTitan, shootBigColor, vapor ]
+smokeEffect: [ shootSmokeTitan, shootBigSmoke ]
+
+consumes: {
+    liquids: [ cmtc-gas-01-steam/0.1 ]
+}
+
+coolant: {
+    type: ConsumeCoolant
+    allowGas: true
+    allowLiquid: true
+    amount: 0.5
+}
+
+coolantMultiplier: 2
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "refined-"
+}
+
+ammoTypes: {
+
+graphite: {
+    type: FlakBulletType
+    sprite: large-bomb
+    spin: 3
+    collidesAir: false
+    collidesGround: true
+    hittable: false
+    width: 20
+    height: 20
+    shrinkY: -0.5
+    shrinkX: -0.5
+    damage: 0
+    splashDamage: 25
+    splashDamageRadius: 80
+    speed: 2.5
+    lifetime: 136
+    explodeDelay: 12
+    explodeRange: 80
+    flakDelay: 15
+    flakInterval: 15
+    reflectable: false
+    absorbable: false
+    status: cmtc-sts-04-sluggish-ii
+    statusDuration: 90
+    frontColor: 95ABD9FF
+    backColor: 626F9BFF
+    trailColor: 626F9BFF
+    hitColor: 95ABD9FF
+    trailLength: 16
+    trailEffect: {
+    type: WaveEffect
+    sizeFrom: 80
+    sizeTo: 80
+    lifetime: 15
+    interp: exp5Out
+    colorFrom: FFFFFFFF
+    colorTo: 95ABD9FF
+    strokeFrom: 6
+    strokeTo: 1
+}
+    trailRotation: true
+    trailInterval: 15
+    fragBullets: 50
+    fragVelocityMin: 0
+    fragVelocityMax: 1
+    fragLifeMin: 1
+    fragLifeMax: 2
+    fragOnHit: false
+    fragOnDespawn: true
+    fragOnAbsorb: false
+    despawnShake: 10
+    hitSound: explosionHeavy
+    despawnSound: explosionHeavy
+    hitEffect: {
+    type: MultiEffect
+    effects: [
+{
+    type: ParticleEffect
+    sizeChangeStart: 20
+    line: true
+    sizeFrom: 12
+    sizeTo: 8
+    lenFrom: 20
+    lenTo: 8
+    strokeFrom: 6
+    strokeTo: 0
+    lifetime: 80
+    colorFrom: FFFFFFFF
+    colorTo: 8B74A9FF
+    interp: pow3Out
+    particles: 30
+    length: 100
+}
+{
+    type: SeqEffect
+    effects: [
+{
+    type: WaveEffect
+    sizeFrom: 8
+    sizeTo: 80
+    lifetime: 40
+    interp: exp5Out
+    colorFrom: FFFFFFFF
+    colorTo: 95ABD9FF
+    strokeFrom: 2
+    strokeTo: 5
+}
+{
+    type: WaveEffect
+    sizeFrom: 80
+    sizeTo: 40
+    lifetime: 90
+    interp: exp5In
+    colorFrom: 95ABD9FF
+    colorTo: 95ABD900
+    strokeFrom: 5
+    strokeTo: 3.5
+}
+]
+}
+]
+}
+
+parts: [
+{
+    type: FlarePart
+    progress: warmup
+    color2: FFFFFFFF
+    color1: 95ABD9FF
+    radius: 20
+    stroke: 5
+    x: 0
+    y: 0
+    followRotation: false
+    spinSpeed: -2.5
+    }
+]
+
+fragBullet: {
+    type: BasicBulletType
+    sprite: mine-bullet
+    collidesAir: false
+    width: 15
+    height: 15
+    shrinkX: 0.5
+    shrinkY: 0.5
+    spin: 4
+    splashDamage: 90
+    splashDamageRadius: 28
+    shieldDamageMultiplier: 1.15
+    lifetime: 90
+    speed: 0.95
+    knockback: 5
+    frontColor: 95ABD9FF
+    backColor: 626F9BFF
+    trailColor: 626F9BFF
+    hitColor: 95ABD9FF
+    despawnEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 30
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 20
+    colorFrom: 95ABD9FF
+    colorTo: 95ABD9FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 12
+    sizeFrom: 3
+    sizeTo: 0
+    lifetime: 24
+    colorFrom: 95ABD9FF
+    colorTo: 95ABD9FF
+    interp: pow3Out
+    particles: 8
+    length: 32
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 12
+    lenFrom: 12
+    lenTo: 10
+    sizeFrom: 8
+    sizeTo: 0
+    lifetime: 24
+    colorFrom: 95ABD9FF
+    colorTo: 95ABD9FF
+    interp: pow3Out
+    particles: 20
+    length: 30
+    line: true
+}
+    ]
+    despawnSound: explosionDull
+    hittable: false
+    reflectable: false
+    absorbable: false
+    collides: false
+    drag: 0.01
+    despawnShake: 2.5
+}
+}
+}
