@@ -1,0 +1,36 @@
+type: GenericCrafter
+
+name: "Gunpowder Mixer"
+description: "Mixes both lignite and sulfur into gunpowder, due to impurities of lignite it turned out to be chunks instead of powder."
+details: "shouldn't it be called a coal chunk?"
+
+health: 450
+size: 2
+hasItems: true
+hasPower: true
+squareSprite: false
+
+category: crafting
+requirements: [ graphite/40, cmtc-itm-10-darkite/10, cmtc-itm-06-aluminum/20, silicon/40 ]
+buildTime: 75
+
+craftTime: 120
+
+consumes: {
+    power: 0.5
+    items: [ cmtc-itm-18-lignite/2, cmtc-itm-05-sulfur/2 ]
+}
+
+outputItem: cmtc-itm-19-gunpowder-chunk/2
+
+updateEffect: none
+
+craftEffect: coalSmeltsmoke
+
+ambientSound: loopMachineSpin
+
+research: {
+    parent: cmtc-cft-12-sulfuric-solidifier
+    planet: dkv-candemor
+}
+researchCostMultiplier: 1

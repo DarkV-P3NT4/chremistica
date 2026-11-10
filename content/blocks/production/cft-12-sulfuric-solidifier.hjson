@@ -1,0 +1,36 @@
+type: GenericCrafter
+
+name: "Sulfuric Solidifier"
+description: "Solidifies Liquid Sulfur into a bundle of Sulfur, Doing so causes Sulfur Gas"
+
+health: 800
+size: 2
+hasLiquids: true
+hasItems: true
+hasPower: true
+liquidCapacity: 54
+ignoreLiquidFullness: true
+
+category: crafting
+requirements: [ graphite/35, cmtc-itm-02-ruined-tin/10, cmtc-itm-06-aluminum/20 ]
+buildTime: 60
+
+craftTime: 120
+
+consumes: {
+    power: 0.5
+    liquids: [ cmtc-lqd-01-liquid-sulfur/0.15 ]
+}
+
+outputItem: cmtc-itm-05-sulfur/1
+outputLiquid: cmtc-gas-02-sulfur-gas/0.25
+
+updateEffect: none
+
+craftEffect: coalSmeltsmoke
+
+research: {
+    parent: cmtc-cft-02-graphic-pressure
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.25

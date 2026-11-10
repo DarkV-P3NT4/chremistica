@@ -1,0 +1,95 @@
+type: GenericCrafter
+
+name: "Multi Fusion Chamber"
+description: "Somewhat expensive but produces essence matter from these list of recipes."
+
+health: 1000
+size: 4
+hasItems: true
+hasLiquids: true
+itemCapacity: 40
+liquidCapacity: 96
+squareSprite: false
+
+category: crafting
+requirements: [ cmtc-itm-04-iron-ingot/100, cmtc-itm-07-refined-tin/80, titanium/50, cmtc-itm-10-darkite/50, silicon/80, graphite/50 ]
+buildTime: 150
+
+craftTime: 180
+
+consumes: {
+    power: 4
+    liquids: [ slag/0.2, cmtc-gas-01-steam/0.4 ]
+    items: [ cmtc-itm-10-darkite/18, cmtc-itm-23-darkite-cluster/9 ]
+}
+
+outputItems: [ cmtc-itm-09-obsidian/3, cmtc-itm-11-essence-matter/9 ]
+
+craftEffect: vapor
+
+ambientSound: loopSmelter
+ambientSoundVolume: 0.15
+
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -bottom
+    }
+{
+    type: DrawLiquidTile
+    drawLiquid: slag
+    padding: 1.5
+}
+{
+    type: DrawLiquidTile
+    drawLiquid: cmtc-gas-01-steam
+    padding: 1.5
+    alpha: 0.5
+}
+    { 
+      type: DrawRegion
+      suffix: -spinner
+      x: 7
+      rotateSpeed: 8
+      spinSprite: true
+    }
+    { 
+      type: DrawRegion
+      suffix: -spinner
+      y: 7
+      rotateSpeed: -8
+      spinSprite: true
+    }
+    { 
+      type: DrawRegion
+      suffix: -spinner
+      x: -7
+      rotateSpeed: 8
+      spinSprite: true
+    }
+    { 
+      type: DrawRegion
+      suffix: -spinner
+      y: -7
+      rotateSpeed: -8
+      spinSprite: true
+    }
+{
+      type: DrawDefault
+    }
+{
+    type: DrawGlowRegion
+    suffix: -glow
+    color: 9773B3
+    alpha: 0.8
+    }
+  ]
+}
+
+research: {
+    parent: cft-07-obsidian-cooling-mold
+    planet: dkv-candemor
+}
+researchCostMultiplier: 1

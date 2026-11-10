@@ -1,0 +1,16 @@
+type: Incinerator
+name: Nullifier
+description: D E S T R O Y  A N Y  I T E M S  O R  L I Q U I D S .
+size: 1
+squareSprite: false
+consumes: {
+  power: 0.5
+}
+category: crafting
+research: cft-02-graphic-pressure
+requirements: [
+  cmtc-itm-01-quartz/10
+  cmtc-itm-06-aluminum/15
+  cmtc-itm-02-ruined-tin/10
+]
+researchCostMultiplier: 0.5

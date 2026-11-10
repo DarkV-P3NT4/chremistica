@@ -1,0 +1,63 @@
+type: GenericCrafter
+
+name: "Chemical Vacuum"
+description: "Extracts gases from bromium."
+
+health: 800
+size: 3
+hasItems: true
+hasLiquids: true
+liquidCapacity: 60
+itemCapacity: 15
+
+category: crafting
+requirements: [ cmtc-itm-09-obsidian/20, cmtc-itm-04-iron-ingot/55, cmtc-itm-07-refined-tin/60, graphite/90, cmtc-itm-12-bromium/80 ]
+buildTime: 80
+
+craftTime: 90
+
+consumes: {
+    power: 2
+    items: [ cmtc-itm-12-bromium/3 ]
+}
+
+outputLiquid: gas-05-bromine-gas/0.4
+
+craftEffect: generatespark
+
+ambientSound: loopExtract
+ambientSoundVolume: 0.2
+
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -bottom
+    }
+    { 
+      type: DrawRegion
+      suffix: -rotator
+      rotateSpeed: -6
+      spinSprite: true
+    }
+{
+      type: DrawLiquidTile
+      drawLiquid: gas-05-bromine-gas
+      padding: 1.5
+}
+    {
+      type: DrawDefault
+    }
+{
+      type: DrawParticles
+      color: 7A3E19
+}
+  ]
+}
+
+research: {
+    parent: cmtc-cft-13-steam-chamber
+    planet: dkv-candemor
+}
+researchCostMultiplier: 1

@@ -1,0 +1,69 @@
+type: HeatCrafter
+
+name: "Steam Chamber"
+description: "Vaporizes water into packs of Steam."
+
+health: 600
+size: 2
+hasLiquids: true
+liquidCapacity: 60
+itemCapacity: 0
+heatRequirement: 4
+maxEfficiency: 1
+squareSprite: false
+
+category: crafting
+requirements: [ cmtc-itm-01-quartz/40, cmtc-itm-07-refined-tin/40, silicon/40, cmtc-itm-06-aluminum/10, cmtc-itm-09-obsidian/10 ]
+buildTime: 80
+
+craftTime: 60
+
+consumes: {
+    liquids: [ water/0.2 ]
+}
+
+outputLiquid: cmtc-gas-01-steam/0.25
+
+updateEffect: none
+
+craftEffect: none
+
+ambientSound: loopSteam
+ambientSoundVolume: 0.5
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawRegion
+    suffix: "-bottom"
+    }
+{
+    type: DrawPistons
+    sinMag: 3
+    sinScl: 5
+    }
+{
+    type: DrawRegion
+    suffix: "-mid"
+    }
+{
+    type: DrawLiquidRegion
+    drawLiquid: cmtc-gas-01-steam
+    alpha: 0.85
+    }
+{
+    type: DrawDefault
+    }
+{
+    type: DrawHeatInput
+}
+    ]
+}
+
+research: {
+    parent: cmtc-cft-06-tin-refiner
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.5

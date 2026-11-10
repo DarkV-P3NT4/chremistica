@@ -1,0 +1,33 @@
+type: HeatConductor
+
+name: "Large Heat Network"
+description: "Redirects units of heat from one to another direction."
+
+health: 600
+size: 3
+category: crafting
+requirements: [ cmtc-itm-01-quartz/40, cmtc-itm-07-refined-tin/20, cmtc-itm-09-obsidian/10, titanium/15 ]
+buildTime: 25
+
+research: {
+    parent: cmtc-cft-31-heat-network
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.5
+
+regionRotated1: 1
+drawer: {
+    type: DrawMulti
+    drawers: [
+{
+    type: DrawDefault
+    }
+{
+    type: DrawHeatOutput
+    }
+{
+    type: DrawHeatInput
+    suffix: -heat
+    }
+]
+}

@@ -1,0 +1,46 @@
+type: GenericCrafter
+
+name: "Titanium Furnace"
+description: "Smelts raw titanium into a Refined Titanium, Requires Sulfur as fuel. Produces waste fragments."
+
+health: 600
+size: 2
+hasItems: true
+itemCapacity: 20
+squareSprite: false
+
+category: crafting
+requirements: [ cmtc-itm-01-quartz/45, cmtc-itm-07-refined-tin/50, cmtc-itm-09-obsidian/20 ]
+buildTime: 100
+
+craftTime: 120
+
+consumes: {
+    items: [ cmtc-itm-08-raw-titanium/2, cmtc-itm-05-sulfur/3 ]
+}
+
+outputItems: [ titanium/2, itm-50-shale-fragment/3 ]
+
+ambientSound: loopMachine
+ambientSoundVolume: 0.35
+
+updateEffect: [ smeltsmoke, smoke ]
+
+craftEffect: {
+    type: WaveEffect
+    colorFrom: A4B8FA
+    colorTo: 7575C8
+    sizeFrom: 0
+    sizeTo: 8.5
+    strokeFrom: 1.25
+    strokeTo: 0
+    interp: pow2Out
+    lifetime: 60
+}
+
+research: {
+    parent: cft-07-obsidian-cooling-mold
+    planet: dkv-candemor
+    objectives: [ cmtc-itm-08-raw-titanium ]
+}
+researchCostMultiplier: 0.5

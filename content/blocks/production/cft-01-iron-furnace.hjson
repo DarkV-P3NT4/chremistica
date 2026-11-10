@@ -1,0 +1,61 @@
+type: HeatProducer
+
+name: "Iron Furnace"
+description: "Smelts raw iron into a processed Iron Ingot, Requires Sulfur as fuel."
+
+health: 450
+size: 2
+hasItems: true
+itemCapacity: 20
+
+category: crafting
+requirements: [ cmtc-itm-01-quartz/45, cmtc-itm-02-ruined-tin/30 ]
+buildTime: 75
+
+craftTime: 120
+
+consumes: {
+    items: [ cmtc-itm-03-raw-iron/2, cmtc-itm-05-sulfur/1 ]
+}
+
+outputItem: itm-04-iron-ingot/2
+
+heatOutput: 4
+warmupRate: 0.1
+
+ambientSound: loopMachine
+ambientSoundVolume: 0.35
+
+updateEffect: [ smeltsmoke, smoke ]
+
+craftEffect: {
+    type: WaveEffect
+    colorFrom: BEBEBD
+    colorTo: 999085
+    sizeFrom: 0
+    sizeTo: 8
+    strokeFrom: 1.25
+    strokeTo: 0
+    interp: pow2Out
+    lifetime: 20
+}
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawDefault
+    }
+{
+    type: DrawHeatOutput
+}
+    ]
+}
+
+research: {
+    parent: cmtc-asp-core-circuit
+    planet: dkv-candemor
+    objectives: [ cmtc-itm-03-raw-iron ]
+}
+researchCostMultiplier: 0.1

@@ -1,0 +1,73 @@
+type: AttributeCrafter
+
+name: "Surge Altar"
+description: "The magic from the storm will be lured in the Altar to create surge alloy, Essence matter is required."
+
+health: 1210
+size: 4
+hasItems: true
+hasLiquids: true
+itemCapacity: 30
+liquidCapacity: 96
+squareSprite: false
+
+category: crafting
+requirements: [ silicon/220, cmtc-itm-09-obsidian/140, cmtc-itm-10-darkite/50, cmtc-itm-11-essence-matter/20, titanium/40 ]
+buildTime: 150
+
+attribute: altar
+
+craftTime: 120
+
+consumes: {
+    power: 5
+    items: [ silicon/4, cmtc-itm-11-essence-matter/1 ]
+    liquids: [ slag/0.4 ]
+}
+
+boostScale: 0.0625
+
+outputItem: surge-alloy/3
+
+craftEffect: surgeCruciSmoke
+
+updateEffect: none
+
+ambientSound: loopElectricHum
+ambientSoundVolume: 0.25
+
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -bottom
+    }
+{
+    type: DrawLiquidRegion
+    drawLiquid: slag
+    alpha: 1
+}
+    { 
+      type: DrawRegion
+      suffix: -spinner
+      rotateSpeed: 1
+      spinSprite: true
+    }
+{
+      type: DrawDefault
+    }
+{
+    type: DrawGlowRegion
+    suffix: -glow
+    color: FCF387FF
+    alpha: 0.85
+    }
+  ]
+}
+
+research: {
+    parent: cft-07-obsidian-cooling-mold
+    planet: dkv-candemor
+}
+researchCostMultiplier: 1

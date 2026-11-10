@@ -1,0 +1,33 @@
+type: HeatConductor
+
+name: "Heat Network"
+description: "Redirects units of heat from one to another direction."
+
+health: 300
+size: 2
+category: crafting
+requirements: [ cmtc-itm-01-quartz/25, cmtc-itm-07-refined-tin/10, cmtc-itm-09-obsidian/5 ]
+buildTime: 15
+
+research: {
+    parent: cmtc-cft-35-thermal-phaser
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.5
+
+regionRotated1: 1
+drawer: {
+    type: DrawMulti
+    drawers: [
+{
+    type: DrawDefault
+    }
+{
+    type: DrawHeatOutput
+    }
+{
+    type: DrawHeatInput
+    suffix: -heat
+    }
+]
+}

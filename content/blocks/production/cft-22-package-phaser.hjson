@@ -1,0 +1,59 @@
+type: Separator
+
+name: "Package Phaser"
+description: "Generates items slowly using power, There was a trademark label inside the interior of the machinery."
+details: "Coming straight from V.Corps"
+
+health: 780
+size: 3
+hasItems: true
+itemCapacity: 20
+squareSprite: false
+
+category: crafting
+requirements: [ cmtc-itm-04-iron-ingot/40, cmtc-itm-10-darkite/30, cmtc-itm-07-refined-tin/60, graphite/50, cmtc-itm-14-violium-gem/80 ]
+buildTime: 240
+
+craftTime: 120
+
+consumes: {
+    power: 1
+}
+
+results: [
+    itm-01-quartz/30
+    itm-02-ruined-tin/20
+    itm-05-sulfur/40
+    itm-04-iron-ingot/10
+]
+
+drawer: {
+  type: DrawMulti
+  drawers: [
+    { 
+      type: DrawRegion
+      suffix: -bottom
+    }
+    { 
+      type: DrawRegion
+      suffix: -spinner
+      rotateSpeed: -10
+      spinSprite: true
+    }
+    {
+      type: DrawDefault
+    }
+    {
+    type: DrawGlowRegion
+    suffix: -glow
+    color: F25555
+    alpha: 0.85
+    }
+  ]
+}
+
+research: {
+    parent: cmtc-cft-18-titanium-furnace
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.25

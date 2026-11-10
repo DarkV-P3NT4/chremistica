@@ -1,0 +1,69 @@
+type: GenericCrafter
+
+name: "Bromine Molder"
+description: "Press and Molds Bromine into solid Bromium Alloy."
+
+health: 700
+size: 3
+hasLiquids: true
+liquidCapacity: 120
+itemCapacity: 30
+squareSprite: false
+
+category: crafting
+requirements: [ cmtc-itm-04-iron-ingot/45, cmtc-itm-07-refined-tin/80, silicon/40, graphite/100, cmtc-itm-09-obsidian/40 ]
+buildTime: 80
+
+craftTime: 90
+
+consumes: {
+    power: 5
+    items: [ cmtc-itm-04-iron-ingot/3 ]
+    liquids: [ cmtc-lqd-06-bromine/0.5 ]
+}
+
+outputItem: cmtc-itm-12-bromium/3
+
+updateEffect: none
+
+craftEffect: none
+
+ambientSound: loopMachine2
+ambientSoundVolume: 0.25
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawRegion
+    suffix: "-bottom"
+    }
+{
+    type: DrawLiquidTile
+    drawLiquid: cmtc-lqd-06-bromine
+    padding: 1.5
+    }
+{
+    type: DrawPistons
+    sinMag: 6.0
+    sinScl: 4.0
+    lenOffset: -3.5
+    sideOffset: 6.0
+    }
+{
+    type: DrawDefault
+    }
+{
+    type: DrawGlowRegion
+    color: 7A3E19
+}
+    ]
+}
+
+research: {
+    parent: cmtc-cft-06-tin-refiner
+    planet: dkv-candemor
+    objectives: [ cmtc-lqd-06-bromine ]
+}
+researchCostMultiplier: 1

@@ -1,0 +1,67 @@
+type: HeatCrafter
+
+name: "Nitrogen Concentrator"
+description: "Concentrates liquid nitrogen from water and power. Requires heat."
+
+health: 750
+size: 3
+hasLiquids: true
+liquidCapacity: 60
+itemCapacity: 0
+heatRequirement: 21
+maxEfficiency: 1.5
+squareSprite: false
+
+category: crafting
+requirements: [ silicon/150, cmtc-itm-07-refined-tin/110, cmtc-itm-01-quartz/120, titanium/90, cmtc-itm-10-darkite/30 ]
+buildTime: 220
+
+craftTime: 60
+
+consumes: {
+    liquids: [ water/0.4 ]
+    power: 3
+}
+
+outputLiquid: cmtc-lqd-03-liquid-nitrogen/0.2
+
+updateEffect: none
+
+craftEffect: none
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawRegion
+    suffix: "-bottom"
+    }
+{
+    type: DrawLiquidTile
+    drawLiquid: cmtc-lqd-03-liquid-nitrogen
+    padding: 4.1
+    }
+{
+    type: DrawDefault
+    }
+{
+    type: DrawHeatInput
+}
+{
+    type: DrawParticles
+    color: d4f0ff
+    particleSize: 4
+    particles: 10
+    particleRad: 12
+    particleLife: 140
+}
+    ]
+}
+
+research: {
+    parent: cmtc-cft-07-obsidian-cooling-mold
+    planet: dkv-candemor
+    objectives: [ itm-10-darkite ]
+}
+researchCostMultiplier: 0.25

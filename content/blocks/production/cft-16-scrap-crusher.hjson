@@ -1,0 +1,48 @@
+type: GenericCrafter
+
+name: "Scrap Crusher"
+description: "Crushes down Scraps into fine sand bundles."
+
+health: 300
+size: 1
+hasItems: true
+itemCapacity: 20
+
+category: crafting
+requirements: [ cmtc-itm-04-iron-ingot/15, cmtc-itm-02-ruined-tin/30, graphite/10 ]
+buildTime: 20
+
+craftTime: 24
+
+consumes: {
+    items: [ scrap/1 ]
+}
+
+outputItem: sand/1
+
+craftEffect: pulverize
+
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawDefault
+    }
+    { 
+      type: DrawRegion
+      suffix: -rotator
+      rotateSpeed: -10
+      spinSprite: true
+    }
+    {
+      type: DrawRegion
+      suffix: -top
+    }
+  ]
+}
+
+research: {
+    parent: cmtc-cft-02-graphic-pressure
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.25

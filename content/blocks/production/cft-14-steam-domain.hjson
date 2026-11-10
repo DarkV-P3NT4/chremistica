@@ -1,0 +1,86 @@
+type: HeatCrafter
+
+name: "Steam Domain"
+description: "Vaporizes even more water into steam, Can increase efficiency from heat."
+
+health: 1300
+size: 5
+hasLiquids: true
+liquidCapacity: 300
+itemCapacity: 0
+heatRequirement: 24
+maxEfficiency: 1.5
+squareSprite: false
+
+category: crafting
+requirements: [ silicon/180, titanium/150, cmtc-itm-14-violium-gem/80, cmtc-itm-06-aluminum/200, cmtc-itm-09-obsidian/80 ]
+buildTime: 300
+
+craftTime: 60
+
+consumes: {
+    power: 5
+    liquids: [ water/1 ]
+}
+
+outputLiquid: cmtc-gas-01-steam/1
+
+updateEffect: none
+
+craftEffect: none
+
+ambientSound: loopSteam
+ambientSoundVolume: 0.5
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawRegion
+    suffix: "-bottom"
+    }
+{
+    type: DrawLiquidTile
+    drawLiquid: water
+    padding: 1.75
+    }
+{
+    type: DrawLiquidTile
+    drawLiquid: cmtc-gas-01-steam
+    alpha: 0.85
+    padding: 1.75
+    }
+{
+    type: DrawPistons
+    sinMag: 2.5
+    sinScl: 5
+    sideOffset: 3
+    }
+{
+    type: DrawDefault
+    }
+{
+    type: DrawRegion
+    suffix: "-spinner"
+    spinSprite: true
+    rotateSpeed: 1.5
+    }
+{
+    type: DrawHeatInput
+}
+{
+    type: DrawParticles
+    color: F4F4F4
+    particleLife: 120
+    particleRad: 24
+    reverse: true
+}
+    ]
+}
+
+research: {
+    parent: cmtc-cft-13-steam-chamber
+    planet: dkv-candemor
+}
+researchCostMultiplier: 1.5

@@ -1,0 +1,47 @@
+type: GenericCrafter
+
+name: "Graphic Pressure"
+description: "Crushes Quartz and Sulfur together, Synthesized and pressed into Graphite and Sulfur Gas."
+
+health: 400
+size: 2
+hasItems: true
+hasLiquids: true
+itemCapacity: 20
+liquidCapacity: 60
+ignoreLiquidFullness: true
+
+category: crafting
+requirements: [ cmtc-itm-04-iron-ingot/20, cmtc-itm-02-ruined-tin/35 ]
+buildTime: 120
+
+craftTime: 30
+
+consumes: {
+    items: [ cmtc-itm-01-quartz/1, cmtc-itm-05-sulfur/2 ]
+}
+
+outputItem: graphite/1
+outputLiquid: gas-02-sulfur-gas/0.25
+
+updateEffect: none
+
+craftEffect: {
+    type: WaveEffect
+    sides: 4
+    colorFrom: 626F9B
+    colorTo: 95ABD9
+    sizeFrom: 0
+    sizeTo: 8
+    strokeFrom: 1.5
+    strokeTo: 0
+    interp: pow2Out
+    lifetime: 30
+}
+
+research: {
+    parent: cmtc-cft-01-iron-furnace
+    planet: dkv-candemor
+    objectives: [ cmtc-itm-06-aluminum ]
+}
+researchCostMultiplier: 0.25

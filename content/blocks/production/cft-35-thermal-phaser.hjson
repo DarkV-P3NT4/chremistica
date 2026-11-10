@@ -1,0 +1,36 @@
+type: HeatProducer
+
+name: "Thermal Phaser"
+description: "Generates heat from consuming power."
+
+health: 550
+size: 2
+category: crafting
+requirements: [ cmtc-itm-01-quartz/25, cmtc-itm-07-refined-tin/15, cmtc-itm-04-iron-ingot/25, cmtc-itm-09-obsidian/10 ]
+buildTime: 60
+itemCapacity: 0
+liquidCapacity: 0
+
+consumes: {
+    power: 1
+}
+
+heatOutput: 2
+
+research: {
+    parent: cmtc-cft-04-silicon-molder
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.5
+
+drawer: {
+    type: DrawMulti
+    drawers: [
+{
+    type: DrawDefault
+    }
+{
+    type: DrawHeatOutput
+    }
+]
+}

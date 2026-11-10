@@ -1,0 +1,52 @@
+type: HeatProducer
+
+name: "Silicon Molder"
+description: "Processes Sulfur and Sand together to create a Batch of Silicon and Heat."
+
+health: 600
+size: 2
+hasItems: true
+hasPower: true
+itemCapacity: 20
+
+category: crafting
+requirements: [ cmtc-itm-04-iron-ingot/10, cmtc-itm-02-ruined-tin/25, cmtc-itm-06-aluminum/10 ]
+buildTime: 60
+
+craftTime: 240
+
+consumes: {
+    power: 2
+    items: [ sand/10, cmtc-itm-05-sulfur/5 ]
+}
+
+outputItem: silicon/5
+
+heatOutput: 6
+warmupRate: 0.1
+
+ambientSound: loopSmelter
+ambientSoundVolume: 0.4
+
+updateEffect: none
+
+craftEffect: smeltsmoke
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawDefault
+    }
+{
+    type: DrawHeatOutput
+}
+    ]
+}
+
+research: {
+    parent: cmtc-cft-02-graphic-pressure
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.25

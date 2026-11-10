@@ -1,0 +1,73 @@
+type: GenericCrafter
+
+name: "Obsidian Cooling Mold"
+description: "Cools down slag using water and molded into fine batches of obsidian."
+
+health: 860
+size: 3
+hasItems: true
+hasLiquids: true
+itemCapacity: 40
+liquidCapacity: 96
+squareSprite: false
+
+category: crafting
+requirements: [ cmtc-itm-01-quartz/90, cmtc-itm-07-refined-tin/80, silicon/80, graphite/50 ]
+buildTime: 150
+
+craftTime: 240
+
+consumes: {
+    power: 1.5
+    liquids: [ slag/0.2, water/0.4 ]
+}
+
+outputItem: cmtc-itm-09-obsidian/4
+
+craftEffect: vapor
+
+updateEffect: vaporSmall
+
+ambientSound: loopSteam
+ambientSoundVolume: 0.25
+
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -bottom
+    }
+{
+    type: DrawLiquidTile
+    drawLiquid: slag
+    padding: 0.78
+}
+{
+    type: DrawLiquidTile
+    drawLiquid: water
+    padding: 0.78
+}
+    { 
+      type: DrawRegion
+      suffix: -spinner
+      rotateSpeed: 3
+      spinSprite: true
+    }
+{
+      type: DrawDefault
+    }
+{
+    type: DrawGlowRegion
+    suffix: -glow
+    color: 9773B3
+    alpha: 0.85
+    }
+  ]
+}
+
+research: {
+    parent: cft-06-tin-refiner
+    planet: dkv-candemor
+}
+researchCostMultiplier: 1

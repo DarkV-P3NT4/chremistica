@@ -1,0 +1,64 @@
+type: GenericCrafter
+
+name: "Multi-Pressurizer"
+description: "Advanced Graphic Pressure, Produces more graphite in cost of more quartz and power."
+
+health: 850
+size: 3
+hasItems: true
+hasLiquids: true
+itemCapacity: 30
+liquidCapacity: 120
+ignoreLiquidFullness: true
+squareSprite: false
+
+category: crafting
+requirements: [ cmtc-itm-04-iron-ingot/60, cmtc-itm-07-refined-tin/80, cmtc-itm-01-quartz/100, cmtc-itm-09-obsidian/100 ]
+buildTime: 240
+
+craftTime: 60
+
+consumes: {
+    power: 2.5
+    items: [ cmtc-itm-01-quartz/8, cmtc-itm-05-sulfur/4 ]
+}
+
+outputItem: graphite/6
+outputLiquid: gas-02-sulfur-gas/0.5
+
+updateEffect: none
+
+craftEffect: {
+    type: WaveEffect
+    sides: 4
+    colorFrom: 626F9B
+    colorTo: 95ABD9
+    sizeFrom: 0
+    sizeTo: 12
+    strokeFrom: 3
+    strokeTo: 0
+    interp: pow3Out
+    lifetime: 60
+}
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawDefault
+    }
+{
+    type: DrawGlowRegion
+    suffix: -glow
+    color: 626F9B
+    alpha: 0.85
+    }
+]
+}
+
+research: {
+    parent: cmtc-cft-02-graphic-pressure
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.5

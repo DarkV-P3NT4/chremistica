@@ -1,0 +1,56 @@
+type: HeatCrafter
+
+name: "Aluminum Melter"
+description: "Melts Aluminum into its Liquefied form. useful for only one thing."
+
+health: 300
+size: 1
+hasLiquids: true
+liquidCapacity: 60
+heatRequirement: 2
+maxEfficiency: 1
+squareSprite: false
+
+category: crafting
+requirements: [ graphite/25, cmtc-itm-02-ruined-tin/10, cmtc-itm-01-quartz/20 ]
+buildTime: 20
+
+craftTime: 10
+
+consumes: {
+    items: [ cmtc-itm-06-aluminum/1 ]
+}
+
+outputLiquid: cmtc-lqd-02-liquid-aluminum/0.2
+
+updateEffect: none
+
+craftEffect: none
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawDefault
+    }
+{
+    type: DrawLiquidRegion
+    drawLiquid: cmtc-lqd-02-liquid-aluminum
+    alpha: 1
+    }
+{
+    type: DrawRegion
+    suffix: "-top"
+    }
+{
+    type: DrawHeatInput
+}
+    ]
+}
+
+research: {
+    parent: cmtc-cft-04-silicon-molder
+    planet: dkv-candemor
+}
+researchCostMultiplier: 0.25
