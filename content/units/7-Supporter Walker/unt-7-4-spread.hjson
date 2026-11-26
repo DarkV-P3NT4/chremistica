@@ -8,7 +8,7 @@ armor: 12
 speed: 0.6
 hitSize: 40
 deathShake: 20
-rotateSpeed: 2.35
+rotateSpeed: 1.5
 buildSpeed: 1
 outlineColor: 2F2724
 itemCapacity: 0
@@ -19,6 +19,7 @@ knockbackMultiplier: 1.2
 legCount: 8
 legLength: 34
 legGroupSize: 4
+legPairOffset: 2
 lockLegBase: true
 legContinuousMove: true
 legBaseOffset: 16
@@ -34,8 +35,8 @@ legPhysicsLayer: true
 
 stepShake: 2
 stepSound: walkerStep
-stepSoundPitch: 1
-stepSoundVolume: 1
+stepSoundPitch: 0.9
+stepSoundVolume: 0.95
 
 shadowElevation: 1
 groundLayer: 70

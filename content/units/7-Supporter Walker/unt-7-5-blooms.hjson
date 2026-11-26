@@ -7,7 +7,7 @@ health: 21000
 armor: 19
 speed: 0.5
 hitSize: 48
-rotateSpeed: 2
+rotateSpeed: 1.3
 deathShake: 50
 buildSpeed: 1.5
 outlineColor: 2F2724
@@ -30,6 +30,7 @@ legMoveSpace: 0.65
 legExtension: -2.5
 legStraightness: 0.2
 baseLegStraightness: 0.3
+rippleScale: 1.1
 
 allowLegStep: true
 hovering: true
@@ -37,7 +38,7 @@ legPhysicsLayer: true
 
 stepShake: 4
 stepSound: walkerStep
-stepSoundPitch: 1
+stepSoundPitch: 0.8
 stepSoundVolume: 1
 
 shadowElevation: 1.1

@@ -29,7 +29,7 @@ mineTier: 2
 
 legCount: 4
 legLength: 16
-legPairOffset: 0.5
+legPairOffset: 2
 lockLegBase: true
 legContinuousMove: true
 legExtension: -3
@@ -39,6 +39,7 @@ legMinLength: 0.2
 legLengthScl: 0.92
 legForwardScl: 0.7
 legMoveSpace: 1
+rippleScale: 0.3
 
 allowLegStep: true
 hovering: true

@@ -20,19 +20,19 @@ mineTier: 1
 
 legCount: 4
 legLength: 18
-legPairOffset: 0.5
+legPairOffset: 1.5
 lockLegBase: true
 legContinuousMove: true
 legExtension: -6
 legBaseOffset: -0.5
-legMaxLength: 1.1
+legMaxLength: 1.2
 legMinLength: 0.2
 legLengthScl: 1
 legForwardScl: 1
 legMoveSpace: 1.1
 legStraightness: 0.2
 baseLegStraightness: 0.1
-rippleScale: 0.2
+rippleScale: 0.1
 deathExplosionEffect: [ dynamicExplosion,
 {
     type: SoundEffect
