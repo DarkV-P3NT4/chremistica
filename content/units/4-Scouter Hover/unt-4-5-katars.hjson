@@ -6,13 +6,13 @@ health: 21000
 armor: 18
 hitSize: 36
 speed: 0.44
-rotateSpeed: 4
+rotateSpeed: 1.25
 faceTarget: true
 drag: 0.08
 accel: 0.12
 deathShake: 50
 rippleScale: 0
-range: 240
+range: 180
 maxRange: 240
 strafePenalty: 1
 targetAir: false
@@ -30,10 +30,12 @@ engineSize: 0
 itemCapacity: 0
 stepSound: none
 moveSound: loopHover
-moveSoundVolume: 1.5
+moveSoundVolume: 1.25
+moveSoundPitchMin: 0.4
+moveSoundPitchMax: 1
 knockbackMultiplier: 2.15
 riseSpeed: 0.008
-descentSpeed: 0.02
+descentSpeed: 0.01
 
 immunities: [ cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-08-ruined-i, cmtc-sts-12-heavyweight ]
 
@@ -636,6 +638,8 @@ bullet: {
     despawnEffect: hitBulletColor
     intervalBullets: 2
     bulletInterval: 7.5
+    despawnSound: shootHooves
+    hitSound: shootHooves
 
 intervalBullet: {
     type: LightningBulletType
@@ -724,6 +728,8 @@ bullet: {
     despawnEffect: hitBulletColor
     intervalBullets: 2
     bulletInterval: 7.5
+    despawnSound: shootHooves
+    hitSound: shootHooves
 
 intervalBullet: {
     type: LightningBulletType
