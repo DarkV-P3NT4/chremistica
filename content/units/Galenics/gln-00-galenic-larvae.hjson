@@ -1,24 +1,26 @@
 type: crawl
 name: "Galenic Larvae"
-description: "The firstborn of the galenic species. An invasive species originated from the meltdown incident, the larvaes known to attack aggressively to any beings threatened to attack the colony... or METAMORPHOSIS."
+description: "The firstborn of the galenic species. An invasive species originated from the meltdown incident, the larvaes known to attack aggressively (Not really) to any beings threatened to attack the colony... or METAMORPHOSIS."
 
 health: 2100
 armor: 30
 hitSize: 10.4
 speed: 0.3
 range: 0
-maxRange: 0
+maxRange: 120
+controller: HugAI
 itemCapacity: 0
 drawBody: false
 drawCell: false
 segments: 3
-segmentMag: 1.5
-segmentScl: 2.5
+segmentMag: 1.2
+segmentScl: 2.4
 segmentMaxRot: 35
-rotateSpeed: 3
+rotateSpeed: 2
 omniMovement: false
 drag: 0.24
 outlineColor: 2D2F33
+lightColor: 89CCDE
 canDrown: false
 floorMultiplier: 0
 faceTarget: true
@@ -27,6 +29,7 @@ hovering: true
 hidden: false
 logicControllable: false
 healColor: 89CCDE
+alwaysShootWhenMoving: true
 
 crawlSlowdown: 0.8
 crushDamage: 0.1
@@ -53,17 +56,18 @@ weapons: [
     x: 0
     y: 0
     shootSound: none
-    reload: 3600
+    reload: 600
     mirror: false
     display: false
     alwaysShooting: true
 
 shoot: {
-    firstShotDelay: 3600
+    firstShotDelay: 600
 }
 
 bullet: {
     instantDisappear: true
+    createChance: 0.8
     killShooter: true
     damage: 0
     shootEffect: none

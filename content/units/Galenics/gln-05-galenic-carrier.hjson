@@ -1,0 +1,182 @@
+type: legs
+name: "Galenic Carrier"
+description: "The promoted caste of the galenic species. An invasive species of the meltdown incident, Used as a storage unit carrying buttloads of tetherium for the colony, Best not to kill it when with the groups."
+
+health: 1250
+armor: 20
+hitSize: 10
+speed: 0.3
+range: 100
+maxRange: 148
+itemCapacity: 0
+drawCell: false
+rotateSpeed: 1.5
+drag: 0.06
+accel: 0.1
+outlineColor: 2D2F33
+canDrown: false
+floorMultiplier: 0.5
+faceTarget: true
+targetAir: false
+hidden: false
+logicControllable: false
+healColor: 89CCDE
+lightColor: 89CCDE
+lightRadius: 80
+stepSound: antStep
+stepSoundVolume: 1.1
+stepSoundPitch: 0.9
+
+lockLegBase: true
+legCount: 6
+legLength: 26
+legGroupSize: 2
+legPairOffset: 1
+lockLegBase: true
+legContinuousMove: true
+legExtension: -3.5
+legBaseOffset: 1.2
+legMaxLength: 1.5
+legMinLength: 0.4
+legLengthScl: 0.9
+legForwardScl: 1
+legMoveSpace: 0.9
+legStraightness: 0.25
+
+allowLegStep: true
+hovering: true
+legPhysicsLayer: true
+groundLayer: 71
+
+immunities: [ cmtc-sts-01-empowered-i, cmtc-sts-01-empowered-ii, cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-i, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-i, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-07-refined-i, cmtc-sts-07-refined-ii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii, cmtc-sts-20-tethersludge ]
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.05
+    }
+{
+    type: LiquidRegenAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: LiquidExplodeAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: StatusFieldAbility
+    effect: cmtc-sts-21-synthesis
+    duration: 480
+    reload: 960
+    range: 80
+    }
+]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-abdomen"
+    mirror: false
+    x: 0
+    y: -9.5
+    children: [
+{
+    type: RegionPart
+    suffix: "-abdomen-glow"
+    color: 458091
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+}
+{
+    type: RegionPart
+    suffix: "-mandible"
+    mirror: true
+    x: 2
+    y: 13.25
+    under: true
+    layerOffset: -0.001
+}
+]
+
+weapons: [
+{
+    x: 0
+    y: 0
+    reload: 1
+    mirror: false
+    shootOnDeath: true
+    shootCone: 180
+    shootSound: none
+    controllable: false
+    aiControllable: false
+
+bullet: {
+    instantDisappear: true
+    killShooter: true
+    type: ExplosionBulletType
+    knockback: 100
+    speed: 0
+    damage: 0
+    fragBullets: 1
+    fragVelocityMin: 1
+
+fragBullet: {
+    type: BasicBulletType
+    hittable: false
+    width: 0
+    height: 0
+    reflectable: false
+    absorbable: false
+    collides: false
+    speed: 0
+    lifetime: 150
+    damage: 0
+    bulletInterval: 3
+    intervalBullets: 8
+    despawnEffect: none
+
+intervalBullet: {
+    type: LiquidBulletType
+    boilTime: 60
+    liquid: cmtc-lqd-05-tetherium
+    orbSize: 4
+    puddleSize: 24
+    damage: 10
+    splashDamage: 5
+    splashDamageRadius: 8
+    knockback: 1.5
+    impact: true
+    speed: 4
+    lifetime: 38
+    drag: 0.01
+    puddles: 10
+    despawnSound: shootAtrax
+    puddleLiquid: cmtc-lqd-05-tetherium
+    puddleRange: 64
+    puddleAmount: 100
+    lifeScaleRandMin: 0.1
+    velocityScaleRandMin: 0.8
+    hitEffect: {
+    type: ParticleEffect
+    colorFrom: 89CCDEFF
+    colorTo: 89CCDEFF
+    sizeFrom: 2
+    sizeTo: 0
+    sizeChangeStart: 10
+    lifetime: 20
+    length: 16
+    particles: 8
+    cone: 30
+    interp: pow3Out
+}
+    despawnEffect: none
+    status: cmtc-sts-20-tethersludge
+    statusDuration: 150
+}
+    }
+}
+    }
+]

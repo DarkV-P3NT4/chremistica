@@ -11,7 +11,8 @@ maxRange: 148
 itemCapacity: 0
 drawCell: false
 rotateSpeed: 3
-drag: 0.24
+drag: 0.06
+accel: 0.1
 outlineColor: 2D2F33
 canDrown: false
 floorMultiplier: 0.5
@@ -19,6 +20,8 @@ faceTarget: true
 hidden: false
 logicControllable: false
 healColor: 89CCDE
+lightColor: 89CCDE
+stepSound: antStep
 
 lockLegBase: true
 legCount: 6
@@ -85,7 +88,7 @@ parts: [
     progress: warmup
     moveX: 1
     moveRot: -45
-    layerOffset: -0.01
+    layerOffset: -0.001
 }
 ]
 

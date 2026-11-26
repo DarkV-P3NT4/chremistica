@@ -1,0 +1,468 @@
+type: legs
+name: "Galenic Queen [Princess]"
+description: "The secondary origin of the galenic species. An invasive species originated from the meltdown incident, In this state she is in her young form, protection is always needed."
+
+health: 2000
+armor: 15
+hitSize: 9.2
+speed: 0.75
+range: 150
+maxRange: 196
+itemCapacity: 0
+drawCell: false
+rotateSpeed: 3
+drag: 0.06
+accel: 0.1
+outlineColor: 2D2F33
+lightColor: 89CCDE
+canDrown: false
+floorMultiplier: 0.5
+faceTarget: true
+hidden: false
+logicControllable: false
+healColor: 89CCDE
+stepSound: antStep
+
+lockLegBase: true
+legCount: 6
+legLength: 19
+legGroupSize: 2
+legPairOffset: 1
+lockLegBase: true
+legContinuousMove: true
+legExtension: -2
+legBaseOffset: 2
+legMaxLength: 1.3
+legMinLength: 0.2
+legLengthScl: 0.92
+legForwardScl: 0.96
+legMoveSpace: 0.9
+legStraightness: 0.3
+
+allowLegStep: true
+hovering: true
+legPhysicsLayer: true
+groundLayer: 71
+
+immunities: [ cmtc-sts-01-empowered-i, cmtc-sts-01-empowered-ii, cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-i, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-i, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-07-refined-i, cmtc-sts-07-refined-ii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii, cmtc-sts-20-tethersludge ]
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.05
+    }
+{
+    type: LiquidRegenAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: LiquidExplodeAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-mandible"
+    mirror: true
+    x: 1.75
+    y: 9.25
+    under: true
+    progress: warmup
+    moveX: 0.5
+    moveRot: -30
+    layerOffset: -0.001
+    moves: [
+    {
+    type: PartMove
+    rot: -10
+    progress: recoil
+    }
+    ]
+}
+{
+    type: RegionPart
+    suffix: "-glow"
+    color: 45809100
+    colorTo: 458091FF
+    blending: additive
+    outline: false
+    layer: -1
+    progress: {
+    type: time
+    ops: [
+    { op: loop, time: 240 }
+    { op: curve, interp: sine }
+    { op: slope }
+    ]
+    }
+}
+]
+
+weapons: [
+{
+    x: 0
+    y: 9.5
+    shootSound: shootSpray
+    shootSoundVolume: 0.35
+    reload: 30
+    inaccuracy: 2
+    minWarmup: 0.9
+    shootWarmupSpeed: 0.08
+    smoothReloadSpeed: 0.15
+    shootCone: 5
+    mirror: false
+    rotate: false
+
+bullet: {
+    type: LiquidBulletType
+    boilTime: 30
+    liquid: cmtc-lqd-05-tetherium
+    orbSize: 4.5
+    puddleSize: 22
+    damage: 30
+    knockback: 2
+    impact: true
+    speed: 8
+    lifetime: 25
+    recoil: 0.1
+    shootEffect: {
+    type: ParticleEffect
+    colorFrom: 89CCDEFF
+    colorTo: 89CCDEFF
+    sizeFrom: 4
+    sizeTo: 0
+    sizeChangeStart: 5
+    lifetime: 24
+    length: 20
+    particles: 6
+    cone: 30
+    interp: pow3Out
+}
+    smokeEffect: none
+    hitEffect: {
+    type: ParticleEffect
+    colorFrom: 89CCDEFF
+    colorTo: 89CCDEFF
+    sizeFrom: 4.5
+    sizeTo: 0
+    sizeChangeStart: 5
+    lifetime: 20
+    length: 16
+    particles: 8
+    cone: 30
+    interp: pow3Out
+}
+    despawnEffect: none
+    status: cmtc-sts-20-tethersludge
+    statusDuration: 150
+}
+    }
+{
+    x: 0
+    y: -4
+    shootCone: 30
+    ignoreRotation: true
+    rotate: false
+    mirror: false
+    shootSound: stepMud
+    shootSoundVolume: 0.3
+    soundPitchMin: 1.2
+    soundPitchMax: 1.4
+    reload: 120
+    layerOffset: 0.1
+    recoil: 0
+    shootY: 0
+
+shoot: {
+    type: ShootSpread
+    shots: 8
+    spread: 45
+    shotDelay: 2
+}
+
+bullet: {
+    type: BasicBulletType
+    sprite: cmtc-needle
+    width: 8
+    height: 8
+    shrinkY: 0
+    shrinkX: 0
+    damage: 20
+    pierce: true
+    pierceCap: 3
+    pierceBuilding: true
+    knockback: 2.5
+    impact: true
+    rangeOverride: 160
+    speed: 4
+    lifetime: 78
+    hitSound: rockBreak
+    frontColor: 757C99FF
+    backColor: 5F6475FF
+    trailColor: 5F6475FF
+    hitColor: 757C99FF
+    trailLength: 5
+    hitEffect: {
+    type: ParticleEffect
+    particles: 12
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    sizeInterp: pow3In
+    sizeFrom: 4
+    sizeTo: 0
+    strokeFrom: 1.5
+    strokeTo: 0.4
+    lenFrom: 5
+    lenTo: 0
+    lifetime: 30
+    length: 20
+    interp: pow3Out
+}
+    despawnEffect: none
+    homingPower: 0.4
+    homingDelay: 10
+    shootEffect: {
+    type: ParticleEffect
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    sizeFrom: 3
+    sizeTo: 0
+    sizeChangeStart: 10
+    lifetime: 20
+    length: 12
+    particles: 6
+    cone: 40
+}
+    smokeEffect: none
+    }
+}
+{
+    x: 0
+    y: 0
+    shootSound: shootLiquid
+    controller: false
+    autoTarget: true
+    rotate: false
+    reload: 120
+    recoil: 0
+    shootY: 0
+    mirror: false
+
+shoot: {
+    shots: 3
+    shotDelay: 20
+}
+
+bullet: {
+    instantDisappear: true
+    rangeOverride: 120
+    recoil: 10
+    despawnEffect: none
+    hitEffect: none
+    shootEffect: none
+    smokeEffect: artilleryTrailSmoke
+}
+}
+{
+    x: 0
+    y: 0
+    shootSound: metamorphingQueen
+    shootSoundVolume: 1.1
+    alwaysShooting: true
+    controllable: false
+    reload: 3600
+    recoil: 0
+    shootCone: 360
+    soundPitchMin: 1
+    soundPitchMax: 1
+    shake: 10
+    display: false
+    parentizeEffects: true
+
+shoot: {
+    firstShotDelay: 3600
+}
+
+bullet: {
+    type: BasicBulletType
+    keepVelocity: false
+    killShooter: true
+    hittable: false
+    absorbable: false
+    reflectable: false
+    collides: false
+    speed: 0
+    lifetime: 100
+    width: 0
+    height: 0
+    damage: 80
+    splashDamage: 600
+    splashDamageRadius: 64
+    scaledSplashDamage: true
+    knockback: 1000
+    impact: true
+    despawnSound: evolveQueenJuv
+    despawnShake: 50
+    shootEffect: [
+{
+    type: ParticleEffect
+    region: "cmtc-gln-19-galenic-queen-juvenile-full"
+    colorFrom: 757C9911
+    colorTo: 757C99FF
+    colorInterp: pow3In
+    sizeFrom: 0
+    sizeTo: 17.5
+    sizeInterp: pow3Out
+    particles: 1
+    length: 0
+    lifetime: 100
+    cone: 0
+    layer: 99
+    baseRotation: -90
+}
+{
+    type: SeqEffect
+    effects: [
+{
+    type: WaveEffect
+    colorFrom: FFFFFFFF
+    colorTo: 757C99FF
+    sizeFrom: 0
+    sizeTo: 56
+    strokeFrom: 0
+    strokeTo: 8
+    lifetime: 40
+    interp: pow3Out
+}
+{
+    type: WaveEffect
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    sizeFrom: 56
+    sizeTo: 0
+    strokeFrom: 8
+    strokeTo: 2
+    lifetime: 60
+    interp: pow3In
+}
+]
+}
+]
+    smokeEffect: {
+    type: SeqEffect
+    effects: [
+{
+    type: ParticleEffect
+    colorFrom: FFFFFFFF
+    colorTo: 757C99FF
+    strokeFrom: 8
+    strokeTo: 0
+    lenFrom: 8
+    lenTo: 6
+    particles: 42
+    length: 80
+    interp: pow3Out
+    sizeInterp: pow3Out
+    lifetime: 30
+    line: true
+}
+{
+    type: ParticleEffect
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    strokeFrom: 0
+    strokeTo: 4
+    lenFrom: 4
+    lenTo: 12
+    particles: 42
+    length: 80
+    baseLength: -80
+    interp: pow3In
+    sizeInterp: smooth
+    lifetime: 70
+    line: true
+}
+]
+}
+    hitEffect: none
+    despawnEffect: [
+{
+    type: WaveEffect
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    sizeFrom: 0
+    sizeTo: 80
+    strokeFrom: 8
+    strokeTo: 0
+    lifetime: 15
+    interp: pow3Out
+}
+{
+    type: WaveEffect
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    sizeFrom: 0
+    sizeTo: 64
+    strokeFrom: 8
+    strokeTo: 0
+    lifetime: 36
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    strokeFrom: 6
+    strokeTo: 0
+    lenFrom: 12
+    lenTo: 8
+    particles: 24
+    length: 80
+    interp: pow3Out
+    sizeInterp: pow3In
+    lifetime: 90
+    line: true
+}
+{
+    type: ParticleEffect
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    strokeFrom: 4.8
+    strokeTo: 0
+    lenFrom: 14
+    lenTo: 10
+    particles: 12
+    length: 80
+    interp: pow3Out
+    sizeInterp: pow3In
+    lifetime: 72
+    line: true
+}
+{
+    type: ParticleEffect
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    sizeFrom: 8
+    sizeTo: 0
+    particles: 20
+    length: 80
+    interp: exp5Out
+    sizeInterp: pow3In
+    lifetime: 68
+}
+    ]
+    fragBullets: 1
+    fragRandomSpread: 0
+
+fragBullet: {
+    instantDisappear: 0
+    speed: 0
+    despawnEffect: none
+    hitEffect: none
+    spawnUnit: cmtc-gln-19-galenic-queen-juvenile
+}
+}
+}
+]

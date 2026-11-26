@@ -1,0 +1,171 @@
+type: legs
+name: "Galenic Overshot"
+description: "The promoted caste of the galenic species. An invasive species of the meltdown incident, Capable of launching powerful galenic artillery in far distances, However becomes rooted to the ground whilst firing."
+
+health: 2200
+armor: 25
+hitSize: 10
+speed: 0.6
+range: 280
+maxRange: 308
+itemCapacity: 0
+drawCell: false
+rotateSpeed: 1.5
+drag: 0.06
+accel: 0.1
+outlineColor: 2D2F33
+canDrown: false
+floorMultiplier: 0.5
+faceTarget: true
+hidden: false
+logicControllable: false
+healColor: 89CCDE
+lightColor: 89CCDE
+stepSound: antStep
+stepSoundVolume: 1.1
+stepSoundPitch: 0.9
+
+lockLegBase: true
+legCount: 6
+legLength: 26
+legGroupSize: 2
+legPairOffset: 1
+lockLegBase: true
+legContinuousMove: true
+legExtension: -3.5
+legBaseOffset: 1.2
+legMaxLength: 1.5
+legMinLength: 0.4
+legLengthScl: 0.9
+legForwardScl: 1
+legMoveSpace: 0.8
+legStraightness: 0.25
+
+allowLegStep: true
+hovering: true
+legPhysicsLayer: true
+groundLayer: 71
+
+immunities: [ cmtc-sts-01-empowered-i, cmtc-sts-01-empowered-ii, cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-i, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-i, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-07-refined-i, cmtc-sts-07-refined-ii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii, cmtc-sts-20-tethersludge ]
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.05
+    }
+{
+    type: LiquidRegenAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: LiquidExplodeAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+]
+
+weapons: [
+{
+    name: galenic-overshot-cannon
+    layerOffset: 0.001
+    heatColor: 89CCDEFF
+    x: 0
+    y: -4.75
+    mirror: false
+    rotate: true
+    rotationLimit: 45
+    rotateSpeed: 2
+    recoil: 2.5
+    recoilTime: 90
+    reload: 120
+    cooldownTime: 120
+    shootCone: 1.5
+    shootSound: shootOvershot
+    shootSoundVolume: 0.85
+    shake: 3
+    shootStatus: unmoving
+    shootStatusDuration: 150
+    shootY: 5.5
+
+bullet: {
+    type: ArtilleryBulletType
+    rangeOverride: 308
+    sprite: cmtc-rock-bullet
+    width: 12
+    height: 12
+    shrinkY: 0.3
+    shrinkX: 0.2
+    damage: 30
+    splashDamage: 150
+    splashDamageRadius: 36
+    knockback: 1
+    impact: true
+    speed: 4
+    lifetime: 77
+    frontColor: 757C99FF
+    backColor: 5F6475FF
+    trailColor: 5F6475FF
+    hitColor: 757C99FF
+    trailLength: 12
+    trailWidth: 2.5
+    trailInterp: slope
+    despawnSound: explosionGalena
+    despawnShake: 2
+    shootEffect: [ shootBigColor, sparkShoot, {
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 32
+    interp: pow2Out
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    strokeFrom: 8
+    strokeTo: 0
+    lifetime: 24
+}
+    ]
+    smokeEffect: shootSmokeTitan
+    hitEffect: none
+    despawnEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 38
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 28
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 30
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 10
+    length: 40
+}
+{
+    type: ParticleEffect
+    lenFrom: 5
+    lenTo: 4
+    sizeFrom: 3
+    sizeTo: 3
+    strokeFrom: 1.1
+    strokeTo: 0
+    lifetime: 48
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    interp: pow3Out
+    sizeInterp: pow2In
+    particles: 8
+    length: 40
+    line: true
+}
+    ]
+}
+}
+]

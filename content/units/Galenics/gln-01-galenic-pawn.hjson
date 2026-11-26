@@ -11,14 +11,17 @@ maxRange: 160
 itemCapacity: 0
 drawCell: false
 rotateSpeed: 3
-drag: 0.24
+drag: 0.06
+accel: 0.1
 outlineColor: 2D2F33
+lightColor: 89CCDE
 canDrown: false
 floorMultiplier: 0.5
 faceTarget: true
 hidden: false
 logicControllable: false
 healColor: 89CCDE
+stepSound: antStep
 
 lockLegBase: true
 legCount: 6
@@ -69,7 +72,7 @@ parts: [
     progress: warmup
     moveX: 0.5
     moveRot: -45
-    layerOffset: -0.01
+    layerOffset: -0.001
 }
 ]
 
@@ -121,17 +124,19 @@ bullet: {
     trailLength: 5
     hitEffect: {
     type: ParticleEffect
-    particles: 12
+    particles: 6
     colorFrom: 757C99FF
     colorTo: 757C99FF
+    sizeInterp: pow3In
     sizeFrom: 4
-    sizeTo: 2
+    sizeTo: 0
     strokeFrom: 1.5
     strokeTo: 0.4
     lenFrom: 5
-    lenTo: 0
-    lifetime: 30
+    lenTo: 5
+    lifetime: 38
     length: 20
+    line: true
     interp: pow3Out
 }
     despawnEffect: none
@@ -147,6 +152,7 @@ bullet: {
     lifetime: 20
     length: 12
     particles: 6
+    cone: 40
 }
     smokeEffect: none
     }
@@ -173,6 +179,7 @@ bullet: {
     width: 10
     height: 10
     shrinkY: 0
+    hitSize: 6
     speed: 3.2
     lifetime: 51.25
     damage: 50
@@ -184,7 +191,7 @@ bullet: {
     backColor: 5F6475FF
     shootEffect: none
     smokeEffect: none
-    recoil: 1.5
+    recoil: 1
     hitEffect: [
 {
     type: WaveEffect
@@ -193,21 +200,21 @@ bullet: {
     colorFrom: 5F6475FF
     colorTo: 757C99FF
     strokeFrom: 5
-    strokeTo: 0.1
+    strokeTo: 0
     lifetime: 12
-    interp: exp5Out
+    interp: pow3Out
 }
 {
     type: ParticleEffect
-    particles: 12
+    particles: 8
     length: 30
-    sizeFrom: 6
-    sizeTo: 2
-    sizeChangeStart: 10
-    lifetime: 18
+    sizeFrom: 4
+    sizeTo: 0
+    sizeInterp: pow3In
+    lifetime: 28
     colorFrom: 5F6475FF
     colorTo: 757C99FF
-    interp: exp5Out
+    interp: pow3Out
 }
 ]
     despawnEffect: none
@@ -225,7 +232,8 @@ fragBullet: {
     sprite: cmtc-rock-bullet-shard
     width: 10
     height: 10
-    shrinkY: 0
+    hitSize: 6
+    shrinkY: 1
     speed: 4
     lifetime: 20
     damage: 15
