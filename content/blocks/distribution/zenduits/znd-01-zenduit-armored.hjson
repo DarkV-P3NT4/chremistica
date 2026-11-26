@@ -1,5 +1,5 @@
 type: ArmoredConduit
-name: Zenduit
+name: Armored Zenduit
 description: Transports liquids forward, Does not accept non-zenduit input and prevents leaking.
 category: liquid
 requirements: [
