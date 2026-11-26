@@ -1,0 +1,19 @@
+name: Hyperdrive
+color: FFD37F
+healthMultiplier: 0.8
+speedMultiplier: 1.65
+damageMultiplier: 1.3
+damage: -0.06
+effect: [ overdriven,
+{
+    type: ParticleEffect
+    colorFrom: FFD37F
+    colorTo: FFD37F
+    length: 8
+    sizeFrom: 1.5
+    sizeTo: 0
+    lifetime: 8
+}
+    ]
+
+opposites: [ overdrive ]
