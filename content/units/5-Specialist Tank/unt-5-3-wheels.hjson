@@ -13,7 +13,7 @@ outlineColor: 2F2724
 speed: 0.632
 drag: 0.56
 deathShake: 20
-rotateSpeed: 2.5
+rotateSpeed: 2.25
 itemCapacity: 0
 targetAir: true
 targetGround: true
@@ -192,13 +192,14 @@ bullet: {
     shootEffect: [ shootBigColor, vaporSmall ]
     trailLength: 12
     bulletInterval: 15
+    hitSound: explosionDull
     despawnSound: explosionDull
-    despawnEffect: [
+    hitEffect: [
 {
     type: WaveEffect
     sizeFrom: 0
     sizeTo: 30
-    strokeFrom: 3
+    strokeFrom: 4
     strokeTo: 0
     lifetime: 15
     colorFrom: 8B74A9FF
@@ -209,7 +210,7 @@ bullet: {
     type: WaveEffect
     sizeFrom: 0
     sizeTo: 20
-    strokeFrom: 3
+    strokeFrom: 4
     strokeTo: 0
     lifetime: 20
     colorFrom: 8B74A9FF
@@ -218,10 +219,10 @@ bullet: {
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
+    sizeInterp: pow3In
     sizeFrom: 5
     sizeTo: 0
-    lifetime: 25
+    lifetime: 32
     colorFrom: 8B74A9FF
     colorTo: 8B74A9FF
     interp: pow3Out
@@ -259,29 +260,47 @@ intervalBullet: {
     shootSound: shootHorizon
     despawnSound: explosionArtillery
     despawnShake: 2
+    hitEffect: none
     despawnEffect: [
 {
     type: WaveEffect
     sizeFrom: 0
     sizeTo: 22
-    strokeFrom: 3
+    strokeFrom: 4
     strokeTo: 0
-    lifetime: 15
+    lifetime: 24
     colorFrom: 8B74A9FF
     colorTo: 8B74A9FF
     interp: pow3Out
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
     sizeFrom: 4
     sizeTo: 0
-    lifetime: 25
+    lifetime: 28
     colorFrom: 8B74A9FF
     colorTo: 8B74A9FF
     interp: pow3Out
+    sizeInterp: pow3In
     particles: 8
-    length: 20
+    length: 24
+}
+{
+    type: ParticleEffect
+    lenFrom: 7
+    lenTo: 5
+    sizeFrom: 8
+    sizeTo: 4
+    strokeFrom: 2.4
+    strokeTo: 0
+    lifetime: 24
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A9FF
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 12
+    length: 28
+    line: true
 }
     ]
     status: cmtc-sts-04-sluggish-iii

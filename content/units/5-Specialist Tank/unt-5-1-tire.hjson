@@ -20,7 +20,7 @@ maxRange: 180
 knockbackMultiplier: 0.5
 floorMultiplier: 0.9
 
-immunities: [ cmtc-sts-02-deprived-i ]
+immunities: [ cmtc-sts-02-deprived-i, cmtc-sts-06-dilemma-i ]
 
 
 treadRects: [

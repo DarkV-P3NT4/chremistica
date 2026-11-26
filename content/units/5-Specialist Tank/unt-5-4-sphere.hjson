@@ -102,7 +102,7 @@ bullet: {
     shrinkY: 0
     spin: 6
     explodeDelay: 12
-    explodeRange: 80
+    explodeRange: 70
     flakDelay: 15
     flakInterval: 15
     damage: 0
@@ -137,6 +137,7 @@ bullet: {
     despawnSound: explosionHeavy
     shootEffect: [ shootTitan, shootBigColor, vapor ]
     smokeEffect: [ shootSmokeTitan, shootBigSmoke ]
+    despawnEffect: none
     hitEffect: {
     type: MultiEffect
     effects: [
@@ -233,7 +234,7 @@ spawnBullets: [
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 12
+    sizeInterp: pow3In
     sizeFrom: 3
     sizeTo: 0
     lifetime: 24
@@ -245,10 +246,10 @@ spawnBullets: [
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 12
+    sizeInterp: pow3In
     lenFrom: 12
     lenTo: 10
-    sizeFrom: 8
+    strokeFrom: 3
     sizeTo: 0
     lifetime: 24
     colorFrom: 8B74A9FF
@@ -307,6 +308,7 @@ fragBullet: {
     backColor: 503F65FF
     trailColor: 503F65FF
     hitColor: 8B74A9FF
+    hitEffect: none
     despawnEffect: [
 {
     type: WaveEffect
@@ -321,7 +323,7 @@ fragBullet: {
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 12
+    sizeInterp: pow3In
     sizeFrom: 3
     sizeTo: 0
     lifetime: 24
@@ -333,12 +335,12 @@ fragBullet: {
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 12
+    sizeInterp: pow3In
     lenFrom: 12
     lenTo: 10
-    sizeFrom: 8
-    sizeTo: 0
-    lifetime: 24
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 38
     colorFrom: 8B74A9FF
     colorTo: 8B74A9FF
     interp: pow3Out

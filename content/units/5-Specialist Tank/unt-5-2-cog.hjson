@@ -13,7 +13,7 @@ outlineColor: 2F2724
 speed: 0.5
 drag: 0.56
 deathShake: 6
-rotateSpeed: 2
+rotateSpeed: 2.25
 itemCapacity: 0
 targetAir: false
 tankMoveSound: tankMoveSmall
@@ -91,18 +91,20 @@ bullet: {
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
     sizeFrom: 4
     sizeTo: 0
     lifetime: 25
     colorFrom: 8B74A9FF
     colorTo: 8B74A9FF
     interp: pow3Out
+    sizeInterp: pow3In
     particles: 8
     length: 20
 }
     ]
-    trailLength: 8
+    trailLength: 16
+    trailWidth: 7.5
+    trailInterp: slope
     shootEffect: shootBigColor
     smokeEffect: shootBigSmoke
     status: cmtc-sts-02-deprived-i
@@ -159,18 +161,20 @@ fragBullet: {
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
     sizeFrom: 4
     sizeTo: 0
     lifetime: 25
     colorFrom: 8B74A9FF
     colorTo: 8B74A9FF
     interp: pow3Out
+    sizeInterp: pow3In
     particles: 8
     length: 20
 }
     ]
-    trailLength: 4
+    trailLength: 12
+    trailWidth: 7.5
+    trailInterp: slope
     status: cmtc-sts-02-deprived-i
     statusDuration: 120
     fragVelocityMin: 1
@@ -225,18 +229,20 @@ fragBullet: {
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
     sizeFrom: 4
     sizeTo: 0
     lifetime: 25
     colorFrom: 8B74A9FF
     colorTo: 8B74A9FF
     interp: pow3Out
+    sizeInterp: pow3In
     particles: 8
     length: 20
 }
     ]
     trailLength: 8
+    trailWidth: 7.5
+    trailInterp: slope
     shootEffect: shootBigColor
     smokeEffect: shootBigSmoke
     status: cmtc-sts-02-deprived-i
