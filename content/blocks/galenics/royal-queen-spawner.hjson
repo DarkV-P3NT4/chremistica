@@ -1,0 +1,209 @@
+type: ItemTurret
+name: Royal Queen Spawner
+description: . . .
+placeablePlayer: false
+buildVisibility: editorOnly
+customShadow: true
+drawTeamOverlay: false
+squareSprite: false
+teamPassable: true
+reload: 10800
+health: 16500
+armor: 20
+size: 4
+hasLiquids: true
+consumes: {
+    liquids: [ cmtc-lqd-05-tetherium/0.25 ]
+}
+liquidCapacity: 3000
+maxAmmo: 720
+ammoPerShot: 360
+shootSound: shootLiquid
+rotateSpeed: 0
+lockRotation: true
+shootEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 4
+    sizeTo: 32
+    strokeFrom: 10
+    strokeTo: 0
+    lifetime: 30
+    colorFrom: 89CCDE
+    colorTo: 458091
+    interp: pow3Out
+}
+{
+    type: WaveEffect
+    sizeFrom: 4
+    sizeTo: 64
+    strokeFrom: 10
+    strokeTo: 0
+    lifetime: 24
+    colorFrom: 89CCDE
+    colorTo: 458091
+    interp: pow3Out
+}
+{
+    type: WaveEffect
+    sizeFrom: 4
+    sizeTo: 96
+    strokeFrom: 10
+    strokeTo: 0
+    lifetime: 18
+    colorFrom: 89CCDE
+    colorTo: 458091
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    particles: 24
+    lifetime: 38
+    interp: pow3Out
+    sizeFrom: 4
+    sizeTo: 0
+    sizeInterp: pow3In
+    colorFrom: 89CCDE
+    colorTo: 458091
+    length: 96
+}
+{
+    type: ParticleEffect
+    particles: 18
+    lifetime: 34
+    interp: pow3Out
+    sizeFrom: 4.5
+    sizeTo: 0
+    sizeInterp: pow3In
+    colorFrom: 89CCDE
+    colorTo: 458091
+    length: 96
+}
+{
+    type: ParticleEffect
+    particles: 18
+    lifetime: 29
+    interp: pow3Out
+    sizeFrom: 3
+    sizeTo: 0
+    sizeInterp: pow3In
+    colorFrom: 89CCDE
+    colorTo: 458091
+    length: 96
+}
+]
+smokeEffect: none
+drawer: {
+  type: DrawTurret
+  basePrefix: blank-
+  parts: [
+{
+    type: RegionPart
+    suffix: "-glow1"
+    progress: {
+    type: time
+    ops: [
+    { op: loop, time: 240 }
+    { op: curve, interp: smoother }
+    { op: slope }
+    ]
+    }
+    colorFrom: 89CCDE00
+    colorTo: 89CCDEFF
+    blending: additive
+    outline: false
+    layer: -1
+}
+{
+    type: RegionPart
+    suffix: "-glow2"
+    progress: {
+    type: smoothReload
+    ops: [
+    { op: curve, interp: exp5In }
+    { op: inv }
+    ]
+    }
+    color: 00000000
+    colorTo: 89CCDEFF
+    blending: additive
+    outline: false
+    layer: -1
+}
+{
+    type: RegionPart
+    suffix: "-glow3"
+    progress: {
+    type: smoothReload
+    ops: [
+    { op: curve, interp: exp5In }
+    { op: inv }
+    ]
+    }
+    color: 00000000
+    colorTo: 89CCDEFF
+    blending: additive
+    outline: false
+    layer: -1
+}
+{
+  type: RegionPart
+  suffix: "-bubble"
+  xScl: 0.01
+  yScl: 0.01
+  growX: 1.09
+  growY: 1.09
+  growProgress: {
+    type: smoothReload
+    ops: [
+    { op: curve, interp: pow3 }
+    { op: inv }
+    ]
+  }
+  outline: false
+  layerOffset: 0.001
+  children: [
+{
+    type: RegionPart
+    suffix: "-bubble-glow"
+    progress: {
+    type: smoothReload
+    ops: [
+    { op: curve, interp: pow3In }
+    { op: delay, amount: 0.5 }
+    ]
+  }
+    color: 00000000
+    colorTo: 89CCDEFF
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+}
+]
+}
+
+alwaysShooting: true
+recoil: 0
+inaccuracy: 360
+minRange: 24
+range: 32
+shootX: 0
+shootY: 0
+ammoTypes: {
+cmtc-itm-20-galena-stone: {
+  ammoMultiplier: 1
+  damage: 0
+  width: 0
+  height: 0
+  lifetime: 0
+  spawnUnit: cmtc-gln-19-galenic-queen-princess
+  despawnHit: none
+  hitEffect: none
+  hitSound: none
+  despawnSound: none
+}  
+}
+outlineColor: 2D2F33
+squareSprite: false

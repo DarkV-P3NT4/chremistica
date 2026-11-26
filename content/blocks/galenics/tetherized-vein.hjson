@@ -1,0 +1,14 @@
+type: ArmoredConveyor
+name: Tetherized Vein
+description: BITCH, ITS ALIVE.
+placeablePlayer: false
+drawTeamOverlay: false
+buildVisibility: editorOnly
+speed: 0.046
+displayedSpeed: 6.5
+itemCapacity: 6
+health: 800
+requirements: []
+bridgeReplacement: cmtc-blk-05-tube-connector
+junctionReplacement: cmtc-blk-02-tube-crosswork
+squareSprite: false

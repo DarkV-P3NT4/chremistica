@@ -1,0 +1,37 @@
+type: AttributeCrafter
+name: "Tetherium Pump"
+description: "Extracts tetherium."
+hasLiquids: true
+health: 3000
+size: 3
+liquidCapacity: 240
+itemCapacity: 0
+attribute: tether
+squareSprite: false
+buildVisibility: editorOnly
+placeablePlayer: false
+drawTeamOverlay: false
+teamPassable: true
+craftTime: 60
+baseEfficiency: 0
+minEfficiency: 1
+boostScale: 0.1111111111111
+displayEfficiency: false
+displayScaledOutput: false
+
+outputLiquid: cmtc-lqd-05-tetherium/0.5
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawDefault
+}
+{
+    type: DrawLiquidRegion
+    drawLiquid: water
+    alpha: 1
+}
+]
+}

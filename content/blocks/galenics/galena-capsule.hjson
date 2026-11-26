@@ -1,0 +1,66 @@
+type: PowerTurret
+name: Galena Capsule
+description: Don't think about breaking this.
+placeablePlayer: false
+buildVisibility: editorOnly
+customShadow: true
+drawTeamOverlay: false
+squareSprite: false
+teamPassable: true
+reload: 0
+health: 1500
+size: 3
+hasLiquids: true
+outlineRadius: 0
+rotateSpeed: 0
+shootSound: none
+lockRotation: true
+shootEffect: none
+smokeEffect: none
+drawer: {
+  type: DrawTurret
+  basePrefix: blank-
+  parts: [
+{
+    type: RegionPart
+    suffix: "-glow"
+    progress: {
+    type: time
+    ops: [
+    { op: loop, time: 240 }
+    { op: curve, interp: slope }
+    ]
+    }
+    color: 00000000
+    colorTo: 89CCDEFF
+    blending: additive
+    outline: false
+    layer: -1
+}
+]
+}
+range: 0
+shootX: 0
+shootY: 0
+shootType: {
+}  
+outlineColor: 2D2F33
+squareSprite: false
+
+destroySound: hitGalena
+destroyBulletSameTeam: true
+destroyBullet: {
+    instantDisappear: true
+    speed: 0
+    despawnEffect: none
+    hitEffect: none
+    fragBullets: 3
+
+fragBullet: {
+    instantDisappear: true
+    hitEffect: none
+    despawnEffect: none
+    speed: 0
+    spawnUnit: cmtc-gln-01-galenic-pawn
+}
+}

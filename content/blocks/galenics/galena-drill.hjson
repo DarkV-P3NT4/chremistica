@@ -1,0 +1,129 @@
+type: AttributeCrafter
+name: "Galena Drill"
+description: "Drills out Galena"
+hasLiquids: true
+health: 2850
+size: 3
+itemCapacity: 40
+attribute: galenic
+squareSprite: false
+placeablePlayer: false
+drawTeamOverlay: false
+teamPassable: true
+buildVisibility: editorOnly
+outlineColor: 2D2F33
+customShadow: true
+craftTime: 60
+baseEfficiency: 0
+minEfficiency: 1
+rotate: false
+boostScale: 0.1111111111111
+displayEfficiency: false
+displayScaledOutput: false
+
+outputItem: cmtc-itm-20-galena-stone/1
+
+drawer: {
+    type: DrawMulti
+
+drawers: [
+{
+    type: DrawDefault
+}
+{
+    type: DrawBlockParts
+
+parts: [
+{
+    type: RegionPart
+    suffix: -top
+    mirror: false
+    outline: true
+    rotation: 90
+    layerOffset: 0.001
+}
+{
+    type: RegionPart
+    suffix: "-glow"
+    color: 458091
+    colorTo: 89CCDE
+    blending: additive
+    outline: false
+    layer: -1
+    rotation: 90
+    layerOffset: 0.001
+    progress: {
+    type: time
+    ops: [
+    { op: loop, time: 300 }
+    { op: curve, interp: slope }
+    ]
+    }
+}
+{
+    type: RegionPart
+    suffix: -bubble1
+    x: -8
+    y: -8.75
+    xScl: 0.7
+    yScl: 0.7
+    growX: 0.4
+    growY: 0.4
+    rotation: 90
+    mirror: false
+    layerOffset: 0.002
+    outline: false
+    growProgress: {
+    type: time
+    ops: [
+    { op: loop, time: 60 }
+    { op: curve, interp: pow3Out }
+    ]
+    }
+}
+{
+    type: RegionPart
+    suffix: -bubble2
+    x: 11
+    y: -6.5
+    xScl: 0.7
+    yScl: 0.7
+    growX: 0.4
+    growY: 0.4
+    rotation: 90
+    mirror: false
+    layerOffset: 0.002
+    outline: false
+    growProgress: {
+    type: time
+    ops: [
+    { op: loop, time: 60 }
+    { op: curve, interp: pow3Out }
+    ]
+    }
+}
+{
+    type: RegionPart
+    suffix: -bubble3
+    x: 0
+    y: 8.25
+    xScl: 0.7
+    yScl: 0.7
+    growX: 0.4
+    growY: 0.4
+    rotation: 90
+    mirror: false
+    layerOffset: 0.002
+    outline: false
+    growProgress: {
+    type: time
+    ops: [
+    { op: loop, time: 60 }
+    { op: curve, interp: pow3Out }
+    ]
+    }
+}
+]
+}
+]
+}

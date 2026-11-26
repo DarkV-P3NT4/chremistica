@@ -1,0 +1,31 @@
+type: RegenProjector
+name: Synthesis Node
+description: You may wanna prioritize it.
+size: 3
+health: 2100
+range: 18
+baseColor: 89CCDE
+squareSprite: false
+hasLiquids: true
+liquidCapacity: 600
+effect: {
+  type: ParticleEffect
+  colorFrom: 89CCDE
+  colorTo: 89CCDE
+  particles: 4
+  length: 8
+  sizeFrom: 3
+  sizeTo: 0
+  lifetime: 90
+  interp: pow2
+  sizeInterp: slope
+}
+consumes: {
+  liquids: [ cmtc-lqd-05-tetherium/0.25 ]
+}
+ambientSound: loopBio
+healPercent: 0.05
+placeablePlayer: false
+drawTeamOverlay: false
+teamPassable: true
+buildVisibility: editorOnly

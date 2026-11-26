@@ -1,0 +1,15 @@
+type: UnitCargoLoader
+name: "Caste Transport Area"
+description: "A Hard Working Caste is doing its job, Appreciate it atleast."
+size: 3
+squareSprite: false
+unitType: cmtc-galena-scavenger
+unitBuildTime: 180
+consumes: {}
+polyColor: 89CCDE
+polyRadius: 8
+itemCapacity: 300
+placeablePlayer: false
+drawTeamOverlay: false
+teamPassable: true
+buildVisibility: editorOnly

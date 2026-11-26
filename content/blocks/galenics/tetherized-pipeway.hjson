@@ -1,0 +1,13 @@
+type: Conduit
+name: Tetherized Pipeway
+description: Transports liquids.
+health: 800
+leaks: true
+placeablePlayer: false
+drawTeamOverlay: false
+buildVisibility: editorOnly
+requirements: []
+junctionReplacement: cmtc-znd-03-zenduit-overhead
+bridgeReplacement: cmtc-znd-04-zenduit-elevator
+underBullets: true
+liquidCapacity: 50

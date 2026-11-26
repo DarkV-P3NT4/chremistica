@@ -1,0 +1,63 @@
+type: wall
+
+name: "Galena Barricade"
+description: "Get fucking cock blocked you fool."
+
+health: 3250
+armor: 15
+size: 3
+placeablePlayer: false
+drawTeamOverlay: false
+teamPassable: true
+buildVisibility: editorOnly
+destroySound: hitGalena
+destroySoundVolume: 0.3
+destroyBulletSameTeam: true
+destroyBullet: {
+  type: BasicBulletType
+    damage: 6
+    speed: 0.1
+    lifetime: 0.5
+    hitEffect: explosion
+    despawnEffect: none
+    fragBullets: 12
+    fragVelocityMin: 0.8
+    fragVelocityMax: 1.5
+fragBullet: {
+    type: BasicBulletType
+    sprite: cmtc-needle
+    width: 8
+    height: 10
+    hitSize: 6
+    shrinkY: 0
+    shrinkX: 0
+    damage: 30
+    knockback: 0.5
+    impact: true
+    speed: 8
+    lifetime: 20
+    hitSound: rockBreak
+    frontColor: 757C99FF
+    backColor: 5F6475FF
+    trailColor: 5F6475FF
+    hitColor: 757C99FF
+    trailLength: 8
+    hitEffect: {
+    type: ParticleEffect
+    particles: 6
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    sizeFrom: 4
+    sizeTo: 2
+    strokeFrom: 1.5
+    strokeTo: 0.4
+    lenFrom: 5
+    lenTo: 0
+    lifetime: 30
+    length: 20
+    line: true
+    interp: pow3Out
+}
+    despawnEffect: none
+  }
+}
