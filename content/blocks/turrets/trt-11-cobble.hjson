@@ -16,6 +16,7 @@ category: turret
 outlineColor: 1E0D0D
 
 shootSound: shootRipple
+rotateSpeed: 2
 recoil: 1.5
 cooldownTime: 60
 range: 340
@@ -38,7 +39,7 @@ drawer: {
 }
 
 shoot: {
-    shots: 8
+    shots: 4
 }
 
 ammoTypes: {

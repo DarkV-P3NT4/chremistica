@@ -10,7 +10,7 @@ ammoPerShot: 5
 reload: 300
 squareSprite: false
 
-heatRequirement: 60
+heatRequirement: 30
 maxHeatEfficiency: 1
 
 buildTime: 300
@@ -21,6 +21,8 @@ outlineColor: 1E0D0D
 shootSound: shootSniper
 soundPitchMin: 0.8
 soundPitchMax: 1
+shootSoundVolume: 1.5
+rotateSpeed: 1.5
 recoil: 2
 range: 340
 trackingRange: 420

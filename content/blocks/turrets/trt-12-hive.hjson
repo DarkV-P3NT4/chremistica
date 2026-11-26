@@ -43,6 +43,8 @@ cmtc-itm-09-obsidian: [
     type: RegionPart
     suffix: "-disc-obsidian"
     under: true
+    color: FFFFFFFF
+    colorTo: FFFFFF00
     y: 3
     moveY: -7
     progress: {

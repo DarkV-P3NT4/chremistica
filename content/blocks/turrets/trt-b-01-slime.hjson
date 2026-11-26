@@ -1,0 +1,233 @@
+type: LiquidTurret
+
+name: "Slime"
+description: "Fires Stickybombs at enemy targets using gases of any kind."
+details: "I am not making more [#F25555]Gas[] Turrets"
+
+health: 750
+size: 2
+liquidCapacity: 10
+hasLiquids: true
+reload: 30
+squareSprite: false
+rotateSpeed: 3
+
+buildTime: 220
+requirements: [ cmtc-itm-01-quartz/80, cmtc-itm-02-ruined-tin/60, cmtc-itm-12-bromium/100 ]
+category: turret
+outlineColor: 161C2D
+
+shootSound: shootSpray
+recoil: 1.5
+range: 160
+trackingRange: 200
+shootEffect: shootBigColor
+smokeEffect: none
+inaccuracy: 2
+velocityRnd: 0.14
+lifeRnd: 0.09
+shake: 0.5
+loopSound: none
+
+drawer: {
+    type: DrawTurret
+    basePrefix: "reshined-"
+}
+
+extinguish: false
+
+ammoTypes: {
+
+gas-01-steam: {
+     type: BasicBulletType
+     sprite: mine-bullet
+     width: 10
+     height: 10
+     shrinkY: 0.1
+     shrinkX: 0.1
+     shrinkInterp: smoother
+     sticky: true
+     targetMissiles: false
+     frontColor: f4f4f4
+     backColor: CCCCCC
+     hitColor: F4F4F4
+     trailColor: CCCCCC
+     damage: 20
+     splashDamage: 50
+     splashDamageRadius: 24
+     speed: 3.2
+     lifetime: 180
+     hittable: false
+     absorbable: false
+     reflectable: false
+     collideTerrain: true
+     drag: 0.02
+     stickyExtraLifetime: 90
+     trailLength: 12
+     despawnSound: explosion
+     despawnShake: 1
+     despawnEffect: none
+     hitEffect: [
+{
+     type: WaveEffect
+     sizeFrom: 0
+     sizeTo: 26
+     colorFrom: FFFFFF
+     colorTo: F4F4F4
+     lifetime: 15
+     interp: pow3Out
+     strokeFrom: 4
+     strokeTo: 0
+}
+{
+     type: ParticleEffect
+     sizeFrom: 3.2
+     sizeTo: 0
+     colorFrom: F4F4F4
+     colorTo: F4F4F4
+     lifetime: 32
+     particles: 6
+     length: 24
+     interp: pow3Out
+     sizeInterp: pow3In
+}
+{
+     type: ParticleEffect
+     strokeFrom: 3
+     strokeTo: 0
+     lenFrom: 6.5
+     lenTo: 4
+     colorFrom: F4F4F4
+     colorTo: F4F4F4
+     lifetime: 32
+     particles: 6
+     length: 24
+     interp: pow3Out
+     sizeInterp: pow3In
+     line: true
+}
+    ]
+    fragBullets: 8
+    fragRandomSpread: 0
+    fragSpread: 45
+
+fragBullet: {
+    type: ShrapnelBulletType
+    collides: true
+    length: 24
+    width: 6
+    damage: 0
+    knockback: 20
+    impact: true
+    fromColor: F4F4F4
+    toColor: F4F4F4
+    lifetime: 6
+    serrations: 0
+    }
+}
+
+gas-02-sulfur-gas: {
+     type: BasicBulletType
+     sprite: mine-bullet
+     width: 10
+     height: 10
+     shrinkY: 0.1
+     shrinkX: 0.1
+     shrinkInterp: smoother
+     sticky: true
+     targetMissiles: false
+     frontColor: CAB773
+     backColor: 93844E
+     hitColor: CAB773
+     trailColor: 93844E
+     damage: 20
+     splashDamage: 50
+     splashDamageRadius: 24
+     speed: 3.2
+     lifetime: 180
+     hittable: false
+     absorbable: false
+     reflectable: false
+     collideTerrain: true
+     drag: 0.02
+     stickyExtraLifetime: 60
+     trailLength: 12
+     status: cmtc-sts-13-sulfur-coated
+     statusDuration: 120
+     statusChance: 0.8
+     despawnSound: explosion
+     despawnShake: 1
+     despawnEffect: none
+     hitEffect: [
+{
+     type: WaveEffect
+     sizeFrom: 0
+     sizeTo: 26
+     colorFrom: CAB773
+     colorTo: CAB773
+     lifetime: 15
+     interp: pow3Out
+     strokeFrom: 4
+     strokeTo: 0
+}
+{
+     type: ParticleEffect
+     sizeFrom: 3.2
+     sizeTo: 0
+     colorFrom: CAB773
+     colorTo: CAB773
+     lifetime: 32
+     particles: 6
+     length: 24
+     interp: pow3Out
+     sizeInterp: pow3In
+}
+{
+     type: ParticleEffect
+     strokeFrom: 3
+     strokeTo: 0
+     lenFrom: 6.5
+     lenTo: 4
+     colorFrom: CAB773
+     colorTo: CAB773
+     lifetime: 32
+     particles: 6
+     length: 24
+     interp: pow3Out
+     sizeInterp: pow3In
+     line: true
+}
+    ]
+    fragBullets: 8
+    fragRandomSpread: 0
+    fragSpread: 45
+
+fragBullet: {
+    type: ShrapnelBulletType
+    collides: true
+    length: 24
+    width: 6
+    damage: 0
+    knockback: 5
+    impact: true
+    fromColor: CAB773
+    toColor: CAB773
+    lifetime: 6
+    serrations: 0
+    status: burning
+    statusDuration: 60
+    statusChance: 0.6
+    }
+}
+    }
+
+research: {
+    parent: cmtc-trt-01-slope
+    planet: dkv-candemor
+}
+
+researchCostMultiplier: 1
+
+
+
+

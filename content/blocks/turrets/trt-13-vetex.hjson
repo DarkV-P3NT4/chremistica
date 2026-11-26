@@ -8,7 +8,7 @@ hasPower: true
 size: 2
 
 bulletDamage: 30
-reload: 6
+reload: 10
 health: 680
 color: D2BF7E
 outlineColor: 1E0D0D
@@ -18,7 +18,7 @@ consumes: {
     power: 4
 }
 buildTime: 165
-requirements: [ graphite/100, cmtc-itm-09-obsidian/50, titanium/50, silicon/60 ]
+requirements: [ graphite/100, cmtc-itm-09-obsidian/50, titanium/80, silicon/80 ]
 
 research: {
     parent: cmtc-trt-05-shock

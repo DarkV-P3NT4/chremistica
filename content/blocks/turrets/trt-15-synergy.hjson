@@ -74,13 +74,13 @@ surge-alloy: {
     rangeChange: 16
     splashDamageRadius: 37.8
     splashDamage: 30
-    lifetime: 36
+    lifetime: 43.2
     damage: 10
     buildingDamageMultiplier: 0.3
     speed: 5
     lightning: 6
     lightningLength: 7
-    lightningDamage: 5
+    lightningDamage: 4
     frontColor: FCF387FF
     backColor: E8D174FF
     trailColor: E8D174FF
@@ -89,6 +89,36 @@ surge-alloy: {
     hitEffect: flakExplosionBig
     despawnEffect: hitBulletColor
 }
+
+itm-14-violium-gem: {
+    type: BasicBulletType
+    height: 12
+    width: 8
+    ammoMultiplier: 1
+    damage: 15
+    splashDamage: 42.5
+    splashDamageRadius: 24
+    buildingDamageMultiplier: 0.3
+    reloadMultiplier: 0.8
+    speed: 5
+    lifetime: 40
+    knockback: 1
+    impact: true
+    trailLength: 8
+    frontColor: B170C7FF
+    backColor: 7C528AFF
+    trailColor: 7C528AFF
+    hitColor: B170C7FF
+    hitEffect: flakExplosionBig
+    despawnEffect: hitSquaresColor
+    status: cmtc-sts-16-violium-charged
+    lightning: 8
+    lightningLength: 9
+    lightningLengthRand: 5
+    lightningDamage: 10
+    lightningColor: 7C528AFF
+}
+
     }
 
 research: {

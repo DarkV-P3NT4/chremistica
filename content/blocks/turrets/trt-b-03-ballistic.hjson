@@ -11,7 +11,7 @@ reload: 600
 liquidCapacity: 150
 
 buildTime: 680
-requirements: [ titanium/60 ]
+requirements: [ titanium/80, cmtc-itm-12-bromium/210, silicon/300, cmtc-itm-09-obsidian/500 ]
 category: turret
 outlineColor: 161C2D
 
@@ -42,6 +42,120 @@ coolant: {
 drawer: {
     type: DrawTurret
     basePrefix: "reshined-"
+ammoParts: {
+
+surge-alloy: [
+{
+    type: RegionPart
+    suffix: "-missile-surge"
+    mirror: false
+    color: FFFFFFFF
+    colorTo: FFFFFF00
+    mixColor: FFFFFF00
+    mixColorTo: FFD37F
+    outline: true
+    under: true
+    layerOffset: -0.001
+    progress: {
+    type: reload
+    ops: [
+    { op: curve, interp: pow2In }
+    ]
+    }
+    moves: [
+{
+    type: PartMove
+    progress: warmup
+    y: 4
+}
+    ]
+}
+]
+
+itm-09-obsidian: [
+{
+    type: RegionPart
+    suffix: "-missile-obsidian"
+    mirror: false
+    color: FFFFFFFF
+    colorTo: FFFFFF00
+    mixColor: FFFFFF00
+    mixColorTo: FFD37F
+    outline: true
+    under: true
+    layerOffset: -0.001
+    progress: {
+    type: reload
+    ops: [
+    { op: curve, interp: pow2In }
+    ]
+    }
+    moves: [
+{
+    type: PartMove
+    progress: warmup
+    y: 4
+}
+    ]
+}
+]
+
+itm-10-darkite: [
+{
+    type: RegionPart
+    suffix: "-missile-darkite"
+    mirror: false
+    color: FFFFFFFF
+    colorTo: FFFFFF00
+    mixColor: FFFFFF00
+    mixColorTo: FFD37F
+    outline: true
+    under: true
+    layerOffset: -0.001
+    progress: {
+    type: reload
+    ops: [
+    { op: curve, interp: pow2In }
+    ]
+    }
+    moves: [
+{
+    type: PartMove
+    progress: warmup
+    y: 4
+}
+    ]
+}
+]
+
+itm-19-gunpowder-chunk: [
+{
+    type: RegionPart
+    suffix: "-missile-gunpowder"
+    mirror: false
+    color: FFFFFFFF
+    colorTo: FFFFFF00
+    mixColor: FFFFFF00
+    mixColorTo: FFD37F
+    outline: true
+    under: true
+    layerOffset: -0.001
+    progress: {
+    type: reload
+    ops: [
+    { op: curve, interp: pow2In }
+    ]
+    }
+    moves: [
+{
+    type: PartMove
+    progress: warmup
+    y: 4
+}
+    ]
+}
+]
+}
     parts: [
 {
     type: RegionPart
@@ -106,9 +220,9 @@ drawer: {
     suffix: "-mid"
     under: true
     mirror: false
-    heatProgress: warmup
     progress: recoil
     moveY: -3
+    heatProgress: recoil
     heatColor: 8B74A9FF
 }
     ]
@@ -116,29 +230,57 @@ drawer: {
 
 
 ammoTypes: {
+
+surge-alloy: {
+    instantDisappear: true
+    despawnEffect: none
+    hitEffect: none
+    frontColor: FCF387FF
+    backColor: FCF387FF
+    hitColor: FCF387FF
+    damage: 0
+    speed: 0
+    reloadMultiplier: 0.95
+    spawnUnit: cmtc-storm-surge-blast
+}
 itm-09-obsidian: {
-    type: BasicBulletType
-    collidesAir: false
-    width: 10
-    height: 10
-    damage: 26
-    lifetime: 44
-    speed: 4
-    ammoMultiplier: 6
-    buildingDamageMultiplier: 0.3
-    armorMultiplier: 1.3
-    frontColor: F4F4F4FF
-    backColor: B3B3B3FF
-    trailColor: B3B3B3FF
-    hitColor: F4F4F4FF
-    hitEffect: hitBulletColor
-    despawnEffect: hitBulletColor
-    trailLength: 4
+    instantDisappear: true
+    despawnEffect: none
+    hitEffect: none
+    frontColor: 9773B3
+    backColor: 9773B3
+    hitColor: 9773B3
+    damage: 0
+    speed: 0
+    spawnUnit: cmtc-obsidian-sunder-missile
+}
+itm-10-darkite: {
+    instantDisappear: true
+    despawnEffect: none
+    hitEffect: none
+    frontColor: 4C3B59FF
+    backColor: 4C3B59FF
+    hitColor: 4C3B59FF
+    damage: 0
+    speed: 0
+    spawnUnit: cmtc-hades-dark-monster-missile
+}
+itm-19-gunpowder-chunk: {
+    instantDisappear: true
+    despawnEffect: none
+    hitEffect: none
+    frontColor: 82171EFF
+    backColor: 82171EFF
+    hitColor: 82171EFF
+    damage: 0
+    speed: 0
+    reloadMultiplier: 0.6
+    spawnUnit: cmtc-blast-behemoth-carrier
 }
     }
 
 research: {
-    parent: cmtc-trt-06-barrel
+    parent: cmtc-trt-b-01-slime
     planet: dkv-candemor
 }
 
