@@ -6,7 +6,7 @@ health: 2400
 armor: 10
 hitSize: 22
 speed: 0.44
-rotateSpeed: 4.5
+rotateSpeed: 2
 faceTarget: true
 deathShake: 15
 deathSound: deathJunior
@@ -16,9 +16,12 @@ outlineColor: 2F2724
 mechLegColor: 2F2724
 itemCapacity: 0
 stepSound: mechStep
-stepShake: 3
+stepSoundVolume: 0.6
+stepShake: 1
 range: 160
 maxRange: 160
+mechSideSway: 1.145
+mechFrontSway: 0.5
 
 immunities: [ cmtc-sts-02-deprived-iii, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-iii ]
 
@@ -37,10 +40,11 @@ applyEffect: [
     colorFrom: F25555FF
     colorTo: F2555500
     length: 40
-    interp: exp5Out
+    interp: pow3Out
+    sizeInterp: pow3In
     lifetime: 120
-    sizeFrom: 2
-    sizeTo: 4
+    sizeFrom: 3
+    sizeTo: 0
 }
 {
     type: ParticleEffect
@@ -48,10 +52,11 @@ applyEffect: [
     colorFrom: A14553FF
     colorTo: A1455300
     length: 40
-    interp: exp5Out
+    interp: pow3Out
+    sizeInterp: pow3In
     lifetime: 120
-    sizeFrom: 3
-    sizeTo: 5
+    sizeFrom: 2
+    sizeTo: 0
 }
     ]
 activeEffect: {
@@ -66,10 +71,11 @@ effect: {
     sizeFrom: 0
     sizeTo: 40
     strokeFrom: 6
-    strokeTo: 2
+    strokeTo: 0
     colorFrom: F25555FF
-    colorTo: FF2555500
-    lifetime: 60
+    colorTo: FF25555FF
+    lifetime: 20
+    interp: pow3Out
 }
     }
   }
@@ -108,7 +114,7 @@ bullet: {
     height: 22
     hitSize: 8
     shrinkY: 0.2
-    damage: 45
+    damage: 40
     splashDamage: 30
     splashDamageRadius: 20
     speed: 3.2
@@ -125,24 +131,42 @@ bullet: {
 {
     type: WaveEffect
     sizeFrom: 0
-    sizeTo: 20
+    sizeTo: 22
+    interp: pow3Out
     colorFrom: C9A58FFF
-    colorTo: C9A58F00
-    strokeFrom: 2
-    strokeTo: 2
-    lifetime: 10
+    colorTo: C9A58FFF
+    strokeFrom: 5
+    strokeTo: 0
+    lifetime: 12
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 30
-    sizeFrom: 4
-    sizeTo: 2
-    lifetime: 14
+    sizeFrom: 3.5
+    sizeTo: 0
+    lifetime: 26
     colorFrom: C9A58FFF
-    colorTo: C9A58F00
+    colorTo: C9A58FFF
     interp: pow3Out
-    particles: 10
+    sizeInterp: pow3In
+    particles: 4
     length: 24
+}
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 2
+    strokeFrom: 3.2
+    strokeTo: 0
+    lenFrom: 5.4
+    lenTo: 3.8
+    lifetime: 26
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 8
+    length: 29
+    line: true
 }
 ]
     despawnEffect: none
@@ -202,24 +226,41 @@ bullet: {
     type: WaveEffect
     sizeFrom: 0
     sizeTo: 42
-    strokeFrom: 3
-    strokeTo: 2
-    lifetime: 30
+    strokeFrom: 5
+    strokeTo: 0
+    lifetime: 12
     colorFrom: C9A58FFF
-    colorTo: C9A58F00
+    colorTo: C9A58FFF
     interp: pow3Out
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 30
-    sizeFrom: 7
+    sizeFrom: 5.5
     sizeTo: 0
-    lifetime: 40
+    lifetime: 26
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
-    particles: 8
-    length: 40
+    sizeInterp: pow3In
+    particles: 6
+    length: 44
+}
+{
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 3
+    strokeFrom: 2.7
+    strokeTo: 0
+    lenFrom: 5.5
+    lenTo: 4.3
+    lifetime: 36
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 21
+    length: 48
+    line: true
 }
     ]
     despawnEffect: none
@@ -270,24 +311,41 @@ fragBullet: {
     type: WaveEffect
     sizeFrom: 0
     sizeTo: 42
-    strokeFrom: 3
-    strokeTo: 2
-    lifetime: 30
+    strokeFrom: 5
+    strokeTo: 0
+    lifetime: 12
     colorFrom: C9A58FFF
-    colorTo: C9A58F00
+    colorTo: C9A58FFF
     interp: pow3Out
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 30
-    sizeFrom: 7
+    sizeFrom: 5.5
     sizeTo: 0
-    lifetime: 40
+    lifetime: 26
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
-    particles: 8
-    length: 40
+    sizeInterp: pow3In
+    particles: 6
+    length: 44
+}
+{
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 3
+    strokeFrom: 2.7
+    strokeTo: 0
+    lenFrom: 5.5
+    lenTo: 4.3
+    lifetime: 36
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 21
+    length: 48
+    line: true
 }
     ]
     despawnEffect: none

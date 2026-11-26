@@ -6,7 +6,7 @@ health: 1150
 armor: 5
 hitSize: 11.6
 speed: 0.516
-rotateSpeed: 5
+rotateSpeed: 2.75
 faceTarget: true
 deathShake: 6
 targetAir: true
@@ -17,6 +17,8 @@ itemCapacity: 0
 stepSound: mechStepSmall
 range: 149.6
 maxRange: 149.6
+mechFrontSway: 0.8
+mechSideSway: 0
 
 immunities: [ cmtc-sts-01-empowered-i, cmtc-sts-02-deprived-i, cmtc-sts-02-deprived-ii, cmtc-sts-05-amplified-i, cmtc-sts-04-sluggish-i ]
 
@@ -94,26 +96,64 @@ bullet: {
     trailColor: 8F665BFF
     hitColor: C9A58FFF
     shootEffect: shootBigColor
-    hitEffect: {
+    hitEffect: [
+{
     type: WaveEffect
     sizeFrom: 0
     sizeTo: 8
-    colorFrom: C9A58FFF
-    colorTo: C9A58F00
-    strokeFrom: 2
-    strokeTo: 2
-    lifetime: 6
-}
-    despawnEffect: {
-    type: WaveEffect
-    sizeFrom: 0
-    sizeTo: 4
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     strokeFrom: 4
     strokeTo: 0
     lifetime: 6
 }
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 3
+    strokeFrom: 2.3
+    strokeTo: 0
+    lenFrom: 4
+    lenTo: 6
+    lifetime: 20
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 4
+    length: 16
+    line: true
+}
+    ]
+    despawnEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 8
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 6
+}
+{
+    type: ParticleEffect
+    sizeFrom: 3
+    sizeTo: 3
+    strokeFrom: 2.3
+    strokeTo: 0
+    lenFrom: 4
+    lenTo: 6
+    lifetime: 20
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 4
+    length: 16
+    line: true
+}
+    ]
     smokeEffect: shootBigSmoke
     trailLength: 4
 }

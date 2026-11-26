@@ -6,7 +6,7 @@ health: 22000
 armor: 25
 hitSize: 36
 speed: 0.44
-rotateSpeed: 4
+rotateSpeed: 1.25
 faceTarget: true
 deathShake: 60
 targetAir: true
@@ -16,9 +16,10 @@ mechLegColor: 2F2724
 itemCapacity: 0
 deathSound: deathSenior
 stepSound: mechStepHeavy
-stepShake: 7.5
+stepShake: 4
 mechFrontSway: 1
-mechSideSway: 0.88
+mechSideSway: 1.12
+mechStepParticles: true
 range: 200
 maxRange: 200
 
@@ -173,6 +174,8 @@ bullet: {
     trailColor: 8F665BFF
     hitColor: C9A58FFF
     trailLength: 12
+    trailWidth: 3
+    trailInterp: slope
     shootEffect: [ sparkShoot, shootBigColor, vaporSmall ]
     smokeEffect: shootBigSmoke
     hitEffect: [
@@ -182,14 +185,14 @@ bullet: {
     sizeTo: 30
     strokeFrom: 6
     strokeTo: 0
-    lifetime: 22
+    lifetime: 12
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
+    sizeInterp: pow3In
     sizeFrom: 4
     sizeTo: 0
     lifetime: 40
@@ -202,16 +205,16 @@ bullet: {
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
-    sizeFrom: 10
-    sizeTo: 5
-    strokeFrom: 6
+    sizeInterp: pow3In
+    lenFrom: 10
+    lenTo: 5
+    strokeFrom: 2.1
     strokeTo: 0
     lifetime: 45
     colorFrom: C9A58FF
     colorTo: C9A58FFF
     interp: pow3Out
-    particles: 24
+    particles: 16
     length: 60
     line: true
 }
@@ -220,8 +223,8 @@ bullet: {
     despawnHit: true
     hitSound: explosionFine
     despawnSound: explosionFine
-    hitShake: 3.5
-    despawnShake: 3.5
+    hitShake: 1
+    despawnShake: 1
 }
     }
 {
@@ -250,10 +253,10 @@ bullet: {
     homingDelay: 5
     speed: 3.2
     lifetime: 62.5
-    damage: 150
+    damage: 200
     splashDamage: 100
     splashDamageRadius: 40
-    shieldDamageMultiplier: 2.5
+    shieldDamageMultiplier: 5
     knockback: 5
     impact: true
     weaveMag: 3
@@ -262,7 +265,8 @@ bullet: {
     backColor: 8F665BFF
     trailColor: 8F665BFF
     hitColor: C9A58FFF
-    trailLength: 8
+    trailLength: 16
+    trailWidth: 3
     shootEffect: [ shootBigColor, vapor ]
     smokeEffect: shootBigSmoke2
     hitEffect: [
@@ -270,19 +274,18 @@ bullet: {
     type: WaveEffect
     sizeFrom: 0
     sizeTo: 42
-    strokeFrom: 3
-    strokeTo: 2
-    lifetime: 40
+    strokeFrom: 8
+    strokeTo: 0
+    lifetime: 18
     colorFrom: C9A58FFF
-    colorTo: C9A58F00
+    colorTo: C9A58FFf
     interp: pow3Out
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 10
     sizeFrom: 4
     sizeTo: 0
-    lifetime: 50
+    lifetime: 36
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
@@ -292,16 +295,16 @@ bullet: {
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
-    sizeFrom: 12
-    sizeTo: 7
-    strokeFrom: 6
+    sizeInterp: pow3In
+    lenFrom: 6.6
+    lenTo: 4
+    strokeFrom: 3.2
     strokeTo: 0
     lifetime: 50
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
-    particles: 18
+    particles: 16
     length: 60
     line: true
 }
@@ -325,16 +328,15 @@ bullet: {
     mirror: false
     rotate: false
     shootY: 0
+    inaccuracy: 30
     ignoreRotation: true
     baseRotation: 180
     controllable: false
     autoTarget: true
 
 shoot: {
-    type: ShootSpread
-    spread: 2.5
     shots: 12
-    shotDelay: 1.5
+    shotDelay: 3
 }
 
 bullet: {
@@ -352,14 +354,14 @@ bullet: {
     splashDamageRadius: 28
     knockback: 2.5
     impact: true
-    rangeOverride: 100
+    rangeOverride: 120
     weaveMag: 6
     weaveScale: 12
     frontColor: C9A58FFF
     backColor: 8F665BFF
     trailColor: 8F665BFF
     hitColor: C9A58FFF
-    trailLength: 8
+    trailLength: 12
     shootEffect: [ shootBigColor, vaporSmall ]
     smokeEffect: shootBigSmoke2
     hitEffect: [
@@ -369,14 +371,14 @@ bullet: {
     sizeTo: 30
     strokeFrom: 6
     strokeTo: 0
-    lifetime: 22
+    lifetime: 18
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
+    sizeInterp: pow3In
     sizeFrom: 3
     sizeTo: 0
     lifetime: 40
@@ -389,16 +391,16 @@ bullet: {
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
-    sizeFrom: 12
-    sizeTo: 8
-    strokeFrom: 6
+    sizeInterp: pow3In
+    lenFrom: 8
+    lenTo: 2
+    strokeFrom: 2
     strokeTo: 0
     lifetime: 45
     colorFrom: C9A58FF
     colorTo: C9A58FFF
     interp: pow3Out
-    particles: 24
+    particles: 12
     length: 60
     line: true
 }

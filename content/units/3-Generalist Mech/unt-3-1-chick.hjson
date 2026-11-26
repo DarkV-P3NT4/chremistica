@@ -6,7 +6,7 @@ health: 500
 armor: 2
 hitSize: 8
 speed: 0.516
-rotateSpeed: 5
+rotateSpeed: 3
 faceTarget: true
 deathShake: 3
 targetAir: true
@@ -17,6 +17,8 @@ itemCapacity: 0
 stepSound: mechStepSmall
 range: 145.6
 maxRange: 145.6
+mechSideSway: 0.56
+mechFrontSway: 0.52
 
 immunities: [ cmtc-sts-02-deprived-i ]
 
@@ -77,30 +79,36 @@ bullet: {
 }
 {
     type: ParticleEffect
-    sizeFrom: 3
-    sizeTo: 1
-    lifetime: 16
+    sizeFrom: 3.1
+    sizeTo: 0
+    lifetime: 22
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
+    sizeInterp: pow3In
     particles: 10
     length: 16
 }
 {
     type: ParticleEffect
     sizeFrom: 3
-    sizeTo: 0
-    lifetime: 16
+    sizeTo: 3
+    strokeFrom: 2.3
+    strokeTo: 0
+    lenFrom: 6
+    lenTo: 5
+    lifetime: 28
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
+    sizeInterp: pow3In
     particles: 5
     length: 15
     line: true
 }
     ]
     despawnEffect: none
-    trailLength: 4
+    trailLength: 6
     drag: -0.003
 }
     }

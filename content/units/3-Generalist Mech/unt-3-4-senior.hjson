@@ -6,7 +6,7 @@ health: 9300
 armor: 15
 hitSize: 26
 speed: 0.5
-rotateSpeed: 3.5
+rotateSpeed: 1.75
 faceTarget: true
 deathShake: 35
 targetAir: true
@@ -16,8 +16,10 @@ mechLegColor: 2F2724
 itemCapacity: 0
 deathSound: deathSenior
 stepSound: mechStepHeavy
-stepShake: 5
-mechFrontSway: 1
+stepSoundVolume: 0.8
+stepShake: 3
+mechStepParticles: true
+mechFrontSway: 1.25
 range: 240
 maxRange: 240
 
@@ -120,11 +122,12 @@ shoot: {
 bullet: {
     type: MissileBulletType
     sprite: "cmtc-missile-huge"
-    height: 18
-    width: 16
+    height: 24
+    width: 20
+    hitSize: 15
     homingPower: 0.1
-    homingRange: 120
-    homingDelay: 18
+    homingRange: 150
+    homingDelay: 30
     speed: 3.2
     lifetime: 100
     damage: 500
@@ -144,33 +147,33 @@ bullet: {
     type: WaveEffect
     sizeFrom: 0
     sizeTo: 50
-    strokeFrom: 3
-    strokeTo: 2
-    lifetime: 40
+    strokeFrom: 8
+    strokeTo: 0
+    lifetime: 18
     colorFrom: C9A58FFF
-    colorTo: C9A58F00
+    colorTo: C9A58FFF
     interp: pow3Out
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 10
     sizeFrom: 4
     sizeTo: 0
-    lifetime: 50
+    lifetime: 42
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
+    sizeInterp: pow3In
     particles: 12
     length: 46
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
-    sizeFrom: 8
-    sizeTo: 5
-    lenFrom: 18
-    lenTo: 0
-    lifetime: 50
+    sizeInterp: pow3In
+    strokeFrom: 1.6
+    strokeTo: 0
+    lenFrom: 8
+    lenTo: 6
+    lifetime: 58
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
@@ -182,6 +185,8 @@ bullet: {
     despawnEffect: none
     hitSound: explosionMissile
     despawnSound: explosionMissile
+    hitShake: 10
+    despawnShake: 3
     fragBullets: 6
     fragOnAbsorb: false
     delayFrags: true
@@ -197,8 +202,8 @@ fragBullet: {
     height: 10
     width: 8
     homingPower: 0.15
-    homingRange: 120
-    homingDelay: 12
+    homingRange: 300
+    homingDelay: 18
     speed: 4
     lifetime: 60
     damage: 80
@@ -217,18 +222,18 @@ fragBullet: {
     sizeFrom: 0
     sizeTo: 26
     strokeFrom: 2
-    strokeTo: 0.5
-    lifetime: 40
+    strokeTo: 0
+    lifetime: 18
     colorFrom: C9A58FFF
-    colorTo: C9A58F00
+    colorTo: C9A58FFF
     interp: pow3Out
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 10
-    sizeFrom: 2
+    sizeInterp: pow3In
+    sizeFrom: 3.5
     sizeTo: 0
-    lifetime: 50
+    lifetime: 42
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
@@ -237,12 +242,12 @@ fragBullet: {
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
-    sizeFrom: 4
-    sizeTo: 2
-    lenFrom: 18
-    lenTo: 0
-    lifetime: 50
+    sizeInterp: pow3In
+    strokeFrom: 1
+    sizeTo: 0
+    lenFrom: 6
+    lenTo: 4
+    lifetime: 60
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
@@ -251,6 +256,7 @@ fragBullet: {
     line: true
 }
     ]
+    despawnShake: 2
     despawnEffect: none
     hitSound: explosionDull
     despawnSound: explosionDull
@@ -266,6 +272,7 @@ fragBullet: {
     shootY: 8.75
     shootX: -1
     recoil: 2
+    recoilTime: 120
     cooldownTime: 60
     mirror: false
     rotate: false
@@ -284,7 +291,7 @@ parts: [
 {
     type: RegionPart
     suffix: "-glow"
-    progress: reload
+    progress: recoil
     color: 8F665BFF
     colorTo: C9A58FFF
     blending: additive
@@ -296,8 +303,9 @@ parts: [
 bullet: {
     type: MissileBulletType
     sprite: missile-large
-    height: 15
+    height: 16
     width: 12
+    hitSize: 8
     shrinkY: 0.1
     damage: 30
     splashDamage: 100
@@ -323,30 +331,47 @@ bullet: {
 {
     type: WaveEffect
     sizeFrom: 0
-    sizeTo: 26
-    strokeFrom: 3
-    strokeTo: 2
-    lifetime: 26
+    sizeTo: 34
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 16
     colorFrom: C9A58FFF
-    colorTo: C9A58F00
+    colorTo: C9A58FFF
     interp: pow3Out
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 10
-    sizeFrom: 6
+    sizeInterp: pow3In
+    sizeFrom: 4.5
     sizeTo: 0
-    lifetime: 30
+    lifetime: 39
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
     particles: 8
-    length: 32
+    length: 38
+}
+{
+    type: ParticleEffect
+    sizeInterp: pow3In
+    strokeFrom: 2
+    sizeTo: 0
+    lenFrom: 6
+    lenTo: 2
+    lifetime: 60
+    colorFrom: C9A58FFF
+    colorTo: C9A58FFF
+    interp: pow3Out
+    particles: 14
+    length: 42
+    line: true
 }
     ]
     despawnEffect: none
     hitSound: explosion
     despawnSound: explosion
+    hitShake: 3
+    despawnShake: 1.5
 }
     }
 {
@@ -358,6 +383,7 @@ bullet: {
     soundPitchMin: 1.1
     soundPitchMax: 1.3
     recoil: 1.5
+    recoilTime: 220
     cooldownTime: 240
     mirror: false
     rotate: false
@@ -370,14 +396,14 @@ bullet: {
 
 shoot: {
     shots: 3
-    shotDelay: 20
+    shotDelay: 30
 }
 
 parts: [
 {
     type: RegionPart
     suffix: "-glow"
-    progress: reload
+    progress: recoil
     color: 8F665BFF
     colorTo: C9A58FFF
     blending: additive
@@ -389,8 +415,9 @@ parts: [
 bullet: {
     type: BasicBulletType
     sprite: cmtc-cannonball
-    height: 10
-    width: 10
+    height: 12
+    width: 12
+    hitSize: 6
     shrinkY: 0
     lifetime: 30
     speed: 8
@@ -404,6 +431,7 @@ bullet: {
     trailColor: 8F665BFF
     hitColor: C9A58FFF
     trailLength: 8
+    trailWidth: 2.2
     shootEffect: [ shootTitan, vapor ]
     smokeEffect: shootSmokeTitan
     hitEffect: [
@@ -411,34 +439,34 @@ bullet: {
     type: WaveEffect
     sizeFrom: 0
     sizeTo: 30
-    strokeFrom: 3
+    strokeFrom: 10
     strokeTo: 0
-    lifetime: 30
+    lifetime: 12
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
-    sizeFrom: 8
+    sizeInterp: pow3In
+    sizeFrom: 6.6
     sizeTo: 0
-    lifetime: 40
+    lifetime: 45
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
-    particles: 10
+    particles: 6
     length: 60
     cone: 60
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
-    sizeFrom: 10
-    sizeTo: 5
-    lenFrom: 12
-    lenTo: 0
-    lifetime: 45
+    sizeInterp: pow3In
+    strokeFrom: 1.8
+    strokeTo: 0
+    lenFrom: 6
+    lenTo: 2
+    lifetime: 58
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
@@ -453,34 +481,34 @@ bullet: {
     type: WaveEffect
     sizeFrom: 0
     sizeTo: 30
-    strokeFrom: 3
+    strokeFrom: 10
     strokeTo: 0
-    lifetime: 30
+    lifetime: 12
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
-    sizeFrom: 8
+    sizeInterp: pow3In
+    sizeFrom: 6.6
     sizeTo: 0
-    lifetime: 40
+    lifetime: 45
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
-    particles: 10
+    particles: 6
     length: 60
     cone: 60
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
-    sizeFrom: 10
-    sizeTo: 5
-    lenFrom: 12
-    lenTo: 0
-    lifetime: 45
+    sizeInterp: pow3In
+    strokeFrom: 1.8
+    strokeTo: 0
+    lenFrom: 6
+    lenTo: 2
+    lifetime: 58
     colorFrom: C9A58FFF
     colorTo: C9A58FFF
     interp: pow3Out
@@ -492,6 +520,7 @@ bullet: {
     ]
     hitSound: explosionTitan
     despawnSound: explosionTitan
+    hitShake: 5
     fragBullets: 3
     fragOnHit: true
     fragOnDespawn: false
@@ -501,6 +530,7 @@ fragBullet: {
     type: BasicBulletType
     width: 8
     height: 12
+    hitSize: 6
     shrinkY: 0
     damage: 50
     knockback: 2.5
