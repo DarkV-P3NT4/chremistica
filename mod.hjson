@@ -9,10 +9,10 @@ description: "Chremistica is a mod that adds a Planet called Candemor. a rocky p
 - Variety of statuseffects and hazard areas
 - 7 Unique combat units with 6 Tiers
 - Small lore about the planet and the Faraway faction
-- Galenic Lifeforms
+- Galenic Lifeforms to fight against
 
 Main Author: Dark V {@deathlife}"
 subtitle: "This is not in a full campaign yet."
-version: "0.1 W.I.P"
-minGameVersion: 161
+version: "0.2 WIP"
+minGameVersion: 156
 hidden: false
