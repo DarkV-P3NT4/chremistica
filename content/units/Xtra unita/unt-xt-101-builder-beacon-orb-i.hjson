@@ -13,6 +13,7 @@ drawMinimap: false
 outlines: false
 payloadCapacity: 0
 lowAltitude: false
+physics: falsee
 drag: 0.06
 speed: 0
 rotateSpeed: 0

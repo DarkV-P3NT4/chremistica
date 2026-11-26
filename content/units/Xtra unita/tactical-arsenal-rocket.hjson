@@ -6,10 +6,9 @@ flying: true
 speed: 4
 lifetime: 367.5
 useUnitCap: false
-rotateSpeed: 0.5
-trailLength: 0
-health: 720
-armor: 0
+rotateSpeed: 0.55
+health: 400
+armor: 4
 homingDelay: 90
 missileAccelTime: 90
 deathSound: explosionMissile
@@ -19,9 +18,13 @@ drawCell: true
 isEnemy: false
 shadowElevation: 1
 engineSize: 3.4
-trailLength: 18
+engineLayer: 110
+engineOffset: 12.5
+engineColor: 8B74A9FF
+trailLength: 20
+trailColor: 8B74A9FF
 loopSound: loopMissileTrail
-loopSoundVolume: 1.6
+loopSoundVolume: 1.3
 outlines: true
 hidden: true  
 lowAltitude: true
@@ -30,15 +33,18 @@ outlineColor: 2F2724
 aimDst: 6
 maxRange: 10
 drag: 0
+knockbackMultiplier: 0
+immunities: [ slow, freezing, wet, unmoving, tarred, sapped, electrified, melting, spore-slowed, fast, overclock, overdrive, sts-03-speedy-i, sts-03-speedy-ii, sts-03-speedy-iii, sts-04-sluggish-i, sts-04-sluggish-ii, sts-04-sluggish-iii, sts-17-nitro-freezing, sts-23-hyperclock, sts-24-hyperdrive ]
+
 abilities: [
   {
     type: MoveEffectAbility
     minVelocity: 0.15
     x: 0
-    y: -12
-    effect: missileTrailSmokeSmall
-    color: 8B74A9FF
-    interval: 7
+    y: -12.5
+    effect: missileTrailSmoke
+    color: 8B74A966
+    interval: 7.5
   }
 ]
 weapons: [
@@ -63,6 +69,7 @@ bullet: {
     hitEffect: pulverize
     hitColor: 8B74A9FF
     shootEffect: [ squareWaveEffect, scatheLight ]
+    hitEffect: none
     despawnEffect: [ scatheExplosion,
 {
     type: WaveEffect
@@ -141,6 +148,7 @@ fragBullet: {
     collidesAir: false
     despawnSound: explosionDull
     despawnShake: 10
+    hitEffect: none
     despawnEffect: [ scatheSlash,
 {
     type: WaveEffect

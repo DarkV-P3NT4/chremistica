@@ -1,0 +1,118 @@
+type: missile
+physics: false
+template: MissileUnitType
+flying: true
+speed: 0
+accel: 0
+drag: 1
+lifetime: 300
+useUnitCap: false
+targetable: false
+killable: true
+wobble: false
+rotateSpeed: 0
+trailLength: 0
+health: 90000
+homingDelay: 0
+deathShake: 5
+drawCell: false
+drawBody: false
+engineSize: 0
+shadowElevation: 0
+knockbackMultiplier: 0
+deathSound: explosionArtilleryShock
+deathExplosionEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 30
+    strokeFrom: 8
+    strokeTo: 0
+    lifetime: 18
+    colorFrom: f3e979
+    colorTo: f3e979
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 30
+    colorFrom: f3e979
+    colorTo: f3e979
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 16
+    length: 30
+}
+{
+    type: ParticleEffect
+    line: true
+    sizeFrom: 4
+    sizeTo: 2
+    lenFrom: 6
+    lenTo: 0
+    lifetime: 30
+    colorFrom: f3e979
+    colorTo: f3e979
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 16
+    length: 30
+}
+    ]
+drawMinimap: false
+isEnemy: false
+shadowElevation: 1
+engineSize: 0
+outlines: true
+hidden: true  
+lowAltitude: true
+aimDst: 2
+range: 2
+maxRange: 2
+abilities: [
+  {
+    type: EnergyFieldAbility
+    hitUnits: true
+    hitBuildings: true
+    reload: 30
+    color: f3e979ff
+    damage: 30
+    healPercent: 0
+    sameTypeHealMult: 0
+    range: 100
+    maxTargets: 30
+    effectRadius: 6
+    rotateSpeed: 16
+    status: shocked
+  }
+]
+weapons: [
+{
+    x: 0
+    y: 0
+    mirror: false
+    alwaysShooting: true
+    reload: 30
+    recoil: 0
+    shootSound: shockBullet
+    shake: 1.5
+    shootCone: 360
+
+shoot: {
+   shots: 3
+   shotDelay: 5
+}
+
+bullet: {
+    instantDisappear: true
+    lightning: 5
+    lightningLength: 20
+    lightningDamage: 20
+    damage: 0
+    speed: 0
+    lightningColor: f3e979ff
+}
+}
+]

@@ -1,0 +1,81 @@
+type: mech
+
+name: "Jukebox"
+description: "Served as a Placeholder Unit when there isnt anything Added, His name is Johnny too."
+
+health: 1000
+armor: 999
+hitSize: 8
+speed: 1
+range: 40
+maxRange: 120
+physics: true
+canDrown: false
+floorMultiplier: 0
+canAttack: false
+itemCapacity: 1
+loopSound: jukebox-theme-song-is-a-joke
+loopSoundVolume: 0.25
+stepSound: walkerStepTiny
+stepSoundVolume: 1
+stepShake: 0.005
+buildRange: 80
+buildSpeed: 0.05
+outlines: false
+drawCell: false
+mechSideSway: 0.67
+mechFrontSway: 0.42
+drag: 0.12
+accel: 0.11
+
+abilities: [
+  {
+    type: MoveEffectAbility
+    y: -2
+    effect: {
+    type: ParticleEffect
+    colorFrom: FFFFFF
+    colorTo: FFFFFF
+    particles: 3
+    length: 20
+    spin: 0.15
+    lifetime: 40
+    sizeFrom: 4
+    sizeTo: 0
+    sizeInterp: pow3In
+    interp: pow3Out
+    region: "cmtc-music-notes"
+    layer: 120
+    }
+    interval: 24
+    minVelocity: 0
+  }
+]
+
+weapons: [
+  {
+  x: 0
+  y: 0
+  reload: 90
+  inaccuracy: 5
+  rotate: true
+  mirror: false
+  shoot: {
+  shots: 60
+  shotDelay: 1
+  }
+  bullet: {
+    type: BasicBulletType
+    homingPower: 0.35
+    homingDelay: 12.5
+    damage: 0
+    hittable: false
+    width: 11
+    height: 8
+    speed: 8
+    lifetime: 120
+    rangeOverride: 120
+    }
+  }
+]
+

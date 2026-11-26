@@ -7,16 +7,18 @@ accel: 1
 drag: 0
 lifetime: 165
 useUnitCap: false
-rotateSpeed: 0
+rotateSpeed: 1.5
 trailLength: 0
 health: 140
-homingDelay: 0
+homingDelay: 60
 deathSound: explosionArtilleryShock
 deathExplosionEffect: none
 drawMinimap: false
 isEnemy: false
 shadowElevation: 1
-engineSize: 0
+engineSize: 3
+engineOffset: 5.75
+engineLayer: 110
 outlines: true
 hidden: true  
 lowAltitude: true
@@ -25,12 +27,13 @@ aimDst: 2
 range: 2
 maxRange: 2
 knockbackMultiplier: 0
+immunities: [ sts-03-speedy-i, sts-03-speedy-ii, sts-03-speedy-iii, sts-04-sluggish-i, sts-04-sluggish-ii, sts-04-sluggish-iii ]
 abilities: [
   {
     type: MoveEffectAbility
     minVelocity: 0.1
     x: 0
-    y: -2.5
+    y: -5.75
     effect: missileTrailShort
     teamColor: true
     interval: 4
@@ -48,7 +51,7 @@ abilities: [
     statusDuration: 300
     range: 80
     maxTargets: 15
-    effectRadius: 1.5
+    effectRadius: 2
     rotateSpeed: 3
   }
 ]

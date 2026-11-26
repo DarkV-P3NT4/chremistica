@@ -1,0 +1,182 @@
+type: flying
+name: "Galenic Hound"
+description: "The advanced caste of the galenic species. An invasive species of the meltdown incident, Incredibly light and fast to take flight and swarm targets, Equipped with the Prototype Fabricator Component in order to clone itself."
+
+health: 800
+armor: 22
+hitSize: 9
+speed: 3.15
+range: 24
+maxRange: 180
+itemCapacity: 0
+drawCell: false
+rotateSpeed: 4
+drag: 0.09
+accel: 0.08
+fallSpeed: 0.0084
+targetAir: false
+outlineColor: 2D2F33
+lightColor: 89CCDE
+canDrown: false
+knockbackMultiplier: 2
+hidden: true
+logicControllable: false
+healColor: 89CCDE
+loopSound: loopWinged
+loopSoundVolume: 0.2
+engineSize: 0
+hovering: true
+flying: true
+lowAltitude: false
+omniMovement: false
+circleTarget: true
+circleTargetRadius: 60
+wreckHealthMultiplier: 1
+
+immunities: [ cmtc-sts-01-empowered-i, cmtc-sts-01-empowered-ii, cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-i, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-i, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-07-refined-i, cmtc-sts-07-refined-ii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii, cmtc-sts-20-tethersludge ]
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.05
+    }
+{
+    type: LiquidRegenAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: LiquidExplodeAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: SpawnDeathAbility
+    unit: grounded-galenic-hound
+}
+]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-mandible"
+    mirror: true
+    x: 1.75
+    y: 6.75
+    under: true
+    progress: {
+    type: time
+    ops: [
+    { op: loop, time: 130 }
+    { op: curve, interp: slope }
+    ]
+    }
+    moveRot: -18
+    layerOffset: -0.001
+}
+{
+    type: RegionPart
+    suffix: "-wing"
+    x: 1
+    y: -0.25
+    mirror: true
+    progress: {
+    type: time
+    ops: [
+    { op: loop, time: 3 }
+    { op: curve, interp: pow3Out }
+    ]
+    }
+    moveRot: 35
+    layerOffset: 0.002
+}
+]
+
+weapons: [
+{
+    minShootVelocity: 0.2
+    x: 0
+    y: 0
+    reload: 70
+    shootY: 0
+    shootCone: 361
+    baseRotation: 180
+    shootSound: shootDull
+    inaccuracy: 30
+    mirror: false
+
+shoot: {
+    shots: 3
+    shotDelay: 6
+}
+
+bullet: {
+    type: BasicBulletType
+    collidesAir: false
+    collides: false
+    rangeOverride: 40
+    sprite: cmtc-rock-bullet
+    width: 12
+    height: 12
+    shrinkY: 0.5
+    shrinkX: 0.5
+    damage: 10
+    splashDamage: 20
+    splashDamageRadius: 24
+    knockback: 3
+    impact: true
+    speed: 2
+    lifetime: 60
+    drag: 0.05
+    frontColor: 757C99FF
+    backColor: 5F6475FF
+    trailColor: 5F6475FF
+    hitColor: 757C99FF
+    trailInterp: slope
+    trailLength: 8
+    despawnSound: explosionGalena
+    despawnShake: 2
+    shootEffect: none
+    smokeEffect: none
+    hitEffect: none
+    despawnEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 26
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 12
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeInterp: pow3In
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 30
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    interp: pow3Out
+    particles: 7
+    length: 28
+}
+{
+    type: ParticleEffect
+    sizeInterp: pow3In
+    lenFrom: 7
+    lenTo: 4
+    sizeFrom: 8
+    sizeTo: 0
+    lifetime: 40
+    colorFrom: 757C99FF
+    colorTo: 757C99FF
+    interp: pow3Out
+    particles: 12
+    length: 28
+    line: true
+}
+    ]
+}
+}
+]

@@ -9,7 +9,6 @@ drag: 0
 lifetime: 62.5
 useUnitCap: false
 rotateSpeed: 1
-trailLength: 0
 health: 80
 homingDelay: 0
 deathSound: explosionArtillery
@@ -17,7 +16,8 @@ deathExplosionEffect: none
 drawMinimap: false
 isEnemy: false
 shadowElevation: 1
-engineSize: 0
+engineSize: 2
+engineLayer: 110
 outlines: true
 hidden: true  
 lowAltitude: true
@@ -26,13 +26,14 @@ aimDst: 2
 range: 2
 maxRange: 2
 knockbackMultiplier: 0
-trailLength: 8
+trailLength: 10
+immunities: [ sts-03-speedy-i, sts-03-speedy-ii, sts-03-speedy-iii, sts-04-sluggish-i, sts-04-sluggish-ii, sts-04-sluggish-iii ]
 abilities: [
   {
     type: MoveEffectAbility
     minVelocity: 0.1
     x: 0
-    y: -2.5
+    y: -5
     effect: missileTrailShort
     teamColor: true
     interval: 2
@@ -60,7 +61,15 @@ bullet: {
     collidesGround: true
     collidesAir: true
     hitEffect: none
-    shootEffect: [ squareWaveEffect, hitSquaresColor ]
+    shootEffect: [ squareWaveEffect, hitSquaresColor,
+{
+    type: WrapEffect
+    effect: dynamicSpikes
+    color: F25555FF
+    rotation: 20
+}
+    ]
+    smokeEffect: none
     despawnEffect: [
 {
     type: WaveEffect
@@ -75,8 +84,8 @@ bullet: {
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
-    sizeFrom: 3
+    sizeInterp: pow3In
+    sizeFrom: 4
     sizeTo: 0
     lifetime: 30
     colorFrom: F25555FF
@@ -84,6 +93,21 @@ bullet: {
     interp: pow3Out
     particles: 4
     length: 30
+}
+{
+    type: ParticleEffect
+    sizeInterp: pow3In
+    lenFrom: 7
+    lenTo: 4
+    sizeFrom: 8
+    sizeTo: 0
+    lifetime: 42
+    colorFrom: F25555FF
+    colorTo: F25555FF
+    interp: pow3Out
+    particles: 12
+    length: 28
+    line: true
 }
     ]
 }
@@ -124,6 +148,8 @@ bullet: {
     trailLength: 0
     hitEffect: hitBulletColor
     despawnEffect: none
+    shootEffect: none
+    smokeEffect: none
 }
     }
 ]

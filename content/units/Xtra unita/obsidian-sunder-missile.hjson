@@ -1,0 +1,188 @@
+type: missile
+physics: false
+template: MissileUnitType
+controller: MissileAI
+flying: true
+speed: 2
+lifetime: 666.72
+useUnitCap: false
+rotateSpeed: 0.3
+health: 580
+armor: 4
+homingDelay: 120
+missileAccelTime: 60
+deathSound: explosionMissile
+deathExplosionEffect: none
+drawMinimap: false
+drawCell: true
+isEnemy: false
+shadowElevation: 1
+engineSize: 3.5
+engineLayer: 110
+engineOffset: 10
+engineColor: 9773B3FF
+trailColor: 9773B3FF
+trailLength: 26
+loopSound: loopMissileTrail
+loopSoundVolume: 1.2
+outlines: true
+hidden: true  
+lowAltitude: true
+targetUnderBlocks: false
+outlineColor: 492C20
+aimDst: 6
+maxRange: 10
+drag: 0
+knockbackMultiplier: 0
+immunities: [ slow, freezing, wet, unmoving, tarred, sapped, electrified, melting, spore-slowed, fast, overclock, overdrive, sts-03-speedy-i, sts-03-speedy-ii, sts-03-speedy-iii, sts-04-sluggish-i, sts-04-sluggish-ii, sts-04-sluggish-iii, sts-17-nitro-freezing, sts-23-hyperclock, sts-24-hyperdrive ]
+abilities: [
+  {
+    type: MoveEffectAbility
+    minVelocity: 0.15
+    x: 0
+    y: -10
+    effect: missileTrailSmoke
+    color: 9773B366
+    interval: 9
+  }
+]
+weapons: [
+{
+    x: 0
+    y: 0
+    reload: 1
+    mirror: false
+    shootOnDeath: true
+    shootCone: 180
+    shootSound: none
+    shake: 20
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    killShooter: true
+    splashDamage: 1000
+    splashDamageRadius: 62
+    buildingDamageMultiplier: 0.1
+    knockback: 20
+    collidesGround: true
+    collidesAir: true
+    hitEffect: pulverize
+    hitColor: 9773B3
+    shootEffect: [ squareWaveEffect, scatheLight ]
+    despawnEffect: [ scatheExplosion,
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 80
+    strokeFrom: 3
+    strokeTo: 0
+    lifetime: 75
+    colorFrom: 9773B3
+    colorTo: 9773B3
+    interp: exp5Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 12
+    sizeTo: 0
+    lifetime: 120
+    colorFrom: 9773B3
+    colorTo: 9773B3
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 26
+    length: 80
+}
+{
+    type: ParticleEffect
+    sizeFrom: 18
+    sizeTo: 0
+    lifetime: 150
+    colorFrom: 9773B3
+    colorTo: 9773B3
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 21
+    length: 30
+}
+{
+    type: ParticleEffect
+    sizeInterp: exp5In
+    sizeFrom: 12
+    sizeTo: 0
+    lifetime: 300
+    colorFrom: C4C4C4FF
+    colorTo: 66666622
+    interp: pow3Out
+    particles: 32
+    length: 120
+}
+{
+    type: ParticleEffect
+    sizeInterp: exp5In
+    sizeFrom: 8
+    sizeTo: 0
+    lifetime: 300
+    colorFrom: C4C4C4FF
+    colorTo: 66666666
+    interp: pow3Out
+    particles: 32
+    length: 120
+}
+    ]
+    fragLifeMin: 0.1
+    fragBullets: 16
+
+fragBullet: {
+    type: BasicBulletType
+    sprite: large-bomb
+    width: 20
+    height: 20
+    shrinkY: 0.3
+    shrinkX: 0.3
+    drag: 0.02
+    speed: 3.4
+    lifetime: 50
+    buildingDamageMultiplier: 0.1
+    splashDamage: 50
+    splashDamageRadius: 48
+    hitUnder: true
+    knockback: 5
+    frontColor: 8B74A9FF
+    backColor: 503F65FF
+    trailColor: 503F65FF
+    hitColor: 8B74A9FF
+    trailLength: 16
+    collides: false
+    collidesAir: false
+    despawnSound: explosionDull
+    despawnShake: 6.5
+    despawnEffect: [ scatheSlash,
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 48
+    strokeFrom: 6
+    strokeTo: 0
+    lifetime: 25
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A9FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeChangeStart: 15
+    sizeFrom: 5
+    sizeTo: 0
+    lifetime: 25
+    colorFrom: 8B74A9FF
+    colorTo: 8B74A9FF
+    interp: pow3Out
+    particles: 12
+    length: 50
+}
+    ]
+    }
+}
+    }
+]

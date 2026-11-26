@@ -14,6 +14,9 @@ rotateSpeed: 0
 trailLength: 0
 health: 90000
 homingDelay: 0
+shadowElevation: 0
+drawCell: false
+knockbackMultiplier: 0
 deathSound: explosionArtilleryShock
 deathExplosionEffect: [
 {

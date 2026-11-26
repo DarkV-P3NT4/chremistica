@@ -1,0 +1,258 @@
+type: missile
+physics: false
+template: MissileUnitType
+controller: MissileAI
+flying: true
+speed: 2.8
+lifetime: 517.2
+useUnitCap: false
+rotateSpeed: 0.33
+health: 200
+armor: 2
+homingDelay: 60
+missileAccelTime: 120
+deathSound: explosionMissile
+deathSoundVolume: 1.5
+deathExplosionEffect: none
+drawMinimap: false
+drawCell: true
+isEnemy: false
+shadowElevation: 1
+engineSize: 3.5
+engineLayer: 110
+engineOffset: 10
+engineColor: 604575
+trailColor: 604575
+trailLength: 26
+loopSound: loopMissileTrail
+loopSoundVolume: 1.2
+outlines: true
+hidden: true  
+lowAltitude: true
+targetUnderBlocks: false
+outlineColor: 492C20
+aimDst: 6
+maxRange: 10
+drag: 0
+knockbackMultiplier: 0
+immunities: [ slow, freezing, wet, unmoving, tarred, sapped, electrified, melting, spore-slowed, fast, overclock, overdrive, sts-03-speedy-i, sts-03-speedy-ii, sts-03-speedy-iii, sts-04-sluggish-i, sts-04-sluggish-ii, sts-04-sluggish-iii, sts-17-nitro-freezing, sts-23-hyperclock, sts-24-hyperdrive ]
+abilities: [
+  {
+    type: MoveEffectAbility
+    minVelocity: 0.15
+    x: 0
+    y: -10
+    effect: missileTrailSmoke
+    color: 60457566
+    interval: 9
+  }
+]
+weapons: [
+{
+    x: 0
+    y: 0
+    reload: 1
+    mirror: false
+    shootOnDeath: true
+    shootCone: 180
+    shootSound: aaa
+    shake: 20
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    killShooter: true
+    splashDamage: 1000
+    splashDamageRadius: 80
+    buildingDamageMultiplier: 0.1
+    collidesGround: true
+    collidesAir: true
+    hitEffect: pulverize
+    hitColor: 604575
+    shootEffect: [ squareWaveEffect, scatheLight ]
+    despawnEffect: [ scatheExplosion,
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 80
+    strokeFrom: 3
+    strokeTo: 0
+    lifetime: 75
+    colorFrom: 604575
+    colorTo: 604575
+    interp: exp5Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 12
+    sizeTo: 0
+    lifetime: 120
+    colorFrom: 604575
+    colorTo: 604575
+    sizeInterp: pow3In
+    interp: pow3Out
+    particles: 21
+    length: 80
+}
+{
+    type: ParticleEffect
+    sizeFrom: 8
+    sizeTo: 0
+    lifetime: 150
+    colorFrom: 604575
+    colorTo: 604575
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 13
+    length: 56
+}
+{
+    type: ParticleEffect
+    sizeInterp: exp5In
+    sizeFrom: 12
+    sizeTo: 0
+    lifetime: 300
+    colorFrom: C4C4C4FF
+    colorTo: 66666622
+    interp: pow3Out
+    particles: 32
+    length: 120
+}
+{
+    type: ParticleEffect
+    sizeInterp: exp5In
+    sizeFrom: 8
+    sizeTo: 0
+    lifetime: 300
+    colorFrom: C4C4C4FF
+    colorTo: 66666666
+    interp: pow3Out
+    particles: 32
+    length: 120
+}
+    ]
+    fragBullets: 3
+
+fragBullet: {
+    instantDisappear: true
+    speed: 0
+    despawnEffect: none
+    hitEffect: none
+    spawnUnit: cmtc-crazed-pixie
+}
+
+spawnBullets: [
+{
+    type: BasicBulletType
+    drag: 1
+    width: 0
+    height: 0
+    frontColor: 604575
+    backColor: 604575
+    hitColor: 604575
+    hittable: false
+    collides: false
+    collidesTiles: false
+    absorbable: false
+    reflectable: false
+    damage: 0
+    speed: 0
+    lifetime: 900
+    intervalBullets: 1
+    bulletInterval: 60
+    hitEffect: none
+    despawnEffect: none
+    trailInterval: 6
+    trailChance: 1
+    trailEffect: {
+    type: ParticleEffect
+    particles: 1
+    sizeFrom: 80
+    sizeTo: 0
+    colorFrom: 1A152033
+    colorTo: 1A152033
+    sizeInterp: pow3In
+    lifetime: 60
+    length: 0
+    layer: 99
+    }
+
+parts: [
+    {
+      type: ShapePart
+      radius: 80
+      stroke: 1
+      strokeTo: 1
+      layer: 99
+      circle: true
+      hollow: true
+      color: 1A1520
+    }
+    {
+      type: HaloPart
+      layer: 99
+      color: 1A1520
+      shapes: 6
+      triLength: 8
+      triLengthTo: 8
+      haloRadius: 80
+      haloRadiusTo: 80
+      tri: true
+      hollow: true
+      radius: 10
+      stroke: 0.2
+      haloRotateSpeed: 0.75
+    }
+]
+
+intervalBullet: {
+    type: BasicBulletType
+    instantDisappear: true
+    hitColor: 604575
+    speed: 0
+    damage: 0
+    splashDamage: 30
+    splashDamageRadius: 80
+    scaledSplashDamage: true
+    status: sts-04-sluggish-i
+    statusDuration: 120
+    hitEffect: none
+    despawnEffect: {
+    type: WrapEffect
+    effect: dynamicSpikes
+    color: 604575
+    rotation: 76
+}
+    despawnSound: explosionMiniInfernus
+
+spawnBullets: [
+{
+    type: BasicBulletType
+    instantDisappear: true
+    hitColor: 604575
+    speed: 0
+    damage: 0
+    splashDamage: 33
+    splashDamageRadius: 53
+    scaledSplashDamage: true
+    hitEffect: none
+    despawnEffect: none
+}
+{
+    type: BasicBulletType
+    instantDisappear: true
+    hitColor: 604575
+    speed: 0
+    damage: 0
+    splashDamage: 37
+    splashDamageRadius: 26
+    scaledSplashDamage: true
+    hitEffect: none
+    despawnEffect: none
+}
+]
+}
+}
+]
+}
+    }
+]

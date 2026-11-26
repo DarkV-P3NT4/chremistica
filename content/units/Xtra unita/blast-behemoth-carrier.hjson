@@ -1,0 +1,145 @@
+type: missile
+physics: false
+template: MissileUnitType
+controller: MissileAI
+flying: true
+speed: 4.2
+lifetime: 350
+useUnitCap: false
+rotateSpeed: 0.6
+health: 30
+armor: 0
+homingDelay: 90
+missileAccelTime: 90
+deathSound: explosionMissile
+deathExplosionEffect: none
+drawMinimap: false
+drawCell: true
+isEnemy: false
+shadowElevation: 1
+engineSize: 3.5
+engineLayer: 110
+engineOffset: 10
+engineColor: 82171E
+trailColor: 82171E
+trailLength: 26
+loopSound: loopMissileTrail
+loopSoundVolume: 1.2
+moveSound: soundtoletplayerknowtheyareindanger
+moveSoundVolume: 0.35
+moveSoundPitchMin: 1
+moveSoundPitchMax: 1
+outlines: true
+hidden: true  
+lowAltitude: true
+targetUnderBlocks: false
+outlineColor: 492C20
+aimDst: 6
+maxRange: 10
+drag: 0
+knockbackMultiplier: 0
+immunities: [ slow, freezing, wet, unmoving, tarred, sapped, electrified, melting, spore-slowed, fast, overclock, overdrive, sts-03-speedy-i, sts-03-speedy-ii, sts-03-speedy-iii, sts-04-sluggish-i, sts-04-sluggish-ii, sts-04-sluggish-iii, sts-17-nitro-freezing, sts-23-hyperclock, sts-24-hyperdrive ]
+abilities: [
+  {
+    type: MoveEffectAbility
+    minVelocity: 0.15
+    x: 0
+    y: -10
+    effect: missileTrailSmoke
+    color: F2555566
+    interval: 9
+  }
+]
+weapons: [
+{
+    x: 0
+    y: 0
+    reload: 1
+    mirror: false
+    shootOnDeath: true
+    shootCone: 180
+    shootSound: aaa
+    shake: 20
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    killShooter: true
+    splashDamage: 3000
+    splashDamageRadius: 64
+    buildingDamageMultiplier: 0.01
+    collidesGround: true
+    collidesAir: true
+    hitEffect: pulverize
+    hitColor: 82171E
+    shootEffect: [ squareWaveEffect, scatheLight,
+{
+    type: WrapEffect
+    effect: dynamicSpikes
+    color: 82171E
+    rotation: 60
+}
+    ]
+    despawnEffect: [ scatheExplosion,
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 80
+    strokeFrom: 3
+    strokeTo: 0
+    lifetime: 75
+    colorFrom: 82171E
+    colorTo: 82171E
+    interp: exp5Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 12
+    sizeTo: 0
+    lifetime: 120
+    colorFrom: 82171E
+    colorTo: 82171E
+    sizeInterp: pow3In
+    interp: pow3Out
+    particles: 21
+    length: 80
+}
+{
+    type: ParticleEffect
+    sizeFrom: 8
+    sizeTo: 0
+    lifetime: 150
+    colorFrom: 82171E
+    colorTo: 82171E
+    interp: pow3Out
+    sizeInterp: pow3In
+    particles: 13
+    length: 56
+}
+{
+    type: ParticleEffect
+    sizeInterp: exp5In
+    sizeFrom: 12
+    sizeTo: 0
+    lifetime: 300
+    colorFrom: C4C4C4FF
+    colorTo: 66666622
+    interp: pow3Out
+    particles: 32
+    length: 120
+}
+{
+    type: ParticleEffect
+    sizeInterp: exp5In
+    sizeFrom: 8
+    sizeTo: 0
+    lifetime: 300
+    colorFrom: C4C4C4FF
+    colorTo: 66666666
+    interp: pow3Out
+    particles: 32
+    length: 120
+}
+    ]
+}
+    }
+]

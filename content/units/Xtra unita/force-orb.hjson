@@ -23,14 +23,17 @@ itemCapacity: 0
 health: 800
 hitSize: 8
 hidden: true
+physics: false
+knockbackMultiplier: 0
+targetable: false
 
 abilities: [
 {
     type: ForceFieldAbility
-    max: 1250
-    regen: 1
+    max: 1300
+    regen: 2.15
     radius: 160
-    cooldown: 2400
+    cooldown: 1200
     sides: 4
     rotation: 45
     }

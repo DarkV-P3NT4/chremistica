@@ -2,16 +2,16 @@ type: crawl
 name: "Grub"
 description: "Spits out bursts of bullets at enemy targets, Can crawl over most terrain."
 
-health: 600
+health: 950
 armor: 3
 hitSize: 10.4
-speed: 0.5252
+speed: 0.6
 range: 100
 itemCapacity: 0
 drawBody: false
 drawCell: true
 segments: 3
-segmentMag: 1.2
+segmentMag: 1
 segmentScl: 2.8
 segmentMaxRot: 30
 rotateSpeed: 3
@@ -24,9 +24,12 @@ faceTarget: true
 targetAir: false
 hovering: true
 knockbackMultiplier: 0
+softShadowScl: 1.5
 playerControllable: false
 logicControllable: false
 hidden: true
+
+crushDamage: 0.04
 
 immunities: [ cmtc-sts-02-deprived-i, cmtc-sts-03-speedy-i, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii ]
 

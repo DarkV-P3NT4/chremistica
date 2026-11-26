@@ -1,0 +1,91 @@
+type: tether
+name: "Galenic Scavenger"
+description: "Have you ever wonder what it's like to do your efforts? only to see that no one appreciated you enough? they see you only as a small thing or entirely nothing?"
+details: "I have that same feeling Scavenger... I kept myself thinking if i am important or insignificant, I wanted to be seen, not be something to forget."
+
+health: 100
+armor: 18
+hitSize: 10
+speed: 4
+itemCapacity: 50
+drawCell: false
+rotateSpeed: 3
+strafePenalty: 0.1
+drag: 0.09
+accel: 0.072
+fallSpeed: 0.0084
+controller: CargoAI
+outlineColor: 2D2F33
+lightColor: 89CCDE
+canDrown: false
+knockbackMultiplier: 1.5
+hidden: true
+isEnemy: false
+playerControllable: false
+logicControllable: false
+healColor: 89CCDE
+loopSound: loopWinged
+loopSoundVolume: 0.2
+engineSize: 0
+hovering: true
+flying: true
+targetable: false
+lowAltitude: true
+omniMovement: false
+wreckHealthMultiplier: 1
+hideDetails: false
+
+immunities: [ cmtc-sts-01-empowered-i, cmtc-sts-01-empowered-ii, cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-i, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-03-speedy-i, cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-04-sluggish-iii, cmtc-sts-05-amplified-i, cmtc-sts-05-amplified-ii, cmtc-sts-05-amplified-iii, cmtc-sts-06-dilemma-i, cmtc-sts-06-dilemma-ii, cmtc-sts-06-dilemma-iii, cmtc-sts-07-refined-i, cmtc-sts-07-refined-ii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, cmtc-sts-08-ruined-iii, cmtc-sts-20-tethersludge ]
+
+abilities: [
+{
+    type: RegenAbility
+    percentAmount: 0.05
+    }
+{
+    type: LiquidRegenAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+{
+    type: LiquidExplodeAbility
+    liquid: cmtc-lqd-05-tetherium
+    }
+]
+
+parts: [
+{
+    type: RegionPart
+    suffix: "-mandible"
+    mirror: true
+    x: 1.5
+    y: 7
+    under: true
+    progress: {
+    type: time
+    ops: [
+    { op: loop, time: 60 }
+    { op: absin, scl: 10, mag: 0.5 }
+    ]
+    }
+    moveRot: -20
+    layerOffset: -0.01
+}
+{
+    type: RegionPart
+    suffix: "-wing"
+    x: 1
+    y: -1.25
+    mirror: true
+    progress: {
+    type: time
+    ops: [
+    { op: loop, time: 1 }
+    { op: curve, interp: pow3Out }
+    ]
+    }
+    moveRot: 32
+    layerOffset: 0.01
+}
+]
+
+weapons: []
