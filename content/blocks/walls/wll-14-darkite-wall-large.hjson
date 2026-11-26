@@ -15,7 +15,7 @@ requirements: [
 chanceDeflect: 15
 deflectSound: shieldHit
 
-researchCostMultiplier: 0.75
+researchCostMultiplier: 1
 research: {
     parent: cmtc-wll-13-darkite-wall
     planet: dkv-candemor

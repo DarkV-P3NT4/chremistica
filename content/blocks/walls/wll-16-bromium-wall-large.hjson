@@ -1,0 +1,50 @@
+type: PowerTurret
+name: Large Bromium Wall
+description: WHAT DO YOU MEAN IT IS MADE OF BROMINE?!
+size: 2
+health: 4100
+armor: 4
+category: defense
+research: cmtc-wll-15-bromium-wall
+drawer: {
+  type: DrawTurret
+  basePrefix: blank-
+}
+requirements: [
+  cmtc-itm-12-bromium/48
+]
+buildTime: 210
+researchCostMultiplier: 1
+reload: 90
+rotateSpeed: 0
+smokeEffect: none
+shootX: 0
+shootY: 0
+shootCone: 360
+shootSound: none
+range: 40
+recoil: 0
+shootType: {
+  instantDisappear: true
+  damage: 0
+  splashDamage: 1
+  splashDamageRadius: 40
+  status: cmtc-sts-14-bromine-burns
+  statusDuration: 150
+  despawnEffect: none
+  hitEffect: none
+  shootEffect: {
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 40
+    strokeFrom: 8
+    strokeTo: 0
+    colorFrom: 7A3E19
+    colorTo: 7A3E19
+    interp: pow3Out
+    lifetime: 24
+  }
+}
+consumes: { }
+rotate: false
+lockRotation: true

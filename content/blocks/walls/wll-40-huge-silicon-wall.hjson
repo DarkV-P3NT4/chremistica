@@ -6,12 +6,12 @@ description: "Protects structures from enemy projectiles. Can block electric arc
 health: 4500
 
 size: 3
-buildTime: 24
+buildTime: 54
 requirements: [
   silicon/54
 ]
 
-researchCostMultiplier: 0.5
+researchCostMultiplier: 1
 research: {
     parent: wll-06-silicon-wall-large
     planet: dkv-candemor
