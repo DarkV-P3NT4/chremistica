@@ -1,0 +1,10 @@
+color: "757C99"
+name: "Galena Stone"
+description: "Quite a unique stone made of lead but somehow unable to be smelted into lead. what does not make sense?"
+research: cmtc-itm-09-obsidian
+charge: 0.05
+explosiveness: 0
+flammability: 0
+radioactivity: 0.1
+cost: 1
+shownPlanets: [dkv-candemor]

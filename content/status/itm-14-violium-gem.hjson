@@ -1,0 +1,11 @@
+color: "B170C7"
+name: "Violium Gem"
+description: "A delicate magical gem infused of the charges of the electromagnetic storm. used for high tech structures and factories."
+research: cmtc-itm-10-darkite
+hardness: 1
+charge: 110
+explosiveness: 0.4
+flammability: 0
+radioactivity: 0.25
+cost: 1
+shownPlanets: [dkv-candemor]
