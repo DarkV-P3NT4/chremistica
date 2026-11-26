@@ -34,7 +34,7 @@ abilities: [
 {
     type: ShieldArcAbility
     radius: 28
-    angle: 90
+    angle: 120
     max: 150
     chanceDeflect: 1
     reflectTime: 1

@@ -177,7 +177,8 @@ bullet: {
     damage: 25
     splashDamage: 25
     status: disarmed
-    statusDuration: 60
+    statusDuration: 240
+    statusChance: 0.3
     speed: 4
     lifetime: 30
     knockback: 5
@@ -186,7 +187,7 @@ bullet: {
     hitEffect: hitSquaresColor
     despawnEffect: hitSquaresColor
     hitSound: shootArc
-    hitSoundVolume: 0.15
+    hitSoundVolume: 0.4
 }
 }
 {
