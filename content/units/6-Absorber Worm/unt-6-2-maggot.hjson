@@ -33,7 +33,7 @@ immunities: [ cmtc-sts-03-speedy-ii, cmtc-sts-03-speedy-iii, cmtc-sts-04-sluggis
 abilities: [
 {
     type: RegenAbility
-    amount: 0.23
+    percentAmount: 0.025
     }
 ]
 

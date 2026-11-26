@@ -16,7 +16,7 @@ segments: 3
 segmentMag: 1.2
 segmentScl: 2.5
 segmentMaxRot: 15
-rotateSpeed: 1.5
+rotateSpeed: 0.8
 omniMovement: false
 drag: 0.24
 outlineColor: 2F2724
@@ -35,7 +35,7 @@ crushDamage: 7
 abilities: [
 {
     type: RegenAbility
-    amount: 3.5
+    percentAmount: 0.025
     }
 {
     type: SpawnDeathAbility
@@ -45,7 +45,7 @@ abilities: [
 {
     type: SpawnDeathAbility
     unit: cmtc-auto-maggot
-    amount: 8
+    amount: 10
     }
 ]
 
@@ -60,11 +60,12 @@ weapons: [
     rotate: true
     rotateSpeed: 3
     alternate: false
+    recoil: 0
 
 bullet: {
     type: ContinuousFlameBulletType
     rangeOverride: 120
-    damage: 22.5
+    damage: 20
     length: 120
     knockback: 0.25
     pierceArmor: true
@@ -79,6 +80,7 @@ bullet: {
     flareLength: 15
     hitEffect: hitFlameBeam
     hitColor: F25555
+    lifetime: 38
 }
     }
 {
@@ -132,8 +134,8 @@ bullet: {
 }
 {
     type: ParticleEffect
-    sizeChangeStart: 15
-    sizeFrom: 3
+    sizeInterp: pow3In
+    sizeFrom: 4
     sizeTo: 0
     lifetime: 30
     colorFrom: F25555FF
