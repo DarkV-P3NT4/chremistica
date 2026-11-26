@@ -48,7 +48,7 @@ type: UnitAssemblerPlan
 unit: cmtc-unt-3-3-junior
 time: 900
 requirements: [
-cmtc-ai-chip-generalist/3
+cmtc-ai-chip-generalist/4
 ]
 }
 {
@@ -56,7 +56,7 @@ type: UnitAssemblerPlan
 unit: cmtc-unt-3-4-senior
 time: 900
 requirements: [
-cmtc-ai-chip-generalist/4
+cmtc-ai-chip-generalist/8
 ]
 }
 {
@@ -64,7 +64,7 @@ type: UnitAssemblerPlan
 unit: cmtc-unt-3-5-elder
 time: 900
 requirements: [
-cmtc-ai-chip-generalist/5
+cmtc-ai-chip-generalist/15
 ]
 }
 ]

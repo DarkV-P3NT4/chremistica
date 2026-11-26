@@ -1,0 +1,61 @@
+type: Constructor
+
+name: "Moderative Constructor"
+description: "Constructs the listed blocks/components as payload form, Builds faster than minimal."
+
+health: 960
+size: 4
+buildTime: 150
+category: units
+
+requirements: [
+    cmtc-itm-01-quartz/150
+    cmtc-itm-07-refined-tin/100
+    silicon/75
+    cmtc-itm-09-obsidian/50
+    graphite/80
+]
+
+minBlockSize: 1
+maxBlockSize: 3
+configurable: true
+regionSuffix: "-refined"
+buildSpeed: 1.5
+filter: [
+    cmtc-wll-01-quartz-wall,
+    cmtc-wll-02-quartz-wall-large,
+    cmtc-wll-03-iron-wall,
+    cmtc-wll-04-iron-wall-large,
+    cmtc-wll-05-silicon-wall,
+    cmtc-wll-06-silicon-wall-large,
+    cmtc-wll-07-refined-tin-wall,
+    cmtc-wll-08-refined-tin-wall-large,
+    cmtc-wll-09-obsidian-wall,
+    cmtc-wll-10-obsidian-wall-large,
+    cmtc-wll-11-refined-titanium-wall,
+    cmtc-wll-12-refined-titanium-wall-large,
+    cmtc-wll-15-bromium-wall,
+    cmtc-wll-16-bromium-wall-large,
+    cmtc-ai-chip-generalist,
+    cmtc-ai-chip-scouter,
+    cmtc-ai-chip-specialist,
+    cmtc-ai-chip-absorber,
+    cmtc-ai-chip-supporter,
+    cmtc-ai-chip-assaulter
+    cmtc-multileg-component,
+    cmtc-sustain-component,
+    cmtc-gravitron-component,
+    cmtc-mandible-component,
+    cmtc-heavyarmor-component,
+    cmtc-integrity-component,
+    cmtc-rotor-component
+]
+
+consumes: {
+    power: 2.5
+}
+
+research: {
+    parent: cmtc-pld-13-minimal-constructor
+    planet: dkv-candemor
+}

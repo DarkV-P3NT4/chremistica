@@ -45,4 +45,31 @@ cmtc-ai-chip-scouter/2
 cmtc-gravitron-component/2
 ]
 }
+{
+type: UnitAssemblerPlan
+unit: cmtc-unt-4-3-hooves
+time: 750
+requirements: [
+cmtc-ai-chip-scouter/4
+cmtc-gravitron-component/4
+]
+}
+{
+type: UnitAssemblerPlan
+unit: cmtc-unt-4-4-claws
+time: 750
+requirements: [
+cmtc-ai-chip-scouter/8
+cmtc-gravitron-component/6
+]
+}
+{
+type: UnitAssemblerPlan
+unit: cmtc-unt-4-5-katars
+time: 750
+requirements: [
+cmtc-ai-chip-scouter/15
+cmtc-gravitron-component/10
+]
+}
 ]
