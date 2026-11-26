@@ -242,7 +242,7 @@ bullet: {
     x: 0
     y: 0
     shootSound: shootLiquid
-    controller: false
+    controllable: false
     autoTarget: true
     rotate: false
     reload: 120
