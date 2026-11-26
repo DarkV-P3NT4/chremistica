@@ -101,14 +101,13 @@ drawer: {
     type: RegionPart
     suffix: "-glow1"
     progress: {
-    type: time
+    type: smoothReload
     ops: [
-    { op: loop, time: 240 }
     { op: curve, interp: smoother }
-    { op: slope }
+    { op: inv }
     ]
     }
-    colorFrom: 89CCDE00
+    color: 89CCDE00
     colorTo: 89CCDEFF
     blending: additive
     outline: false
@@ -178,6 +177,7 @@ drawer: {
     blending: additive
     outline: false
     layer: -1
+    layerOffset: 0.002
 }
 ]
 }
