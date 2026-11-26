@@ -1,0 +1,10 @@
+name: Dampslate Vent
+type: SteamVent
+blendGroup: dampslate-floor
+parent: dampslate-floor
+effect: ventSteam
+effectColor: "1E1928"
+variants: 2
+attributes: {
+   steam: 1
+}

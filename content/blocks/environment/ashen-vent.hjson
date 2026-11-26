@@ -1,0 +1,10 @@
+name: Ashen Vent
+type: SteamVent
+blendGroup: ashen-floor
+parent: ashen-floor
+effect: ventSteam
+effectColor: 3A3A3F
+variants: 2
+attributes: {
+   steam: 1
+}

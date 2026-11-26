@@ -1,0 +1,4 @@
+type: Floor
+name: Sulfur Floor
+variants: 4
+itemDrop: cmtc-itm-05-sulfur

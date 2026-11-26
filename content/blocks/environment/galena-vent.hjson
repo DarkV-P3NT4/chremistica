@@ -1,0 +1,10 @@
+name: Galena Stone Vent
+type: SteamVent
+blendGroup: galena-floor
+parent: galena-floor
+effect: ventSteam
+effectColor: 89CCDE
+variants: 3
+attributes: {
+   tether: 1
+}

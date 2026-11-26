@@ -1,0 +1,11 @@
+name: Bromine Vent
+type: SteamVent
+blendGroup: bromine-floor
+parent: bromine-floor
+effect: ventSteam
+effectColor: 734F3A
+variants: 2
+attributes: {
+   toxic: 1
+   bromine: 1
+}

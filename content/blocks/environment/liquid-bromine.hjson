@@ -1,0 +1,11 @@
+type: Floor
+name: Liquid Bromine
+speedMultiplier: 0.3
+variants: 1
+liquidDrop: cmtc-lqd-06-bromine
+isLiquid: true
+cacheLayer: mud
+liquidMultiplier: 0.5
+albedo: 0.9
+drownTime: 600
+supportsOverlay: true

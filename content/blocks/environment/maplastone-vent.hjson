@@ -1,0 +1,10 @@
+name: Maplastone Vent
+type: SteamVent
+blendGroup: maplastone-floor
+parent: maplastone-floor
+effect: ventSteam
+effectColor: "321D31"
+variants: 2
+attributes: {
+   steam: 1
+}

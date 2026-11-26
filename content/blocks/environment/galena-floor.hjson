@@ -1,0 +1,6 @@
+type: Floor
+name: Galena Floor
+variants: 4
+attributes: {
+  galenic: 1
+}

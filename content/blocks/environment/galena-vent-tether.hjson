@@ -1,0 +1,10 @@
+name: Galena Vent Tether
+type: SteamVent
+blendGroup: galena-vent
+parent: galena-vent
+effect: none
+effectColor: 89CCDE00
+variants: 3
+attributes: {
+   tether: 2
+}

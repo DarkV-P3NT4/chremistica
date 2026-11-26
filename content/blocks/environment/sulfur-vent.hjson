@@ -1,0 +1,9 @@
+name: Sulfur Vent
+type: SteamVent
+blendGroup: sulfur-floor
+parent: sulfur-floor
+effect: ventSteam
+variants: 3
+attributes: {
+   steam: 1
+}

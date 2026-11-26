@@ -1,0 +1,4 @@
+type: StaticWall
+name: Shale Titanium Deposit
+variants: 2
+itemDrop: cmtc-itm-08-raw-titanium

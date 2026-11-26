@@ -1,0 +1,5 @@
+type: OreBlock
+wallOre: true
+name: Wall Iron Ore
+variants: 3
+itemDrop: cmtc-itm-03-raw-iron

@@ -1,0 +1,9 @@
+name: Ferric Stone Vent
+type: SteamVent
+blendGroup: ferric-stone
+parent: ferric-stone
+effect: ventSteam
+variants: 2
+attributes: {
+   steam: 1
+}

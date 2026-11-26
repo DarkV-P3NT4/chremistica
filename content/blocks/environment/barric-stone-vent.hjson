@@ -1,0 +1,10 @@
+name: Barric Stone Vent
+type: SteamVent
+blendGroup: barric-stone-floor
+parent: barric-stone-floor
+effect: ventSteam
+effectColor: 363330
+variants: 2
+attributes: {
+   steam: 1
+}

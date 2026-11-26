@@ -1,0 +1,10 @@
+name: Darkslate Vent
+type: SteamVent
+blendGroup: darkslate-floor
+parent: darkslate-floor
+effect: ventSteam
+effectColor: "1E1928"
+variants: 2
+attributes: {
+   steam: 1
+}

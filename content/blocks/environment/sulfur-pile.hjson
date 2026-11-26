@@ -1,0 +1,10 @@
+name: Sulfur Pile
+type: SteamVent
+blendGroup: sulfur-floor
+parent: sulfur-floor
+effect: none
+effectColor: "FFFFFF00"
+variants: 3
+attributes: {
+   sulfur: 1
+}

@@ -1,0 +1,4 @@
+type: OreBlock
+name: Aluminum Deposit
+variants: 4
+itemDrop: cmtc-itm-06-aluminum

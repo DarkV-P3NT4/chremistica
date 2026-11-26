@@ -1,0 +1,10 @@
+name: Maplastone Debris
+type: SteamVent
+blendGroup: maplastone-floor
+parent: maplastone-floor
+effect: none
+effectColor: "FFFFFF00"
+variants: 2
+attributes: {
+   mappa: 1
+}

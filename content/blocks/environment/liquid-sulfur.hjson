@@ -1,0 +1,11 @@
+type: Floor
+name: Liquid Sulfur
+speedMultiplier: 0.7
+variants: 1
+liquidDrop: cmtc-lqd-01-liquid-sulfur
+isLiquid: true
+cacheLayer: water
+liquidMultiplier: 1
+albedo: 0.75
+drownTime: 600
+supportsOverlay: true

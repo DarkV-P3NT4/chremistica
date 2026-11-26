@@ -1,0 +1,9 @@
+name: Quartz Vent
+type: SteamVent
+blendGroup: quartz-floor
+parent: quartz-floor
+effect: ventSteam
+variants: 2
+attributes: {
+   steam: 1
+}
