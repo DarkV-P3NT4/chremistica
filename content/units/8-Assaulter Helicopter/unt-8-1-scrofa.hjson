@@ -15,16 +15,50 @@ itemCapacity: 0
 drag: 0.08
 accel: 0.095
 fallSpeed: 0.0042
-rotateSpeed: 4.5
+rotateSpeed: 4
 strafePenalty: 1
 deathShake: 4
 engineSize: 0
 wobble: true
 flying: true
 hovering: true
-lowAltitude: true
+lowAltitude: false
 loopSound: helicopter1
 knockbackMultiplier: 1.75
+
+abilities: [
+  {
+    type: MoveEffectAbility
+    y: 1.5
+    parentizeEffects: true
+    effect: [
+{
+    type: ParticleEffect
+    colorFrom: 66666666
+    colorTo: 31313100
+    sizeFrom: 1.5
+    sizeTo: 1
+    interp: smoother
+    colorInterp: exp5In
+    length: 21
+    lifetime: 24
+}
+{
+    type: ParticleEffect
+    colorFrom: 66666666
+    colorTo: 38383800
+    sizeFrom: 1.1
+    sizeTo: 0.7
+    interp: smoother
+    colorInterp: exp5In
+    length: 24
+    lifetime: 32
+}
+    ]
+    interval: 4
+    minVelocity: 0
+  }
+]
 
 weapons: [
 {
@@ -63,8 +97,8 @@ bullet: {
     sizeFrom: 0
     sizeTo: 14
     strokeFrom: 2
-    strokeTo: 0.1
-    lifetime: 12
+    strokeTo: 0
+    lifetime: 24
     colorFrom: FFD2B4FF
     colorTo: FFD2B4FF
     interp: pow3Out
@@ -72,8 +106,8 @@ bullet: {
 {
     type: ParticleEffect
     sizeFrom: 3
-    sizeTo: 1
-    lifetime: 16
+    sizeTo: 0
+    lifetime: 28
     colorFrom: FFD2B4FF
     colorTo: FFD2B4FF
     interp: pow3Out
@@ -83,13 +117,17 @@ bullet: {
 {
     type: ParticleEffect
     sizeFrom: 3
-    sizeTo: 0
-    lifetime: 16
+    sizeTo: 2
+    strokeFrom: 1.8
+    strokeTo: 0
+    lifetime: 30
     colorFrom: FFD2B4FF
     colorTo: FFD2B4FF
     interp: pow3Out
     particles: 5
-    length: 15
+    length: 16
+    lenFrom: 3.2
+    lenTo: 4
     line: true
 }
     ]
@@ -124,39 +162,14 @@ bullet: {
     trailColor: E69E6BFF
     hitColor: FFD2B4FF
     trailLength: 3
-    hitEffect: {
-    type: ParticleEffect
-    sizeFrom: 4
-    sizeTo: 2
-    strokeFrom: 1.7
-    strokeTo: 0.1
-    colorFrom: FFD2B4FF
-    colorTo: FFD2B4FF
-    particles: 8
-    length: 8
-    cone: 30
-    line: true
-    lifetime: 6
-}
-    despawnEffect: {
-    type: ParticleEffect
-    sizeFrom: 4
-    sizeTo: 2
-    strokeFrom: 1.7
-    strokeTo: 0.1
-    colorFrom: FFD2B4FF
-    colorTo: FFD2B4FF
-    particles: 8
-    length: 8
-    cone: 30
-    line: true
-    lifetime: 6
-}
+    hitEffect: hitBulletColor
+    despawnEffect: hitBulletColor
     shootEffect: shootSmallColor
 }
     }
 {
     name: unt-8-1-scrofa-rotor
+    layerOffset: 0.001
     alwaysShooting: true
 	 display: false
  	controllable: false
@@ -164,7 +177,7 @@ bullet: {
  	mirror: false
     x: 0
  	y: 0
-	 reload: 180
+	 reload: 60
  	recoil: 0
  	shootSound: none
 

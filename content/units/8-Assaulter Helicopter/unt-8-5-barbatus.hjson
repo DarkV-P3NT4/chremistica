@@ -1,0 +1,701 @@
+type: payload
+
+name: "Barbatus"
+description: "Fires massive piercing frags at enemy targets, Capable of carrying payloads, Can strafe without loosing speed."
+
+health: 19000
+armor: 18
+hitSize: 36
+outlineColor: 492C20
+
+speed: 1
+range: 180
+maxRange: 200
+itemCapacity: 0
+drag: 0.08
+accel: 0.095
+fallSpeed: 0.0032
+rotateSpeed: 1
+strafePenalty: 1
+payloadCapacity: 2304
+deathShake: 50
+engineSize: 0
+wobble: true
+flying: true
+hovering: true
+lowAltitude: false
+loopSound: helicopter3
+loopSoundVolume: 3
+pickupUnits: true
+knockbackMultiplier: 1.75
+
+immunities: [ cmtc-sts-01-empowered-ii, cmtc-sts-01-empowered-iii, cmtc-sts-02-deprived-ii, cmtc-sts-02-deprived-iii, cmtc-sts-04-sluggish-i, cmtc-sts-04-sluggish-ii, cmtc-sts-05-amplified-iii, cmtc-sts-07-refined-iii, cmtc-sts-08-ruined-i, cmtc-sts-08-ruined-ii, burning ]
+
+abilities: [
+  {
+    type: MoveEffectAbility
+    y: 7.5
+    parentizeEffects: true
+    effect: [
+{
+    type: ParticleEffect
+    colorFrom: 66666666
+    colorTo: 31313100
+    sizeFrom: 5
+    sizeTo: 3
+    interp: smoother
+    colorInterp: exp5In
+    length: 64
+    lifetime: 36
+}
+{
+    type: ParticleEffect
+    colorFrom: F4F4F477
+    colorTo: D1D1D100
+    sizeFrom: 4.2
+    sizeTo: 2.9
+    interp: smoother
+    colorInterp: exp5In
+    length: 70
+    lifetime: 48
+}
+{
+    type: ParticleEffect
+    colorFrom: F0F0F066
+    colorTo: B1B1B100
+    sizeFrom: 5.6
+    sizeTo: 4
+    interp: smoother
+    colorInterp: exp5In
+    length: 46
+    lifetime: 24
+}
+    ]
+    interval: 4
+    minVelocity: 0
+  }
+]
+
+weapons: [
+{
+    x: 9.25
+    y: 0
+    shootSound: shootReign
+    shake: 0.2
+    reload: 15
+    shootCone: 15
+    rotate: true
+    rotateSpeed: 2
+    shootY: 0
+    mirror: true
+    recoil: 0
+    velocityRnd: 0.08
+
+bullet: {
+    type: BasicBulletType
+    rangeOverride: 200
+    sprite: cmtc-hard-bullet
+    width: 12
+    height: 28
+    shrinkY: 0.1
+    damage: 60
+    splashDamage: 13.5
+    splashDamageRadius: 16
+    buildingDamageMultiplier: 1.3
+    blockArmorMultiplier: 0.8
+    pierce: true
+    pierceCap: 8
+    knockback: 1
+    speed: 13
+    lifetime: 15.5
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    trailEffect: hitSquaresColor
+    trailInterval: 3
+    trailLength: 12
+    shootEffect: shootBigColor
+    smokeEffect: shootBigSmoke
+    despawnSound: explosionFine
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 20
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 18
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 24
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 8
+    length: 28
+}
+{
+    type: ParticleEffect
+    sizeFrom: 5
+    sizeTo: 5
+    lifetime: 28
+    strokeFrom: 2
+    strokeTo: 0
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 12
+    length: 28
+    lenFrom: 4
+    lenTo: 5
+    line: true
+}
+    ]
+    despawnEffect: none
+    fragBullets: 3
+    fragVelocityMin: 0.4
+    fragLifeMin: 0
+    fragRandomSpread: 30
+
+fragBullet: {
+    type: BasicBulletType
+    sprite: cmtc-hard-bullet
+    width: 10
+    height: 12
+    shrinkY: 0.2
+    damage: 15
+    splashDamage: 11.25
+    splashDamageRadius: 13
+    buildingDamageMultiplier: 1.3
+    knockback: 0.33
+    impact: true
+    pierce: true
+    pierceCap: 3
+    pierceBuilding: true
+    speed: 9
+    lifetime: 20
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    trailLength: 10
+    despawnEffect: none
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 15
+    strokeFrom: 3.4
+    strokeTo: 0
+    lifetime: 18
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 22
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 8
+    length: 18
+}
+{
+    type: ParticleEffect
+    sizeFrom: 5
+    sizeTo: 3
+    lifetime: 24
+    strokeFrom: 2
+    strokeTo: 0
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 12
+    length: 16
+    lenFrom: 2
+    lenTo: 3.5
+    line: true
+}
+    ]
+}
+}
+}
+{
+    x: 0
+    y: 7.5
+    shootSound: shootReign
+    shake: 0.2
+    reload: 22.5
+    shootCone: 15
+    rotate: true
+    rotateSpeed: 2
+    shootY: 0
+    mirror: true
+    recoil: 0
+    velocityRnd: 0.08
+
+bullet: {
+    type: BasicBulletType
+    rangeOverride: 200
+    sprite: cmtc-hard-bullet
+    width: 12
+    height: 28
+    shrinkY: 0.1
+    damage: 60
+    splashDamage: 13.5
+    splashDamageRadius: 16
+    buildingDamageMultiplier: 1.3
+    blockArmorMultiplier: 0.8
+    pierce: true
+    pierceCap: 8
+    knockback: 1
+    speed: 13
+    lifetime: 15.5
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    trailEffect: hitSquaresColor
+    trailInterval: 3
+    trailLength: 12
+    shootEffect: shootBigColor
+    smokeEffect: shootBigSmoke
+    despawnSound: explosionFine
+    despawnEffect: none
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 20
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 18
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 24
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 8
+    length: 28
+}
+{
+    type: ParticleEffect
+    sizeFrom: 5
+    sizeTo: 5
+    lifetime: 28
+    strokeFrom: 2
+    strokeTo: 0
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 12
+    length: 28
+    lenFrom: 4
+    lenTo: 5
+    line: true
+}
+    ]
+    fragBullets: 3
+    fragVelocityMin: 0.4
+    fragLifeMin: 0
+    fragRandomSpread: 30
+
+fragBullet: {
+    type: BasicBulletType
+    sprite: cmtc-hard-bullet
+    width: 10
+    height: 12
+    shrinkY: 0.2
+    damage: 15
+    splashDamage: 11.25
+    splashDamageRadius: 13
+    buildingDamageMultiplier: 1.3
+    knockback: 0.33
+    impact: true
+    pierce: true
+    pierceCap: 3
+    pierceBuilding: true
+    speed: 9
+    lifetime: 20
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    trailLength: 10
+    despawnEffect: none
+    hitEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 15
+    strokeFrom: 3.4
+    strokeTo: 0
+    lifetime: 18
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 4
+    sizeTo: 0
+    lifetime: 22
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 8
+    length: 18
+}
+{
+    type: ParticleEffect
+    sizeFrom: 5
+    sizeTo: 3
+    lifetime: 24
+    strokeFrom: 2
+    strokeTo: 0
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 12
+    length: 16
+    lenFrom: 2
+    lenTo: 3.5
+    line: true
+}
+    ]
+}
+}
+}
+{
+    x: 0
+    y: 0
+    shootSound: castBarbatus
+    chargeSound: chargeCorvus
+    parentizeEffects: true
+    reload: 1160
+    shootY: 0
+    shake: 10
+    shootCone: 361
+    soundPitchMin: 0.95
+    soundPitchMax: 1
+
+shoot: {
+    firstShotDelay: 80
+}
+
+bullet: {
+    type: BasicBulletType
+    rangeOverride: 160
+    keepVelocity: false
+    width: 0
+    height: 0
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    hittable: false
+    absorbable: false
+    reflectable: false
+    collides: false
+    damage: 0
+    speed: 2
+    lifetime: 360
+    circleShooter: true
+    circleShooterRadius: 1
+    circleShooterRadiusSmooth: 1
+    intervalBullets: 4
+    bulletInterval: 10
+    chargeEffect: {
+    type: WaveEffect
+    sizeFrom: 80
+    sizeTo: 1
+    lifetime: 64
+    colorFrom: FFFFFF00
+    colorTo: FFD2B4FF
+    strokeFrom: 2
+    strokeTo: 6
+    }
+    smokeEffect: none
+    shootEffect: [
+{
+    type: WaveEffect
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B400
+    sizeFrom: 0
+    sizeTo: 160
+    strokeFrom: 8
+    strokeTo: 4
+    interp: exp5Out
+    lifetime: 60
+}
+    {
+    type: WaveEffect
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B400
+    sizeFrom: 0
+    sizeTo: 180
+    strokeFrom: 6
+    strokeTo: 2
+    interp: exp5Out
+    lifetime: 20
+    }
+{
+    type: ParticleEffect
+    colorInterp: exp5In
+    sizeFrom: 8
+    sizeTo: 6
+    lenFrom: 12
+    lenTo: 6
+    lifetime: 50
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B400
+    interp: exp5Out
+    particles: 60
+    length: 200
+    line: true
+    strokeFrom: 1.5
+    strokeTo: 1
+}
+    ]
+
+intervalBullet: {
+    type: BasicBulletType
+    createChance: 0.6
+    width: 0
+    height: 0
+    hittable: false
+    reflectable: false
+    absorbable: false
+    collides: false
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    damage: 0
+    splashDamage: 0
+    splashDamageRadius: 8
+    speed: 8
+    lifetime: 20
+    lifeScaleRandMin: 0.2
+    fragBullets: 1
+    hitSound: fallingMiniInfernus
+    hitSoundVolume: 0.2
+    hitEffect: none
+    despawnEffect: [ ballfire, hitSquaresColor, vaporSmall, hitFlameSmall ]
+
+fragBullet: {
+    type: BasicBulletType
+    sprite: mine-bullet
+    width: 18
+    height: 18
+    shrinkY: 0.4
+    shrinkX: 0.4
+    spin: 3
+    damage: 40
+    collides: false
+    collidesAir: false
+    splashDamage: 40
+    splashDamageRadius: 32
+    knockback: 0.8
+    scaledSplashDamage: true
+    buildingDamageMultiplier: 1.25
+    lifetime: 60
+    speed: 1
+    lifeScaleRandMin: 0.8
+    drag: 0.05
+    makeFire: true
+    incendSpread: 24
+    incendAmount: 6
+    incendChance: 0.4
+    status: burning
+    statusDuration: 600
+    frontColor: FFD2B4FF
+    backColor: E69E6BFF
+    trailColor: E69E6BFF
+    hitColor: FFD2B4FF
+    trailEffect: ballfire
+    trailInterval: 3
+    despawnShake: 1
+    hitSound: explosionMiniInfernus
+    hitSoundVolume: 0.7
+    hitEffect: none
+    despawnEffect: [
+{
+    type: WaveEffect
+    sizeFrom: 0
+    sizeTo: 34
+    strokeFrom: 4
+    strokeTo: 0
+    lifetime: 30
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+}
+{
+    type: ParticleEffect
+    sizeFrom: 6
+    sizeTo: 0
+    lifetime: 32
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 12
+    length: 36
+}
+{
+    type: ParticleEffect
+    sizeFrom: 5
+    sizeTo: 4
+    strokeFrom: 2.2
+    strokeTo: 0
+    lifetime: 36
+    colorFrom: FFD2B4FF
+    colorTo: FFD2B4FF
+    interp: pow3Out
+    particles: 16
+    length: 38
+    lenFrom: 5
+    lenTo: 4.2
+    line: true
+}
+    ]
+    fragBullets: 2
+
+fragBullet: {
+    createChance: 0.6
+    type: FireBulletType
+    lifetime: 30
+    velMin: 0.5
+    velMax: 2
+    makeFire: true
+    damage: 10
+    splashDamage: 20
+    splashDamageRadius: 36
+    status: burning
+    statusDuration: 600
+}
+}
+}
+}
+}
+{
+    name: unt-8-5-barbatus-rotor
+    layerOffset: 0.1
+    alwaysShooting: true
+	 display: false
+ 	controllable: false
+    useAttackRange: false
+ 	mirror: false
+    x: 0
+ 	y: 0
+	 reload: 60
+ 	recoil: 0
+ 	shootSound: none
+
+bullet: {
+    type: BasicBulletType
+ 	width: 0
+ 	height: 0
+ 	speed: 0
+ 	damage: 0
+ 	lifetime: 0
+ 	hitEffect: none
+	 instantDisappear: true
+	 despawnEffect: none
+	 shootEffect: none
+ 	smokeEffect: none
+    }
+
+parts: [
+{
+ 	type: RegionPart
+ 	suffix: "-blade"
+ 	progress: reload
+ 	moveRot: -360
+ 	mirror: false
+ 	outline: false
+    y: 7.5
+    }
+{
+    type: RegionPart
+    suffix: "-top"
+ 	mirror: false
+ 	outline: false
+    y: 7.5
+    }
+]
+    }
+{
+    x: 0
+    y: 0
+    reload: 1
+    mirror: false
+    shootOnDeath: true
+    shootCone: 180
+    shootSound: explosionDull
+    controllable: false
+    aiControllable: false
+
+bullet: {
+    type: ExplosionBulletType
+    instantDisappear: true
+    killShooter: true
+    splashDamage: 1000
+    splashDamageRadius: 48
+    buildingDamageMultiplier: 1.2
+    collidesGround: true
+    collidesAir: false
+    makeFire: true
+    incendAmount: 30
+    incendSpread: 38
+    incendChance: 0.5
+    hitEffect: pulverize
+    despawnEffect: [ massiveExplosion, blastExplosion, flakExplosion, shockwave ]
+fragBullet: {
+
+    type: BasicBulletType
+    width: 0
+    height: 0
+    collides: false
+    hittable: false
+    absorbable: false
+    reflectable: false
+    damage: 0
+    speed: 0
+    lifetime: 1500
+    bulletInterval: 15
+    despawnEffect: none
+    intervalBullets: 10
+
+intervalBullet: {
+    createChance: 0.35
+    type: FireBulletType
+    lifetime: 30
+    velMin: 0.5
+    velMax: 5
+    makeFire: true
+    damage: 60
+    splashDamage: 40
+    splashDamageRadius: 36
+}
+    }
+}
+    }
+]

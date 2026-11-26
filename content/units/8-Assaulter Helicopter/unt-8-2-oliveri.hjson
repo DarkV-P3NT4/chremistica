@@ -15,31 +15,62 @@ itemCapacity: 0
 drag: 0.08
 accel: 0.095
 fallSpeed: 0.0042
-rotateSpeed: 4.5
+rotateSpeed: 4
 strafePenalty: 1
 deathShake: 4
 engineSize: 0
 wobble: true
 flying: true
 hovering: true
-lowAltitude: true
+lowAltitude: false
 loopSound: helicopter1
 knockbackMultiplier: 1.75
 
 abilities: [
 {
     type: ArmorPlateAbility
-    healthMultiplier: 0.1
+    healthMultiplier: 0.15
     drawPlate: false
     drawShine: false
 }
+  {
+    type: MoveEffectAbility
+    y: 2.25
+    parentizeEffects: true
+    effect: [
+{
+    type: ParticleEffect
+    colorFrom: 66666666
+    colorTo: 31313100
+    sizeFrom: 2.1
+    sizeTo: 1.8
+    interp: smoother
+    colorInterp: exp5In
+    length: 42
+    lifetime: 28
+}
+{
+    type: ParticleEffect
+    colorFrom: DADADA66
+    colorTo: D1D1D100
+    sizeFrom: 2.3
+    sizeTo: 1.2
+    interp: smoother
+    colorInterp: exp5In
+    length: 31
+    lifetime: 36
+}
+    ]
+    interval: 4
+    minVelocity: 0
+  }
 ]
 
 weapons: [
 {
-    x: 0
+    x: 2
     y: 6
-    mirror: false
+    mirror: true
     rotate: false
     useAttackRange: false
     reload: 5
@@ -53,6 +84,7 @@ bullet: {
     collidesGround: true
     width: 8
     height: 8
+    shrinkY: 0.2
     damage: 10
     splashDamage: 30
     splashDamageRadius: 20.8
@@ -97,6 +129,7 @@ fragBullet: {
     }
 {
     name: unt-8-2-oliveri-rotor
+    layerOffset: 0.001
     alwaysShooting: true
 	 display: false
  	controllable: false
@@ -104,7 +137,7 @@ fragBullet: {
  	mirror: false
     x: 0
  	y: 0
-	 reload: 150
+	 reload: 60
  	recoil: 0
  	shootSound: none
 

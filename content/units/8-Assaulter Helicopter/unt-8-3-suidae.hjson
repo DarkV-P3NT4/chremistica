@@ -46,10 +46,52 @@ abilities: [
     missileUnitMultiplier: 1.5
     chanceDeflect: 0.35
     reflectVel: 2
-    max: 600
+    max: 800
     regen: 1
     pushUnits: false
 }
+{
+    type: MoveEffectAbility
+    parentizeEffects: true
+    y: 3
+    effect: [
+{
+    type: ParticleEffect
+    colorFrom: 66666666
+    colorTo: 31313100
+    sizeFrom: 2.8
+    sizeTo: 2.1
+    interp: smoother
+    colorInterp: exp5In
+    length: 48
+    lifetime: 27
+}
+{
+    type: ParticleEffect
+    colorFrom: 69696966
+    colorTo: 33333300
+    sizeFrom: 3.1
+    sizeTo: 1.1
+    interp: smoother
+    colorInterp: exp5In
+    length: 42
+    lifetime: 38
+}
+{
+    type: ParticleEffect
+    colorFrom: DDDDDD66
+    colorTo: B0B0B000
+    sizeFrom: 2
+    sizeTo: 1
+    interp: smoother
+    colorInterp: exp5In
+    length: 27
+    lifetime: 20
+}
+    ]
+    interval: 4
+    minVelocity: 0
+  }
 ]
 
 weapons: [
@@ -106,7 +148,7 @@ bullet: {
 {
     type: ParticleEffect
     sizeFrom: 4
-    sizeTo: 1
+    sizeTo: 0
     lifetime: 24
     colorFrom: FFD2B4FF
     colorTo: FFD2B4FF
@@ -117,13 +159,17 @@ bullet: {
 {
     type: ParticleEffect
     sizeFrom: 5
-    sizeTo: 0
-    lifetime: 24
+    sizeTo: 3
+    lifetime: 28
+    strokeFrom: 2.1
+    strokeTo: 0
     colorFrom: FFD2B4FF
     colorTo: FFD2B4FF
     interp: pow3Out
     particles: 12
     length: 25
+    lenFrom: 3
+    lenTo: 5
     line: true
 }
     ]
@@ -200,13 +246,17 @@ bullet: {
 {
     type: ParticleEffect
     sizeFrom: 5
-    sizeTo: 0
-    lifetime: 24
+    sizeTo: 4
+    strokeFrom: 2.2
+    strokeTo: 0
+    lifetime: 28
     colorFrom: FFD2B4FF
     colorTo: FFD2B4FF
     interp: pow3Out
     particles: 16
     length: 30
+    lenFrom: 5
+    lenTo: 4.2
     line: true
 }
     ]
@@ -225,7 +275,7 @@ bullet: {
  	mirror: false
     x: 0
  	y: 3
-	 reload: 180
+	 reload: 60
  	recoil: 0
  	shootSound: none
 
